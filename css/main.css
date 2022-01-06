@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Roboto&&display=swap');
+
+button:hover {
+  cursor: pointer;
+}
+
+html,
+body {
+  background-color: #ceffcb;
+  color: black;
+  margin: 0;
+  font-family: "Roboto";
+}
+
+h2 {
+  font-family: "Quicksand";
+  color: #005588;
+}
+
+#main-nav {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0;
+  background-color: #38393E;
+  overflow: hidden;
+  width: 100%;
+}
+
+#main-nav li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px;
+  padding: 10px 16px;
+  color: white;
+}
+
+#main-nav li {
+  float: left;
+}
+
+#main-nav li:last-child {
+  float: right;
+}
+
+#selected a {
+  background-color: #04aa6d;
+  text-shadow: 2px 2px #3D6E44;
+}
+
+#main-nav li a:hover {
+  background-color: #1B1C1E;
+}
+
+@media screen and (min-width: 1000px) {
+  #main-nav {
+    font-size: 200%;
+  }
+  
+  h1 {
+    font-size: 250%
+  }
+  
+  p, p ul li {
+    font-size: 120%;
+  }
+  
+  #banner p {
+    font-size: 130%;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #main-nav li {
+    display: block;
+    float: none;
+  }
+  
+  #main-nav {
+    font-size: 180%;
+  }
+
+  #main-nav li:last-child {
+    float: none;
+  }
+  
+  #banner p {
+    font-size: 150%;
+    padding: 40px;
+  }
+  
+  h1 {
+    font-size: 250%;
+  }
+  
+  button {
+    font-size: 80%;
+  }
+}
+
+.p, .p ul li {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+h1 {
+  color: #1C6E65;
+  margin: 10px;
+  font-family: "Quicksand";
+}
+
+p, ul, button {
+  color: dimgrey;
+  font-family: "Quicksand";
+}
+
+#banner {
+  background-blend-mode: darken;
+  background-color: rgba(0,0,0,0.3);
+  background-image: url("../resources/banner.webp");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#banner p {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px #66CFFF;
+}
+
+#footer {
+  background-color: #373737;
+  padding-bottom: 0;
+  overflow: none;
+  width: 100%;
+  display: block;
+  padding: 12px 0px;
+}
+
+#footer span {
+  float: right;
+  font-family: "Roboto";
+  color: #7F7F7F;
+  display: block;
+  padding-right: 10px;
+}
+
+#footer ul {
+  padding: 0 0;
+  display: block;
+  margin-bottom: 40px;
+}
+
+#footer ul li{
+  float: left;
+  display: block;
+  padding: 0 0;
+  color: lightgrey;
+  font-family: "Quicksand"
+}
+
+#footer ul li a {
+  text-decoration: none;
+  padding-left: 10px;
+  color: white;
+}
+
+#icon img {
+  border-radius: 64px;
+}
+
+#icon figcaption {
+  color: grey;
+}
+
+#icon {
+  float: right;
+  display: block;
+  width: 20%;
+}
+
+button {
+  border: none;
+  border-radius: 40px;
+  background-color: #4C649F;
+  color: white;
+}
