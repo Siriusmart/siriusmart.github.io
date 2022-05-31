@@ -54,19 +54,19 @@ h2 {
 
 @media screen and (min-width: 1000px) {
   #main-nav {
-    font-size: 200%;
+    font-size: 130%;
   }
   
   h1 {
-    font-size: 250%
+    font-size: 150%
   }
   
   p, p ul li {
-    font-size: 120%;
+    font-size: 100%;
   }
   
   #banner p {
-    font-size: 130%;
+    font-size: 150%;
     padding: 40px;
   }
 }
@@ -78,7 +78,7 @@ h2 {
   }
   
   #main-nav {
-    font-size: 180%;
+    font-size: 130%;
   }
 
   #main-nav li:last-child {
