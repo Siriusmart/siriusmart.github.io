@@ -1,20 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Roboto&&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600');
 
 button:hover {
   cursor: pointer;
 }
 
-html,
-body {
+html, body {
   background-color: #ceffcb;
   color: black;
   margin: 0;
-  font-family: "Roboto";
+  font-family: "Quicksand";
 }
 
 h2 {
-  font-family: "Quicksand";
   color: #005588;
+}
+
+h3 {
+  color: #515f00;
 }
 
 #main-nav {
@@ -142,7 +144,6 @@ p, ul, button {
 
 #footer span {
   float: right;
-  font-family: "Roboto";
   color: #7F7F7F;
   display: block;
   padding-right: 10px;
