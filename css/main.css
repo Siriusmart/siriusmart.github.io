@@ -45,13 +45,18 @@ h3 {
   float: right;
 }
 
-#selected a {
+#main-nav li:hover {
+  background-color: #1B1C1E;
+}
+
+#main-nav #selected a {
   background-color: #04aa6d;
   text-shadow: 2px 2px #3D6E44;
 }
 
-#main-nav li a:hover {
-  background-color: #1B1C1E;
+#main-nav #selected a:hover {
+  background-color: #07bd7a;
+  box-shadow: 0px 3px #2a332c;
 }
 
 @media screen and (min-width: 1000px) {
