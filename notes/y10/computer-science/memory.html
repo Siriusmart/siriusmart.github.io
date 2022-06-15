@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>memory</title>
+  <link rel="stylesheet" type="text/css" href="../../../css/markdown.css">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/71584876" type="image/x-icon" />
+</head>
+
+<body>
+  <h1 id="memory">Memory</h1>
+  <h2 id="random-access-memory-ram">Random Access Memory (RAM)</h2>
+  <ul>
+    <li>Main memory</li>
+    <li>Volatile (when powered off data is loss)</li>
+    <li>Temporary storage for programs and data while the program is
+      running</li>
+    <li>CPU cannot go directly to secondary storage</li>
+  </ul>
+  <h2 id="virtual-memeory-vram">Virtual Memeory (VRAM)</h2>
+  <ul>
+    <li>Part of the secondary storage to behave like main memory</li>
+    <li>Is slower because swapping takes time</li>
+  </ul>
+  <ol type="1">
+    <li>RAM gets full</li>
+    <li>Sections are swapped out to secondary storage, freeing up space for
+      in RAM (paging)</li>
+  </ol>
+  <h2 id="read-only-memory-rom">Read Only Memory (ROM)</h2>
+  <ul>
+    <li>Cannot write to it once created</li>
+    <li>Non-volatile</li>
+    <li>Holds the bootstrap for the computer</li>
+  </ul>
+  <table>
+    <colgroup>
+      <col style="width: 50%" />
+      <col style="width: 50%" />
+    </colgroup>
+    <thead>
+      <tr class="header">
+        <th>RAM</th>
+        <th>ROM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Volatile - data is lost when the power is turned off (temporary
+          memory)</td>
+        <td>Non-volatile - data is not loss when the power is turned off
+          (permanent memory)</td>
+      </tr>
+      <tr class="even">
+        <td>Stores data that is currently in use</td>
+        <td>Stores BIOS/bootstrap loader used at startup</td>
+      </tr>
+      <tr class="odd">
+        <td>Can be read and write to</td>
+        <td>Can only be read and not written to</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><a href="./">Back to index page</a></p>
+</body>
+
+</html>

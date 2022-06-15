@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>cpp-basics</title>
+  <link rel="stylesheet" type="text/css" href="../../../css/markdown.css">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/71584876" type="image/x-icon" />
+</head>
+
+<body>
+  <h1 id="c-basics">C++ Basics</h1>
+  <h2 id="hello-world">Hello world</h2>
+  <ol type="1">
+    <li>Create a new file with the file extension <code>.cpp</code></li>
+    <li>Open the file in your text editor
+      (e.g. <code>CodeBlocks</code>)</li>
+    <li>All C++ programes containts a <code>main</code> function</li>
+  </ol>
+  <div class="sourceCode" id="cb1">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// this ends the main function, and the program</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+  </div>
+  <h2 id="libraries">Libraries</h2>
+  <p>To print out hello world, we need to include the
+    <code>iostream</code> library
+  </p>
+  <div class="sourceCode" id="cb2">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">// without bringing `std` to namespace, we have to specify `std::cout`</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Hello World!&quot;</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span> <span class="co">// a semicolon as line break</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+  </div>
+  <h2 id="arithmetics">Arithmetics</h2>
+  <div class="sourceCode" id="cb3">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// snip</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span> <span class="co">// new integer x with value 5</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> x <span class="op">+</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// new integer y with value 8</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> z <span class="op">=</span> x<span class="op">++;</span> <span class="co">// return x then increase it by 1 (z is 5)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="op">++</span>x<span class="op">;</span> <span class="co">// increase x by 1 then return x (z is 6)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>x <span class="op">+=</span> <span class="dv">10</span><span class="op">;</span> <span class="co">// x = x + 10 (x is 15)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>x <span class="op">/=</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// x = x / 3 (x is 5)</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">%</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// remainder of x divided by 2 (z is 1)</span></span></code></pre>
+  </div>
+  <table>
+    <thead>
+      <tr class="header">
+        <th>Operator</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td><code>+</code></td>
+        <td>Addition</td>
+      </tr>
+      <tr class="even">
+        <td><code>-</code></td>
+        <td>Subtraction</td>
+      </tr>
+      <tr class="odd">
+        <td><code>*</code></td>
+        <td>Multiplication</td>
+      </tr>
+      <tr class="even">
+        <td><code>/</code></td>
+        <td>Division</td>
+      </tr>
+      <tr class="odd">
+        <td><code>%</code></td>
+        <td>Modulo (Remainder)</td>
+      </tr>
+      <tr class="even">
+        <td><code>++</code></td>
+        <td>Increment by 1</td>
+      </tr>
+      <tr class="odd">
+        <td><code>--</code></td>
+        <td>Decrement by 1</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="strings">Strings</h2>
+  <p>```cpp #include <string>
+  </p>
+  <p>using namespace std;</p>
+  <p>int main() { string name = “Joe”; string hi = name + ” mama”; // +
+    concatenates strings</p>
+  <pre><code>int x = 5;
+string x_str = to_string(x); // convert x to string
+
+int back = stoi(x_str); // convert string to int
+// stoi: string to int
+// stof: string to float
+
+return 0;</code></pre>
+  <p>}</p>
+  <p><a href="./">Back to index page</a></p>
+</body>
+
+</html>

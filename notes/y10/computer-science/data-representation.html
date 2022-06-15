@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>data-representation</title>
+  <link rel="stylesheet" type="text/css" href="../../../css/markdown.css">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/71584876" type="image/x-icon" />
+</head>
+
+<body>
+  <h1 id="data-representation">Data Representation</h1>
+  <table>
+    <colgroup>
+      <col style="width: 50%" />
+      <col style="width: 50%" />
+    </colgroup>
+    <thead>
+      <tr class="header">
+        <th>Unit</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Bit (b)</td>
+        <td>1 or 0</td>
+      </tr>
+      <tr class="even">
+        <td>Nibble</td>
+        <td>4 bits</td>
+      </tr>
+      <tr class="odd">
+        <td>Byte (B)</td>
+        <td>8 bits</td>
+      </tr>
+      <tr class="even">
+        <td>Kilobyte (KB)</td>
+        <td>1024 bytes</td>
+      </tr>
+      <tr class="odd">
+        <td>Megabyte (MB)</td>
+        <td>1024 kilobytes</td>
+      </tr>
+      <tr class="even">
+        <td>Gigabyte (GB)</td>
+        <td>1024 megabytes</td>
+      </tr>
+      <tr class="odd">
+        <td>Terabyte (TB)</td>
+        <td>1024 gigabytes (according to hardware manufacturers it’s 1000GB, and
+          it’s obviously a scam)</td>
+      </tr>
+      <tr class="even">
+        <td>Petabyte (PB)</td>
+        <td>1024 terabytes</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="binary">Binary</h2>
+  <ol type="1">
+    <li>First digit is 2⁰ = 1</li>
+    <li>2ⁱ = 2</li>
+    <li>2² = 4</li>
+    <li>…</li>
+  </ol>
+  <p>With n bits can store any number from 0 to 2ⁿ - 1</p>
+  <blockquote>
+    <h3 id="most-significant-bit">Most significant bit</h3>
+    <ul>
+      <li>The most left bit, no matter it is 0 or 1</li>
+      <li>The most right bit is the least significant bit</li>
+    </ul>
+  </blockquote>
+  <h2 id="hexadecimal">Hexadecimal</h2>
+  <ul>
+    <li>0123456789ABCDEF (base 16)</li>
+    <li>4 nibbles = 1 hexadecimal digit</li>
+    <li>More readable to human</li>
+  </ul>
+  <blockquote>
+    <h3 id="binary-shifts">Binary shifts</h3>
+    <ul>
+      <li>Left shift: Multiply by 2 (might loose the most significant
+        bit)</li>
+      <li>Right shift: Divide by 2 (might loose the least significant bit but
+        it doesn’t really matter)</li>
+    </ul>
+  </blockquote>
+  <h2 id="characters">Characters</h2>
+  <ul>
+    <li>A character set maps a binary value to a character</li>
+  </ul>
+  <table>
+    <thead>
+      <tr class="header">
+        <th>Character set</th>
+        <th>Bits per character</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Ascii</td>
+        <td>7 bits</td>
+      </tr>
+      <tr class="even">
+        <td>Extended ASCII</td>
+        <td>8 bits (1 byte)</td>
+      </tr>
+      <tr class="odd">
+        <td>Unicode (UTF-8 is the greatest invention)</td>
+        <td>16 - 32 bits</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><a href="./">Back to index page</a></p>
+</body>
+
+</html>

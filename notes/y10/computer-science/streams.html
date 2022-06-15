@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>streams</title>
+  <link rel="stylesheet" type="text/css" href="../../../css/markdown.css">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/71584876" type="image/x-icon" />
+</head>
+
+<body>
+  <h1 id="streams">Streams</h1>
+  <h2 id="output-streams">Output streams</h2>
+  <p>Take a look at <code>cout</code></p>
+  <div class="sourceCode" id="cb1">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Hello World!&quot;</span><span class="op">;</span></span></code></pre>
+  </div>
+  <p>Here you are actually pushing the string “Hello World!” to the output
+    buffer, the buffer will then be printed to the terminal.</p>
+  <p>Besides pushing output to <code>cout</code>, you can also push output
+    to <code>ofstream</code> (files)</p>
+  <div class="sourceCode" id="cb2">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">// snip...</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ofstream myFile<span class="op">(</span><span class="st">&quot;myFile.txt&quot;</span><span class="op">);</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>myFile<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    myFile <span class="op">&lt;&lt;</span> <span class="st">&quot;Hello World!&quot;</span><span class="op">;</span> <span class="co">// this line</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    myFile<span class="op">.</span>close<span class="op">();</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Could not open file&quot;</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+  </div>
+  <p>In the above example, we created a buffer for the file
+    <code>myFile.txt</code>, then we added “Hello World!” to the buffer, and
+    when we close the file, the changes will be written to it
+  </p>
+  <h2 id="input-streams">Input streams</h2>
+  <p>In the same sense input streams are a buffer for the input (usually a
+    string), and reading from the buffer removes the read part from the
+    buffer.</p>
+  <div class="sourceCode" id="cb3">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">// snip...</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>string myString<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>cin <span class="op">&gt;&gt;</span> myString<span class="op">;</span> <span class="co">// takes one word (until a space) from the standard input</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>getline<span class="op">(</span>cin<span class="op">,</span> myString<span class="op">);</span> <span class="co">// takes one line from the standard input (until line break &#39;\n&#39;)</span></span></code></pre>
+  </div>
+  <p>This rule also applies to <code>ifstream</code> for files</p>
+  <div class="sourceCode" id="cb4">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;fstream&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">// snip...</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ifstream myFile<span class="op">(</span><span class="st">&quot;myFile.txt&quot;</span><span class="op">);</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>myFile<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    myFile <span class="op">&gt;&gt;</span> myString<span class="op">;</span> <span class="co">// takes one word (until a space) from the file</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    getline<span class="op">(</span>myFile<span class="op">,</span> myString<span class="op">);</span> <span class="co">// takes one line from the file (until line break &#39;\n&#39;)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Could not open file&quot;</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+  </div>
+</body>
+<p><a href="./">Back to index page</a></p>
+
+</html>
