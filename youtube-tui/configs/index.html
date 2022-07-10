@@ -8,9 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    
+    <link rel="canonical" href="https://siriusmart.github.io/youtube-tui/configs/">
     <link rel="shortcut icon" href="../img/favicon.ico">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <title>Customizations - User Manual</title>
     <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
@@ -89,7 +88,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>Contains some basic options for the TUI, and also <code>env</code> which will be used in commands.</p>
 <pre><code class="language-yaml">---
 max_watch_history: 50
-server_url: &quot;https://invidious.sethforprivacy.com&quot;
+server_url: &quot;https://vid.puffyan.us&quot;
 env:
   download_location: ~/Downloads/%(title)s.%(ext)s
 </code></pre>
@@ -97,27 +96,28 @@ env:
 <p>The maximum number of watch history stored, watch history contains the video details and a low definition thumbnail. Watch history can be viewed in the <em>history</em> tab in main menu.</p>
 <h4 id="server_url">server_url</h4>
 <p>The URL of the Invidious instance, <a href="https://api.invidious.io">here</a> are the list of Invidious instance, the instance should have a <a href="https://docs.invidious.io/api">working api</a>. If there is a problem with the instance, try switching to another instance.</p>
+<p>Also suggest switching to an instance with lower latency.</p>
 <p><em>(For example <code>yewtu.be</code> does not have an API and as of writing, <code>vid.puffyan.us</code> gives an error when viewing channel playlists)</em></p>
 <h4 id="env">env</h4>
 <p>Contains user defined variables for commands.</p>
 <h3 id="keybindingsyml">keybindings.yml</h3>
 <p>Contains key - action pairs</p>
 <pre><code class="language-yaml">---
-Esc: Deselect
-? Char: j
-: Down
+? - - None # List of key modifiers, can have multiple
+  - Esc # Key code
+: Deselect # Action when keybind triggered
+
+? - - Control # Ctrl key modifier
+  - Char: r # When character r key pressed
+: Refresh # Refresh page
 
 # etc
 </code></pre>
-<p>The syntax might be a bit confusing, here's a rundown of what's happening.</p>
-<ul>
-<li><code>Esc: Deselect</code> means action <code>Deselect</code> is binded to the key <code>Esc</code></li>
-<li><code>? Char: j&lt;BR&gt;: Down</code> means action <code>Down</code> is binded to the key <code>Char('j')</code></li>
-</ul>
 <p>Structs:</p>
 <ul>
 <li><a href="https://docs.rs/youtube-tui/latest/youtube_tui/app/config/enum.Action.html">Actions</a></li>
 <li><a href="https://docs.rs/youtube-tui/latest/youtube_tui/app/config/enum.KeyCodeTransitional.html">Key Codes</a></li>
+<li><a href="https://docs.rs/youtube-tui/latest/youtube_tui/app/config/enum.KeyModifierTransitional.html">Key Modifier</a></li>
 </ul>
 <h3 id="commandyml">command.yml</h3>
 <p>Self defined commands, change the command to use another application. The default apps are <code>konsole</code> as terminal and <code>mpv</code> as media player.</p>

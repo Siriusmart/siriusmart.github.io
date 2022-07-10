@@ -8,9 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    
+    <link rel="canonical" href="https://siriusmart.github.io/youtube-tui/getting-started/">
     <link rel="shortcut icon" href="../img/favicon.ico">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <title>Getting Started - User Manual</title>
     <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
@@ -97,6 +96,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>To install the latest version of YouTube TUI, run the following command. <em>If there are errors and the app failed to build, try searching <a href="https://stackoverflow.com/">Stack Overflow</a> with the error message, it is most likely caused by missing dependencies (most commonly openssl).</em></p>
 <pre><code class="language-bash">cargo install youtube-tui
 </code></pre>
+<p>And also AUR WIP so just wait</p>
 <h2 id="usage">Usage</h2>
 <p>Here is a quick run down to using the TUI</p>
 <h3 id="to-launch">To Launch</h3>
@@ -136,6 +136,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <td>Clear history</td>
 </tr>
 <tr>
+<td>Ctrl + R</td>
+<td>Refresh page</td>
+</tr>
+<tr>
 <td>Q</td>
 <td>Exit TUI</td>
 </tr>
@@ -146,7 +150,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>Almost everything about this program can be customized excatly to your likings, things that are customizable includes:</p>
 <ul>
 <li>Video download locations</li>
-<li>Invidious instance (URL)</li>
+<li>Invidious instance (<u>Strongly</u> recommend swtiching to an instance with lower latency)</li>
 <li>Screen layout</li>
 <li>Keybindings</li>
 <li>Commands ran for each action (for example using <code>vlc</code> instead of the default <code>mpv</code> as media player)</li>
