@@ -32,7 +32,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "0.4.3", url: "#_top", children: [
+          {title: "Currently WIP", url: "#_top", children: [
+              {title: "v0.4.4", url: "#v044" },
+              {title: "v0.4.3", url: "#v043" },
           ]},
         ];
 
@@ -72,12 +74,54 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <p>This page contains changes made in each version.</p>
-<h3 id="043">0.4.3</h3>
+<h2 id="currently-wip">Currently WIP</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Expected version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go to url directly</td>
+<td>v0.5</td>
+</tr>
+<tr>
+<td>Clipboard support</td>
+<td>v0.5</td>
+</tr>
+<tr>
+<td>Command line launch options</td>
+<td>v0.6</td>
+</tr>
+<tr>
+<td>Vim-like commands</td>
+<td>v0.6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v044">v0.4.4</h3>
+<h4 id="added">Added</h4>
+<ul>
+<li>Added default select item for each page (can be changed in <code>layouts.yml</code>)</li>
+</ul>
+<h4 id="fixes">Fixes</h4>
+<ul>
+<li>Video list view in playlists not working</li>
+<li>Channel view scroll causes panic</li>
+<li>Search options gray backgound + image covering popup</li>
+</ul>
+<h3 id="v043">v0.4.3</h3>
+<h4 id="added_1">Added</h4>
 <ul>
 <li>Refresh pages</li>
-<li>Fixed cache not being cleared after exit</li>
 <li>Key modifiers for key bindings</li>
 <li>Image loading can be disabled</li>
+</ul>
+<h4 id="fixes_1">Fixes</h4>
+<ul>
+<li>Fixed cache not being cleared after exit</li>
 </ul>
 
   <br>
