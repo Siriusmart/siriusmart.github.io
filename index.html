@@ -9,9 +9,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/animations.css">
   <title>Home - Siriusmart</title>
   <link rel="icon" href="https://avatars.githubusercontent.com/u/71584876" type="image/x-icon" />
 </head>
+
+<video autoplay muted loop id="background-video">
+  <source src="./assets/background.webm" type="video/webm">
+  <source src="./assets/background.mp4" type="video/mp4">
+</video>
 
 <body>
   <a name="top"></a>
@@ -22,53 +28,66 @@
     <li class="not-selected"><a href="./help.html" title="Navigate to the help page">Help</a>
     </li>
   </ul>
-  <div id="banner">
+  <div id="banner" class="container float-in-top">
     <p class="p">I know this website is slightly garbage, but I'll use this for now because I don't know how to make a
       dynamic
       webpage... yet.</p>
   </div>
-
-  <section>
+  <section class="container float-in-bottom">
     <article>
-      <h1>Hi, I'm a programmer/video editor/Minecraft player</h1>
-      <p class="p">This website may contains files and links that you might find useful</p>
+      <h1>Oh hi I'm Siriusmart</h1>
+      <p class="p">I'm just a random bored kid who decided to learn coding, and I use Arch btw.</p>
     </article>
 
     <article>
-      <h2 class="p">Basic Things</h2>
-      <p class="p">I like free software - software that are free as in freedom. Most people I know simply does not know
-        what's the reason behind me doing that, two words - privacy and spyware. You can learn more about free software
-        <a href="https://www.gnu.org/philosophy/philosophy.html" target="_blank">here</a>
+      <div id="neofetch" class="container glitch-wrapper delayed-float-in-right">
+      <div>
+      <br><br><br>
+      <span class="mono glitch glitch-2" data-text="siri@siriusmart">siri@siriusmart</span>
+      <br>
+      <span class="mono glitch glitch-2" data-text="---------------">---------------</span>
+      <br>
+      <span class="mono glitch glitch-1" data-text="OS: Arch x86_64 btw">OS: Arch x86_64 btw</span>
+      <br>
+      <span class="mono glitch glitch-1" data-text="Job: Student">Job: Student</span>
+      <br>
+      <span class="mono glitch glitch-1" data-text="Location: UK">Location: UK</span>
+      <br>
+      <span class="mono glitch glitch-1" data-text="Hobbies: Editing/Coding">Hobbies: Editing/Coding</span>
+      <br>
+      <span class="mono glitch glitch-1" data-text="Games: Minecraft">Games: Minecraft</span>
+	    </div>
+      <p class="mono glitch glitch-2" data-text="% neofetch">
+        % neofetch
+      </p>
+      <figure>
+	<img src="/assets/profile-picture.png" alt="Siriusmart's profile picture" width="128px" height="128px">
+      </figure>
+    </div>
+      <p class="p">
+        On this site you may find the most <i>random</i> things possible, from coding projects to <i style="color: red;">soundboard of friends</i> that I made as a joke, or URLs that links to random articles. But whatever you are using any files from this site, please share them by the page they are found here. <u>This site needs some publicity</u>, thanks :D
       </p>
     </article>
+</section>
+<div class="flex-container">
+<section class="container right float-in-right">
+	<p class="p">tesest</p>
+</section>
+<section class="container left float-in-left">
+	<p class="p">tesest</p>
+</section>
+</div>
 
-    <figure id="icon">
-      <img src="https://yt3.ggpht.com/ytc/AKedOLR4Kg3ro5nCSgwnqKdifB9NYoQm00s6JdhyaIsIaA=s176-c-k-c"
-        alt="Siriusmart's profile picture" width="128px" height="128px">
-      <figcaption>Siriusmart's profile picture</figcaption>
-    </figure>
+<section class="container float-in-bottom">
+	<p class="p">test</p>
+</section>
 
-    <article>
-      <h2 class="p">Resources Page</h2>
-      <p class="p">I have a few projects that I am working on. You can find
-        them <a href="./resources.html">here</a>. It may also contain useful resources
-      </p>
-    </article>
-
-
-    <h2 class="p">ChristmasEC2021</h2>
-    <p class="p">I spent 3 hours non stop typing to make this page, come take a look and pay respect<br><a
-        href="https://christmasec2021results.siriusmart.repl.co"><button>View results</button></a></p>
-    </article>
-  </section>
-
-
-  <div id="footer">
-    <span>Siriusmart&copy; 2021</span>
-    <ul>
-      <li><a href="#top">🔺Back to top</a></li>
-    </ul>
-  </div>
 </body>
+<footer class="slide-in-bottom">
+  <span>Siriusmart&copy; 2022</span>
+  <ul>
+    <li><a href="#top">🔺Back to top</a></li>
+  </ul>
+</footer>
 
 </html>

@@ -19,10 +19,10 @@ var showPageToc = true;
 var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
 var Keys = {
-  ENTER:  13,
+  ENTER: 13,
   ESCAPE: 27,
-  UP:     38,
-  DOWN:   40,
+  UP: 38,
+  DOWN: 40,
 };
 
 function startsWith(str, prefix) { return str.lastIndexOf(prefix, 0) === 0; }
@@ -191,7 +191,7 @@ function cleanUrlPath(relUrl) {
 function initMainWindow() {
   // wm-toc-button either opens the table of contents in the side-pane, or (on smaller screens)
   // shows the side-pane as a drop-down.
-  $('#wm-toc-button').on('click', function(e) {
+  $('#wm-toc-button').on('click', function (e) {
     if (isSmallScreen()) {
       $('.wm-toc-pane').toggleClass('wm-toc-dropdown');
       $('#wm-main-content').removeClass('wm-toc-hidden');
@@ -204,24 +204,24 @@ function initMainWindow() {
 
   // Update the state of the wm-toc-button
   updateTocButtonState();
-  $(window).on('resize', function() {
+  $(window).on('resize', function () {
     updateTocButtonState();
     updateContentHeight();
   });
 
   // Connect up the Back and Forward buttons (if present).
-  $('#hist-back').on('click', function(e) { window.history.back(); });
-  $('#hist-fwd').on('click', function(e) { window.history.forward(); });
+  $('#hist-back').on('click', function (e) { window.history.back(); });
+  $('#hist-fwd').on('click', function (e) { window.history.forward(); });
 
   // When the side-pane is a dropdown, hide it on click-away.
   $(window).on('blur', closeTempItems);
 
   // When we click on an opener in the table of contents, open it.
-  $('.wm-toc-pane').on('click', '.wm-toc-opener', function(e) {
+  $('.wm-toc-pane').on('click', '.wm-toc-opener', function (e) {
     $(this).toggleClass('wm-toc-open');
     $(this).next('.wm-toc-li-nested').collapse('toggle');
   });
-  $('.wm-toc-pane').on('click', '.wm-page-toc-opener', function(e) {
+  $('.wm-toc-pane').on('click', '.wm-page-toc-opener', function (e) {
     // Ignore clicks while transitioning.
     if ($(this).next('.wm-page-toc').hasClass('collapsing')) { return; }
     showPageToc = !showPageToc;
@@ -230,7 +230,7 @@ function initMainWindow() {
   });
 
   // Once the article loads in the side-pane, close the dropdown.
-  $('.wm-article').on('load', function() {
+  $('.wm-article').on('load', function () {
     document.title = iframeWindow.document.title;
     updateContentHeight();
 
@@ -251,9 +251,9 @@ function initMainWindow() {
   initSearch();
 
   // Load the iframe now, and whenever we navigate the top frame.
-  setTimeout(function() { updateIframe(false); }, 0);
+  setTimeout(function () { updateIframe(false); }, 0);
   // For our usage, 'popstate' or 'hashchange' would work, but only 'hashchange' work on IE.
-  $(window).on('hashchange', function() { updateIframe(true); });
+  $(window).on('hashchange', function () { updateIframe(true); });
 }
 
 function onIframeBeforeLoad(url) {
@@ -293,10 +293,10 @@ function collapseAndRemove(collapsibleElem) {
     // If the element is already hidden, just remove it immediately.
     collapsibleElem.remove();
   } else {
-    collapsibleElem.on('hidden.bs.collapse', function() {
+    collapsibleElem.on('hidden.bs.collapse', function () {
       collapsibleElem.remove();
     })
-    .collapse('hide');
+      .collapse('hide');
   }
 }
 
@@ -332,17 +332,17 @@ if (!mainWindow) {
 
 } else {
   // Adjust all links to point to the top page with the right hash fragment.
-  $(document).ready(function() {
-    $('a').each(function() { adjustLink(this); });
+  $(document).ready(function () {
+    $('a').each(function () { adjustLink(this); });
   });
 
   // For any dynamically-created links, adjust them on click.
-  $(document).on('click', 'a:not([data-wm-adjusted])', function(e) { adjustLink(this); });
+  $(document).on('click', 'a:not([data-wm-adjusted])', function (e) { adjustLink(this); });
 }
 
 if (is_top_frame) {
   // Main window.
-  $(document).ready(function() {
+  $(document).ready(function () {
     iframeWindow = $('.wm-article')[0].contentWindow;
     initMainWindow();
   });
@@ -356,7 +356,7 @@ if (is_top_frame) {
 
   // Other initialization of iframe contents.
   hljs.initHighlightingOnLoad();
-  $(document).ready(function() {
+  $(document).ready(function () {
     $('table').addClass('table table-striped table-hover table-bordered table-condensed');
   });
 }
@@ -369,7 +369,7 @@ var searchIndexReady = false;
  */
 function initSearch() {
   // Create elasticlunr index.
-  searchIndex = elasticlunr(function() {
+  searchIndex = elasticlunr(function () {
     this.setRef('location');
     this.addField('title');
     this.addField('text');
@@ -380,13 +380,13 @@ function initSearch() {
 
   // Fetch the prebuilt index data, and add to the index.
   $.getJSON(base_url + '/search/search_index.json')
-  .done(function(data) {
-    data.docs.forEach(function(doc) {
-      searchIndex.addDoc(doc);
+    .done(function (data) {
+      data.docs.forEach(function (doc) {
+        searchIndex.addDoc(doc);
+      });
+      searchIndexReady = true;
+      $(document).trigger('searchIndexReady');
     });
-    searchIndexReady = true;
-    $(document).trigger('searchIndexReady');
-  });
 
   function showSearchResults(optShow) {
     var show = (optShow === false ? false : Boolean(searchBox.val()));
@@ -402,7 +402,7 @@ function initSearch() {
     return show;
   }
 
-  searchBox.on('click', function(e) {
+  searchBox.on('click', function (e) {
     if (!searchResults.parent().hasClass('open')) {
       if (showSearchResults()) {
         e.stopPropagation();
@@ -411,25 +411,25 @@ function initSearch() {
   });
 
   // Search automatically and show results on keyup event.
-  searchBox.on('keyup', function(e) {
+  searchBox.on('keyup', function (e) {
     var show = (e.which !== Keys.ESCAPE && e.which !== Keys.ENTER);
     showSearchResults(show);
   });
 
   // Open the search box (and run the search) on up/down arrow keys.
-  searchBox.on('keydown', function(e) {
+  searchBox.on('keydown', function (e) {
     if (e.which === Keys.UP || e.which === Keys.DOWN) {
       if (showSearchResults()) {
         e.stopPropagation();
         e.preventDefault();
-        setTimeout(function() {
+        setTimeout(function () {
           searchResults.find('a').eq(e.which === Keys.UP ? -1 : 0).focus();
         }, 0);
       }
     }
   });
 
-  searchResults.on('keydown', function(e) {
+  searchResults.on('keydown', function (e) {
     if (e.which === Keys.UP || e.which === Keys.DOWN) {
       if (searchResults.find('a').eq(e.which === Keys.UP ? 0 : -1)[0] === e.target) {
         searchBox.focus();
@@ -439,26 +439,26 @@ function initSearch() {
     }
   });
 
-  $(searchResults).on('click', '.search-all', function(e) {
+  $(searchResults).on('click', '.search-all', function (e) {
     e.stopPropagation();
     e.preventDefault();
     $('#wm-search-form').trigger('submit');
   });
 
   // Redirect to the search page on Enter or button-click (form submit).
-  $('#wm-search-form').on('submit', function(e) {
+  $('#wm-search-form').on('submit', function (e) {
     var url = this.action + '?' + $(this).serialize();
     visitUrl(url, e);
     searchResults.parent().removeClass('open');
   });
 
-  $('#wm-search-show,#wm-search-go').on('click', function(e) {
+  $('#wm-search-show,#wm-search-go').on('click', function (e) {
     if (isSmallScreen()) {
       e.preventDefault();
       var el = $('#mkdocs-search-query').closest('.wm-top-tool');
       el.toggleClass('wm-top-tool-expanded');
       if (el.hasClass('wm-top-tool-expanded')) {
-        setTimeout(function() {
+        setTimeout(function () {
           $('#mkdocs-search-query').focus();
           showSearchResults();
         }, 0);
@@ -480,7 +480,7 @@ function SnippetBuilder(query) {
   this._termsRegex = termsPattern ? new RegExp(termsPattern, "gi") : null;
 }
 
-SnippetBuilder.prototype.getSnippet = function(text, len) {
+SnippetBuilder.prototype.getSnippet = function (text, len) {
   if (!this._termsRegex) {
     return text.slice(0, len);
   }
@@ -509,7 +509,7 @@ function doSearch(options) {
   // If the index isn't ready, wait for it, and search again when ready.
   if (!searchIndexReady) {
     resultsElem.append($('<li class="disabled"><a class="search-link">SEARCHING...</a></li>'));
-    $(document).one('searchIndexReady', function() { doSearch(options); });
+    $(document).one('searchIndexReady', function () { doSearch(options); });
     return;
   }
 
@@ -520,13 +520,13 @@ function doSearch(options) {
   if (query === '') { return; }
 
   var results = searchIndex.search(query, {
-    fields: { title: {boost: 10}, text: { boost: 1 } },
+    fields: { title: { boost: 10 }, text: { boost: 1 } },
     expand: true,
     bool: "AND"
   });
 
   var snippetBuilder = new SnippetBuilder(query);
-  if (results.length > 0){
+  if (results.length > 0) {
     var len = Math.min(results.length, limit || Infinity);
     for (var i = 0; i < len; i++) {
       var doc = searchIndex.documentStore.getDoc(results[i].ref);
@@ -537,7 +537,7 @@ function doSearch(options) {
           .append($('<div class="search-text">').html(snippet)))
       );
     }
-    resultsElem.find('a').each(function() { adjustLink(this); });
+    resultsElem.find('a').each(function () { adjustLink(this); });
     if (limit) {
       resultsElem.append($('<li role="separator" class="divider"></li>'));
       resultsElem.append($(

@@ -19,13 +19,13 @@ function getScriptsInOrder(scripts, callback) {
     callback();
     return;
   }
-  getScript(scripts[0], function() {
+  getScript(scripts[0], function () {
     getScriptsInOrder(scripts.slice(1), callback);
   });
 }
 
 function loadScripts(urls, callback) {
-  if( 'function' === typeof importScripts ) {
+  if ('function' === typeof importScripts) {
     importScripts.apply(null, urls);
     callback();
   } else {
@@ -33,7 +33,7 @@ function loadScripts(urls, callback) {
   }
 }
 
-function onJSONLoaded () {
+function onJSONLoaded() {
   data = JSON.parse(this.responseText);
   var scriptsToLoad = ['lunr.js'];
   if (data.config && data.config.lang && data.config.lang.length) {
@@ -47,7 +47,7 @@ function onJSONLoaded () {
     if (lang.includes("ja") || lang.includes("jp")) {
       scriptsToLoad.push('tinyseg.js');
     }
-    for (var i=0; i < lang.length; i++) {
+    for (var i = 0; i < lang.length; i++) {
       if (lang[i] != 'en') {
         scriptsToLoad.push(['lunr', lang[i], 'js'].join('.'));
       }
@@ -56,7 +56,7 @@ function onJSONLoaded () {
   loadScripts(scriptsToLoad, onScriptsLoaded);
 }
 
-function onScriptsLoaded () {
+function onScriptsLoaded() {
   console.log('All search scripts loaded, building Lunr index...');
   if (data.config && data.config.separator && data.config.separator.length) {
     lunr.tokenizer.separator = new RegExp(data.config.separator);
@@ -79,7 +79,7 @@ function onScriptsLoaded () {
       this.field('text');
       this.ref('location');
 
-      for (var i=0; i < data.docs.length; i++) {
+      for (var i = 0; i < data.docs.length; i++) {
         var doc = data.docs[i];
         this.add(doc);
         documents[doc.location] = doc;
@@ -88,22 +88,22 @@ function onScriptsLoaded () {
     console.log('Lunr index built, search ready');
   }
   allowSearch = true;
-  postMessage({config: data.config});
-  postMessage({allowSearch: allowSearch});
+  postMessage({ config: data.config });
+  postMessage({ allowSearch: allowSearch });
 }
 
-function init () {
+function init() {
   var oReq = new XMLHttpRequest();
   oReq.addEventListener("load", onJSONLoaded);
   var index_path = base_path + '/search_index.json';
-  if( 'function' === typeof importScripts ){
-      index_path = 'search_index.json';
+  if ('function' === typeof importScripts) {
+    index_path = 'search_index.json';
   }
   oReq.open("GET", index_path);
   oReq.send();
 }
 
-function search (query) {
+function search(query) {
   if (!allowSearch) {
     console.error('Assets for search still loading');
     return;
@@ -111,7 +111,7 @@ function search (query) {
 
   var resultDocuments = [];
   var results = index.search(query);
-  for (var i=0; i < results.length; i++){
+  for (var i = 0; i < results.length; i++) {
     var result = results[i];
     doc = documents[result.ref];
     doc.summary = doc.text.substring(0, 200);
@@ -120,7 +120,7 @@ function search (query) {
   return resultDocuments;
 }
 
-if( 'function' === typeof importScripts ) {
+if ('function' === typeof importScripts) {
   onmessage = function (e) {
     if (e.data.init) {
       init();
