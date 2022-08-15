@@ -2,41 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+  <meta http-equiv="Cache-Control" content="must-revalidate, max-age=3600" />
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/homepage.css">
   <link rel="stylesheet" type="text/css" href="./css/animations.css">
   <title>Home - Siriusmart</title>
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/71584876" type="image/x-icon" />
+  <meta name="keywords" content="Siriusmart, Youtube TUI, Personal site">
+  <meta name="description" content="Home page for Siriusmart's personal website.">
+  <meta name="author" content="Siriusmart">
+  <link rel="icon" href="./assets/profile-picture.png" type="image/x-icon" />
 </head>
-
-<video autoplay muted loop id="background-video">
-  <source src="./assets/background.webm" type="video/webm">
-  <source src="./assets/background.mp4" type="video/mp4">
-</video>
 
 <body>
   <a name="top"></a>
   <ul id="main-nav">
-    <li id="selected"><a title="Navigate to the home page" href="./"><b>&#x2302</b></a></li>
-    <li class="not-selected"><a title="Navigate to the resources page" href="./resources.html">Resources</a></li>
-    <li class="not-selected"><a href="./contacts.html" title="Navigate to the contacts page">Contacts</a></li>
-    <li class="not-selected"><a href="./help.html" title="Navigate to the help page">Help</a>
-    </li>
+    <li id="selected"><button onclick="exit('./')"><b>&#x2302</b></button></li>
+    <li class="not-selected"><button onclick="exit('./about.html')">About</button></li>
+    <li class="not-selected"><button onclick="exit('./resources.html')">Resources</button></li>
+    <li class="not-selected"><button onclick="exit('./help.html')">Help</button></li>
   </ul>
   <div id="banner" class="container float-in-top">
-    <p class="p">I know this website is slightly garbage, but I'll use this for now because I don't know how to make a
-      dynamic
-      webpage... yet.</p>
+	  <p>Javascript is required to load message of the day</p>
   </div>
   <section class="container float-in-bottom">
     <article>
-      <h1>Oh hi I'm Siriusmart</h1>
-      <p class="p">I'm just a random bored kid who decided to learn coding, and I use Arch btw.</p>
+      <h1>Oh welcome to the site</h1>
     </article>
 
     <article>
@@ -65,29 +58,52 @@
       </figure>
     </div>
       <p class="p">
-        On this site you may find the most <i>random</i> things possible, from coding projects to <i style="color: red;">soundboard of friends</i> that I made as a joke, or URLs that links to random articles. But whatever you are using any files from this site, please share them by the page they are found here. <u>This site needs some publicity</u>, thanks :D
+      On this site you may find the most <i>random</i> things possible, from coding projects to <i style="color: red;">soundboard of friends</i> that I made as a joke, or URLs that links to random articles.</p>
+      <p class ="p">But whatever you are using any files from this site, please share them by the page they are found here. <u>This site needs some publicity</u>, thanks :D
       </p>
     </article>
 </section>
 <div class="flex-container">
 <section class="container right float-in-right">
-	<p class="p">tesest</p>
+	<div>
+	<h1>Who am I</h1>
+	<p class="p">I do a lot of stuff, but my main focuses are:</p>
+	<h2 class="p">YouTube (And LBRY/Odysee)</h2>
+	<p class="p">I used to upload Minecraft edits and am somewhat experienced with editing, I primarily use <a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank">Davinci Resolve</a> for editing.</p>
+	<p class="p">My future content will most likely be short informative videos (like <i>Brief History of X</i> and <i>X Explained in 100 Seconds</i>). I will also upload a small amount of Minecraft clip dumps of playing with friends "just for fun".</p>
+	<h2 class="p">Contributing to the FOSS world</h2>
+	<p class="p">I am a big fan of free and open source software, and as I had taken from it, I will also contribute by creating small projects under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPL licensing</a>.</p>
+	<p class="p">Currently I'm working on my own project called the <code class="mono">youtube-tui</code><sub><a class="mono aur" href="https://aur.archlinux.org/packages/youtube-tui-git" target="_blank">AUR</a> <a href="https://github.com/Siriusmart/youtube-tui" class="mono github">GitHub</a></sub>, it is a TUI for browsing YouTube written in Rust.</p>
+	</div>
 </section>
 <section class="container left float-in-left">
-	<p class="p">tesest</p>
+	<div>
+		<h1>Latest from Siriusmart</h1>
+		<div id="posts"><p class="p">
+			Javascript is required for content to load.
+			</p></div>
+	</div>
 </section>
 </div>
 
 <section class="container float-in-bottom">
-	<p class="p">test</p>
+	<h1>Places</h1>
+	<p class="p">Here are some interesting places to visit in this site:</p>
 </section>
 
 </body>
-<footer class="slide-in-bottom">
+<footer class="footer">
   <span>Siriusmart&copy; 2022</span>
-  <ul>
-    <li><a href="#top">🔺Back to top</a></li>
-  </ul>
+  <a href="#top" id="return-to-top">🔺Back to top</a>
 </footer>
+<video autoplay muted loop id="background-video">
+  <source src="./assets/background.webm" type="video/webm">
+  <source src="./assets/background.mp4" type="video/mp4">
+</video>
+  <script type="text/javascript" src="./scripts/init.js"></script>
+  <script type="text/javascript" src="./scripts/cross-req.js"></script>
+  <script type="text/javascript" src="./scripts/exit.js"></script>
+  <script type="text/javascript" src="./scripts/posts-home.js"></script>
+  <script type="text/javascript" src="./scripts/motd.js"></script>
 
 </html>

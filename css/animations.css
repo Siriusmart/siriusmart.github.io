@@ -1,20 +1,24 @@
-.slide-in-bottom {
+.footer {
   transition: 1s;
-  animation: slide-in-bottom 2s;
+  animation: footer 2s;
 }
 
-@keyframes slide-in-bottom {
+@keyframes footer {
   0% {
 	transform: translateY(100%);
-	opacity: 100%;
   }
   50% {
 	transform: translateY(100%);
-	opacity: 100%;
   }
   100% {
 	transform: translateY(0%)
   }
+}
+
+.footer-reverse {
+  transition: 500ms;
+  transform: translateY(100%);
+  opacity: 0;
 }
 
 .float-in-top {
@@ -32,6 +36,13 @@
 	opacity: 100%;
   }
 }
+
+.float-in-top-reverse {
+  transition: 500ms;
+  transform: translateY(-10%);
+  opacity: 0;
+}
+
 .float-in-bottom {
   transition: 1s;
   animation: float-in-bottom 0.5s;
@@ -46,6 +57,12 @@
 	transform: translateY(0%);
 	opacity: 100%;
   }
+}
+
+.float-in-bottom-reverse {
+  transition: 500ms;
+  transform: translateY(10%);
+  opacity: 0;
 }
 
 .float-in-left {
@@ -64,9 +81,21 @@
   }
 }
 
+.float-in-left-reverse {
+  transition: 500ms;
+  transform: translateX(10%);
+  opacity: 0;
+}
+
 .float-in-right {
   transition: 1s;
   animation: float-in-right 0.5s;
+}
+
+.float-in-right-reverse {
+  transition: 500ms;
+  transform: translateX(-10%);
+  opacity: 0;
 }
 
 .delayed-float-in-right {

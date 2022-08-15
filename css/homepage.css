@@ -1,0 +1,63 @@
+#neofetch {
+padding-bottom: 30px;
+float: right;
+display: block;
+width: 450px;
+z-index: 10000;
+}
+
+#neofetch div {
+  float: right;
+  display: block;
+  margin-right: 20px;
+  color: #00ffff;
+}
+
+#neofetch p {
+  display: block;
+  float: left;
+  padding: 0px;
+  margin-left: 20px;
+  color: #00f000;
+}
+
+@media screen and (max-width: 750px) {
+  #neofetch {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+	.left {
+	  margin-top: 110px;
+	}
+
+	.right {
+	  margin-bottom: 100px;
+	}
+}
+
+i {
+	color: violet;
+}
+
+.read_more {
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 2px solid purple;
+	color: violet;
+	margin-top: 8px;
+	box-shadow: 0 0 3px purple;
+	transition: 0.5s;
+}
+
+.read_more:hover {
+	background-color: rgba(100, 0, 100, 0.7);
+	box-shadow: 0 0 6px purple;
+	font-size: 100%;
+}
+
+.article-header {
+  padding-left: 6vw;
+  padding-right: 2vw;
+}

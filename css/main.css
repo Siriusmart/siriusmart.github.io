@@ -6,11 +6,13 @@ button:hover {
 
 body {
   color: white;
+  background-color: #252525;
   margin: 0;
   font-family: "Quicksand";
   margin-bottom: 80px;
   position: relative;
-  overflow: auto;
+  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 h2 {
@@ -21,31 +23,16 @@ h3 {
   color: #515f00;
 }
 
-.flex-container {
-	display: flex;
-	align-items: stretch;
-	left: 0;
-	right: 0;
-	top: 0;
-}
-
 .container {
   margin: 10px 10px 0px 10px;
   border: 2px white solid;
   background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 8px #5b5c5e;
   z-index: -1;
 }
 
-.left {
-	display: flex;
-	min-width: calc(50vw - 25px);
-	float: left;
-}
-
-.right {
-	display: flex;
-	min-width: calc(50vw - 20px);
-	float: right;
+.container:hover {
+  box-shadow: 0px 0px 15px #aaaaaa;
 }
 
 #background-video {
@@ -61,17 +48,26 @@ h3 {
   list-style-type: none;
   margin: 0px;
   padding: 0;
-  background-color: #272729;
+  background-color: rgba(24, 18, 18, 0.95);
   overflow: hidden;
   width: 100%;
+  border-bottom: 2px solid purple;
+  box-shadow: 0 0 6px purple;
+  transition: 0.5s;
 }
 
-#main-nav li a {
+#main-nav:hover {
+  box-shadow: 0 0 12px purple;
+}
+
+#main-nav li button {
+  transition: 0.5s;
   display: block;
   text-align: center;
   text-decoration: none;
   margin: 0px;
   padding: 7px 12px;
+  font-size: 24px;
   color: white;
 }
 
@@ -83,18 +79,26 @@ h3 {
   float: right;
 }
 
-#main-nav li:hover {
-  background-color: #1B1C1E;
+#main-nav button:hover {
+  background-color: #5b5c5e;
+  box-shadow: 0px 0px 6px #5b5c5e;
 }
 
-#main-nav #selected a {
+#main-nav #selected button {
   background-color: #04aa6d;
   text-shadow: 2px 2px #3D6E44;
 }
 
-#main-nav #selected a:hover {
-  background-color: #07bd7a;
-  box-shadow: 0px 3px #2a332c;
+#main-nav #selected button:hover {
+  background-color: #50ee90;
+  text-shadow: 0px 3px #2a332c;
+  box-shadow: 0px 0px 6px #50ee90;
+}
+
+#main-nav button {
+  border: none;
+  background-color: rgba(0,0,0,0);
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (min-width: 1000px) {
@@ -115,12 +119,37 @@ h3 {
     font-size: 150%;
     padding: 40px;
   }
+
+  .right {
+  	display: flex;
+  	min-width: calc(50vw - 19px);
+  	float: right;
+  }
+  
+  .left {
+  	display: flex;
+  	min-width: calc(50vw - 19px);
+  	float: left;
+  	margin-left: 0;
+  }
+  
+  .flex-container {
+  	display: flex;
+  	align-items: stretch;
+  	left: 0;
+  	right: 0;
+  	top: 0;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   #main-nav li {
     display: block;
     float: none;
+  }
+
+  #main-nav button {
+    width: 100%;
   }
 
   #main-nav {
@@ -148,8 +177,8 @@ h3 {
 
 .p,
 .p ul li {
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 3vw;
+  padding-right: 2vw;
 }
 
 h1 {
@@ -179,15 +208,34 @@ button {
   margin: 0;
   color: white;
   text-shadow: 1px 1px #66CFFF;
+  text-align: center;
 }
 
+a {
+  color: #ff9ee2;
+  transition: 0.5s;
+}
+
+a:hover {
+  font-size: 115%;
+}
+
+.mono {
+  font-family: 'JetBrains Mono';
+}
+
+.full {
+	width: 100vw;
+	height: 100vh;
+}
 footer {
-  background-color: #272729;
-  padding-bottom: 0;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,6), rgba(0,0,0,8));
+  background-color: ;
+  padding-bottom: 5px;
+  padding-top: 20px;
   overflow: none;
   width: 100%;
   display: block;
-  padding: 12px 0px;
   position: fixed;
   bottom: 0;
 }
@@ -199,13 +247,7 @@ footer span {
   padding-right: 10px;
 }
 
-footer ul {
-  padding: 0 0;
-  display: block;
-  margin-bottom: 40px;
-}
-
-footer ul li {
+footer a {
   float: left;
   display: block;
   padding: 0 0;
@@ -213,56 +255,33 @@ footer ul li {
   font-family: "Quicksand"
 }
 
-footer ul li a {
+footer a {
   text-decoration: none;
   padding-left: 10px;
   color: white;
 }
 
-#neofetch {
-padding-bottom: 30px;
-float: right;
-display: block;
-width: 450px;
-z-index: 10000;
-}
-
-#neofetch div {
-  float: right;
-  display: block;
-  margin-right: 20px;
-  color: #00ffff;
-}
-
-#neofetch p {
-  display: block;
-  float: left;
-  padding: 0px;
-  margin-left: 20px;
-  color: #00f000;
-}
-
-@media screen and (max-width: 750px) {
-  #neofetch {
-    display: none;
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-button {
-  border: 1px purple;
-  background-color: #454850;
-  color: rgb(255, 255, 255);
+code {
+	color: #00ff00;
 }
 
-a {
-  color: #309ee2;
+sub {
+	font-size: 70%;
 }
 
-.mono {
-  font-family: 'JetBrains Mono';
+.aur, .github {
+	text-decoration: none;
 }
 
-.full {
-	width: 100vw;
-	height: 100vh;
+.aur {
+	color: #55bbff;
+}
+.github {
+	color: #ff0022;
 }
