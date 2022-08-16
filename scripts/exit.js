@@ -10,13 +10,20 @@ const animations = {
 function exit(url) {
 	for (const [before, after] of Object.entries(animations)) {
 		let items = document.getElementsByClassName(before);
-		for(let i = 0; i < items.length; i++) {
-			items[i].classList.add(after);
+		for(const item of items) {
+			item.classList.add(after);
 		}
 	}
 
 	setTimeout(
 		() => {
+			for(const after of Object.values(animations)) {
+				let items = document.getElementsByClassName(after);
+				for(const item of items) {
+					item.classList.remove(after);
+				}
+
+			}
 			window.location.href = url;
 		},
 		500

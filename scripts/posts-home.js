@@ -44,7 +44,7 @@ window.addEventListener("message", ({data: res}) => {
 					let read_more = document.createElement('button');
 					read_more.className = 'read_more';
 					read_more.innerText = 'Read more';
-					read_more.onclick = () => window.exit('./posts/view.html?id=${post_id}');
+					read_more.onclick = () => window.exit(`./view-post.html?id=${post_id}`);
 
 					let br = document.createElement('br');
 					p.appendChild(br);

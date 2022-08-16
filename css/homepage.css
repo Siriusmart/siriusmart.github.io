@@ -3,7 +3,8 @@ padding-bottom: 30px;
 float: right;
 display: block;
 width: 450px;
-z-index: 10000;
+z-index: 10;
+position: relative;
 }
 
 #neofetch div {

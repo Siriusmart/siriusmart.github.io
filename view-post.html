@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Cache-Control" content="must-revalidate"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/animations.css">
+  <title>Article Viewer - Siriusmart</title>
+  <meta name="keywords" content="Siriusmart, Youtube TUI, Personal site">
+  <meta name="description" content="View article">
+  <meta name="author" content="Siriusmart">
+  <link rel="icon" href="./assets/profile-picture.png" type="image/x-icon" />
+</head>
+
+<body>
+  <a name="top"></a>
+  <ul id="main-nav">
+    <li id="selected"><button onclick="exit('./')"><b>&#x2302;</b></button></li>
+    <li class="not-selected"><button onclick="exit('./about.html')">About</button></li>
+    <li class="not-selected"><button onclick="exit('./resources.html')">Resources</button></li>
+    <li class="not-selected"><button onclick="exit('./help.html')">Help</button></li>
+  </ul>
+  <div id="banner" class="container float-in-top">
+	  <p class="p">Javascript is required to load message of the day</p>
+  </div>
+
+  <div class="container float-in-bottom" id="header-container">
+	  <div id="header">
+		  <p class="p">Javascript is required for article to load.</p>
+	  </div>
+  </div>
+
+<footer class="footer">
+  <span>Siriusmart&copy; 2022</span>
+  <a href="#top" id="return-to-top">🔺Back to top</a>
+</footer>
+</body>
+<video autoplay muted loop id="background-video">
+  <source src="./assets/background.webm" type="video/webm">
+  <source src="./assets/background.mp4" type="video/mp4">
+</video>
+  <script src="./scripts/init.js"></script>
+  <script src="./scripts/markdown.js"></script>
+  <script src="./scripts/cross-req.js"></script>
+  <script src="./scripts/exit.js"></script>
+  <script src="./scripts/motd.js"></script>
+  <script src="./scripts/article-viewer.js"></script>
+
+</html>
