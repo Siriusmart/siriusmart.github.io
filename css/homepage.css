@@ -43,22 +43,3 @@ i {
 	color: violet;
 }
 
-.read_more {
-	background-color: rgba(0, 0, 0, 0.7);
-	border: 2px solid purple;
-	color: violet;
-	margin-top: 8px;
-	box-shadow: 0 0 3px purple;
-	transition: 0.5s;
-}
-
-.read_more:hover {
-	background-color: rgba(100, 0, 100, 0.7);
-	box-shadow: 0 0 6px purple;
-	font-size: 100%;
-}
-
-.article-header {
-  padding-left: 6vw;
-  padding-right: 2vw;
-}

@@ -14,25 +14,35 @@ window.addEventListener('message', ({data: req}) => {
 		case 'article-json':
 			try {
 				data = JSON.parse(data);
-				headerP.remove();
-
-				let h1 = document.createElement('h1');
-				let p = document.createElement('p');
-				h1.innerText = data.content.title;
-				p.innerText = data.content.header;
-				p.style.paddingLeft = '3vw';
-				
-				header.appendChild(h1);
-				header.appendChild(p);
-
-				document.title = data.content.title;
-
-				switch(data.type) {
-					case 'blog':
-						window.createIframe(`${window.env.filesUrl}/index.html?path=./posts/${id}.md&type=article-md&label=${encodeURIComponent(data.content.title)}`);
-				}
 			} catch (e) {
 				headerP.innerText = 'No such article.'
+				return;
+			}
+
+			let preview = document.createElement('div');
+			preview.id = 'preview';
+			preview.classList.add('container');
+			preview.classList.add('float-in-bottom');
+
+			header.parentNode.remove();
+
+
+			let h1 = document.createElement('h1');
+			let p = document.createElement('p');
+			h1.innerText = data.content.title;
+			p.innerText = data.content.header;
+			p.style.paddingLeft = '3vw';
+			
+			preview.appendChild(h1);
+			preview.appendChild(p);
+
+			document.body.appendChild(preview);
+
+			document.title = data.content.title;
+
+			switch(data.type) {
+				case 'blog':
+					window.createIframe(`${window.env.filesUrl}/index.html?path=./posts/${id}.md&type=article-md&label=${encodeURIComponent(data.content.title)}`);
 			}
 			break;
 
@@ -45,9 +55,9 @@ window.addEventListener('message', ({data: req}) => {
 			title.innerText = decodeURIComponent(req.label);
 
 			let article = document.createElement('article');
+			article.classList.add('p');
 			let html = window.markdown(data);
 			article.innerHTML += html;
-			article.style.paddingLeft = '3vw'
 
 			let div = document.createElement('div')
 			div.appendChild(article);
@@ -55,7 +65,14 @@ window.addEventListener('message', ({data: req}) => {
 			container.appendChild(title);
 			container.appendChild(div);
 
-			document.getElementById('header-container').remove();
+			let button = document.createElement('button');
+			button.innerText = 'All posts';
+			button.className = 'button'
+			button.style.marginBottom = '20px';
+			button.onclick = () => window.exit('./posts.html');
+			article.appendChild(button);
+
+			document.getElementById('preview').remove();
 			document.body.appendChild(container);
 	}
 });

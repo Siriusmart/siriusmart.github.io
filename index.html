@@ -78,9 +78,12 @@
 <div class="container left float-in-left">
 	<div>
 		<h1>Latest from Siriusmart</h1>
-		<div id="posts"><p class="p">
+		<div id="posts" class="p"><p id="indicator">
 			Javascript is required for content to load.
-			</p></div>
+			</p>
+			<p>---</p>
+			<button class="button" onclick="exit('./posts.html')">View all posts</button>
+		</div>
 	</div>
 </div>
 </div>
@@ -89,7 +92,9 @@
 	<h1>Places</h1>
 	<p class="p">Here are some interesting places to visit in this site:</p>
 	<h2 class="p">YouTube TUI User Manual</h2>
-	<p class="p">User manual for <code class="mono">youtube-tui</code><sub><a class="mono aur" href="http://aur.archlinux.org/packages/youtube-tui-git" target="_blank">AUR</a> <a href="https://github.com/Siriusmart/youtube-tui" class="mono github">GitHub</a></sub><br><a href="./youtube-tui" target="_blank"><button class="read_more">Visit page</button></a></p>
+	<p class="p">User manual for <code class="mono">youtube-tui</code><sub><a class="mono aur" href="http://aur.archlinux.org/packages/youtube-tui-git" target="_blank">AUR</a> <a href="https://github.com/Siriusmart/youtube-tui" class="mono github">GitHub</a></sub><br><a href="./youtube-tui" target="_blank"><button class="button">Go to page</button></a></p>
+	<h2 class="p">Posts</h2>
+	<p class="p">Posts by Siriusmart<br><button class="button" onclick="exit('./posts.html')">Go to page</button></p>
 </section>
 
 <footer class="footer">

@@ -11,7 +11,6 @@ body {
   font-family: "Quicksand";
   margin-bottom: 80px;
   position: relative;
-  /* overflow: hidden; */
   overflow-x: hidden;
 }
 
@@ -28,7 +27,6 @@ h3 {
   border: 2px white solid;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0px 0px 8px #5b5c5e;
-  z-index: 1;
 }
 
 .container:hover {
@@ -175,7 +173,7 @@ h3 {
 }
 
 
-.p, .p ul li, p{
+.p, .p ul li{
   padding-left: 3vw;
   padding-right: 2vw;
 }
@@ -284,3 +282,41 @@ sub {
 .github {
 	color: #ff0022;
 }
+
+
+.centered {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.centered-wrapper {
+	display: table;
+	width: calc(100% - 24px)
+}
+
+.square-button {
+	width: 30px;
+	height: 30px;
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.button {
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 2px solid purple;
+	color: violet;
+	margin-top: 8px;
+	box-shadow: 0 0 3px purple;
+	transition: 0.5s;
+}
+
+.button:hover {
+	background-color: rgba(100, 0, 100, 0.7);
+	box-shadow: 0 0 6px purple;
+	font-size: 100%;
+}
+
