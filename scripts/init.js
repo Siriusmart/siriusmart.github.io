@@ -1,5 +1,6 @@
 window.env = {
-	filesUrl: 'https://files-host.siriusmart.repl.co'
+	filesUrl: 'https://files-host.siriusmart.repl.co',
+	outReqUrl: 'https://out-request.siriusmart.repl.co',
 }
 
 try {

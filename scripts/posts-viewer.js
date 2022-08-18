@@ -92,7 +92,7 @@ function display(posts) { //recursive
 		return;
 	}
 
-	const post = posts.pop();
+	const post = posts.shift();
 
 	if(post === undefined) {
 		display([]);
@@ -156,6 +156,7 @@ window.addEventListener('message', ({data: req}) => {
 			break;
 		
 		case 'post-preview':
+			loaded++;
 			updateIndicator();
 			let post = JSON.parse(data);
 			let {index, id} = JSON.parse(req.label);
@@ -167,9 +168,6 @@ window.addEventListener('message', ({data: req}) => {
 				// type: post.type,
 			};
 
-			loaded++;
-
-			
 			if(loaded === total) {
 				indicator.parentNode.remove();
 				display(arr);

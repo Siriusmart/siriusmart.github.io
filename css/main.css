@@ -23,6 +23,7 @@ h3 {
 }
 
 .container {
+  transition: 1s;
   margin: 10px 10px 0px 10px;
   border: 2px white solid;
   background-color: rgba(0, 0, 0, 0.7);
@@ -319,4 +320,3 @@ sub {
 	box-shadow: 0 0 6px purple;
 	font-size: 100%;
 }
-
