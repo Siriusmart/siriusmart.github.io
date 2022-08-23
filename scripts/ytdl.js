@@ -1,5 +1,9 @@
 document.getElementById('jscheck').remove();
 
+let instances = document.getElementById('instances-container');
+let instance = document.getElementById('instances');
+instances.classList.add('unblurred');
+
 let videoName = undefined;
 let inputs = document.getElementById('inputs');
 let messages = document.getElementById('messages');
@@ -7,14 +11,9 @@ let url = document.getElementById('url');
 let inputsContainer = document.getElementsByClassName('nourl')[0];
 let downloads = null;
 url.value = '';
-
-window.createIframe(window.env.outReqUrl);
-
-inputs.classList.remove('blurred');
+inputs.classList.add('unblurred');
 
 let button = document.getElementById('convert');
-
-const instance = 'vid.puffyan.us';
 
 function extractId(url) {
 	if(url.length === 11) {
@@ -48,6 +47,8 @@ url.addEventListener('keydown', function(event)
 });
 
 function convert() {
+	inputsContainer.classList.remove('withurl');
+	inputsContainer.classList.add('nourl');
 	let toRemoves = document.getElementsByClassName('info');
 
 	for(let i = 0; i < toRemoves.length; i++) {
@@ -78,7 +79,8 @@ function convert() {
 		messages.style.color = 'cyan';
 	}
 
-	window.createIframe(`${window.env.outReqUrl}?hostname=${instance}&path=/api/v1/videos/${id}&protocol=https&type=video`);
+
+	window.createIframe(`${window.env.outReqUrl}?url=${instance.value}/api/v1/videos/${id}&type=video`);
 }
 
 function process(data) {
@@ -105,14 +107,12 @@ function process(data) {
 		let type = file.type.split(';')[0].split('/')[0];
 		switch(type) {
 			case 'audio':
-				let quality = file.audioQuality.split('_')[2];
 				audioOnly.push({
 					url: file.url,
 					format: file.container,
 					encoding: file.encoding,
 					sampleRate: file.audioSampleRate,
 					stereo: file.audioChannels > 1,
-					quality: quality.charAt(0) + quality.slice(1).toLowerCase(),
 					bitrate: Math.round(parseInt(file.bitrate) / 1024),
 				});
 				break;
@@ -130,7 +130,7 @@ function process(data) {
 
 	for(const file of data.captions) {
 		captions.push({
-			url: `https://${instance}${file.url}`,
+			url: `${instance}${file.url}`,
 			label: file.label,
 		});
 	}
@@ -153,23 +153,34 @@ function displayInfo(thumbnail) {
 	let title = document.createElement('h2');
 	title.innerText = videoName;
 
-	let img = document.createElement('img');
-	img.src = thumbnail;
-	img.width = '640';
-	img.height = '360';
-
 	container.appendChild(title);
-	container.appendChild(img);
 
 	document.body.appendChild(container);
+
+	let img = document.createElement('img');
+	let width = container.offsetWidth;
+	if(width >= 640) {
+		width = 640;
+	}
+	height = width * 9 / 16;
+	img.src = thumbnail;
+	img.width = width;
+	img.height = height;
+	container.appendChild(img);
 }
 
 function displayVideos(videos) {
+	if(videos.length === 0) {
+		return;
+	}
 	let container = document.createElement('div');
 	container.classList.add('container');
 	container.classList.add('float-in-right');
 	container.classList.add('info');
 
+	let h3 = document.createElement('h3');
+	h3.innerText = 'Videos';
+	container.appendChild(h3);
 	let table = document.createElement('table');
 	
 	{
@@ -218,11 +229,17 @@ function displayVideos(videos) {
 }
 
 function displayAudio(audio) {
+	if(audio.length === 0) {
+		return;
+	}
 	let container = document.createElement('div');
 	container.classList.add('container');
 	container.classList.add('float-in-right');
 	container.classList.add('info');
 
+	let h3 = document.createElement('h3');
+	h3.innerText = 'Audio';
+	container.appendChild(h3);
 	let table = document.createElement('table');
 	
 	{
@@ -233,15 +250,12 @@ function displayAudio(audio) {
 		encoding.innerText = 'Encoding';
 		let sampleRate = document.createElement('th');
 		sampleRate.innerText = 'Sample rate';
-		let quality = document.createElement('th');
-		quality.innerText = 'Quality';
 		let bitrate = document.createElement('th');
 		bitrate.innerText = 'Bitrate';
 		
 		tr.appendChild(format);
 		tr.appendChild(encoding);
 		tr.appendChild(sampleRate);
-		tr.appendChild(quality);
 		tr.appendChild(bitrate);
 		table.appendChild(tr);
 	}
@@ -254,8 +268,6 @@ function displayAudio(audio) {
 		encoding.innerText = file.encoding;
 		let samplerate = document.createElement('th');
 		samplerate.innerText = file.sampleRate;
-		let quality = document.createElement('th');
-		quality.innerText = file.quality;
 		let bitrate = document.createElement('th');
 		bitrate.innerText = `${file.bitrate}kb/s`;
 		
@@ -272,7 +284,6 @@ function displayAudio(audio) {
 		tr.appendChild(format);
 		tr.appendChild(encoding);
 		tr.appendChild(samplerate);
-		tr.appendChild(quality);
 		tr.appendChild(bitrate);
 		tr.appendChild(a);
 		table.appendChild(tr);
@@ -283,11 +294,17 @@ function displayAudio(audio) {
 }
 
 function displayVideoOnly(video) {
+	if(video.length === 0) {
+		return;
+	}
 	let container = document.createElement('div');
 	container.classList.add('container');
 	container.classList.add('float-in-right');
 	container.classList.add('info');
 
+	let h3 = document.createElement('h3');
+	h3.innerText = 'Video Only';
+	container.appendChild(h3);
 	let table = document.createElement('table');
 	
 	{
@@ -298,15 +315,15 @@ function displayVideoOnly(video) {
 		encoding.innerText = 'Encoding';
 		let sampleRate = document.createElement('th');
 		sampleRate.innerText = 'Sample rate';
-		let quality = document.createElement('th');
-		quality.innerText = 'Quality';
+		let fps = document.createElement('th');
+		fps.innerText = 'Frame rate';
 		let bitrate = document.createElement('th');
 		bitrate.innerText = 'Bitrate';
 		
 		tr.appendChild(format);
 		tr.appendChild(encoding);
 		tr.appendChild(sampleRate);
-		tr.appendChild(quality);
+		tr.appendChild(fps);
 		tr.appendChild(bitrate);
 		table.appendChild(tr);
 	}
@@ -348,10 +365,16 @@ function displayVideoOnly(video) {
 }
 
 function displayCaptions(captions) {
+	if(captions.length === 0) {
+		return;
+	}
 	let container = document.createElement('div');
 	container.classList.add('container');
 	container.classList.add('float-in-right');
 	container.classList.add('info');
+	let h3 = document.createElement('h3');
+	h3.innerText = 'Captions';
+	container.appendChild(h3);
 
 	let table = document.createElement('table');
 	
@@ -413,29 +436,41 @@ function display(data) {
 }
 
 window.addEventListener('message', ({data: res}) => {
-	let data = res.content;
 	switch(res.type) {
 		case 'video':
-			if(data.videoThumbnails === undefined) {
-				messages.innerText = JSON.stringify(data);
+			let data;
+			try {
+				data = JSON.parse(res.content.replace("\\\"", ""));
+			} catch (e) {
+				messages.innerText = 'Invalid JSON response';
 				messages.style.color = 'red';
 				return;
 			}
-			url.blur();
+
 			if(data.error) {
 				messages.innerText = data.error;
 				messages.style.color = 'red';
 				return;
 			}
 
+			if(data.videoThumbnails === undefined) {
+				messages.innerText = JSON.stringify(data);
+				messages.style.color = 'red';
+				return;
+			}
+			url.blur();
+
 			messages.innerText = 'Download OK';
 			messages.style.color = '#00ff00';
+			instances.style.opacity = '0%';
+			instances.style.filter = 'blur(30px)';
 
 			videoName = data.title;
 
 			data = process(data);
 
 			setTimeout(() => {
+				instances.remove();
 				inputsContainer.classList.remove('nourl');
 				inputsContainer.classList.add('withurl');
 				display(data)

@@ -1,74 +1,112 @@
 #url {
-	width: 30vw;
-	min-width: 300px;
+  width: 30vw;
+  min-width: 300px;
 }
 
 #convert {
-	width: 10vw;
-	min-width: 130px;
+  width: 10vw;
+  min-width: 130px;
 }
 
-#url, #convert {
-	background: rgba(0, 0, 0, 0.5);
-	border: none;
-	outline: 5px solid purple;
-	box-shadow: 0px 0px 15px purple;
-	border-radius: 3px;
-	font-size: 30px;
-	padding: 5px;
-	color: #00ff00;
-	margin: 15px;
-	transition: 0.7s;
+#url,
+#convert {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: 5px solid purple;
+  box-shadow: 0px 0px 15px purple;
+  border-radius: 3px;
+  font-size: 30px;
+  padding: 5px;
+  color: #00ff00;
+  margin: 15px;
+  transition: 0.7s;
 }
 
-#url:hover, #convert:hover {
-	box-shadow: 0px 0px 30px violet;
+#url:hover,
+#convert:hover {
+  box-shadow: 0px 0px 30px violet;
 }
 
 .blurred {
-	opacity: 0;
-	filter: blur(30px);
+  opacity: 0;
+  /* transition:  */
+  filter: blur(30px);
 }
 
 .unblurred {
-	opacity: 100%;
-	filter: blur(0px);
+  opacity: 100%;
+  filter: blur(0px);
 }
 
 .nourl {
-	padding-top: 35vh;
-	padding-bottom: 35vh;
-	height: calc(10vh - 40px);
+  padding-top: 35vh;
+  padding-bottom: 35vh;
+  height: calc(10vh - 40px);
 }
 
 .withurl {
-	padding-top: 2vh;
-	padding-bottom: 2vh;
-	height: calc(10vh - 40px);
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  height: calc(10vh - 40px);
 }
 
 #inputs {
-	transition: 1s;
+  transition: 1s;
 }
 
 .info {
-	text-align: center;
-	align-items: center;
-	transition: 0.5s;
+  text-align: center;
+  align-items: center;
+  transition: 0.5s;
 }
 
 table {
-	margin: 20px;
-	margin-left:auto;
-	margin-right:auto;
-	font-size: 20px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
 }
 
-th, td {
-	padding: 10px;
+@media screen and (min-width: 650px) {
+  th,
+  td {
+    padding: 10px;
+  }
 }
 
 tr button {
-	font-size: 20px;
-	margin-left: 10px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+#instances {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  font-family: 'Jetbrains Mono';
+  text-align: center;
+  transition: 1s;
+  color: inherit;
+}
+
+#instances:hover {
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+#instances-container {
+  color: grey;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  transition: 1s;
+}
+
+#instances-container:hover {
+  color: #0f0;
 }
