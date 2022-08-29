@@ -23,11 +23,7 @@ if(window.cookies.motd) {
 	bannerP.innerText = 'Loading MOTD...';
 }
 
-window.addEventListener('message', ({data: res}) => {
-	if (res.type!=='motd') {
-		return;
-	}
-
+window.listeners.motd = (res) => {
 	let data = JSON.parse(res.content);
 
 	let a =banner.getElementsByTagName('a')[0];
@@ -44,6 +40,6 @@ window.addEventListener('message', ({data: res}) => {
 		window.cookies.motd = data;
 		window.updateCookie();
 	}
-});
+}
 
 window.createIframe(`${window.env.filesUrl}/index.html?path=./motd.json&type=motd`)

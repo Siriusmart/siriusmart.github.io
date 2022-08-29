@@ -435,45 +435,41 @@ function display(data) {
 	}, 500);
 }
 
-window.addEventListener('message', ({data: res}) => {
-	switch(res.type) {
-		case 'video':
-			let data;
-			try {
-				data = JSON.parse(res.content.replace("\\\"", ""));
-			} catch (e) {
-				messages.innerText = 'Invalid JSON response';
-				messages.style.color = 'red';
-				return;
-			}
-
-			if(data.error) {
-				messages.innerText = data.error;
-				messages.style.color = 'red';
-				return;
-			}
-
-			if(data.videoThumbnails === undefined) {
-				messages.innerText = JSON.stringify(data);
-				messages.style.color = 'red';
-				return;
-			}
-			url.blur();
-
-			messages.innerText = 'Download OK';
-			messages.style.color = '#00ff00';
-			instances.style.opacity = '0%';
-			instances.style.filter = 'blur(30px)';
-
-			videoName = data.title;
-
-			data = process(data);
-
-			setTimeout(() => {
-				instances.remove();
-				inputsContainer.classList.remove('nourl');
-				inputsContainer.classList.add('withurl');
-				display(data)
-			}, 500)
+window.listeners.video = ({content}) => {
+	try {
+		content = JSON.parse(window.decodeEntity(content.replace("\\\"", "")));
+	} catch (e) {
+		messages.innerText = 'Invalid JSON response';
+		messages.style.color = 'red';
+		return;
 	}
-});
+
+	if(content.error) {
+		messages.innerText = content.error;
+		messages.style.color = 'red';
+		return;
+	}
+
+	if(content.videoThumbnails === undefined) {
+		messages.innerText = JSON.stringify(data);
+		messages.style.color = 'red';
+		return;
+	}
+	url.blur();
+
+	messages.innerText = 'Download OK';
+	messages.style.color = '#00ff00';
+	instances.style.opacity = '0%';
+	instances.style.filter = 'blur(30px)';
+
+	videoName = content.title;
+
+	content = process(content);
+
+	setTimeout(() => {
+		instances.remove();
+		inputsContainer.classList.remove('nourl');
+		inputsContainer.classList.add('withurl');
+		display(content)
+	}, 500)
+};

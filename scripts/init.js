@@ -1,6 +1,6 @@
 window.env = {
 	filesUrl: 'https://files-host.siriusmart.repl.co',
-	outReqUrl: 'http://3.74.146.72:54033/utils/request-proxy/html'
+	outReqUrl: 'https://server.siriusmart.repl.co/api/v1/utils/request-proxy/html'
 }
 
 try {
@@ -12,3 +12,17 @@ try {
 function updateCookie() {
 	document.cookie = JSON.stringify(window.cookies);
 }
+
+function decodeEntity(inputStr) {
+    var textarea = document.createElement("textarea");
+    textarea.innerHTML = inputStr;
+    return textarea.value;
+}
+
+window.listeners = {};
+
+window.addEventListener("message", ({data: message}) => {
+	if(message.type !== undefined && typeof listeners[message.type] === 'function') {
+		listeners[message.type](message);
+	}
+});

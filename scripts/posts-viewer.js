@@ -127,53 +127,47 @@ function display(posts) { //recursive
 }
 
 function updateIndicator() {
-		indicator.innerText = `Loading posts... (${loaded}/${total})`;
+	indicator.innerText = `Loading posts... (${loaded}/${total})`;
 }
 
-window.addEventListener('message', ({data: req}) => {
-	let data = req.content;
+window.listeners['posts-index'] = ({content: data}) => {
+	let posts = JSON.parse(data);
+	max_page = Math.ceil(posts.length / number_per_page);
 
-	switch(req.type) {
-		case 'posts-index':
-			let posts = JSON.parse(data);
-			max_page = Math.ceil(posts.length / number_per_page);
+	let start = (page - 1) * number_per_page;
 
-			let start = (page - 1) * number_per_page;
+	posts = posts.slice(start, start + number_per_page);
+	arr = new Array(posts.length);
+	total = posts.length;
 
-			posts = posts.slice(start, start + number_per_page);
-			arr = new Array(posts.length);
-			total = posts.length;
-
-			if(posts.length === 0) {
-				indicator.innerText = 'There seems to be no posts in this page.';
-				display([]);
-			}
-
-			for(let i = 0; i < posts.length; i++) {
-				window.createIframe(`${window.env.filesUrl}/index.html?path=./posts/${posts[i]}.json&type=post-preview&label=${JSON.stringify({index: start + i, id: posts[i]})}`);
-			}
-		 	updateIndicator();
-			break;
-		
-		case 'post-preview':
-			loaded++;
-			updateIndicator();
-			let post = JSON.parse(data);
-			let {index, id} = JSON.parse(req.label);
-
-			arr[index] = {
-				title: post.content.title,
-				id,
-				preview: post.content.header,
-				// type: post.type,
-			};
-
-			if(loaded === total) {
-				indicator.parentNode.remove();
-				display(arr);
-			}
-
+	if(posts.length === 0) {
+		indicator.innerText = 'There seems to be no posts in this page.';
+		display([]);
 	}
-});
+
+	for(let i = 0; i < posts.length; i++) {
+		window.createIframe(`${window.env.filesUrl}/index.html?path=./posts/${posts[i]}.json&type=post-preview&label=${JSON.stringify({index: start + i, id: posts[i]})}`);
+	}
+	updateIndicator();
+}
+
+window.listeners['post-preview'] = ({content: data, label}) => {
+	loaded++;
+	updateIndicator();
+	let post = JSON.parse(data);
+	let {index, id} = JSON.parse(label);
+
+	arr[index] = {
+		title: post.content.title,
+		id,
+		preview: post.content.header,
+		// type: post.type,
+	};
+
+	if(loaded === total) {
+		indicator.parentNode.remove();
+		display(arr);
+	}
+}
 
 window.createIframe(`${window.env.filesUrl}/index.html?path=./posts/index.json&type=posts-index`);
