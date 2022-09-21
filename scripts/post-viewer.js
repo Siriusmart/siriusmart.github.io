@@ -53,7 +53,10 @@ window.listeners['article-md'] = ({content: data, label}) => {
 
 	let article = document.createElement('article');
 	article.classList.add('p');
-	let html = window.markdown(data);
+	showdown.setFlavor('github');
+	var converter = new showdown.Converter(),
+	    text      = data,
+	    html      = converter.makeHtml(text);
 	article.innerHTML += html;
 
 	let div = document.createElement('div')
