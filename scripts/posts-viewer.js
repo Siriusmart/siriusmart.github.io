@@ -1,7 +1,7 @@
 let indicator = document.getElementById('indicator');
 indicator.innerText = 'Loading posts...';
 
-let paramString = window.location.href.split('?')[1];
+let paramString = window.location.href.split('?')[1].split('#')[0];
 let search_params = new URLSearchParams(paramString);
 let page = Number(search_params.get('p'));
 let number_per_page = Number(search_params.get('n'));

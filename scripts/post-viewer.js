@@ -5,7 +5,7 @@ headerP.innerText = 'Loading article...';
 
 document.title = 'Loading article';
 
-let paramString = window.location.href.split('?')[1];
+let paramString = window.location.href.split('?')[1].split('#')[0];
 let id = new URLSearchParams(paramString).get('id');
 
 window.listeners['article-json'] = ({content: data}) => {
@@ -54,7 +54,7 @@ window.listeners['article-md'] = ({content: data, label}) => {
 	let article = document.createElement('article');
 	article.classList.add('p');
 	showdown.setFlavor('github');
-	var converter = new showdown.Converter(),
+	let converter = new showdown.Converter(),
 	    text      = data,
 	    html      = converter.makeHtml(text);
 	article.innerHTML += html;

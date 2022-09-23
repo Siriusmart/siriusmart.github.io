@@ -1,6 +1,7 @@
 window.env = {
 	filesUrl: 'https://files-host.siriusmart.repl.co',
-	outReqUrl: 'https://server.siriusmart.repl.co/api/v1/utils/request-proxy/html'
+	outReqUrl: 'https://server.siriusmart.repl.co/api/v1/utils/request-proxy/html',
+	notesUrl: 'https://notes.siriusmart.repl.co'
 }
 
 try {
