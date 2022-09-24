@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Cache-Control" content="must-revalidate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="./css/post.css" />
+    <title>About - Siriusmart</title>
+    <meta name="keywords" content="Siriusmart, Youtube TUI, Personal site" />
+    <meta name="description" content="About Siriusmart" />
+    <meta name="author" content="Siriusmart" />
+    <link rel="icon" href="./assets/profile-picture.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <a name="top"></a>
+    <ul id="main-nav">
+      <li class="not-selected">
+        <button onclick="exit('./')"><b>&#x2302;</b></button>
+      </li>
+      <li id="selected">
+        <button onclick="exit('./about.html')">About</button>
+      </li>
+      <li class="not-selected">
+        <button onclick="exit('./resources.html')">Resources</button>
+      </li>
+    <li class="not-selected"><a href="./help.html" target=_blank style="text-decoration: none;"><button>Help</button></a></li>
+    </ul>
+    <div id="banner" class="container float-in-top">
+      <p class="p">Javascript is required to load message of the day</p>
+    </div>
+
+    <div class="container float-in-bottom">
+      <h1>Who am I</h1>
+      <p class="p">Random kid on the internet, no more information provided.</p>
+    </div>
+
+    <div class="container float-in-bottom">
+      <h1>Socials</h1>
+
+      <div class="p">
+        <h3>YouTube</h3>
+	<span>Siriusmart</code> <a href="https://youtube.com/siriusmart" target=_blank><button class="button">Visit channel</button></a>
+      </div>
+      <div class="p">
+        <h3>Discord</h3>
+	<span>Siriusmart#9148</code> <button class="button" onclick="copy(this, 'Siriusmart#9148')">Copy</button> <a href="https://discord.gg/nwknEVhHkK" target=_blank><button class="button">Join server</button></a>
+      </div>
+      <div class="p">
+        <h3>Email</h3>
+	<span>siriusmart@tuta.io</code> <button class="button" onclick="copy(this, 'siriusmart@tuta.io')">Copy</button> <a href="mailto:siriusmart@tuta.io" target=_blank><button class="button">Send Email</button></a>
+      </div>
+      <div class="p">
+        <h3>LBRY/Odysee</h3>
+	<span>@Siriusmart</code> <a href="https://odysee.com/@siriusmart" target=_blank><button class="button">Visit channel</button></a>
+      </div>
+      <br>
+    </div>
+
+    <footer class="footer">
+      <span>Siriusmart&copy; 2022</span>
+      <a href="#top" id="return-to-top">🔺Back to top</a>
+    </footer>
+  </body>
+  <video autoplay muted loop id="background-video">
+    <source src="./assets/background.webm" type="video/webm" />
+    <source src="./assets/background.mp4" type="video/mp4" />
+  </video>
+  <script src="./scripts/init.js"></script>
+  <script src="./scripts/exit.js"></script>
+  <script src="./scripts/motd.js"></script>
+  <script src="./scripts/utils.js"></script>
+</html>

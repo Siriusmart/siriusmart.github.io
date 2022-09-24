@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Cache-Control" content="must-revalidate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="./css/post.css" />
+    <title>Resources - Siriusmart</title>
+    <meta name="keywords" content="Siriusmart, Youtube TUI, Personal site" />
+    <meta name="description" content="View article" />
+    <meta name="author" content="Siriusmart" />
+    <link rel="icon" href="./assets/profile-picture.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <a name="top"></a>
+    <ul id="main-nav">
+      <li class="not-selected">
+        <button onclick="exit('./')"><b>&#x2302;</b></button>
+      </li>
+      <li class="not-selected">
+        <button onclick="exit('./about.html')">About</button>
+      </li>
+      <li id="selected">
+        <button onclick="exit('./resources.html')">Resources</button>
+      </li>
+    <li class="not-selected"><a href="./help.html" target=_blank style="text-decoration: none;"><button>Help</button></a></li>
+    </ul>
+    <div id="banner" class="container float-in-top">
+      <p class="p">Javascript is required to load message of the day</p>
+    </div>
+
+    <div class="container float-in-bottom" id="header-container">
+      <h1>Resources</h1>
+      <p class="p">
+        This page contains possible useful resources, mostly files and links to
+        other pages in this site.
+      </p>
+
+      <div class="p">
+        <div>
+          <h2>Revision notes</h2>
+          <p>Revision notes I made, mainly for GCSE.</p>
+          <p>
+            If you have the time and want to do some revision, you can add your
+            notes to the collection.
+            <a href="./about.html" target="_blank">DM me on Discord</a> so that
+            you can get perms to edit the files.
+          </p>
+          <a href="./notes" target="blank_"
+            ><button class="button">Go to notes</button></a
+          >
+        </div>
+        <div>
+          <h2>Soundboards</h2>
+          <p>
+            If you don't know about soundboards,
+            <a href="https://soundux.rocks/">Soundux</a> would be a good choice.
+          </p>
+          <div>
+            <h3>Galactic soundboard</h3>
+            <p>Epic soundboard perfect for VCs.</p>
+            <p>Note: Working on newer verson with more sounds.</p>
+            <a
+              href="https://files-host.siriusmart.repl.co/files/galactic.tar.gz"
+              ><button class="button">Download as tar.gz</button></a
+            >
+            <a href="https://files-host.siriusmart.repl.co/files/galactic.zip"
+              ><button class="button">Download as zip</button></a
+            >
+          </div>
+          <div>
+            <h3>Fireship soundboard</h3>
+            <p>Soundboard for roasting, from Fireship videos.</p>
+            <a
+              href="https://files-host.siriusmart.repl.co/files/fireship.tar.gz"
+              ><button class="button">Download as tar.gz</button></a
+            >
+            <a href="https://files-host.siriusmart.repl.co/files/fireship.zip"
+              ><button class="button">Download as zip</button></a
+            >
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <footer class="footer">
+      <span>Siriusmart&copy; 2022</span>
+      <a href="#top" id="return-to-top">🔺Back to top</a>
+    </footer>
+  </body>
+  <video autoplay muted loop id="background-video">
+    <source src="./assets/background.webm" type="video/webm" />
+    <source src="./assets/background.mp4" type="video/mp4" />
+  </video>
+  <script src="./scripts/init.js"></script>
+  <script src="./scripts/cross-req.js"></script>
+  <script src="./scripts/exit.js"></script>
+  <script src="./scripts/motd.js"></script>
+  <script src="./scripts/post-viewer.js"></script>
+  <script src="./scripts/showdown.js"></script>
+</html>

@@ -1,7 +1,10 @@
 let container = document.getElementById("items");
 container.innerText = "Loading content...";
 
-let paramString = window.location.href.split("?")[1].split("#")[0];
+let paramString = window.location.href.split('?')[1];
+if(typeof paramString === 'string') {
+	paramString = paramString.split('#')[0];
+}
 let search_params = new URLSearchParams(paramString);
 let level = search_params.get("level");
 let subject = search_params.get("subject");
@@ -67,13 +70,19 @@ function display_item(chapters, container, title) {
   let button = document.createElement("button");
   button.innerText = chapter.title;
   button.onclick = () =>
-    exit(`./note.html?level=${level}&subject=${subject}&id=${chapter.id}&title=${chapter.title} - ${title}`);
+    exit(
+      `./note.html?level=${level}&subject=${subject}&id=${chapter.id}&title=${chapter.title} - ${title}`
+    );
   let li = document.createElement("li");
   li.appendChild(button);
   li.classList.add("float-in-bottom");
   container.appendChild(li);
 
   setTimeout(() => display_item(chapters, container, title), 30);
+}
+
+function upOneLevel() {
+  exit(`./level.html?level=${level}`);
 }
 
 createIframe(
