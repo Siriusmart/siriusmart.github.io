@@ -224,3 +224,9 @@ tbody {
     scroll-behavior: smooth;
   }
 }
+
+canvas {
+  width: 100%;
+  border: 1px solid #acc5db;
+  border-radius: 10px;
+}
