@@ -230,3 +230,9 @@ canvas {
   border: 1px solid #acc5db;
   border-radius: 10px;
 }
+
+select {
+	background: none;
+	color: white;
+	border: none;
+}

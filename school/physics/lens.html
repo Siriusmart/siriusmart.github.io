@@ -12,55 +12,88 @@
   <meta name="description" content="Very epic lens simulator">
   <meta name="author" content="Siriusmart">
   <link rel="icon" href="../../assets/profile-picture.png" type="image/x-icon" />
+  <style>
+#penguin-container {
+	float: right;
+	display: inline;
+	margin: 50px;
+	text-align: center;
+}
+
+#penguin {
+	width: 10em;
+	height: 10em;
+}
+
+  </style>
 </head>
 
 <body>
 	<h1>Epic Lens Simulator (Epic)</h1>
 	<hr>
-	<div class="float-in-bottom">
+	<div class="float-in-bottom" id="controls">
 		<canvas width="1920" height="1080" id="lens"></canvas>
-		<div>
+		<div id="penguin-container">
+			<img src="https://images.emojiterra.com/twitter/v11/512px/1f427.png" id="penguin">
+			<br>
+			<span>Image recieved</span>
+			<br>
+			<span id="focused"></span>
+		</div>
+		<div id="r1-container">
 			<span>Thickness (r<sub>1</sub>)</span>
 			<span id="r1-display"></span>
 			<br>
-			<input type="range" min="0" max="5" value="1" step="0.01" onchange="update()" oninput="update()" id="r1">
+			<input type="range" min="0.01" max="5" value="1" step="0.04" onchange="update()" oninput="update()" id="r1">
 		</div>
-		<div>
+		<div id="fd-container">
+			<span>Sensors Distance (fd)</span>
+			<span id="fd-display"></span>
+			<br>
+			<input type="range" min="0.8" max="100" value="1.5" step="0.2" onchange="update()" oninput="update()" id="fd">
+		</div>
+		<div id="h-container">
 			<span>Length (h)</span>
 			<span id="h-display"></span>
 			<br>
-			<input type="range" min="0" max="5" value="2.5" step="0.01" onchange="update()" oninput="update()" id="h">
+			<input type="range" min="0.01" max="5" value="2.5" step="0.02" onchange="update()" oninput="update()" id="h">
 		</div>
-		<div>
+		<div id="d-container">
 			<span>Image distance (d)</span>
 			<span id="d-display"></span>
 			<br>
-			<input type="range" min="0.2" max="2" value="0.2" step="0.01" onchange="update()" oninput="update()" id="d">
+			<input type="range" min="0.2" max="2" value="0.2" step="0.02" onchange="update()" oninput="update()" id="d">
 		</div>
-		<div>
+		<div id="m-container">
 			<span>Zoom (m)</span>
 			<span id="m-display"></span>
 			<br>
-			<input type="range" min="0" max="2" value="1" step="0.01" onchange="update()" oninput="update()" id="m">
+			<input type="range" min="0.01" max="2" value="1" step="0.03" onchange="update()" oninput="update()" id="m">
 		</div>
-		<div>
+		<div id="r-container">
 			<span>Refractive Index (r)</span>
 			<span id="r-display"></span>
 			<br>
-			<input type="range" min="0.5" max="5" value="1.5" step="0.01" onchange="update()" oninput="update()" id="r">
+			<input type="range" min="0.5" max="5" value="1.5" step="0.05" onchange="update()" oninput="update()" id="r">
 		</div>
-		<span>(Use arrow keys or scroll on the sliders for finer adjustments)</span>
+		<div>
+			<span>Mode</span>
+			<br>
+			<select id="mode" onchange="update()">
+				<option value="eyes">Eyes</option>
+				<option value="camera">Camera</option>
+				<option value="full">Full</option>
+			</select>
+			<br>
+			<br>
+		</div>
+		<br>
+		<span>Use arrow keys or scroll on the sliders for finer adjustments,</span>
+		<br>
+		<span>Explanations to how this is made WIP.</span>
 
-		<h2>Marks</h2>
-		<ul>
-			<li>Camera/Eye focusing on a short distance object. (would be the interactive thingy, but am still figuring out how stuff work)</li>
-			<li>Camera/Eye focusing on a long distance object. (same)</li>
-			<li>3 differences between an eye and a camera explained.</li>
-			<li>Description of how a camera works. (done)</li>
-			<li>Description of how the eye works. (done)</li>
-			<li>Explanation of how each works. (done)</li>
-			<li>Comparison between a digital camera and a film camera. (done)</li>
-		</ul>
+		<hr>
+
 		<article>
 			<h2>Digital Cameras</h2>
 			<p>To capture an image, a digital camera has millions of <i>photosites</i>. During exposure these photosites recives photons and <i>charge build up</i>. At the end of the exposure this charge can be used to determin the brightness of the pixel.</p>
@@ -95,7 +128,6 @@
 	<br>
 	<br>
 
-		<img src="https://images.emojiterra.com/twitter/v11/512px/1f427.png" style="display: none;" id="penguin">
 <footer class="footer">
   <span>|</span>
   <a href="#top">Back to top</a>
