@@ -49,6 +49,10 @@ function update() {
     r1_slider.value = h_slider.value;
   }
 
+  if (fd_slider.value < r1_slider.value) {
+    fd_slider.value = r1_slider.value;
+  }
+
   switch (mode.value) {
     case "full":
       r1_container.style.display = "block";
@@ -209,8 +213,8 @@ function update() {
   let sensor_x_display = sensor_x + centerx;
 
   ctx.beginPath();
-  ctx.moveTo(sensor_x_display, centery - h);
-  ctx.lineTo(sensor_x_display, centery + h);
+  ctx.moveTo(sensor_x_display, 0);
+  ctx.lineTo(sensor_x_display, canvas.height);
   ctx.stroke();
   ctx.strokeStyle = "#feffcf";
 
@@ -309,7 +313,7 @@ function update() {
       let intercept_y_center = s1 * sensor_x + m1;
 
       let blur_amount =
-        (Math.abs(intercept_y_center - intercept_y_horizontal) /
+        (Math.abs(intercept_y_center + intercept_y_horizontal) /
           m_slider.value -
           30) *
         0.1;
