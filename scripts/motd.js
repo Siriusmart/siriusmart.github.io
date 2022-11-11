@@ -13,12 +13,16 @@ function setMotd(data) {
 		a.target = '_blank';
 		p = a;
 	}
+	banner.removeChild(banner.lastChild)
 	banner.appendChild(p);
 }
 
-if(window.cookies.motd) {
+if(localStorage.motdText) {
 	bannerP.remove();
-	setMotd(window.cookies.motd);
+	setMotd({
+		text: localStorage.motdText,
+		url: localStorage.motdUrl,
+	});
 } else {
 	bannerP.innerText = 'Loading MOTD...';
 }
@@ -26,7 +30,7 @@ if(window.cookies.motd) {
 window.listeners.motd = (res) => {
 	let data = JSON.parse(res.content);
 
-	let a =banner.getElementsByTagName('a')[0];
+	let a = banner.getElementsByTagName('a')[0];
 
 	if(a) {
 		a.remove();
@@ -36,9 +40,11 @@ window.listeners.motd = (res) => {
 
 	setMotd(data);
 
-	if(data !== window.cookies.motd) {
-		window.cookies.motd = data;
-		window.updateCookie();
+	localStorage.motdText = data.text;
+	if(data.url) {
+		localStorage.motdUrl = data.url;
+	} else {
+		localStorage.removeItem('motdUrl');
 	}
 }
 
