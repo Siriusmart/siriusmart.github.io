@@ -1,9 +1,9 @@
 let container = document.getElementById("items");
 container.innerText = "Loading content...";
 
-let paramString = window.location.href.split('?')[1];
-if(typeof paramString === 'string') {
-	paramString = paramString.split('#')[0];
+let paramString = window.location.href.split("?")[1];
+if (typeof paramString === "string") {
+  paramString = paramString.split("#")[0];
 }
 let search_params = new URLSearchParams(paramString);
 let level = search_params.get("level");
@@ -66,5 +66,7 @@ function display_item(items) {
 }
 
 createIframe(
-  `${window.env.notesUrl}?path=./${level}/index.json&type=notes_level`
+  `${
+    window.env.customNotesUrl ? window.env.customNotesUrl : window.env.notesUrl
+  }?path=./${level}/index.json&type=notes_level`
 );

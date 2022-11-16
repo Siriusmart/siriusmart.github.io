@@ -1,142 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta http-equiv="Cache-Control" content="must-revalidate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../css/animations.css" />
+    <link rel="stylesheet" href="../../css/markdown.css" />
+    <title>Epic Lens Simulator</title>
+    <meta
+      name="keywords"
+      content="Siriusmart, Youtube TUI, Personal site, GCSE, Revision notes, UK, School"
+    />
+    <meta name="description" content="Very epic lens simulator" />
+    <meta name="author" content="Siriusmart" />
+    <link
+      rel="icon"
+      href="../../assets/profile-picture.png"
+      type="image/x-icon"
+    />
+    <style>
+      #penguin-container {
+        float: right;
+        display: inline;
+        margin: 50px;
+        text-align: center;
+      }
 
-<head>
-  <meta http-equiv="Cache-Control" content="must-revalidate"/>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="../../css/animations.css">
-  <link rel="stylesheet" href="../../css/markdown.css">
-  <title>Epic Lens Simulator</title>
-  <meta name="keywords" content="Siriusmart, Youtube TUI, Personal site, GCSE, Revision notes, UK, School">
-  <meta name="description" content="Very epic lens simulator">
-  <meta name="author" content="Siriusmart">
-  <link rel="icon" href="../../assets/profile-picture.png" type="image/x-icon" />
-  <style>
-#penguin-container {
-	float: right;
-	display: inline;
-	margin: 50px;
-	text-align: center;
-}
+      #penguin {
+        width: 10em;
+        height: 10em;
+      }
+    </style>
+  </head>
 
-#penguin {
-	width: 10em;
-	height: 10em;
-}
+  <body>
+    <h1>Epic Lens Simulator (Epic)</h1>
+    <hr />
+    <div class="float-in-bottom" id="controls">
+      <canvas width="1920" height="1080" id="lens"></canvas>
+      <div id="penguin-container">
+        <img
+          src="https://images.emojiterra.com/twitter/v11/512px/1f427.png"
+          id="penguin"
+        />
+        <br />
+        <span>Image recieved</span>
+        <br />
+        <span id="focused"></span>
+      </div>
+      <div id="r1-container">
+        <span>Thickness (r<sub>1</sub>)</span>
+        <span id="r1-display"></span>
+        <br />
+        <input
+          type="range"
+          min="0.01"
+          max="5"
+          value="1"
+          step="0.04"
+          onchange="update()"
+          oninput="update()"
+          id="r1"
+        />
+      </div>
+      <div id="fd-container">
+        <span>Sensors Distance (fd)</span>
+        <span id="fd-display"></span>
+        <br />
+        <input
+          type="range"
+          min="0.8"
+          max="100"
+          value="1.5"
+          step="0.2"
+          onchange="update()"
+          oninput="update()"
+          id="fd"
+        />
+      </div>
+      <div id="h-container">
+        <span>Length (h)</span>
+        <span id="h-display"></span>
+        <br />
+        <input
+          type="range"
+          min="0.01"
+          max="5"
+          value="2.5"
+          step="0.02"
+          onchange="update()"
+          oninput="update()"
+          id="h"
+        />
+      </div>
+      <div id="d-container">
+        <span>Image distance (d)</span>
+        <span id="d-display"></span>
+        <br />
+        <input
+          type="range"
+          min="0.2"
+          max="2"
+          value="0.2"
+          step="0.02"
+          onchange="update()"
+          oninput="update()"
+          id="d"
+        />
+      </div>
+      <div id="m-container">
+        <span>Zoom (m)</span>
+        <span id="m-display"></span>
+        <br />
+        <input
+          type="range"
+          min="0.01"
+          max="2"
+          value="1"
+          step="0.03"
+          onchange="update()"
+          oninput="update()"
+          id="m"
+        />
+      </div>
+      <div id="r-container">
+        <span>Refractive Index (r)</span>
+        <span id="r-display"></span>
+        <br />
+        <input
+          type="range"
+          min="0.5"
+          max="5"
+          value="1.5"
+          step="0.05"
+          onchange="update()"
+          oninput="update()"
+          id="r"
+        />
+      </div>
+      <div>
+        <span>Mode</span>
+        <br />
+        <select id="mode" onchange="update()">
+          <option value="eyes">Eyes</option>
+          <option value="camera">Camera</option>
+          <option value="full">Full</option>
+        </select>
+        <br />
+        <br />
+      </div>
+      <br />
+      <span
+        >Use arrow keys or scroll on the sliders for finer adjustments,</span
+      >
+      <br />
+      <span>Explanations to how this is made WIP.</span>
 
-  </style>
-</head>
+      <hr />
 
-<body>
-	<h1>Epic Lens Simulator (Epic)</h1>
-	<hr>
-	<div class="float-in-bottom" id="controls">
-		<canvas width="1920" height="1080" id="lens"></canvas>
-		<div id="penguin-container">
-			<img src="https://images.emojiterra.com/twitter/v11/512px/1f427.png" id="penguin">
-			<br>
-			<span>Image recieved</span>
-			<br>
-			<span id="focused"></span>
-		</div>
-		<div id="r1-container">
-			<span>Thickness (r<sub>1</sub>)</span>
-			<span id="r1-display"></span>
-			<br>
-			<input type="range" min="0.01" max="5" value="1" step="0.04" onchange="update()" oninput="update()" id="r1">
-		</div>
-		<div id="fd-container">
-			<span>Sensors Distance (fd)</span>
-			<span id="fd-display"></span>
-			<br>
-			<input type="range" min="0.8" max="100" value="1.5" step="0.2" onchange="update()" oninput="update()" id="fd">
-		</div>
-		<div id="h-container">
-			<span>Length (h)</span>
-			<span id="h-display"></span>
-			<br>
-			<input type="range" min="0.01" max="5" value="2.5" step="0.02" onchange="update()" oninput="update()" id="h">
-		</div>
-		<div id="d-container">
-			<span>Image distance (d)</span>
-			<span id="d-display"></span>
-			<br>
-			<input type="range" min="0.2" max="2" value="0.2" step="0.02" onchange="update()" oninput="update()" id="d">
-		</div>
-		<div id="m-container">
-			<span>Zoom (m)</span>
-			<span id="m-display"></span>
-			<br>
-			<input type="range" min="0.01" max="2" value="1" step="0.03" onchange="update()" oninput="update()" id="m">
-		</div>
-		<div id="r-container">
-			<span>Refractive Index (r)</span>
-			<span id="r-display"></span>
-			<br>
-			<input type="range" min="0.5" max="5" value="1.5" step="0.05" onchange="update()" oninput="update()" id="r">
-		</div>
-		<div>
-			<span>Mode</span>
-			<br>
-			<select id="mode" onchange="update()">
-				<option value="eyes">Eyes</option>
-				<option value="camera">Camera</option>
-				<option value="full">Full</option>
-			</select>
-			<br>
-			<br>
-		</div>
-		<br>
-		<span>Use arrow keys or scroll on the sliders for finer adjustments,</span>
-		<br>
-		<span>Explanations to how this is made WIP.</span>
+      <article>
+        <h2>Digital Cameras</h2>
+        <p>
+          To capture an image, a digital camera has millions of
+          <i>photosites</i>. During exposure these photosites recives photons
+          and <i>charge build up</i>. At the end of the exposure this charge can
+          be used to determin the brightness of the pixel.
+        </p>
+        <p>
+          To create a coloured image, a <i>Bayer mosaic</i> is placed over the
+          sensors, each filter has its own colour of <i>red, green or blue</i>,
+          and each covers one photosites. This allows the
+          <i>colour intensity</i> of each pixel to be determined.
+        </p>
+        <p>
+          To reflect the way a human eye is
+          <i>more sensitive to green light</i>, the <i>Bayer mosaic</i> consist
+          of twice as many green filters than other colours.
+        </p>
+      </article>
+      <article>
+        <h2>Film Cameras</h2>
+        <p>
+          The camera film contains <i>silver-halide crystals</i>, these crystals
+          act as photon detectors, although they also react to other kinds of
+          radiation. The <i>silver-halide</i> grains are mixed with
+          <i>sliver-nitrate</i> and <i>halide salts</i> to create different
+          sizes, shapes and compositions, this will change their
+          <i>surface area</i> and <i>light sensitivity</i>.
+        </p>
+        <p>
+          Unmodified grains are only sensitive to <i>blue</i> lights (like how
+          photosites are not colour sensitive), orgainic molecules known as
+          <i>spectral sensitizers</i> are added to make the grains more
+          sensitive to a specific colour.
+        </p>
+      </article>
+      <article>
+        <h2>Eye</h2>
+        <p>
+          The eye has 2 lenses, the un-squeezable <i>cornea</i> for coarse
+          focusing and the <i>"lens"</i> for finer focusing. Muscles around the
+          lens contracts to thicken it, reducing the focal length, allowing
+          closer objects to be in focus. The pupil contracts and relaxes to
+          <i>control the amount of light</i> to let it, preventing high light
+          intensity from damaging the cells.
+        </p>
+        <p>
+          There are millions of <i>rod</i> and <i>cone</i> cells on the retina,
+          where rod cells are responsible for <i>monochromatic</i> (black and
+          white) and cone cells are responsible for <i>colour</i> vision. Rod
+          cells also works better in <i>low light</i> environment, loss of rod
+          cells will cause <i>night blindness</i>.
+        </p>
+      </article>
+      <article>
+        <h2>Similarties</h2>
+        <p>
+          Both cameras and eyes form <i>real</i> image that is inverted, the
+          orientation is then corrected by <i>the brain</i> or
+          <i>some sort of software</i>.
+        </p>
+        <p>
+          Also, both eyes and cameras use <i>electric pulses</i> to transfer
+          information recieved for processing.
+        </p>
+      </article>
+      <article>
+        <h2>Differences</h2>
+        <p>
+          Photosites and grains for digital and film cameras are responsible for
+          <i>both</i> brightness and colour (with <i>Bayer mosaic</i> filters),
+          whereas rod and cone cells are responsible for (mainly)
+          <i>brightness</i> and <i>colour vision</i> respectively.
+        </p>
+        <p>
+          To keep to image in-focus, eyes has a stretchy lens, the
+          <i>thickness</i> and <i>curvature</i> changes as it is pulled,
+          (hopefully) creating a focused image on the retina. Cameras move the
+          sensors or the lens back and forth to get a focused image on the
+          sensors or the film.
+        </p>
+        <p>
+          The human eye is <u>very well designed</u>, it has no depthh
+          distortion, has an <b><i>epic</i></b> dynamic range as the cells are
+          dynamically adjusted to the environment (mainly brightness). The human
+          eye is also 24 times higher in resolution than the average cameras.
+        </p>
+        <p>
+          However, the human eye only sees the centre 20 degrees in detail, and
+          has a <i>blind spot</i> caused by the exiting nerve, all which a
+          camera does not have. Cemeras can also have <i>wide</i> or
+          <i>telephoto</i> lens (like in telescopes), and <i>multiple</i> of
+          these lens to fit a specific purpose, which the human eye only have
+          one coarse and one fine lens.
+        </p>
+      </article>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
 
-		<hr>
-
-		<article>
-			<h2>Digital Cameras</h2>
-			<p>To capture an image, a digital camera has millions of <i>photosites</i>. During exposure these photosites recives photons and <i>charge build up</i>. At the end of the exposure this charge can be used to determin the brightness of the pixel.</p>
-			<p>To create a coloured image, a <i>Bayer mosaic</i> is placed over the sensors, each filter has its own colour of <i>red, green or blue</i>, and each covers one photosites. This allows the <i>colour intensity</i> of each pixel to be determined.</p>
-			<p>To reflect the way a human eye is <i>more sensitive to green light</i>, the <i>Bayer mosaic</i> consist of twice as many green filters than other colours.</p>
-		</article>
-		<article>
-			<h2>Film Cameras</h2>
-			<p>The camera film contains <i>silver-halide crystals</i>, these crystals act as photon detectors, although they also react to other kinds of radiation. The <i>silver-halide</i> grains are mixed with <i>sliver-nitrate</i> and <i>halide salts</i> to create different sizes, shapes and compositions, this will change their <i>surface area</i> and <i>light sensitivity</i>.</p>
-			<p>Unmodified grains are only sensitive to <i>blue</i> lights (like how photosites are not colour sensitive), orgainic molecules known as <i>spectral sensitizers</i> are added to make the grains more sensitive to a specific colour.</p>
-		</article>
-		<article>
-			<h2>Eye</h2>
-			<p>The eye has 2 lenses, the un-squeezable <i>cornea</i> for coarse focusing and the <i>"lens"</i> for finer focusing. Muscles around the lens contracts to thicken it, reducing the focal length, allowing closer objects to be in focus. The pupil contracts and relaxes to <i>control the amount of light</i> to let it, preventing high light intensity from damaging the cells.</p>
-			<p>There are millions of <i>rod</i> and <i>cone</i> cells on the retina, where rod cells are responsible for <i>monochromatic</i> (black and white) and cone cells are responsible for <i>colour</i> vision. Rod cells also works better in <i>low light</i> environment, loss of rod cells will cause <i>night blindness</i>.</p>
-		</article>
-		<article>
-			<h2>Similarties</h2>
-			<p>Both cameras and eyes form <i>real</i> image that is inverted, the orientation is then corrected by <i>the brain</i> or <i>some sort of software</i>.</p>
-			<p>Also, both eyes and cameras use <i>electric pulses</i> to transfer information recieved for processing.</p>
-		</article>
-		<article>
-			<h2>Differences</h2>
-			<p>Photosites and grains for digital and film cameras are responsible for <i>both</i> brightness and colour (with <i>Bayer mosaic</i> filters), whereas rod and cone cells are responsible for (mainly) <i>brightness</i> and <i>colour vision</i> respectively.</p>
-			<p>To keep to image in-focus, eyes has a stretchy lens, the <i>thickness</i> and <i>curvature</i> changes as it is pulled, (hopefully) creating a focused image on the retina. Cameras move the sensors or the lens back and forth to get a focused image on the sensors or the film.</p>
-			<p>The human eye is <u>very well designed</u>, it has no depthh distortion, has an <b><i>epic</i></b> dynamic range as the cells are dynamically adjusted to the environment (mainly brightness). The human eye is also 24 times higher in resolution than the average cameras.</p>
-			<p>However, the human eye only sees the centre 20 degrees in detail, and has a <i>blind spot</i> caused by the exiting nerve, all which a camera does not have. Cemeras can also have <i>wide</i> or <i>telephoto</i> lens (like in telescopes), and <i>multiple</i> of these lens to fit a specific purpose, which the human eye only have one coarse and one fine lens.</p>
-		</article>
-	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-
-<footer class="footer">
-  <span>|</span>
-  <a href="#top">Back to top</a>
-  <span>|</span>
-  <button onclick="exit('./')">Up one level</button>
-  <span>|</span>
-</footer>
-</body>
-</video>
+    <footer class="footer">
+      <span>|</span>
+      <a href="#top">Back to top</a>
+      <span>|</span>
+      <button onclick="exit('./')">Up one level</button>
+      <span>|</span>
+    </footer>
+  </body>
   <script src="../../scripts/init.js"></script>
   <script src="../../scripts/exit.js"></script>
   <script src="../../scripts/lens.js"></script>

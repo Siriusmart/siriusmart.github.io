@@ -1,117 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta http-equiv="Cache-Control" content="must-revalidate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/homepage.css" />
+    <link rel="stylesheet" type="text/css" href="./css/animations.css" />
+    <title>Home - Siriusmart</title>
+    <meta name="keywords" content="Siriusmart, Youtube TUI, Personal site" />
+    <meta
+      name="description"
+      content="Home page for Siriusmart's personal website."
+    />
+    <meta name="author" content="Siriusmart" />
+    <link rel="icon" href="./assets/profile-picture.png" type="image/x-icon" />
+  </head>
 
-<head>
-  <meta http-equiv="Cache-Control" content="must-revalidate"/>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="./css/main.css">
-  <link rel="stylesheet" type="text/css" href="./css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="./css/animations.css">
-  <title>Home - Siriusmart</title>
-  <meta name="keywords" content="Siriusmart, Youtube TUI, Personal site">
-  <meta name="description" content="Home page for Siriusmart's personal website.">
-  <meta name="author" content="Siriusmart">
-  <link rel="icon" href="./assets/profile-picture.png" type="image/x-icon" />
-</head>
-
-<body>
-  <a name="top"></a>
-  <ul id="main-nav">
-    <li id="selected"><button onclick="exit('./')"><b>&#x2302;</b></button></li>
-    <li class="not-selected"><button onclick="exit('./about.html')">About</button></li>
-    <li class="not-selected"><button onclick="exit('./resources.html')">Resources</button></li>
-    <li class="not-selected"><a href="./help.html" target=_blank style="text-decoration: none;"><button>Help</button></a></li>
-  </ul>
-  <div id="banner" class="container float-in-top">
-	  <p>Javascript is required to load message of the day</p>
-  </div>
-  <section class="container float-in-bottom">
-    <div>
-      <h1>Oh welcome to the site</h1>
+  <body>
+    <a name="top"></a>
+    <ul id="main-nav">
+      <li id="selected">
+        <button onclick="exit('./')"><b>&#x2302;</b></button>
+      </li>
+      <li class="not-selected">
+        <button onclick="exit('./about.html')">About</button>
+      </li>
+      <li class="not-selected">
+        <button onclick="exit('./resources.html')">Resources</button>
+      </li>
+      <li class="not-selected">
+        <a href="./help.html" target="_blank" style="text-decoration: none"
+          ><button>Help</button></a
+        >
+      </li>
+    </ul>
+    <div id="banner" class="container float-in-top">
+      <p>Javascript is required to load message of the day</p>
     </div>
-
-    <div>
-      <div id="neofetch" class="container glitch-wrapper delayed-float-in-right">
+    <section class="container float-in-bottom">
       <div>
-      <br><br><br>
-      <span class="mono glitch glitch-2" data-text="siri@siriusmart">siri@siriusmart</span>
-      <br>
-      <span class="mono glitch glitch-2" data-text="---------------">---------------</span>
-      <br>
-      <span class="mono glitch glitch-1" data-text="OS: Arch x86_64 btw">OS: Arch x86_64 btw</span>
-      <br>
-      <span class="mono glitch glitch-1" data-text="Occupation: Student">Occupation: Student</span>
-      <br>
-      <span class="mono glitch glitch-1" data-text="Location: UK">Location: UK</span>
-      <br>
-      <span class="mono glitch glitch-1" data-text="Hobbies: Editing/Coding">Hobbies: Editing/Coding</span>
-      <br>
-      <span class="mono glitch glitch-1" data-text="Games: Minecraft">Games: Minecraft</span>
-	    </div>
-      <p class="mono glitch glitch-2" data-text="% neofetch">
-        % neofetch
-      </p>
-      <figure>
-	<img src="/assets/profile-picture.png" alt="Siriusmart's profile picture" width="128" height="128">
-      </figure>
+        <h1>Oh welcome to the site</h1>
+      </div>
+
+      <div>
+        <div
+          id="neofetch"
+          class="container glitch-wrapper delayed-float-in-right"
+        >
+          <div>
+            <br /><br /><br />
+            <span class="mono glitch glitch-2" data-text="siri@siriusmart"
+              >siri@siriusmart</span
+            >
+            <br />
+            <span class="mono glitch glitch-2" data-text="---------------"
+              >---------------</span
+            >
+            <br />
+            <span class="mono glitch glitch-1" data-text="OS: Arch x86_64 btw"
+              >OS: Arch x86_64 btw</span
+            >
+            <br />
+            <span class="mono glitch glitch-1" data-text="Occupation: Student"
+              >Occupation: Student</span
+            >
+            <br />
+            <span class="mono glitch glitch-1" data-text="Location: UK"
+              >Location: UK</span
+            >
+            <br />
+            <span
+              class="mono glitch glitch-1"
+              data-text="Hobbies: Editing/Coding"
+              >Hobbies: Editing/Coding</span
+            >
+            <br />
+            <span class="mono glitch glitch-1" data-text="Games: Minecraft"
+              >Games: Minecraft</span
+            >
+          </div>
+          <p class="mono glitch glitch-2" data-text="% neofetch">% neofetch</p>
+          <figure>
+            <img
+              src="/assets/profile-picture.png"
+              alt="Siriusmart's profile picture"
+              width="128"
+              height="128"
+            />
+          </figure>
+        </div>
+        <p class="p">
+          On this site you may find the most <i>random</i> things possible, from
+          coding projects to
+          <i style="color: red">soundboard of friends</i> that I made as a joke,
+          or URLs that links to random articles.
+        </p>
+        <p class="p">
+          But whatever you are using any files from this site, please share them
+          by the page they are found here.
+          <u>This site needs some publicity</u>, thanks :D
+        </p>
+      </div>
+    </section>
+    <div class="flex-container">
+      <div class="container right float-in-right">
+        <div>
+          <h1>Who am I</h1>
+          <p class="p">I do a lot of stuff, but my main focuses are:</p>
+          <h2 class="p">YouTube (And LBRY/Odysee)</h2>
+          <p class="p">
+            I used to upload Minecraft edits and am somewhat experienced with
+            editing, I primarily use
+            <a
+              href="http://www.blackmagicdesign.com/products/davinciresolve"
+              target="_blank"
+              >Davinci Resolve</a
+            >
+            for editing.
+          </p>
+          <p class="p">
+            My future content will most likely be short informative videos (like
+            <i>Brief History of X</i> and <i>X Explained in 100 Seconds</i>). I
+            will also upload a small amount of Minecraft clip dumps of playing
+            with friends "just for fun".
+          </p>
+          <h2 class="p">Contributing to the FOSS world</h2>
+          <p class="p">
+            I am a big fan of free and open source software, and as I had taken
+            from it, I will also contribute by creating small projects under the
+            <a
+              href="http://www.gnu.org/licenses/gpl-3.0.en.html"
+              target="_blank"
+              >GPL licensing</a
+            >.
+          </p>
+          <p class="p">
+            Currently I'm working on my own project called the
+            <code class="mono">youtube-tui</code
+            ><sub
+              ><a
+                class="mono aur"
+                href="http://aur.archlinux.org/packages/youtube-tui-git"
+                target="_blank"
+                >AUR</a
+              >
+              <a
+                href="https://github.com/Siriusmart/youtube-tui"
+                class="mono github"
+                >GitHub</a
+              ></sub
+            >, it is a TUI for browsing YouTube written in Rust.
+          </p>
+        </div>
+      </div>
+      <div class="container left float-in-left">
+        <div>
+          <h1>Latest from Siriusmart</h1>
+          <div id="posts" class="p">
+            <p id="indicator">Javascript is required for content to load.</p>
+            <p>---</p>
+            <button
+              class="button"
+              style="margin-bottom: 10px"
+              onclick="exit('./posts.html')"
+            >
+              View all posts
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <section class="container float-in-bottom">
+      <h1>Places</h1>
+      <p class="p">Here are some interesting places to visit in this site:</p>
+      <h2 class="p">YouTube Downloader</h2>
       <p class="p">
-      On this site you may find the most <i>random</i> things possible, from coding projects to <i style="color: red;">soundboard of friends</i> that I made as a joke, or URLs that links to random articles.</p>
-      <p class ="p">But whatever you are using any files from this site, please share them by the page they are found here. <u>This site needs some publicity</u>, thanks :D
+        Yet another YouTube downloader (powered by Invidious API).<br /><button
+          class="button"
+          onclick="exit('./ytdl.html')"
+        >
+          Go to page
+        </button>
       </p>
-    </div>
-</section>
-<div class="flex-container">
-<div class="container right float-in-right">
-	<div>
-	<h1>Who am I</h1>
-	<p class="p">I do a lot of stuff, but my main focuses are:</p>
-	<h2 class="p">YouTube (And LBRY/Odysee)</h2>
-	<p class="p">I used to upload Minecraft edits and am somewhat experienced with editing, I primarily use <a href="http://www.blackmagicdesign.com/products/davinciresolve" target="_blank">Davinci Resolve</a> for editing.</p>
-	<p class="p">My future content will most likely be short informative videos (like <i>Brief History of X</i> and <i>X Explained in 100 Seconds</i>). I will also upload a small amount of Minecraft clip dumps of playing with friends "just for fun".</p>
-	<h2 class="p">Contributing to the FOSS world</h2>
-	<p class="p">I am a big fan of free and open source software, and as I had taken from it, I will also contribute by creating small projects under the <a href="http://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPL licensing</a>.</p>
-	<p class="p">Currently I'm working on my own project called the <code class="mono">youtube-tui</code><sub><a class="mono aur" href="http://aur.archlinux.org/packages/youtube-tui-git" target="_blank">AUR</a> <a href="https://github.com/Siriusmart/youtube-tui" class="mono github">GitHub</a></sub>, it is a TUI for browsing YouTube written in Rust.</p>
-	</div>
-</div>
-<div class="container left float-in-left">
-	<div>
-		<h1>Latest from Siriusmart</h1>
-		<div id="posts" class="p"><p id="indicator">
-			Javascript is required for content to load.
-			</p>
-			<p>---</p>
-			<button class="button" style="margin-bottom: 10px;" onclick="exit('./posts.html')">View all posts</button>
-		</div>
-	</div>
-</div>
-</div>
+      <h2 class="p">YouTube TUI User Manual</h2>
+      <p class="p">
+        User manual for <code class="mono">youtube-tui</code
+        ><sub
+          ><a
+            class="mono aur"
+            href="http://aur.archlinux.org/packages/youtube-tui-git"
+            target="_blank"
+            >AUR</a
+          >
+          <a
+            href="https://github.com/Siriusmart/youtube-tui"
+            class="mono github"
+            >GitHub</a
+          ></sub
+        ><br /><a href="./youtube-tui" target="_blank"
+          ><button class="button">Go to page</button></a
+        >
+      </p>
+      <h2 class="p">Posts</h2>
+      <p class="p">
+        Posts by Siriusmart<br /><button
+          class="button"
+          onclick="exit('./posts.html')"
+        >
+          Go to page
+        </button>
+      </p>
+    </section>
 
-<section class="container float-in-bottom">
-	<h1>Places</h1>
-	<p class="p">Here are some interesting places to visit in this site:</p>
-	<h2 class="p">YouTube Downloader</h2>
-	<p class="p">Yet another YouTube downloader (powered by Invidious API).<br><button class="button" onclick="exit('./ytdl.html')">Go to page</button></p>
-	<h2 class="p">YouTube TUI User Manual</h2>
-	<p class="p">User manual for <code class="mono">youtube-tui</code><sub><a class="mono aur" href="http://aur.archlinux.org/packages/youtube-tui-git" target="_blank">AUR</a> <a href="https://github.com/Siriusmart/youtube-tui" class="mono github">GitHub</a></sub><br><a href="./youtube-tui" target="_blank"><button class="button">Go to page</button></a></p>
-	<h2 class="p">Posts</h2>
-	<p class="p">Posts by Siriusmart<br><button class="button" onclick="exit('./posts.html')">Go to page</button></p>
-</section>
-
-<footer class="footer">
-  <span>Siriusmart&copy; 2022</span>
-  <a href="#top" id="return-to-top">🔺Back to top</a>
-</footer>
-</body>
-<video autoplay muted loop id="background-video">
-  <source src="./assets/background.webm" type="video/webm">
-  <source src="./assets/background.mp4" type="video/mp4">
-</video>
+    <footer class="footer">
+      <span>Siriusmart&copy; 2022</span>
+      <a href="#top" id="return-to-top">🔺Back to top</a>
+    </footer>
+  </body>
+  <video autoplay muted loop id="background-video">
+    <source src="./assets/background.webm" type="video/webm" />
+    <source src="./assets/background.mp4" type="video/mp4" />
+  </video>
   <script src="./scripts/init.js"></script>
   <script src="./scripts/cross-req.js"></script>
   <script src="./scripts/exit.js"></script>
   <script src="./scripts/posts-home.js"></script>
   <script src="./scripts/motd.js"></script>
-
 </html>

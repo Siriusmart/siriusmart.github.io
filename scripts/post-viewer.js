@@ -43,7 +43,9 @@ window.listeners["article-json"] = ({ content: data }) => {
     case "blog":
       window.createIframe(
         `${
-          window.env.filesUrl
+          window.env.customFilesUrl
+            ? window.env.customFilesUrl
+            : window.env.filesUrl
         }/index.html?path=./posts/${id}.md&type=article-md&label=${encodeURIComponent(
           data.content.title
         )}`
@@ -85,5 +87,7 @@ window.listeners["article-md"] = ({ content: data, label }) => {
 };
 
 window.createIframe(
-  `${window.env.filesUrl}/index.html?path=./posts/${id}.json&type=article-json`
+  `${
+    window.env.customFilesUrl ? window.env.customFilesUrl : window.env.filesUrl
+  }/index.html?path=./posts/${id}.json&type=article-json`
 );

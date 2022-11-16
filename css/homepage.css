@@ -1,10 +1,10 @@
 #neofetch {
-padding-bottom: 30px;
-float: right;
-display: block;
-width: 450px;
-z-index: 10;
-position: relative;
+  padding-bottom: 30px;
+  float: right;
+  display: block;
+  width: 450px;
+  z-index: 10;
+  position: relative;
 }
 
 #neofetch div {
@@ -28,19 +28,18 @@ position: relative;
   }
 }
 
-
 @media screen and (min-width: 1000px) {
-	.left {
-	  margin-top: 110px;
-	}
+  .left {
+    margin-top: 110px;
+  }
 
-	.right {
-	  margin-bottom: 100px;
-	}
+  .right {
+    margin-bottom: 100px;
+  }
 }
 
 i {
-	color: violet;
+  color: violet;
 }
 
 .glitch-wrapper {
@@ -49,11 +48,11 @@ i {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .glitch {
   position: relative;
@@ -70,31 +69,31 @@ i {
 }
 .glitch-1::before {
   left: 2px;
-  text-shadow: -2px 0 #49FC00;
+  text-shadow: -2px 0 #49fc00;
   clip: rect(24px, 550px, 90px, 0);
   -webkit-animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
-          animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+  animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
 }
 .glitch-1::after {
   left: -2px;
   text-shadow: -2px 0 #b300fc;
   clip: rect(85px, 550px, 140px, 0);
   -webkit-animation: glitch-anim 2.5s infinite linear alternate-reverse;
-          animation: glitch-anim 2.5s infinite linear alternate-reverse;
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
 }
 .glitch-2::before {
   left: 2px;
-  text-shadow: -2px 0 #49FC00;
+  text-shadow: -2px 0 #49fc00;
   clip: rect(24px, 550px, 90px, 0);
   -webkit-animation: glitch-anim-2 2.5s infinite linear alternate;
-          animation: glitch-anim-2 2.5s infinite linear alternate;
+  animation: glitch-anim-2 2.5s infinite linear alternate;
 }
 .glitch-2::after {
   left: -2px;
   text-shadow: -2px 0 #b300fc;
   clip: rect(85px, 550px, 140px, 0);
   -webkit-animation: glitch-anim 2.5s infinite linear alternate;
-          animation: glitch-anim 2.5s infinite linear alternate;
+  animation: glitch-anim 2.5s infinite linear alternate;
 }
 @-webkit-keyframes glitch-anim {
   0% {

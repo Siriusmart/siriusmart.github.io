@@ -5,13 +5,13 @@
 
 @keyframes footer {
   0% {
-	transform: translateY(100%);
+    transform: translateY(100%);
   }
   50% {
-	transform: translateY(100%);
+    transform: translateY(100%);
   }
   100% {
-	transform: translateY(0%)
+    transform: translateY(0%);
   }
 }
 
@@ -28,12 +28,12 @@
 
 @keyframes float-in-top {
   0% {
-	transform: translateY(-10%);
-	opacity: 0%;
+    transform: translateY(-10%);
+    opacity: 0%;
   }
   100% {
-	transform: translateY(0%);
-	opacity: 100%;
+    transform: translateY(0%);
+    opacity: 100%;
   }
 }
 
@@ -50,12 +50,12 @@
 
 @keyframes float-in-bottom {
   0% {
-	transform: translateY(20px);
-	opacity: 0%;
+    transform: translateY(20px);
+    opacity: 0%;
   }
   100% {
-	transform: translateY(0%);
-	opacity: 100%;
+    transform: translateY(0%);
+    opacity: 100%;
   }
 }
 
@@ -72,12 +72,12 @@
 
 @keyframes float-in-left {
   0% {
-	transform: translateX(10%);
-	opacity: 0%;
+    transform: translateX(10%);
+    opacity: 0%;
   }
   100% {
-	transform: translateX(0%);
-	opacity: 100%;
+    transform: translateX(0%);
+    opacity: 100%;
   }
 }
 
@@ -105,27 +105,26 @@
 
 @keyframes float-in-right {
   0% {
-	transform: translateX(-10%);
-	opacity: 0%;
+    transform: translateX(-10%);
+    opacity: 0%;
   }
   100% {
-	transform: translateX(0%);
-	opacity: 100%;
+    transform: translateX(0%);
+    opacity: 100%;
   }
 }
 
 @keyframes delayed-float-in-right {
   0% {
-	transform: translateX(-10%);
-	opacity: 0%;
+    transform: translateX(-10%);
+    opacity: 0%;
   }
   50% {
-	transform: translateX(-10%);
-	opacity: 0%;
+    transform: translateX(-10%);
+    opacity: 0%;
   }
   100% {
-	transform: translateX(0%);
-	opacity: 100%;
+    transform: translateX(0%);
+    opacity: 100%;
   }
 }
-
