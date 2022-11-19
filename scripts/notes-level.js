@@ -62,7 +62,7 @@ function display_item(items) {
 
   container.appendChild(div);
 
-  setTimeout(() => display_item(items), 300);
+  setTimeout(() => display_item(items), 100);
 }
 
 createIframe(

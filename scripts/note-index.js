@@ -55,9 +55,9 @@ function display_items(items, title) {
     container.appendChild(ol);
 
     display_item(item.items, ol, title);
-  }, 30);
+  }, 20);
 
-  setTimeout(() => display_items(items, title), 330 + 30 * item.items.length);
+  setTimeout(() => display_items(items, title), 280 + 20 * item.items.length);
 }
 
 function display_item(chapters, container, title) {
