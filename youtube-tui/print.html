@@ -173,9 +173,9 @@ env:
 </ul>
 <h3 id="what-it-doesnt-have"><a class="header" href="#what-it-doesnt-have">What it doesn't have</a></h3>
 <ul>
-<li>Next page button in pages (first priority)</li>
-<li>Lazy image loading (first priority)</li>
-<li>Vim-like commands (will implement)</li>
+<li>Vim-like commands (first priority)</li>
+<li>Command line args (first priority)</li>
+<li>Bootleg Vimscript? (will implement)</li>
 <li>Channel search (will implement)</li>
 <li>Channel videos sorting (will implement)</li>
 <li>Subscriptions (will implement)</li>
@@ -414,24 +414,47 @@ playlist:
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="keybindings-config"><a class="header" href="#keybindings-config">Keybindings config</a></h1>
 <p>The keybindings config binds each key to an action, or multiple keys for the same action. It can be found in <code>~/.config/youtube-tui/keybindings.yml</code>.</p>
 <h2 id="example-keybindings-config"><a class="header" href="#example-keybindings-config">Example keybindings config</a></h2>
-<pre><code class="language-yaml">Up:
-  0: MoveUp
+<pre><code class="language-yaml">'q':
+  0: Exit
 Down:
   0: MoveDown
+'r':
+  2: Reload
+Enter:
+  0: Select
+'l':
+  0: MoveRight
+Up:
+  0: MoveUp
+'j':
+  0: MoveDown
+End:
+  0: ClearHistory
 Right:
   0: MoveRight
+Backspace:
+  0: Back
+'h':
+  0: MoveLeft
+F5:
+  0: Reload
+'k':
+  0: MoveUp
+Esc:
+  0: Deselect
+Home:
+  0: FirstHistory
 Left:
   0: MoveLeft
   4: Back
-Esc:
-  0: Deselect
-Backspace:
-  0: Back
-Enter:
-  0: Select
 </code></pre>
 <h2 id="keys"><a class="header" href="#keys">Keys</a></h2>
-<p>Keys are the name of the keys that are pressed in the keyboard, all keys are avaliable <a href="https://docs.rs/crossterm/latest/crossterm/event/enum.KeyCode.html" target=_blank><em>here</em></a>.</p>
+<p>Keys can be:</p>
+<ul>
+<li>A single character (e.g. <code>'q'</code>)</li>
+<li>Named keys (e.g. <code>Up</code>, <code>Down</code>)</li>
+<li>Function keys (e.g. <code>F5</code>)</li>
+</ul>
 <h2 id="key-modifiers"><a class="header" href="#key-modifiers">Key modifiers</a></h2>
 <p>Key modifiers are the modifier keys that are pressed along with the actual key, for instance in <code>Ctrl + C</code> would have the modifier <code>Ctrl</code> and the key <code>C</code>.</p>
 <p>Each modifier has its own code, for instance <code>Shift</code> would be <code>1</code> and <code>Ctrl</code> would be <code>2</code>. The final modifier will be the <u>sum</u> of all modifier keys. (<code>Ctrl + Shift</code> would be a <code>3</code>).</p>
@@ -458,16 +481,20 @@ Enter:
 <h2 id="example-layout-config"><a class="header" href="#example-layout-config">Example layout config</a></h2>
 <pre><code class="language-yaml">main_menu:
   layout:
-  - !NonCenteredRow
+  - type: NonCenteredRow
+    items:
     - SearchBar
     - SearchFilters
-  - !CenteredRow
+  - type: CenteredRow
+    items:
     - Popular
     - Trending
     - History
-  - !NonCenteredRow
+  - type: NonCenteredRow
+    items:
     - ItemList
-  - !NonCenteredRow
+  - type: NonCenteredRow
+    items:
     - MessageBar
   message: Loading main menu...
 
@@ -511,10 +538,7 @@ colors:
   outline_selected: LightBlue
   outline_hover: LightRed
   outline_secondary: LightYellow
-  message_outline: !Rgb # todo: represent colours with hex values or `rgb(r,g,b)`
-  - 255
-  - 127
-  - 0
+  message_outline: '#FF7F00'
   message_error_outline: LightRed
   message_success_outline: LightGreen
   item_info:
@@ -525,22 +549,11 @@ colors:
     viewcount: LightYellow
     length: LightCyan
     published: LightMagenta
-    video_count: !Rgb
-    - 131
-    - 141
-    - 255
-    sub_count: !Rgb
-    - 101
-    - 255
-    - 186
-    likes: !Rgb
-    - 200
-    - 255
-    - 129
-    genre: !Rgb
-    - 255
-    - 121
-    - 215
+    video_count: '#838DFF'
+    sub_count: '#65FFBA'
+    likes: '#C8FF81'
+    genre: '#FF75D7'
+    page_turner: Gray
 </code></pre>
 <hr>
 <p>Below are the description of each of the fields:</p>
@@ -550,11 +563,11 @@ colors:
 <h3 id="literally-everything-else"><a class="header" href="#literally-everything-else">Literally everything else</a></h3>
 <p>Any colours, here are the 2 main represenations of colours, for more check out this page <a href="https://docs.rs/tui/latest/tui/style/enum.Color.html" target=_blank><em>here</em></a>.</p>
 <h4 id="terminal-colour"><a class="header" href="#terminal-colour">Terminal colour</a></h4>
-<p>This can be modified by the themes of your terminal.</p>
-<h4 id="rgb"><a class="header" href="#rgb">RGB</a></h4>
-<p>RGB colour values, requires TrueColour support in terminal (for instance Windows CMD cannot display RBG colours).</p>
+<p>This can be modified by the themes of your terminal (e.g. white, green, etc).</p>
+<h4 id="hex"><a class="header" href="#hex">Hex</a></h4>
+<p>Hex should be a string that starts with the <code>#</code> character, and can be from <code>000000</code> (black) to <code>FFFFFF</code> (white).</p>
 <blockquote>
-<p>Hex colour values to be implemented.</p>
+<p>RGB color values has been deprecated</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="default-search-options"><a class="header" href="#default-search-options">Default search options</a></h1>
 <p>The default search query/filters when launching the TUI, this can be found in <code>~/.config/youtube-tui/search.yml</code>, but should not be &quot;customised&quot; like how you would to a config file because it's just a configurable default value.</p>
@@ -575,21 +588,32 @@ filters:
 <p>How the search results are sorted.</p>
 <p><em>Accept: <code>Relevance</code>/<code>Rating</code>/<code>Date</code>/<code>Views</code></em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelogs"><a class="header" href="#changelogs">Changelogs</a></h1>
-<h2 id="v051"><a class="header" href="#v051">v0.5.1</a></h2>
+<h2 id="v052"><a class="header" href="#v052">v0.5.2</a></h2>
 <h4 id="added"><a class="header" href="#added">Added</a></h4>
+<ul>
+<li>Improved config files (including hex colour support)</li>
+<li>Page turners (next/prev page in search)</li>
+</ul>
+<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<ul>
+<li>Where the image and text are displaying in the same place, and the image is displayed over the text</li>
+</ul>
+<h3 id="v051"><a class="header" href="#v051">v0.5.1</a></h3>
+<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
 <ul>
 <li>Image lazy loading (will not rerender image if already rendered)</li>
 <li>Optional features that can be disabled</li>
 </ul>
 <h3 id="v050"><a class="header" href="#v050">v0.5.0</a></h3>
-<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
+<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
 <ul>
 <li>Entire TUI rewritten from scratch, now using the <a href="https://crates.io/crates/tui-additions" target=_blank><code>tui-additions</code></a> crate</li>
 <li>Sixels image support</li>
 <li>Improved config files</li>
 </ul>
+<hr>
 <h2 id="v044"><a class="header" href="#v044">v0.4.4</a></h2>
-<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
+<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
 <ul>
 <li>Added default select item for each page (can be changed in <code>layouts.yml</code>)</li>
 </ul>
@@ -600,7 +624,7 @@ filters:
 <li>Search options gray backgound + image covering popup</li>
 </ul>
 <h3 id="v043"><a class="header" href="#v043">v0.4.3</a></h3>
-<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
+<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
 <ul>
 <li>Refreshing page</li>
 <li>Key modifiers for key bindings</li>

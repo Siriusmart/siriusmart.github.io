@@ -145,16 +145,20 @@
 <h2 id="example-layout-config"><a class="header" href="#example-layout-config">Example layout config</a></h2>
 <pre><code class="language-yaml">main_menu:
   layout:
-  - !NonCenteredRow
+  - type: NonCenteredRow
+    items:
     - SearchBar
     - SearchFilters
-  - !CenteredRow
+  - type: CenteredRow
+    items:
     - Popular
     - Trending
     - History
-  - !NonCenteredRow
+  - type: NonCenteredRow
+    items:
     - ItemList
-  - !NonCenteredRow
+  - type: NonCenteredRow
+    items:
     - MessageBar
   message: Loading main menu...
 

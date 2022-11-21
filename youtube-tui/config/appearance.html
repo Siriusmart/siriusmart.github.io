@@ -153,10 +153,7 @@ colors:
   outline_selected: LightBlue
   outline_hover: LightRed
   outline_secondary: LightYellow
-  message_outline: !Rgb # todo: represent colours with hex values or `rgb(r,g,b)`
-  - 255
-  - 127
-  - 0
+  message_outline: '#FF7F00'
   message_error_outline: LightRed
   message_success_outline: LightGreen
   item_info:
@@ -167,22 +164,11 @@ colors:
     viewcount: LightYellow
     length: LightCyan
     published: LightMagenta
-    video_count: !Rgb
-    - 131
-    - 141
-    - 255
-    sub_count: !Rgb
-    - 101
-    - 255
-    - 186
-    likes: !Rgb
-    - 200
-    - 255
-    - 129
-    genre: !Rgb
-    - 255
-    - 121
-    - 215
+    video_count: '#838DFF'
+    sub_count: '#65FFBA'
+    likes: '#C8FF81'
+    genre: '#FF75D7'
+    page_turner: Gray
 </code></pre>
 <hr>
 <p>Below are the description of each of the fields:</p>
@@ -192,11 +178,11 @@ colors:
 <h3 id="literally-everything-else"><a class="header" href="#literally-everything-else">Literally everything else</a></h3>
 <p>Any colours, here are the 2 main represenations of colours, for more check out this page <a href="https://docs.rs/tui/latest/tui/style/enum.Color.html" target=_blank><em>here</em></a>.</p>
 <h4 id="terminal-colour"><a class="header" href="#terminal-colour">Terminal colour</a></h4>
-<p>This can be modified by the themes of your terminal.</p>
-<h4 id="rgb"><a class="header" href="#rgb">RGB</a></h4>
-<p>RGB colour values, requires TrueColour support in terminal (for instance Windows CMD cannot display RBG colours).</p>
+<p>This can be modified by the themes of your terminal (e.g. white, green, etc).</p>
+<h4 id="hex"><a class="header" href="#hex">Hex</a></h4>
+<p>Hex should be a string that starts with the <code>#</code> character, and can be from <code>000000</code> (black) to <code>FFFFFF</code> (white).</p>
 <blockquote>
-<p>Hex colour values to be implemented.</p>
+<p>RGB color values has been deprecated</p>
 </blockquote>
 
                     </main>
