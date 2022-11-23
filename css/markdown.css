@@ -19,17 +19,6 @@ body {
   font-kerning: normal;
 }
 
-@media (max-width: 600px) {
-  body {
-    font-size: 0.9em;
-    padding: 1em;
-  }
-
-  h1 {
-    font-size: 1.8em;
-  }
-}
-
 @media print {
   body {
     background-color: transparent;
@@ -164,15 +153,13 @@ code {
 }
 
 footer {
-  background-color: ;
   padding-bottom: 5px;
   padding-top: 20px;
-  overflow: none;
-  display: inline;
+  padding-left: calc(18em - 200px);
   align-items: center;
-  text-align: center;
   justify-self: center;
   position: fixed;
+  width: 100%;
   bottom: 0;
   background-image: linear-gradient(
     rgba(32, 34, 37, 0),
@@ -181,15 +168,18 @@ footer {
   );
 }
 
-@media screen and (min-width: 550px) {
-  footer {
-    min-width: calc(25em + 13vw);
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9em;
+    padding: 1em;
   }
-}
 
-@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
   footer {
-    min-width: 90vw;
+    padding-left: calc(50vw - 200px);
   }
 }
 
