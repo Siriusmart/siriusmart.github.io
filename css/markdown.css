@@ -6,6 +6,10 @@ html {
   background-color: #202225;
 }
 
+@font-face {
+  font-display: swap;
+}
+
 body {
   margin: 0 auto;
   max-width: 36em;

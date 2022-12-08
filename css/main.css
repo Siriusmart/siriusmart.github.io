@@ -4,6 +4,10 @@ button:hover {
   cursor: pointer;
 }
 
+@font-face {
+  font-display: swap;
+}
+
 body {
   color: white;
   background-color: #252525;

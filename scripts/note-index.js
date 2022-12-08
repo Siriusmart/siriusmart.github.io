@@ -57,7 +57,7 @@ function display_items(items, title) {
     display_item(item.items, ol, title);
   }, 20);
 
-  setTimeout(() => display_items(items, title), 280 + 20 * item.items.length);
+  setTimeout(() => display_items(items, title), 120 + 20 * item.items.length);
 }
 
 function display_item(chapters, container, title) {

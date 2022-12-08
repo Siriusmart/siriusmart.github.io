@@ -25,7 +25,7 @@ window.listeners.notes_level = ({ content: data }) => {
   levelLabel.classList.add("float-in-bottom");
   container.appendChild(levelLabel);
 
-  setTimeout(() => display_item(data.items), 500);
+  setTimeout(() => display_item(data.items), 200);
 };
 
 function display_item(items) {
