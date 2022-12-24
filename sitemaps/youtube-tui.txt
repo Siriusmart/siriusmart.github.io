@@ -1,0 +1,14 @@
+https://siriusmart.github.io/youtube-tui/404.html
+https://siriusmart.github.io/youtube-tui/basic_usage.html
+https://siriusmart.github.io/youtube-tui/changelogs.html
+https://siriusmart.github.io/youtube-tui/contributors.html
+https://siriusmart.github.io/youtube-tui
+https://siriusmart.github.io/youtube-tui/installation.html
+https://siriusmart.github.io/youtube-tui/print.html
+https://siriusmart.github.io/youtube-tui/config/appearance.html
+https://siriusmart.github.io/youtube-tui/config/commands.html
+https://siriusmart.github.io/youtube-tui/config/index.html
+https://siriusmart.github.io/youtube-tui/config/keybindings.html
+https://siriusmart.github.io/youtube-tui/config/main.html
+https://siriusmart.github.io/youtube-tui/config/pages.html
+https://siriusmart.github.io/youtube-tui/config/search.html
