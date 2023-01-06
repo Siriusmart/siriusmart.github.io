@@ -149,32 +149,42 @@
                     <main>
                         <h1 id="commands"><a class="header" href="#commands">Commands</a></h1>
 <p>Commands can be entered to the TUI by pressing the <code>:</code> key, the same as in Vim. Some commands have shorter <em>alternatives</em> that can be used instead.</p>
+<blockquote>
+<p>Env variables can be used by passing in as <code>${key}</code>, such as <code>:channel ${channel-id}</code> when in a video or playlist page.</p>
+</blockquote>
+<p><strong>Loadpage commands</strong> can also be used when launching, for example <code>youtube-tui loadpage popular</code> or <code>youtube-tui popular</code>.</p>
 <p>Below are the avaliable commands:</p>
 <h2 id="loadpage"><a class="header" href="#loadpage">Loadpage</a></h2>
 <p><code>loadpage</code> can be used to load a specific page.</p>
-<pre><code class="language-vim">:loadpage popular (alt: `popular`)
-:loadpage trending (alt: `trending`)
-:loadpage watchhistory (alt: `watchhistory`)
-:loadpage search [search query] (alt: `search [search query]`)
-:loadpage video [id or url] (alt: `video [id or url]`)
-:loadpage playlist [id or url] (alt: `playlist [id or url] `)
-:loadpage channel [id or url] (alt: `channel [id or url] `)
+<pre><code class="language-vim">loadpage popular (alt: `popular`)
+loadpage trending (alt: `trending`)
+loadpage watchhistory (alt: `watchhistory`)
+loadpage search [search query] (alt: `search [search query]`)
+loadpage video [id or url] (alt: `video [id or url]`)
+loadpage playlist [id or url] (alt: `playlist [id or url] `)
+loadpage channel [id or url] (alt: `channel [id or url] `)
 </code></pre>
 <h2 id="history"><a class="header" href="#history">History</a></h2>
 <p><code>history</code> is used to manage page history (<code>Backspace</code> equivalent).</p>
-<pre><code class="language-vim">:history back (alt: `back`)
-:history clear
+<pre><code class="language-vim">history back (alt: `back`)
+history clear
 </code></pre>
 <h2 id="utility"><a class="header" href="#utility">Utility</a></h2>
-<pre><code class="language-vim">:reload (alt `r`)
-:reload configs (alt `reload/r config/configs`)
-:flush
-:quit (alt `q`, `exit`, `x`)
+<pre><code class="language-vim">reload (alt `r`)
+reload configs (alt `reload/r config/configs`)
+flush
+quit (alt `q`, `exit`, `x`)
+run [command]
 </code></pre>
 <blockquote>
 <p>The <code>flush</code> command is used to run all tasks in queue immediately, this is usually done automatically.</p>
 <p>But for when tasks are stacked up in the <em>same</em> event loop and the order of which they are executed matters, this command can be used to force the already stacked up commands to be ran first.</p>
 </blockquote>
+<h2 id="text-commands"><a class="header" href="#text-commands">Text commands</a></h2>
+<p>Text commands generates a <em>text only response</em> without launching the TUI.</p>
+<pre><code class="language-vim">help
+version
+</code></pre>
 
                     </main>
 

@@ -152,7 +152,8 @@
 <h2 id="customisable"><a class="header" href="#customisable">Customisable</a></h2>
 <p>The YouTube TUI can be customised through config files, they are located in <code>~/.config/youtube-tui</code> and are in the YAML format.</p>
 <p>Here's an example of the config file:</p>
-<pre><code class="language-yaml">invidious_instance: https://vid.puffyan.us
+<pre><code class="language-yaml">mouse_support: true
+invidious_instance: https://vid.puffyan.us
 max_watch_history: 50
 allow_unicode: false
 images: Sixels
@@ -163,7 +164,6 @@ env:
   video-player: mpv
   youtube-downloader: yt-dlp
   terminal-emulator: konsole -e
-
 </code></pre>
 <p>Anything from layouts to colours and keybindings can be customised, more on that later.</p>
 <h2 id="dependency-free"><a class="header" href="#dependency-free">Dependency-free</a></h2>
@@ -185,12 +185,9 @@ env:
 </ul>
 <h3 id="what-it-doesnt-have"><a class="header" href="#what-it-doesnt-have">What it doesn't have</a></h3>
 <ul>
-<li>Command line args (first priority)</li>
-<li>Bootleg Vimscript? (will implement)</li>
+<li>Binding commands to keys (first priority)</li>
 <li>Channel search (will implement)</li>
-<li>Channel videos sorting (will implement)</li>
 <li>Subscriptions (will implement)</li>
-<li>Recommendations/comments (probably will not implement)</li>
 </ul>
 <h2 id="how-to-contribute"><a class="header" href="#how-to-contribute">How to contribute</a></h2>
 <p>You will need a <u>general knowledge</u> of the Rust programming language, and the ability to <em>understand my spaghetti</em>.</p>
@@ -216,10 +213,10 @@ env:
 <h2 id="aur-for-arch-linux-recommended"><a class="header" href="#aur-for-arch-linux-recommended">AUR for Arch Linux (recommended)</a></h2>
 <p>The YouTube TUI is avaliable in the AUR <a href="https://aur.archlinux.org/packages/youtube-tui-git" target=_blank><em>here</em></a>.</p>
 <p>Use an <a href="https://aur.archlinux.org" target=_blank>AUR</a> helper like <a href="https://aur.archlinux.org/packages/yay" target=_blank><code>yay</code></a> to install.</p>
-<pre><code class="language-sh">yay -S youtube-tui # replace `yay` with your AUR helper
+<pre><code class="language-sh">yay -S youtube-tui-git # replace `yay` with your AUR helper
+yay -S youtube-tui-full-bin # requires libsixel
+yay -S youtube-tui-nodefaults-bin
 </code></pre>
-<h2 id="download-a-compiled-binary"><a class="header" href="#download-a-compiled-binary">Download a compiled binary</a></h2>
-<p>Download the compiled binary for your system from <a href="https://github.com/Siriusmart/youtube-tui/releases" target=_blank><em>GitHub releases</em></a> and manually place it in <em>a folder</em> (e.g. <code>~/.cargo/bin/</code> or <code>/bin/</code>)</p>
 <h2 id="build-from-source"><a class="header" href="#build-from-source">Build from source</a></h2>
 <p>Use the <code>cargo</code> command:</p>
 <pre><code class="language-sh">cargo install --git https://github.com/siriusmart/youtube-tui
@@ -306,32 +303,42 @@ cargo install youtube-tui --all-features # install with all features (even if no
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="commands"><a class="header" href="#commands">Commands</a></h1>
 <p>Commands can be entered to the TUI by pressing the <code>:</code> key, the same as in Vim. Some commands have shorter <em>alternatives</em> that can be used instead.</p>
+<blockquote>
+<p>Env variables can be used by passing in as <code>${key}</code>, such as <code>:channel ${channel-id}</code> when in a video or playlist page.</p>
+</blockquote>
+<p><strong>Loadpage commands</strong> can also be used when launching, for example <code>youtube-tui loadpage popular</code> or <code>youtube-tui popular</code>.</p>
 <p>Below are the avaliable commands:</p>
 <h2 id="loadpage"><a class="header" href="#loadpage">Loadpage</a></h2>
 <p><code>loadpage</code> can be used to load a specific page.</p>
-<pre><code class="language-vim">:loadpage popular (alt: `popular`)
-:loadpage trending (alt: `trending`)
-:loadpage watchhistory (alt: `watchhistory`)
-:loadpage search [search query] (alt: `search [search query]`)
-:loadpage video [id or url] (alt: `video [id or url]`)
-:loadpage playlist [id or url] (alt: `playlist [id or url] `)
-:loadpage channel [id or url] (alt: `channel [id or url] `)
+<pre><code class="language-vim">loadpage popular (alt: `popular`)
+loadpage trending (alt: `trending`)
+loadpage watchhistory (alt: `watchhistory`)
+loadpage search [search query] (alt: `search [search query]`)
+loadpage video [id or url] (alt: `video [id or url]`)
+loadpage playlist [id or url] (alt: `playlist [id or url] `)
+loadpage channel [id or url] (alt: `channel [id or url] `)
 </code></pre>
 <h2 id="history"><a class="header" href="#history">History</a></h2>
 <p><code>history</code> is used to manage page history (<code>Backspace</code> equivalent).</p>
-<pre><code class="language-vim">:history back (alt: `back`)
-:history clear
+<pre><code class="language-vim">history back (alt: `back`)
+history clear
 </code></pre>
 <h2 id="utility"><a class="header" href="#utility">Utility</a></h2>
-<pre><code class="language-vim">:reload (alt `r`)
-:reload configs (alt `reload/r config/configs`)
-:flush
-:quit (alt `q`, `exit`, `x`)
+<pre><code class="language-vim">reload (alt `r`)
+reload configs (alt `reload/r config/configs`)
+flush
+quit (alt `q`, `exit`, `x`)
+run [command]
 </code></pre>
 <blockquote>
 <p>The <code>flush</code> command is used to run all tasks in queue immediately, this is usually done automatically.</p>
 <p>But for when tasks are stacked up in the <em>same</em> event loop and the order of which they are executed matters, this command can be used to force the already stacked up commands to be ran first.</p>
 </blockquote>
+<h2 id="text-commands"><a class="header" href="#text-commands">Text commands</a></h2>
+<p>Text commands generates a <em>text only response</em> without launching the TUI.</p>
+<pre><code class="language-vim">help
+version
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="config-files"><a class="header" href="#config-files">Config files</a></h1>
 <p>Config files are located in <code>~/.config/youtube-tui</code>, modifying them changes the behavior of the TUI accordingly.</p>
 <p>Config files will be generated if not present, backed up and regenerated if there is an issue reading it (most likely caused by changes made by user or updates).</p>
@@ -416,7 +423,7 @@ env:
 - Play video: ${video-player} ${embed-url}
 - Play audio: ${terminal-emulator} ${video-player} ${embed-url} --no-video
 - Play audio (loop): ${terminal-emulator} ${video-player} ${embed-url} --no-video --loop-file=inf
-- View channel: :channel ${channel_id}
+- View channel: :channel ${channel-id}
 - Open in browser: ${browser} ${url}
 - Download video (webm): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${embed-url}
 - Download audio (opus): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${embed-url} -x
@@ -427,7 +434,7 @@ playlist:
 - Play all audio: ${terminal-emulator} ${video-player} ${all-videos} --no-video
 - Shuffle play all audio: ${terminal-emulator} ${video-player} ${all-videos} --no-video --shuffle
 - Shuffle play all audio (loop): ${terminal-emulator} ${video-player} ${all-videos} --no-video --shuffle --loop-playlist=inf
-- View channel: :channel ${channel_id}
+- View channel: :channel ${channel-id}
 - Open in browser: ${browser} ${url}
 - Download all video (webm): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${all-videos}
 - Download all audio (opus): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${all-videos} -x
@@ -471,6 +478,8 @@ playlist:
 <p>Does not include custom env set in <code>main.yml</code>.</p>
 <div class="table-wrapper"><table><thead><tr><th>Name</th><th>Page</th><th>Value</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>video &amp; playlist</td><td>String url to the web page</td></tr>
+<tr><td><code>id</code></td><td>video &amp; playlist</td><td>String id of the video or playlist</td></tr>
+<tr><td><code>channel-id</code></td><td>video &amp; playlist</td><td>String id of the channel</td></tr>
 <tr><td><code>embed-url</code></td><td>video</td><td>String url to the embed video (required to play video using mpv from Invidious)</td></tr>
 <tr><td><code>all-videos</code></td><td>playlist</td><td>String url<em><strong>s</strong></em> separated by space to all embed videos in a playlist</td></tr>
 <tr><td><code>provider</code></td><td>video &amp; playlist</td><td>To display the current provider, is the only env that can be displayed in the label, and can only be used when <code>%switch-provider%</code> is the command</td></tr>
@@ -680,8 +689,19 @@ filters:
 <p>Todo...</p>
 <p><img src="./images/rows.svg" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelogs"><a class="header" href="#changelogs">Changelogs</a></h1>
-<h2 id="v060"><a class="header" href="#v060">v0.6.0</a></h2>
+<h2 id="v061"><a class="header" href="#v061">v0.6.1</a></h2>
 <h3 id="added"><a class="header" href="#added">Added</a></h3>
+<ul>
+<li>Rework of the env system, now using environment variables provided by the OS as opposed to implmenting own version of env</li>
+<li>Ability to use envs in command mode</li>
+<li>Launch commands (including <code>youtube-tui help</code>)</li>
+</ul>
+<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<ul>
+<li>Screen blinking when pressing up arrow on the first item in playlist page, videos view</li>
+</ul>
+<h3 id="v060"><a class="header" href="#v060">v0.6.0</a></h3>
+<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
 <ul>
 <li>Mouse support</li>
 <li>Vim-like commands</li>
@@ -689,28 +709,28 @@ filters:
 </ul>
 <hr>
 <h2 id="v053"><a class="header" href="#v053">v0.5.3</a></h2>
-<h4 id="fixed"><a class="header" href="#fixed">Fixed</a></h4>
+<h4 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h4>
 <ul>
 <li>Search bar could not handle non English characters (e.g. <a href="https://github.com/Siriusmart/youtube-tui/issues/14" target=_blank>Russian</a>)</li>
 </ul>
 <h3 id="v052"><a class="header" href="#v052">v0.5.2</a></h3>
-<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
+<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
 <ul>
 <li>Improved config files (including hex colour support)</li>
 <li>Page turners (next/prev page in search)</li>
 </ul>
-<h3 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h3>
+<h3 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h3>
 <ul>
 <li>Where the image and text are displaying in the same place, and the image is displayed over the text</li>
 </ul>
 <h3 id="v051"><a class="header" href="#v051">v0.5.1</a></h3>
-<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
+<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
 <ul>
 <li>Image lazy loading (will not rerender image if already rendered)</li>
 <li>Optional features that can be disabled</li>
 </ul>
 <h3 id="v050"><a class="header" href="#v050">v0.5.0</a></h3>
-<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
+<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
 <ul>
 <li>Entire TUI rewritten from scratch, now using the <a href="https://crates.io/crates/tui-additions" target=_blank><code>tui-additions</code></a> crate</li>
 <li>Sixels image support</li>
@@ -718,7 +738,7 @@ filters:
 </ul>
 <hr>
 <h2 id="v044"><a class="header" href="#v044">v0.4.4</a></h2>
-<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
+<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
 <ul>
 <li>Added default select item for each page (can be changed in <code>layouts.yml</code>)</li>
 </ul>
@@ -729,7 +749,7 @@ filters:
 <li>Search options gray backgound + image covering popup</li>
 </ul>
 <h3 id="v043"><a class="header" href="#v043">v0.4.3</a></h3>
-<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
+<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
 <ul>
 <li>Refreshing page</li>
 <li>Key modifiers for key bindings</li>

@@ -162,10 +162,10 @@
 <h2 id="aur-for-arch-linux-recommended"><a class="header" href="#aur-for-arch-linux-recommended">AUR for Arch Linux (recommended)</a></h2>
 <p>The YouTube TUI is avaliable in the AUR <a href="https://aur.archlinux.org/packages/youtube-tui-git" target=_blank><em>here</em></a>.</p>
 <p>Use an <a href="https://aur.archlinux.org" target=_blank>AUR</a> helper like <a href="https://aur.archlinux.org/packages/yay" target=_blank><code>yay</code></a> to install.</p>
-<pre><code class="language-sh">yay -S youtube-tui # replace `yay` with your AUR helper
+<pre><code class="language-sh">yay -S youtube-tui-git # replace `yay` with your AUR helper
+yay -S youtube-tui-full-bin # requires libsixel
+yay -S youtube-tui-nodefaults-bin
 </code></pre>
-<h2 id="download-a-compiled-binary"><a class="header" href="#download-a-compiled-binary">Download a compiled binary</a></h2>
-<p>Download the compiled binary for your system from <a href="https://github.com/Siriusmart/youtube-tui/releases" target=_blank><em>GitHub releases</em></a> and manually place it in <em>a folder</em> (e.g. <code>~/.cargo/bin/</code> or <code>/bin/</code>)</p>
 <h2 id="build-from-source"><a class="header" href="#build-from-source">Build from source</a></h2>
 <p>Use the <code>cargo</code> command:</p>
 <pre><code class="language-sh">cargo install --git https://github.com/siriusmart/youtube-tui

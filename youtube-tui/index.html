@@ -154,7 +154,8 @@
 <h2 id="customisable"><a class="header" href="#customisable">Customisable</a></h2>
 <p>The YouTube TUI can be customised through config files, they are located in <code>~/.config/youtube-tui</code> and are in the YAML format.</p>
 <p>Here's an example of the config file:</p>
-<pre><code class="language-yaml">invidious_instance: https://vid.puffyan.us
+<pre><code class="language-yaml">mouse_support: true
+invidious_instance: https://vid.puffyan.us
 max_watch_history: 50
 allow_unicode: false
 images: Sixels
@@ -165,7 +166,6 @@ env:
   video-player: mpv
   youtube-downloader: yt-dlp
   terminal-emulator: konsole -e
-
 </code></pre>
 <p>Anything from layouts to colours and keybindings can be customised, more on that later.</p>
 <h2 id="dependency-free"><a class="header" href="#dependency-free">Dependency-free</a></h2>
@@ -187,12 +187,9 @@ env:
 </ul>
 <h3 id="what-it-doesnt-have"><a class="header" href="#what-it-doesnt-have">What it doesn't have</a></h3>
 <ul>
-<li>Command line args (first priority)</li>
-<li>Bootleg Vimscript? (will implement)</li>
+<li>Binding commands to keys (first priority)</li>
 <li>Channel search (will implement)</li>
-<li>Channel videos sorting (will implement)</li>
 <li>Subscriptions (will implement)</li>
-<li>Recommendations/comments (probably will not implement)</li>
 </ul>
 <h2 id="how-to-contribute"><a class="header" href="#how-to-contribute">How to contribute</a></h2>
 <p>You will need a <u>general knowledge</u> of the Rust programming language, and the ability to <em>understand my spaghetti</em>.</p>
