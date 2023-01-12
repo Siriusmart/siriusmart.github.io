@@ -12,6 +12,7 @@ let subject = search_params.get("subject");
 window.listeners.note_index = ({ content: data }) => {
   try {
     data = JSON.parse(data);
+    localStorage[`notes-index-${level}-${subject}`] = JSON.stringify(data);
   } catch (e) {
     container.innerText = "Error loading index.";
     return;
@@ -71,7 +72,7 @@ function display_item(chapters, container, title) {
   button.innerText = chapter.title;
   button.onclick = () =>
     exit(
-      `./note.html?level=${level}&subject=${subject}&id=${chapter.id}&title=${chapter.title} - ${title}`
+      `./note.html?level=${level}&subject=${subject}&id=${chapter.id}`
     );
   let li = document.createElement("li");
   li.appendChild(button);
