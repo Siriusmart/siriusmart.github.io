@@ -45,7 +45,7 @@ function decodeEntity(inputStr) {
 window.listeners = {};
 
 window.addEventListener("message", ({ data: message }) => {
-  document.getElementById(message['iframe-id']).remove();
+  document.getElementById(message["iframe-id"]).remove();
   if (
     message.type !== undefined &&
     typeof listeners[message.type] === "function"

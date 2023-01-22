@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" class="sidebar-visible no-js ayu">
+  <head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8" />
+    <title>A Guide to BitScript</title>
+    <meta name="robots" content="noindex" />
+
+    <!-- Custom HTML head -->
+
+    <meta name="description" content="A short guide to writing BitScript." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/chrome.css" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="FontAwesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="highlight.css" />
+    <link rel="stylesheet" href="tomorrow-night.css" />
+    <link rel="stylesheet" href="ayu-highlight.css" />
+
+    <!-- Custom theme stylesheets -->
+  </head>
+  <body>
+    <!-- Provide site root to javascript -->
+    <script>
+      var path_to_root = "";
+      var default_theme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "ayu"
+        : "ayu";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script>
+      try {
+        var theme = localStorage.getItem("mdbook-theme");
+        var sidebar = localStorage.getItem("mdbook-sidebar");
+
+        if (theme.startsWith('"') && theme.endsWith('"')) {
+          localStorage.setItem(
+            "mdbook-theme",
+            theme.slice(1, theme.length - 1)
+          );
+        }
+
+        if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+          localStorage.setItem(
+            "mdbook-sidebar",
+            sidebar.slice(1, sidebar.length - 1)
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script>
+      var theme;
+      try {
+        theme = localStorage.getItem("mdbook-theme");
+      } catch (e) {}
+      if (theme === null || theme === undefined) {
+        theme = default_theme;
+      }
+      var html = document.querySelector("html");
+      html.classList.remove("no-js");
+      html.classList.remove("ayu");
+      html.classList.add(theme);
+      html.classList.add("js");
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script>
+      var html = document.querySelector("html");
+      var sidebar = "hidden";
+      if (document.body.clientWidth >= 1080) {
+        try {
+          sidebar = localStorage.getItem("mdbook-sidebar");
+        } catch (e) {}
+        sidebar = sidebar || "visible";
+      }
+      html.classList.remove("sidebar-visible");
+      html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+      <div class="sidebar-scrollbox">
+        <ol class="chapter">
+          <li class="chapter-item expanded">
+            <a href="overview.html"
+              ><strong aria-hidden="true">1.</strong> Overview</a
+            >
+          </li>
+          <li class="chapter-item expanded">
+            <a href="quickstart.html"
+              ><strong aria-hidden="true">2.</strong> Quick start</a
+            >
+          </li>
+          <li class="chapter-item expanded affix"></li>
+          <li class="part-title">BitScript</li>
+          <li class="chapter-item expanded">
+            <a href="syntax/syntax.html"
+              ><strong aria-hidden="true">3.</strong> Syntax</a
+            >
+          </li>
+          <li>
+            <ol class="section">
+              <li class="chapter-item expanded">
+                <a href="syntax/display.html"
+                  ><strong aria-hidden="true">3.1.</strong> Display</a
+                >
+              </li>
+              <li class="chapter-item expanded">
+                <a href="syntax/variables.html"
+                  ><strong aria-hidden="true">3.2.</strong> Variables</a
+                >
+              </li>
+              <li class="chapter-item expanded">
+                <a href="syntax/gates.html"
+                  ><strong aria-hidden="true">3.3.</strong> Gates</a
+                >
+              </li>
+              <li class="chapter-item expanded">
+                <a href="syntax/input.html"
+                  ><strong aria-hidden="true">3.4.</strong> Input</a
+                >
+              </li>
+              <li class="chapter-item expanded">
+                <a href="syntax/casting.html"
+                  ><strong aria-hidden="true">3.5.</strong> Casting</a
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="chapter-item expanded"></li>
+          <li class="part-title">Bitr</li>
+          <li class="chapter-item expanded">
+            <a href="bitr.html"
+              ><strong aria-hidden="true">4.</strong> Commands</a
+            >
+          </li>
+          <li class="chapter-item expanded">
+            <a href="changelog.html"
+              ><strong aria-hidden="true">5.</strong> Changelog</a
+            >
+          </li>
+          <li class="chapter-item expanded">
+            <a href="contributing.html"
+              ><strong aria-hidden="true">6.</strong> Contributing</a
+            >
+          </li>
+        </ol>
+      </div>
+      <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+      <div class="page">
+        <div id="menu-bar-hover-placeholder"></div>
+        <div id="menu-bar" class="menu-bar sticky bordered">
+          <div class="left-buttons">
+            <button
+              id="sidebar-toggle"
+              class="icon-button"
+              type="button"
+              title="Toggle Table of Contents"
+              aria-label="Toggle Table of Contents"
+              aria-controls="sidebar"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+            <button
+              id="theme-toggle"
+              class="icon-button"
+              type="button"
+              title="Change theme"
+              aria-label="Change theme"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="theme-list"
+            >
+              <i class="fa fa-paint-brush"></i>
+            </button>
+            <ul
+              id="theme-list"
+              class="theme-popup"
+              aria-label="Themes"
+              role="menu"
+            >
+              <li role="none">
+                <button role="menuitem" class="theme" id="light">Light</button>
+              </li>
+              <li role="none">
+                <button role="menuitem" class="theme" id="rust">Rust</button>
+              </li>
+              <li role="none">
+                <button role="menuitem" class="theme" id="coal">Coal</button>
+              </li>
+              <li role="none">
+                <button role="menuitem" class="theme" id="navy">Navy</button>
+              </li>
+              <li role="none">
+                <button role="menuitem" class="theme" id="ayu">Ayu</button>
+              </li>
+            </ul>
+            <button
+              id="search-toggle"
+              class="icon-button"
+              type="button"
+              title="Search. (Shortkey: s)"
+              aria-label="Toggle Searchbar"
+              aria-expanded="false"
+              aria-keyshortcuts="S"
+              aria-controls="searchbar"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+
+          <h1 class="menu-title">A Guide to BitScript</h1>
+
+          <div class="right-buttons">
+            <a
+              href="print.html"
+              title="Print this book"
+              aria-label="Print this book"
+            >
+              <i id="print-button" class="fa fa-print"></i>
+            </a>
+            <a
+              href="https://github.com/siriusmart/bitr/tree/master/docs"
+              title="Git repository"
+              aria-label="Git repository"
+            >
+              <i id="git-repository-button" class="fa fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div id="search-wrapper" class="hidden">
+          <form id="searchbar-outer" class="searchbar-outer">
+            <input
+              type="search"
+              id="searchbar"
+              name="searchbar"
+              placeholder="Search this book ..."
+              aria-controls="searchresults-outer"
+              aria-describedby="searchresults-header"
+            />
+          </form>
+          <div id="searchresults-outer" class="searchresults-outer hidden">
+            <div id="searchresults-header" class="searchresults-header"></div>
+            <ul id="searchresults"></ul>
+          </div>
+        </div>
+
+        <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+        <script>
+          document
+            .getElementById("sidebar-toggle")
+            .setAttribute("aria-expanded", sidebar === "visible");
+          document
+            .getElementById("sidebar")
+            .setAttribute("aria-hidden", sidebar !== "visible");
+          Array.from(document.querySelectorAll("#sidebar a")).forEach(function (
+            link
+          ) {
+            link.setAttribute("tabIndex", sidebar === "visible" ? 0 : -1);
+          });
+        </script>
+
+        <div id="content" class="content">
+          <main>
+            <h1 id="overview">
+              <a class="header" href="#overview">Overview</a>
+            </h1>
+            <p>
+              BitScript is like
+              <em><strong>pseudocode to logic gates</strong></em
+              >, similar to how pseudocode is to logic. It can be used to test
+              series of logic gates, as it
+              <em>closely mimics how logic gates work</em>.
+            </p>
+            <p><img src="./images/adder-showcase.png" alt="" /></p>
+            <p>
+              <strong>Bitr</strong> is a minimal BitScript interpreter written
+              in Rust, it does not include any external dependencies.
+            </p>
+            <p>
+              (Stands for <em>bit-runner</em>, is pronounced as
+              <em>bitter</em>.)
+            </p>
+            <h2 id="use-case">
+              <a class="header" href="#use-case">Use case</a>
+            </h2>
+            <p>
+              Designing and testing logic gate systems are usually done on paper
+              or with
+              <a
+                href="https://creately.com/lp/logic-gates-software/"
+                target="_blank"
+                ><em>obscure softwares</em></a
+              >
+              that often looks like a toy, both of which are far from ideal.
+            </p>
+            <p>
+              BitScript is an
+              <strong>interpreted language for designing logic gates</strong>,
+              makes <em>testing</em> and <em>sharing</em> designs a lot easier.
+            </p>
+            <p>
+              Examples of what you can do with BitScript can be found in
+              <a
+                href="https://github.com/siriusmart/bitr/tree/master/examples"
+                target="_blank"
+                >examples</a
+              >.
+            </p>
+            <h2 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h2>
+            <ul>
+              <li>
+                <input disabled="" type="checkbox" checked="" /> Assigning
+                values to a single cell, whole array and range or cells.
+              </li>
+              <li>
+                <input disabled="" type="checkbox" checked="" /> Common logic
+                gates.
+              </li>
+              <li>
+                <input disabled="" type="checkbox" checked="" /> Input with base
+                8, 10 and 16 numbers.
+              </li>
+              <li>
+                <input disabled="" type="checkbox" /> Goto, label, and if
+                statements.
+              </li>
+              <li>
+                <input disabled="" type="checkbox" /> Reusable components.
+              </li>
+              <li>
+                <input disabled="" type="checkbox" /> Unicode characters from
+                binary.
+              </li>
+              <li>
+                <input disabled="" type="checkbox" /> Browser interpreter with
+                Web Assembly.
+              </li>
+              <li>
+                <input disabled="" type="checkbox" /> Convery BitScript into a
+                diagram of logic gates.
+              </li>
+            </ul>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="quick-start">
+              <a class="header" href="#quick-start">Quick start</a>
+            </h1>
+            <p>
+              Install bitr from
+              <a href="https://crates.io/crates/bitr" target="_blank"
+                >crates.io</a
+              >
+              using the command below, or
+              <a
+                href="https://github.com/siriusmart/bitr/releases"
+                target="_blank"
+                >download a prebuilt binary</a
+              >.
+            </p>
+            <p>
+              Make sure
+              <a href="https://www.rust-lang.org/tools/install" target="_blank"
+                ><code>cargo</code></a
+              >
+              is present in your system.
+            </p>
+            <pre><code class="language-sh">cargo install bitr
+</code></pre>
+            <p>To confirm it is installed, run <code>bitr</code>.</p>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="syntax"><a class="header" href="#syntax">Syntax</a></h1>
+            <p>
+              This section is the guide to writing BitScript. It also act as the
+              documentation of BitScript, so if you are just searching for a
+              specific syntax, use the search button above.
+            </p>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="hello-world">
+              <a class="header" href="#hello-world">Hello world</a>
+            </h1>
+            <p>
+              To display the text &quot;Hello world&quot;, create a file
+              <code>hello_world.bs</code>.
+            </p>
+            <pre><code class="language-sh"># hello_world.bs
+
+# this is a comment
+
+disp Hello world\n # disp [string]
+</code></pre>
+            <p>
+              Save the file and run <code>bitr display</code>. Alternatively,
+              you can run it in the repl, start the repl with <code>bitr</code>.
+            </p>
+            <h2 id="debug"><a class="header" href="#debug">Debug</a></h2>
+            <p><code>dbg</code> display values with no formatting.</p>
+            <pre><code class="language-sh">dbg 1 # 1
+dbg AND(1, 0) # 0
+dbg NOT(11001101) # 00110010
+dbg DEN(1111) # 15, DEN for denary (base 10)
+</code></pre>
+            <h2 id="display"><a class="header" href="#display">Display</a></h2>
+            <p>
+              <code>disp</code> display strings with formatting arguments. Use
+              singe quotes (<code>''</code>) to preserve leading/trailing
+              spaces, and curly braces (<code>{}</code>) for values.
+            </p>
+            <pre><code class="language-sh">disp This is a string.\n # This is a string.
+disp 'Enter a value: ' # Enter a value: 
+disp 1 and 1 is {AND(1, 1)} # 1 and 1 is 1
+</code></pre>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="variables">
+              <a class="header" href="#variables">Variables</a>
+            </h1>
+            <p>
+              There are no data types in BitScript, because all data are stored
+              in <em>1d array of bits</em>.
+            </p>
+            <h2 id="declare"><a class="header" href="#declare">Declare</a></h2>
+            <p>
+              <code>dclr</code> is used declare variables, the size (length) of
+              variables cannot be changed once created, and variable names
+              <em>can only contain alphabet and underscores</em>.
+            </p>
+            <pre><code class="language-sh">dclr first_var 4 # creates a variable of length 4
+dclr another_var 4 1 # creates a variable of length 4, initialise it with 1s
+</code></pre>
+            <h2 id="assigning-to-variables">
+              <a class="header" href="#assigning-to-variables"
+                >Assigning to variables</a
+              >
+            </h2>
+            <p>
+              Variables can be displayed <em>as a whole</em>,
+              <em>individual cells</em> or <em>ranges</em>.
+            </p>
+            <pre><code class="language-sh">first_var = another_var # sets first_var to 1111
+first_var[0] = 0 # sets the least significant bit to 0, first_var is now 1110
+first_var[2..4] = 00 # sets the 2-3rd least significant bit to 00, first_var is now 0010
+first_var[..] = 0 # ranges can be unbounded, in this case it sets first_var to 0000
+</code></pre>
+            <p>
+              Variables can also be used as index for another variable, for
+              example.
+            </p>
+            <pre><code class="language-sh">first_var[..DEN(11)] = another_var[1..] # denary of `11` is 3
+first_var[AND(1, 0)] = 2
+</code></pre>
+            <h2 id="displaying-variables">
+              <a class="header" href="#displaying-variables"
+                >Displaying variables</a
+              >
+            </h2>
+            <p>
+              In the same sense that it is assigned, it can be displayed the
+              same way with <code>dbg</code> and <code>disp</code>.
+            </p>
+            <pre><code class="language-sh">dbg another_var # 0000
+dbg another_var[0] # 0
+dbg another_var[NOT(0)..] # 000
+
+disp another_var is {another_var}
+disp the least significant bit of another_var is {another_var[0]}
+disp the other 3 bits are {another_var[NOT(0)..]}
+</code></pre>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="gates"><a class="header" href="#gates">Gates</a></h1>
+            <p>
+              Logic gates are the only way to process variables in BitScript,
+              and that's the entire point.
+            </p>
+            <pre><code class="language-sh">dbg NOT(0) # 1
+dbg AND(1, 0) # 0
+dbg OR(1, 0) # 1
+dbg NOR(1, 0) # 0
+dbg NAND(1, 0) # 1
+dbg XOR(1, 0) # 1
+dbg XNOR(1, 0) # 0
+</code></pre>
+            <h2 id="short-hand-expression">
+              <a class="header" href="#short-hand-expression"
+                >Short hand expression</a
+              >
+            </h2>
+            <pre><code class="language-sh">dbg NOT(1101) # 0010, same as NOT(1, 1, 0, 1)
+dbg AND(1101) # 0, same as AND(1, AND(1, AND(0, 1)))
+dbg OR(1101) # 1, same as OR(1, OR(1, OR(0, 1)))
+dbg NOR(1101) # 0, same as NOR(1, NOR(1, NOR(0, 1)))
+dbg NAND(1101) # 1, same as NAND(1, NAND(1, NAND(0, 1)))
+dbg XOR(1101) # 1, same as XOR(1, XOR(1, XOR(0, 1)))
+dbg XNOR(1101) # 0, same as XNOR(1, XNOR(1, XNOR(0, 1)))
+</code></pre>
+            <blockquote>
+              <p>
+                Single values, whole arrays, and ranges can be used in gates.
+              </p>
+            </blockquote>
+            <p>In conclusion, this is how each gate behaves.</p>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Gate</th>
+                    <th>Behavior</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>NOT</code></td>
+                    <td>Flips all bits to its opposite.</td>
+                  </tr>
+                  <tr>
+                    <td><code>AND</code></td>
+                    <td>
+                      Only returns <code>1</code> if all bits are
+                      <code>1</code>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>OR</code></td>
+                    <td>
+                      Returns <code>1</code> if any of the bit is
+                      <code>1</code>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>NOR</code></td>
+                    <td><code>NOT(OR)</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>NAND</code></td>
+                    <td><code>NOT(AND)</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>XOR</code></td>
+                    <td>
+                      Returns <code>1</code> if there is an
+                      <em>odd number</em> of <code>1</code>s.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>XNOR</code></td>
+                    <td>
+                      Returns <code>1</code> if there is an
+                      <em>even number</em> of <code>1</code>s.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="input"><a class="header" href="#input">Input</a></h1>
+            <p>BitScript can take input from stdin.</p>
+            <pre><code class="language-sh">dclr user_input 4
+
+disp 'Enter a 4 bit number: '
+inpt user_input
+disp You have entered: {user_input}
+</code></pre>
+            <p>
+              In this example, if the user enters <code>1011</code>, then the
+              program will tell the user that he entered <code>1011</code>.
+              Simple as that.
+            </p>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="casting"><a class="header" href="#casting">Casting</a></h1>
+            <p>
+              Since there is only one datatype in BitScript, casting isn't
+              really a thing.
+            </p>
+            <p>
+              However, what <em>is</em> a possible is accepting inputs of octal,
+              denary, and hexidecimal numbers. And opposite to that - displaying
+              variables in that format.
+            </p>
+            <h2 id="input-casting">
+              <a class="header" href="#input-casting">Input casting</a>
+            </h2>
+            <pre><code class="language-sh">dclr store 0 # decalre a dummy variable
+
+inpt store # now accepting only binary numbers
+inpt o store # now accepting only octal numbers
+inpt d store # now accepting only denary numbers
+inpt h store # now accepting only hexidecimal numbers
+</code></pre>
+            <h2 id="output-casting">
+              <a class="header" href="#output-casting">Output casting</a>
+            </h2>
+            <pre><code class="language-sh">dbg 1100 # 1100
+dbg OCT(1100) # 14
+dbg DEN(1100) # 12
+dbg HEX(1100) # C
+</code></pre>
+            <h2 id="assign-casting">
+              <a class="header" href="#assign-casting">Assign casting</a>
+            </h2>
+            <pre><code class="language-sh">dclr store 0
+
+store = 1100 # 1100
+store =o 14 # 1100
+store =d 12 # 1100
+store =h C # 1100
+</code></pre>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="commands">
+              <a class="header" href="#commands">Commands</a>
+            </h1>
+            <h2 id="repl"><a class="header" href="#repl">Repl</a></h2>
+            <p>
+              Running <code>bitr</code> without any arguments will start the
+              repl, all variables declared in the repl will be remembered until
+              the repl ends.
+            </p>
+            <pre><code class="language-sh">bitr # launches the repl
+</code></pre>
+            <h2 id="run-file">
+              <a class="header" href="#run-file">Run file</a>
+            </h2>
+            <p>
+              To run a file, put the file name (with or without
+              <code>.bs</code> extension) as the first argument.
+            </p>
+            <pre><code class="language-sh">bitr [file name].bs # runs [file name].bs
+bitr [file name] # the `.bs` extension is not required
+</code></pre>
+            <h2 id="informational">
+              <a class="header" href="#informational">Informational</a>
+            </h2>
+            <p>
+              Informational commands prints out information and does nothing
+              else.
+            </p>
+            <pre><code class="language-sh">bitr help # displays the help message
+bitr version # displays the version of bitr installed
+</code></pre>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="changelog">
+              <a class="header" href="#changelog">Changelog</a>
+            </h1>
+            <h2 id="v010"><a class="header" href="#v010">v0.1.0</a></h2>
+            <h3 id="added"><a class="header" href="#added">Added</a></h3>
+            <ul>
+              <li>Initial commit</li>
+            </ul>
+            <div style="break-before: page; page-break-before: always"></div>
+            <h1 id="contributing">
+              <a class="header" href="#contributing">Contributing</a>
+            </h1>
+            <p>
+              If you are able and like the project so far, consider contributing
+              through one of the following ways.
+            </p>
+            <h2 id="examples">
+              <a class="header" href="#examples">Examples</a>
+            </h2>
+            <p>
+              Add your code to
+              <a
+                href="https://github.com/siriusmart/bitr/tree/master/examples"
+                target="_blank"
+                >examples</a
+              >, for that you can either
+              <a
+                href="https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"
+                target="_blank"
+                ><em>create a pull request</em></a
+              >
+              or <em>contact me</em> through any ways (e.g. open an issue).
+            </p>
+            <h2 id="docs"><a class="header" href="#docs">Docs</a></h2>
+            <p>
+              If you've noticed any undocumented behavior that seems resonable,
+              you can either <em>open a pull request</em> with the docs edited,
+              or <em>contact me</em>. If you think it's a bug, open an issue.
+            </p>
+            <h2 id="adding-featuresfixing-bugs">
+              <a class="header" href="#adding-featuresfixing-bugs"
+                >Adding features/fixing bugs</a
+              >
+            </h2>
+            <p>
+              If you somehow managed to understand my code, it would be great if
+              you can add features/fix bugs in Bitr. Open a pull request if you
+              do.
+            </p>
+            <p>
+              Your code should
+              <strong
+                >generate no warnings with <code>cargo clippy</code></strong
+              >, unless there are strong reasons to write it not according to
+              clippy.
+            </p>
+          </main>
+
+          <nav class="nav-wrapper" aria-label="Page navigation">
+            <!-- Mobile navigation buttons -->
+
+            <div style="clear: both"></div>
+          </nav>
+        </div>
+      </div>
+
+      <nav class="nav-wide-wrapper" aria-label="Page navigation"></nav>
+    </div>
+
+    <script>
+      window.playground_copyable = true;
+    </script>
+
+    <script src="elasticlunr.min.js"></script>
+    <script src="mark.min.js"></script>
+    <script src="searcher.js"></script>
+
+    <script src="clipboard.min.js"></script>
+    <script src="highlight.js"></script>
+    <script src="book.js"></script>
+
+    <!-- Custom JS scripts -->
+
+    <script>
+      window.addEventListener("load", function () {
+        window.setTimeout(window.print, 100);
+      });
+    </script>
+  </body>
+</html>

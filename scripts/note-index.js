@@ -71,9 +71,7 @@ function display_item(chapters, container, title) {
   let button = document.createElement("button");
   button.innerText = chapter.title;
   button.onclick = () =>
-    exit(
-      `./note.html?level=${level}&subject=${subject}&id=${chapter.id}`
-    );
+    exit(`./note.html?level=${level}&subject=${subject}&id=${chapter.id}`);
   let li = document.createElement("li");
   li.appendChild(button);
   li.classList.add("float-in-bottom");
