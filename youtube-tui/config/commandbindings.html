@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>keybindings - YouTube TUI User Manual</title>
+        <title>commandbindings - YouTube TUI User Manual</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="../commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="../config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="../config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="../config/keybindings.html" class="active"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="../config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="../config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="../config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="../config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="../how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Invidious API</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Individual items</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Contribution guide</div></li><li class="chapter-item expanded "><a href="../changelogs.html"><strong aria-hidden="true">8.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="../contributors.html"><strong aria-hidden="true">9.</strong> Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="../commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="../config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="../config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="../config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="../config/commandbindings.html" class="active"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="../config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="../config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="../config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="../how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Invidious API</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Individual items</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Contribution guide</div></li><li class="chapter-item expanded "><a href="../changelogs.html"><strong aria-hidden="true">8.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="../contributors.html"><strong aria-hidden="true">9.</strong> Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -118,7 +118,7 @@
                         <a href="https://github.com/siriusmart/youtube-tui/tree/master/docs" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/siriusmart/youtube-tui/edit/master/docs/src/config/keybindings.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/siriusmart/youtube-tui/edit/master/docs/src/config/commandbindings.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -147,81 +147,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="keybindings-config"><a class="header" href="#keybindings-config">Keybindings config</a></h1>
-<p>The keybindings config binds each key to an action, or multiple keys for the same action. It can be found in <code>~/.config/youtube-tui/keybindings.yml</code>.</p>
-<h2 id="example-keybindings-config"><a class="header" href="#example-keybindings-config">Example keybindings config</a></h2>
-<pre><code class="language-yaml">'q':
-  0: Exit
-Down:
-  0: MoveDown
-'r':
-  2: Reload
-Enter:
-  0: Select
-'l':
-  0: MoveRight
-Up:
-  0: MoveUp
-'j':
-  0: MoveDown
-End:
-  0: ClearHistory
-Right:
-  0: MoveRight
-Backspace:
-  0: Back
-'h':
-  0: MoveLeft
-F5:
-  0: Reload
-'k':
-  0: MoveUp
-Esc:
-  0: Deselect
-Home:
-  0: FirstHistory
-Left:
-  0: MoveLeft
-  4: Back
+                        <h1 id="command-bindings"><a class="header" href="#command-bindings">Command bindings</a></h1>
+<p>Commands can be binded to keys (just like normal keybindings), it allows functionalities such as <u>playing hovered videos</u>. Bindings can be either <em>global</em> or <em>page specific</em>, it is located in <code>~/.config/youtube-tui/commandbindings.yml</code>.</p>
+<h2 id="example-commandbindings-config"><a class="header" href="#example-commandbindings-config">Example commandbindings config</a></h2>
+<pre><code class="language-yml">global:
+  'f':
+    2: run ${browser} '${url}'
+  'c':
+    2: cp ${url}
+video: {}
+search:
+  'a':
+    2: run ${terminal-emulator} mpv '${hover-url}' --no-video
+  'A':
+    1: run ${terminal-emulator} mpv '${hover-url}' --no-video --loop-playlist=inf --shuffle
+  'p':
+    2: run mpv '${hover-url}'
+watchhistory:
+  'A':
+    1: run ${terminal-emulator} mpv '${hover-url}' --no-video --loop-playlist=inf --shuffle
+  'p':
+    2: run mpv '${hover-url}'
+  'a':
+    2: run ${terminal-emulator} mpv '${hover-url}' --no-video
+# etc
 </code></pre>
-<h2 id="keys"><a class="header" href="#keys">Keys</a></h2>
-<p>Keys can be:</p>
-<ul>
-<li>A single character (e.g. <code>'q'</code>)</li>
-<li>Named keys (e.g. <code>Up</code>, <code>Down</code>)</li>
-<li>Function keys (e.g. <code>F5</code>)</li>
-</ul>
-<h2 id="key-modifiers"><a class="header" href="#key-modifiers">Key modifiers</a></h2>
-<p>Key modifiers are the modifier keys that are pressed along with the actual key, for instance in <code>Ctrl + C</code> would have the modifier <code>Ctrl</code> and the key <code>C</code>.</p>
-<p>Each modifier has its own code, for instance <code>Shift</code> would be <code>1</code> and <code>Ctrl</code> would be <code>2</code>. The final modifier will be the <u>sum</u> of all modifier keys. (<code>Ctrl + Shift</code> would be a <code>3</code>).</p>
-<h3 id="keys-reference"><a class="header" href="#keys-reference">Keys reference</a></h3>
-<p>All possible keys can be found <a href="https://docs.rs/crossterm/latest/crossterm/event/enum.KeyCode.html" target=_blank><em>here</em></a>.</p>
-<blockquote>
-<p>Enums are represented using the character <code>!</code>, for example the <code>q</code> key would be <code>!Char 'q'</code></p>
-<p><code>Shift + Q</code> however would be <code>!Char 'Q'</code> with <code>0</code> as modifier code as <code>Shift</code> turns <code>q</code> into an upper case character.</p>
-</blockquote>
-<h3 id="modifiers-reference"><a class="header" href="#modifiers-reference">Modifiers reference</a></h3>
-<div class="table-wrapper"><table><thead><tr><th>Modifier</th><th>Code</th></tr></thead><tbody>
-<tr><td>None</td><td><code>0</code></td></tr>
-<tr><td><code>Shift</code></td><td><code>1</code></td></tr>
-<tr><td><code>Ctrl</code></td><td><code>2</code></td></tr>
-<tr><td><code>Alt</code></td><td><code>4</code></td></tr>
-<tr><td><code>Super</code>/&quot;Windows&quot; key</td><td><code>8</code></td></tr>
-<tr><td><code>Hyper</code></td><td><code>16</code></td></tr>
-<tr><td><code>Meta</code></td><td><code>32</code></td></tr>
-</tbody></table>
-</div>
-<p>All key modifiers (if any are added) will be in <a href="https://docs.rs/crossterm/latest/crossterm/event/struct.KeyModifiers.html" target=_blank><em>the code</em></a>.</p>
+<hr>
+<p>Specifications are same as <a href="commands.html"><code>comamnds.yml</code></a>, the exact same envs can be used.</p>
+<p>Default bindings can be found in <a href="../commands.html#command-bindings">this section</a>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../config/commands.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../config/keybindings.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../config/commandbindings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../config/pages.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -231,11 +194,11 @@ Left:
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../config/commands.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../config/keybindings.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../config/commandbindings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../config/pages.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

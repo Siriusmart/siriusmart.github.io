@@ -1,346 +1,157 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en" class="sidebar-visible no-js ayu">
-  <head>
-    <!-- Book generated using mdBook -->
-    <meta charset="UTF-8" />
-    <title>commands - YouTube TUI User Manual</title>
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>commands - YouTube TUI User Manual</title>
 
-    <!-- Custom HTML head -->
 
-    <meta
-      name="description"
-      content="The user manual, documentation and contribution guide for YouTube TUI"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="The user manual, documentation and contribution guide for YouTube TUI">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
-    <link rel="icon" href="../favicon.svg" />
-    <link rel="shortcut icon" href="../favicon.png" />
-    <link rel="stylesheet" href="../css/variables.css" />
-    <link rel="stylesheet" href="../css/general.css" />
-    <link rel="stylesheet" href="../css/chrome.css" />
-    <link rel="stylesheet" href="../css/print.css" media="print" />
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="../fonts/fonts.css" />
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
-    <!-- Highlight.js Stylesheets -->
-    <link rel="stylesheet" href="../highlight.css" />
-    <link rel="stylesheet" href="../tomorrow-night.css" />
-    <link rel="stylesheet" href="../ayu-highlight.css" />
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
-    <!-- Custom theme stylesheets -->
-  </head>
-  <body>
-    <!-- Provide site root to javascript -->
-    <script>
-      var path_to_root = "../";
-      var default_theme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "navy"
-        : "ayu";
-    </script>
+        <!-- Custom theme stylesheets -->
 
-    <!-- Work around some values being stored in localStorage wrapped in quotes -->
-    <script>
-      try {
-        var theme = localStorage.getItem("mdbook-theme");
-        var sidebar = localStorage.getItem("mdbook-sidebar");
-
-        if (theme.startsWith('"') && theme.endsWith('"')) {
-          localStorage.setItem(
-            "mdbook-theme",
-            theme.slice(1, theme.length - 1)
-          );
-        }
-
-        if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-          localStorage.setItem(
-            "mdbook-sidebar",
-            sidebar.slice(1, sidebar.length - 1)
-          );
-        }
-      } catch (e) {}
-    </script>
-
-    <!-- Set the theme before any content is loaded, prevents flash -->
-    <script>
-      var theme;
-      try {
-        theme = localStorage.getItem("mdbook-theme");
-      } catch (e) {}
-      if (theme === null || theme === undefined) {
-        theme = default_theme;
-      }
-      var html = document.querySelector("html");
-      html.classList.remove("no-js");
-      html.classList.remove("ayu");
-      html.classList.add(theme);
-      html.classList.add("js");
-    </script>
-
-    <!-- Hide / unhide sidebar before it is displayed -->
-    <script>
-      var html = document.querySelector("html");
-      var sidebar = "hidden";
-      if (document.body.clientWidth >= 1080) {
-        try {
-          sidebar = localStorage.getItem("mdbook-sidebar");
-        } catch (e) {}
-        sidebar = sidebar || "visible";
-      }
-      html.classList.remove("sidebar-visible");
-      html.classList.add("sidebar-" + sidebar);
-    </script>
-
-    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-      <div class="sidebar-scrollbox">
-        <ol class="chapter">
-          <li class="chapter-item expanded">
-            <a href="../index.html"
-              ><strong aria-hidden="true">1.</strong> Overview</a
-            >
-          </li>
-          <li class="chapter-item expanded">
-            <a href="../installation.html"
-              ><strong aria-hidden="true">2.</strong> Installation</a
-            >
-          </li>
-          <li class="chapter-item expanded">
-            <a href="../basic_usage.html"
-              ><strong aria-hidden="true">3.</strong> Basic usage</a
-            >
-          </li>
-          <li class="chapter-item expanded">
-            <a href="../commands.html"
-              ><strong aria-hidden="true">4.</strong> Commands</a
-            >
-          </li>
-          <li class="chapter-item expanded affix"></li>
-          <li class="part-title">Customisation guide</li>
-          <li class="chapter-item expanded">
-            <a href="../config/index.html"
-              ><strong aria-hidden="true">5.</strong> Config files</a
-            >
-          </li>
-          <li>
-            <ol class="section">
-              <li class="chapter-item expanded">
-                <a href="../config/main.html"
-                  ><strong aria-hidden="true">5.1.</strong> main</a
-                >
-              </li>
-              <li class="chapter-item expanded">
-                <a href="../config/commands.html" class="active"
-                  ><strong aria-hidden="true">5.2.</strong> commands</a
-                >
-              </li>
-              <li class="chapter-item expanded">
-                <a href="../config/keybindings.html"
-                  ><strong aria-hidden="true">5.3.</strong> keybindings</a
-                >
-              </li>
-              <li class="chapter-item expanded">
-                <a href="../config/pages.html"
-                  ><strong aria-hidden="true">5.4.</strong> pages</a
-                >
-              </li>
-              <li class="chapter-item expanded">
-                <a href="../config/appearance.html"
-                  ><strong aria-hidden="true">5.5.</strong> appearance</a
-                >
-              </li>
-              <li class="chapter-item expanded">
-                <a href="../config/search.html"
-                  ><strong aria-hidden="true">5.6.</strong> search</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="chapter-item expanded"></li>
-          <li class="part-title">Contributing</li>
-          <li class="chapter-item expanded">
-            <a href="../how_it_works.html"
-              ><strong aria-hidden="true">6.</strong> How it works</a
-            >
-          </li>
-          <li>
-            <ol class="section">
-              <li class="chapter-item expanded">
-                <a href="../framework.html"
-                  ><strong aria-hidden="true">6.1.</strong> Framework</a
-                >
-              </li>
-              <li class="chapter-item expanded">
-                <div>
-                  <strong aria-hidden="true">6.2.</strong> Invidious API
-                </div>
-              </li>
-              <li class="chapter-item expanded">
-                <div>
-                  <strong aria-hidden="true">6.3.</strong> Individual items
-                </div>
-              </li>
-            </ol>
-          </li>
-          <li class="chapter-item expanded">
-            <div><strong aria-hidden="true">7.</strong> Contribution guide</div>
-          </li>
-          <li class="chapter-item expanded">
-            <a href="../changelogs.html"
-              ><strong aria-hidden="true">8.</strong> Changelogs</a
-            >
-          </li>
-          <li class="chapter-item expanded">
-            <a href="../contributors.html"
-              ><strong aria-hidden="true">9.</strong> Contributors</a
-            >
-          </li>
-        </ol>
-      </div>
-      <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-    </nav>
-
-    <div id="page-wrapper" class="page-wrapper">
-      <div class="page">
-        <div id="menu-bar-hover-placeholder"></div>
-        <div id="menu-bar" class="menu-bar sticky bordered">
-          <div class="left-buttons">
-            <button
-              id="sidebar-toggle"
-              class="icon-button"
-              type="button"
-              title="Toggle Table of Contents"
-              aria-label="Toggle Table of Contents"
-              aria-controls="sidebar"
-            >
-              <i class="fa fa-bars"></i>
-            </button>
-            <button
-              id="theme-toggle"
-              class="icon-button"
-              type="button"
-              title="Change theme"
-              aria-label="Change theme"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-controls="theme-list"
-            >
-              <i class="fa fa-paint-brush"></i>
-            </button>
-            <ul
-              id="theme-list"
-              class="theme-popup"
-              aria-label="Themes"
-              role="menu"
-            >
-              <li role="none">
-                <button role="menuitem" class="theme" id="light">Light</button>
-              </li>
-              <li role="none">
-                <button role="menuitem" class="theme" id="rust">Rust</button>
-              </li>
-              <li role="none">
-                <button role="menuitem" class="theme" id="coal">Coal</button>
-              </li>
-              <li role="none">
-                <button role="menuitem" class="theme" id="navy">Navy</button>
-              </li>
-              <li role="none">
-                <button role="menuitem" class="theme" id="ayu">Ayu</button>
-              </li>
-            </ul>
-            <button
-              id="search-toggle"
-              class="icon-button"
-              type="button"
-              title="Search. (Shortkey: s)"
-              aria-label="Toggle Searchbar"
-              aria-expanded="false"
-              aria-keyshortcuts="S"
-              aria-controls="searchbar"
-            >
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-
-          <h1 class="menu-title">YouTube TUI User Manual</h1>
-
-          <div class="right-buttons">
-            <a
-              href="../print.html"
-              title="Print this book"
-              aria-label="Print this book"
-            >
-              <i id="print-button" class="fa fa-print"></i>
-            </a>
-            <a
-              href="https://github.com/siriusmart/youtube-tui/tree/master/docs"
-              title="Git repository"
-              aria-label="Git repository"
-            >
-              <i id="git-repository-button" class="fa fa-github"></i>
-            </a>
-            <a
-              href="https://github.com/siriusmart/youtube-tui/edit/master/docs/src/config/commands.md"
-              title="Suggest an edit"
-              aria-label="Suggest an edit"
-            >
-              <i id="git-edit-button" class="fa fa-edit"></i>
-            </a>
-          </div>
-        </div>
-
-        <div id="search-wrapper" class="hidden">
-          <form id="searchbar-outer" class="searchbar-outer">
-            <input
-              type="search"
-              id="searchbar"
-              name="searchbar"
-              placeholder="Search this book ..."
-              aria-controls="searchresults-outer"
-              aria-describedby="searchresults-header"
-            />
-          </form>
-          <div id="searchresults-outer" class="searchresults-outer hidden">
-            <div id="searchresults-header" class="searchresults-header"></div>
-            <ul id="searchresults"></ul>
-          </div>
-        </div>
-
-        <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
         <script>
-          document
-            .getElementById("sidebar-toggle")
-            .setAttribute("aria-expanded", sidebar === "visible");
-          document
-            .getElementById("sidebar")
-            .setAttribute("aria-hidden", sidebar !== "visible");
-          Array.from(document.querySelectorAll("#sidebar a")).forEach(function (
-            link
-          ) {
-            link.setAttribute("tabIndex", sidebar === "visible" ? 0 : -1);
-          });
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
         </script>
 
-        <div id="content" class="content">
-          <main>
-            <h1 id="commands-config">
-              <a class="header" href="#commands-config">Commands config</a>
-            </h1>
-            <p>
-              The commands config file decides what options (that will run a
-              certain command on select) to be display in the <em>video</em> and
-              <em>playlist</em> page respectively, it is located in
-              <code>~/.config/youtube-tui/commands.yml</code>.
-            </p>
-            <h2 id="example-commands-config">
-              <a class="header" href="#example-commands-config"
-                >Example commands config</a
-              >
-            </h2>
-            <pre><code class="language-yaml">video:
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="../commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="../config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="../config/commands.html" class="active"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="../config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="../config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="../config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="../config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="../config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="../how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Invidious API</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Individual items</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Contribution guide</div></li><li class="chapter-item expanded "><a href="../changelogs.html"><strong aria-hidden="true">8.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="../contributors.html"><strong aria-hidden="true">9.</strong> Contributors</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">YouTube TUI User Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/siriusmart/youtube-tui/tree/master/docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/siriusmart/youtube-tui/edit/master/docs/src/config/commands.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="commands-config"><a class="header" href="#commands-config">Commands config</a></h1>
+<p>The commands config file decides what options (that will run a certain command on select) to be display in the <em>video</em> and <em>playlist</em> page respectively, it is located in <code>~/.config/youtube-tui/commands.yml</code>.</p>
+<h2 id="example-commands-config"><a class="header" href="#example-commands-config">Example commands config</a></h2>
+<pre><code class="language-yaml">launch_command: loadpage popular ;; flush ;; history clear # suggested to set page to watchhistory if you don't want to wait for popular to load
+video:
 - Play video: ${video-player} ${embed-url}
 - Play audio: ${terminal-emulator} ${video-player} ${embed-url} --no-video
 - Play audio (loop): ${terminal-emulator} ${video-player} ${embed-url} --no-video --loop-file=inf
@@ -361,20 +172,11 @@ playlist:
 - Download all audio (opus): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${all-videos} -x
 - 'Mode: ${provider}': '%switch-provider%'
 </code></pre>
-            <h2 id="env-variables">
-              <a class="header" href="#env-variables">Env variables</a>
-            </h2>
-            <p>
-              Notice that a lot of the commands contains the
-              <code>${label}</code> pattern, this actually replaces the text
-              with the env variables set in <code>main.yml</code>, or is added
-              by the current page (video or playlist) on-the-go.
-            </p>
-            <p>
-              Replacing all these with known values it might look something like
-              this:
-            </p>
-            <pre><code class="language-yaml">video:
+<h2 id="env-variables"><a class="header" href="#env-variables">Env variables</a></h2>
+<p>Notice that a lot of the commands contains the <code>${label}</code> pattern, this actually replaces the text with the env variables set in <code>main.yml</code>, or is added by the current page (video or playlist) on-the-go.</p>
+<p>Replacing all these with known values it might look something like this:</p>
+<pre><code class="language-yaml">launch_command: loadpage popular ;; flush ;; history clear
+video:
 - Play video: mpv 'https://youtube.com/embed/dQw4w9WgXcQ'
 - Play audio: konsole -e mpv 'https://youtube.com/embed/dQw4w9WgXcQ' --no-video
 - Open in browser: firefox 'https://youtu.be/dQw4w9WgXcQ'
@@ -390,194 +192,76 @@ playlist:
 - Download all video (webm): konsole -e yt-dlp -o '~/Downloads/%(title)s-%(id)s.%(ext)s' 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps'
 - 'Mode: ${provider}': '%switch-provider%'
 </code></pre>
-            <blockquote>
-              <p>
-                Global commands can also be used here. (Ones that start with an
-                <code>:</code>).
-              </p>
-            </blockquote>
-            <h2 id="item-commands">
-              <a class="header" href="#item-commands">Item commands</a>
-            </h2>
-            <p>
-              (will be replaced by global vim-like commands in the next major
-              version)
-            </p>
-            <p>
-              Notice that there is another pattern in the commands, it is the
-              <code>%label%</code> commands. They are special cases that are
-              consumed by the item and is never actually ran as a system
-              command.
-            </p>
-            <p>
-              For instance <code>%switch-provider%</code> toggles the provider
-              between <code>YouTube</code> and <code>Invidious</code>.
-            </p>
-            <hr />
-            <p>Below are the description of each of the fields:</p>
-            <h3 id="video"><a class="header" href="#video">video</a></h3>
-            <p>Commands to be displayed in a video page.</p>
-            <p>
-              <em>Accept: <code>string_label: string_command</code> pairs</em>
-            </p>
-            <h3 id="playlist">
-              <a class="header" href="#playlist">playlist</a>
-            </h3>
-            <p>Commands to be displayed in a playlist page (commands view).</p>
-            <p>
-              <em>Accept: <code>string_label: string_command</code> pairs</em>
-            </p>
-            <h2 id="env-reference">
-              <a class="header" href="#env-reference">Env reference</a>
-            </h2>
-            <p>Does not include custom env set in <code>main.yml</code>.</p>
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Page</th>
-                    <th>Value</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>url</code></td>
-                    <td>video &amp; playlist</td>
-                    <td>String url to the web page</td>
-                  </tr>
-                  <tr>
-                    <td><code>id</code></td>
-                    <td>video &amp; playlist</td>
-                    <td>String id of the video or playlist</td>
-                  </tr>
-                  <tr>
-                    <td><code>channel-id</code></td>
-                    <td>video &amp; playlist</td>
-                    <td>String id of the channel</td>
-                  </tr>
-                  <tr>
-                    <td><code>embed-url</code></td>
-                    <td>video</td>
-                    <td>
-                      String url to the embed video (required to play video
-                      using mpv from Invidious)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code>all-videos</code></td>
-                    <td>playlist</td>
-                    <td>
-                      String url<em><strong>s</strong></em> separated by space
-                      to all embed videos in a playlist
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code>provider</code></td>
-                    <td>video &amp; playlist</td>
-                    <td>
-                      To display the current provider, is the only env that can
-                      be displayed in the label, and can only be used when
-                      <code>%switch-provider%</code> is the command
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+<blockquote>
+<p>Global commands can also be used here. (Ones that start with an <code>:</code>).</p>
+</blockquote>
+<hr>
+<p>Below are the description of each of the fields:</p>
+<h3 id="video"><a class="header" href="#video">video</a></h3>
+<p>Commands to be displayed in a video page.</p>
+<p><em>Accept: <code>string_label: string_command</code> pairs</em></p>
+<h3 id="playlist"><a class="header" href="#playlist">playlist</a></h3>
+<p>Commands to be displayed in a playlist page (commands view).</p>
+<p><em>Accept: <code>string_label: string_command</code> pairs</em></p>
+<h2 id="env-reference"><a class="header" href="#env-reference">Env reference</a></h2>
+<p>Does not include custom env set in <code>main.yml</code>.</p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Page</th><th>Value</th></tr></thead><tbody>
+<tr><td><code>url</code></td><td>search, popular, trending, video, playlist</td><td>String url to the web page</td></tr>
+<tr><td><code>id</code></td><td>video, playlist</td><td>String id of the video or playlist</td></tr>
+<tr><td><code>channel-id</code></td><td>video, playlist</td><td>String id of the channel</td></tr>
+<tr><td><code>embed-url</code></td><td>video</td><td>String url to the embed video (required to play video using mpv from Invidious)</td></tr>
+<tr><td><code>all-videos</code></td><td>playlist</td><td>String url<em><strong>s</strong></em> separated by space to all embed videos in a playlist</td></tr>
+<tr><td><code>hover-url</code></td><td>trending, popular, search</td><td>Url of the currenly hovering item.</td></tr>
+<tr><td><code>all-ids</code></td><td>playlist</td><td>IDs of all videos in a playlist, separated with space.</td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../config/main.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../config/keybindings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
             </div>
-            <h2 id="item-command-reference">
-              <a class="header" href="#item-command-reference"
-                >Item command reference</a
-              >
-            </h2>
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Page</th>
-                    <th>Use</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>swtich-provider</code></td>
-                    <td>video &amp; playlist</td>
-                    <td>
-                      Toggles the provider between <code>YouTube</code> and
-                      <code>Invidious</code>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </main>
 
-          <nav class="nav-wrapper" aria-label="Page navigation">
-            <!-- Mobile navigation buttons -->
-            <a
-              rel="prev"
-              href="../config/main.html"
-              class="mobile-nav-chapters previous"
-              title="Previous chapter"
-              aria-label="Previous chapter"
-              aria-keyshortcuts="Left"
-            >
-              <i class="fa fa-angle-left"></i>
-            </a>
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../config/main.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-            <a
-              rel="next"
-              href="../config/keybindings.html"
-              class="mobile-nav-chapters next"
-              title="Next chapter"
-              aria-label="Next chapter"
-              aria-keyshortcuts="Right"
-            >
-              <i class="fa fa-angle-right"></i>
-            </a>
+                    <a rel="next" href="../config/keybindings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
 
-            <div style="clear: both"></div>
-          </nav>
         </div>
-      </div>
 
-      <nav class="nav-wide-wrapper" aria-label="Page navigation">
-        <a
-          rel="prev"
-          href="../config/main.html"
-          class="nav-chapters previous"
-          title="Previous chapter"
-          aria-label="Previous chapter"
-          aria-keyshortcuts="Left"
-        >
-          <i class="fa fa-angle-left"></i>
-        </a>
 
-        <a
-          rel="next"
-          href="../config/keybindings.html"
-          class="nav-chapters next"
-          title="Next chapter"
-          aria-label="Next chapter"
-          aria-keyshortcuts="Right"
-        >
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </nav>
-    </div>
 
-    <script>
-      window.playground_copyable = true;
-    </script>
 
-    <script src="../elasticlunr.min.js"></script>
-    <script src="../mark.min.js"></script>
-    <script src="../searcher.js"></script>
+        <script>
+            window.playground_copyable = true;
+        </script>
 
-    <script src="../clipboard.min.js"></script>
-    <script src="../highlight.js"></script>
-    <script src="../book.js"></script>
 
-    <!-- Custom JS scripts -->
-  </body>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
 </html>
