@@ -68,6 +68,7 @@ window.listeners["article-md"] = ({ content: data, label }) => {
     text = data,
     html = converter.makeHtml(text);
   article.innerHTML += html;
+  renderMathInElement(article);
 
   let div = document.createElement("div");
   div.appendChild(article);

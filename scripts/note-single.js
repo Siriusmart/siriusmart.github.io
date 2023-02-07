@@ -43,6 +43,7 @@ window.listeners.note_single = ({ content: data }) => {
       let div = document.createElement("div");
       div.innerHTML = html;
       div.classList.add("float-in-bottom");
+      renderMathInElement(div);
 
       container.appendChild(div);
     });

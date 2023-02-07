@@ -14,6 +14,7 @@ function setMotd(data) {
     p = a;
   }
   banner.removeChild(banner.lastChild);
+  renderMathInElement(p);
   banner.appendChild(p);
 }
 
