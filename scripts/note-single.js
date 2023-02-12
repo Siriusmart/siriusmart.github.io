@@ -34,21 +34,21 @@ window.listeners.note_single = ({ content: data }) => {
     hr.classList.add("float-in-bottom");
     container.appendChild(hr);
     data = data
-      .replace(
-        "./",
-        `${
-          window.env.customNotesUrl
-            ? window.env.customNotesUrl
-            : window.env.notesUrl
-        }/${level}/${subject}/`
-      )
-      .replace(
-        "../",
+      .split("../")
+      .join(
         `${
           window.env.customNotesUrl
             ? window.env.customNotesUrl
             : window.env.notesUrl
         }/${level}/`
+      )
+      .split("./")
+      .join(
+        `${
+          window.env.customNotesUrl
+            ? window.env.customNotesUrl
+            : window.env.notesUrl
+        }/${level}/${subject}/`
       );
 
     showdown.setOption("tables", true);
