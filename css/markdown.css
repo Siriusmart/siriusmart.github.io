@@ -10,6 +10,12 @@ html {
   font-display: swap;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body {
   margin: 0 auto;
   max-width: 36em;

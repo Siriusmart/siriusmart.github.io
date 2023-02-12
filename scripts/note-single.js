@@ -33,18 +33,35 @@ window.listeners.note_single = ({ content: data }) => {
     let hr = document.createElement("hr");
     hr.classList.add("float-in-bottom");
     container.appendChild(hr);
+    data = data
+      .replace(
+        "./",
+        `${
+          window.env.customNotesUrl
+            ? window.env.customNotesUrl
+            : window.env.notesUrl
+        }/${level}/${subject}/`
+      )
+      .replace(
+        "../",
+        `${
+          window.env.customNotesUrl
+            ? window.env.customNotesUrl
+            : window.env.notesUrl
+        }/${level}/`
+      );
 
     showdown.setOption("tables", true);
     let converter = new showdown.Converter(),
       text = data,
       html = converter.makeHtml(text);
 
-    setTimeout(() => {
-      let div = document.createElement("div");
-      div.innerHTML = html;
-      div.classList.add("float-in-bottom");
-      renderMathInElement(div);
+    let div = document.createElement("div");
+    div.innerHTML = html;
+    div.classList.add("float-in-bottom");
+    renderMathInElement(div);
 
+    setTimeout(() => {
       container.appendChild(div);
     });
   }, 500);
