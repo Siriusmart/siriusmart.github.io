@@ -1,6 +1,5 @@
 let container = document.getElementById("items");
 container.innerText = "Loading content...";
-let pageTurnContainer = document.getElementById("page-turner");
 
 let paramString = window.location.href.split("?")[1];
 if (typeof paramString === "string") {
@@ -96,7 +95,6 @@ function titleAndEnd() {
           title = `${obj.items[i].items[j].title} - ${obj.title}`;
           setTimeout(() => {
             let end = document.createElement("div");
-            end.className = "float-in-bottom";
             if (i !== 0 || j !== 0) {
               let prev_i = i;
               let prev_j = j - 1;
@@ -141,11 +139,15 @@ function titleAndEnd() {
               end.appendChild(next_chapter);
             }
 
+            let turnerContainer = document.createElement("div");
+            turnerContainer.classList.add("float-in-bottom");
+
             if (end.children.length !== 0) {
-              pageTurnContainer.append(document.createElement("hr"));
+              turnerContainer.append(document.createElement("hr"));
             }
 
-            pageTurnContainer.appendChild(end);
+            turnerContainer.appendChild(end);
+            container.appendChild(turnerContainer);
           }, 1000);
 
           break bigLoop;
