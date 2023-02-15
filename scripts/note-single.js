@@ -1,5 +1,6 @@
 let container = document.getElementById("items");
 container.innerText = "Loading content...";
+let pageTurnContainer = document.getElementById("page-turner");
 
 let paramString = window.location.href.split("?")[1];
 if (typeof paramString === "string") {
@@ -141,10 +142,10 @@ function titleAndEnd() {
             }
 
             if (end.children.length !== 0) {
-              container.append(document.createElement("hr"));
+              pageTurnContainer.append(document.createElement("hr"));
             }
 
-            container.appendChild(end);
+            pageTurnContainer.appendChild(end);
           }, 1000);
 
           break bigLoop;
