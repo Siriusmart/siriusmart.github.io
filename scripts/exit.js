@@ -1,24 +1,53 @@
 function exit(url) {
-  let search_params_obj = {};
-  if (window.env.customNotesUrl) {
-    search_params_obj.notes = window.env.customNotesUrl;
-  }
+  let currentUrl = new URL(document.URL);
+  let currentParams = new URLSearchParams(currentUrl.search);
 
-  if (window.env.customFilesUrl) {
-    search_params_obj.files = window.env.customFilesUrl;
-  }
+  let targetUrl;
 
-  if (window.env.customOutReqUrl) {
-    search_params_obj.outreq = window.env.customOutReqUrl;
-  }
-
-  let search_params = new URLSearchParams(search_params_obj).toString();
-
-  if (Object.keys(search_params_obj).length === 0) {
-  } else if (url.split("/").pop().includes("?")) {
-    url += "&" + search_params;
+  if (url.startsWith("../")) {
+    targetUrl = new URL(
+      url.replace(
+        "../",
+        `${currentUrl.origin}${currentUrl.pathname
+          .split("/")
+          .slice(0, -2)
+          .join("/")}/`
+      )
+    );
+  } else if (url.startsWith("./")) {
+    targetUrl = new URL(
+      url.replace(
+        "./",
+        `${currentUrl.origin}${currentUrl.pathname
+          .split("/")
+          .slice(0, -1)
+          .join("/")}/`
+      )
+    );
   } else {
-    url += "?" + search_params;
+    targetUrl = new URL(url);
+  }
+
+  let targetParams = new URLSearchParams(targetUrl.search);
+
+  let customNotes = currentParams.get("notes");
+  if (customNotes) {
+    targetParams.append("notes", customNotes);
+  }
+
+  let customFiles = currentParams.get("files");
+  if (customFiles) {
+    targetParams.append("files", customFiles);
+  }
+
+  let customOutReq = currentParams.get("out-req");
+  if (customOutReq) {
+    targetParams.append("out-req", customOutReq);
+  }
+
+  let customStyle = currentParams.get("style");
+  if (customStyle) {
+    targetParams.append("style", customStyle);
   }
 
   for (const [before, after] of Object.entries(window.transitionclasses)) {
@@ -28,5 +57,9 @@ function exit(url) {
     }
   }
 
-  setTimeout(() => (window.location.href = url), 500);
+  setTimeout(
+    () =>
+      (window.location.href = `${currentUrl.origin}${targetUrl.pathname}?${targetParams}`),
+    500
+  );
 }

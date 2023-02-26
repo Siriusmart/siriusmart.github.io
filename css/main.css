@@ -196,6 +196,10 @@ button {
   font-family: "Quicksand";
 }
 
+button {
+  background-color: black;
+}
+
 #banner {
   background-blend-mode: hue;
   background-color: rgba(0, 0, 0, 0.3);

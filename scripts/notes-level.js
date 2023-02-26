@@ -1,6 +1,7 @@
 let container = document.getElementById("items");
 container.innerText = "Loading content...";
 
+
 let paramString = window.location.href.split("?")[1];
 if (typeof paramString === "string") {
   paramString = paramString.split("#")[0];
