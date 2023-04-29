@@ -70,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -172,12 +174,10 @@ env:
   terminal-emulator: konsole -e
 </code></pre>
 <p>Anything from layouts to colours and keybindings can be customised, more on that later.</p>
-<h2 id="dependency-free"><a class="header" href="#dependency-free"><del>Dependency-free</del></a></h2>
-<blockquote>
-<p>Clipboard need to be put as an optional feature before before calling dependency-free, for now <code>libxcb</code> is a required dependency.</p>
-</blockquote>
+<h2 id="dependency-free"><a class="header" href="#dependency-free">Dependency-free*</a></h2>
+<p><sub>See <a href="./installation.html#features">installation#features</a> for more info on dependencies.</sub></p>
 <p>The YouTube TUI does not work on its own, it is instead like a <em>TUI frontend</em> for programs like <code>mpv</code> or <code>yt-dlp</code>/<code>youtube-dl</code>.</p>
-<p>However, the programs to launch can be changed, and therefore <del>the YouTube TUI <u>does not rely on any specific dependencies</u> to run</del>.</p>
+<p>However, the programs to launch can be changed, and therefore the YouTube TUI <u>does not rely on any specific dependencies</u> to run.</p>
 <p><img src="./images/custom-dependencies-showcase.png" alt="" /></p>
 <h2 id="powerful"><a class="header" href="#powerful">Powerful</a></h2>
 <p>The YouTube TUI allows you to browse YouTube with (almost) all of it's features, functions including:</p>
@@ -197,6 +197,8 @@ env:
 <h3 id="what-it-doesnt-have"><a class="header" href="#what-it-doesnt-have">What it doesn't have</a></h3>
 <ul>
 <li>Subscriptions (first priority)</li>
+<li>Clipboard feature that does not depend on the <code>clipboard</code> feature</li>
+<li>Up arrow command history + Ctrl arrow keys move between words</li>
 </ul>
 <h2 id="how-to-contribute"><a class="header" href="#how-to-contribute">How to contribute</a></h2>
 <p>You will need a <u>general knowledge</u> of the Rust programming language, and the ability to <em>understand my spaghetti</em>.</p>

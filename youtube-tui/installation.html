@@ -70,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -184,7 +186,7 @@ yay -S youtube-tui-nodefaults-bin # minimal binary (out of date)
 <pre><code class="language-sh">cargo install youtube-tui # install with all default features
 cargo install youtube-tui --no-default-features # install without any features enabled
 cargo install youtube-tui --no-default-features -F 'halfblock' # install with only HalfBlocks support (but not Sixels)
-cargo install youtube-tui --no-default-features -F 'halfblock' -F 'sixel' # can install with multiple features by doing this
+cargo install youtube-tui --no-default-features -F 'clipboard' -F 'sixel' # can install with multiple features by doing this
 cargo install youtube-tui --all-features # install with all features (even if not included in default)
 </code></pre>
 <h3 id="halfblock-default"><a class="header" href="#halfblock-default"><code>halfblock</code> (default)</a></h3>
@@ -193,6 +195,9 @@ cargo install youtube-tui --all-features # install with all features (even if no
 <p>Display images with Sixels, allows the display of images at full definition. Not present on windows.</p>
 <p>Enabling this will also enable <code>halfblock</code>.</p>
 <p>Requires <a href="https://github.com/saitoha/libsixel" target=_blank><code>libsixel</code></a>.</p>
+<h3 id="clipboard-default"><a class="header" href="#clipboard-default"><code>clipboard</code> (default)</a></h3>
+<p>Allows clipboard pasting in commands and search bar.</p>
+<p>Requires <a href="https://xcb.freedesktop.org/" target=_blank><code>libxcb</code></a>.</p>
 
                     </main>
 
