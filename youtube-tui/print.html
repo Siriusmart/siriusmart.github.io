@@ -229,6 +229,12 @@ yay -S youtube-tui-git # latest git version, potentially untested
 yay -S youtube-tui-full-bin # default binary (out of date)
 yay -S youtube-tui-nodefaults-bin # minimal binary (out of date)
 </code></pre>
+<h2 id="installation-on-nixos"><a class="header" href="#installation-on-nixos">Installation on NixOS</a></h2>
+<p>Add the following Nix code to your NixOS Configuration</p>
+<pre><code class="language-nix">environment.systemPackages = [
+  pkgs.youtube-tui
+];
+</code></pre>
 <h2 id="build-from-source"><a class="header" href="#build-from-source">Build from source</a></h2>
 <p>Use the <code>cargo</code> command:</p>
 <pre><code class="language-sh">cargo install --git https://github.com/siriusmart/youtube-tui

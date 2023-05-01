@@ -4,7 +4,12 @@
     <meta http-equiv="Cache-Control" content="must-revalidate" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./css/main.css" id="pageStyle" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/main.css"
+      id="pageStyle"
+    />
     <link rel="stylesheet" type="text/css" href="./css/animations.css" />
     <link rel="stylesheet" type="text/css" href="./css/ytdl.css" />
     <title>YouTube Downloader - Siriusmart</title>
@@ -29,27 +34,6 @@
   </head>
 
   <body>
-    <a name="top"></a>
-    <ul id="main-nav">
-      <li id="selected">
-        <button onclick="exit('./')"><b>&#x2302;</b></button>
-      </li>
-      <li class="not-selected">
-        <button onclick="exit('./about.html')">About</button>
-      </li>
-      <li class="not-selected">
-        <button onclick="exit('./resources.html')">Resources</button>
-      </li>
-      <li class="not-selected">
-        <a href="./help.html" target="_blank" style="text-decoration: none"
-          ><button>Help</button></a
-        >
-      </li>
-    </ul>
-    <div id="banner" class="container float-in-top">
-      <p class="p">Javascript is required to load message of the day</p>
-    </div>
-
     <div class="container centered-wrapper nourl">
       <div id="inputs" class="centered blurred">
         <input
@@ -101,10 +85,6 @@
       <a href="#top" id="return-to-top">🔺Back to top</a>
     </footer>
   </body>
-  <video autoplay muted loop id="background-video">
-    <source src="./assets/background.webm" type="video/webm" />
-    <source src="./assets/background.mp4" type="video/mp4" />
-  </video>
   <script src="./scripts/init.js"></script>
   <script src="./scripts/cross-req.js"></script>
   <script src="./scripts/exit.js"></script>

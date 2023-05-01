@@ -7,7 +7,7 @@ window.transitionclasses = {
   "delayed-float-in-right": "float-in-right-reverse",
 };
 
-let params = new URLSearchParams((new URL(window.location.href)).search);
+let params = new URLSearchParams(new URL(window.location.href).search);
 window.params = params;
 
 let customFilesUrl = params.get("files");

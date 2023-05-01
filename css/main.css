@@ -104,77 +104,43 @@ h3 {
   color: rgb(255, 255, 255);
 }
 
-@media screen and (min-width: 1000px) {
-  #main-nav {
-    font-size: 120%;
-  }
-
-  h1 {
-    font-size: 200%;
-  }
-
-  p,
-  p ul li {
-    font-size: 115%;
-  }
-
-  #banner p {
-    font-size: 150%;
-    padding: 40px;
-  }
-
-  .right {
-    display: flex;
-    min-width: calc(50vw - 19px);
-    float: right;
-  }
-
-  .left {
-    display: flex;
-    min-width: calc(50vw - 19px);
-    float: left;
-    margin-left: 0;
-  }
-
-  .flex-container {
-    display: flex;
-    align-items: stretch;
-    left: 0;
-    right: 0;
-    top: 0;
-  }
+#main-nav {
+  font-size: 120%;
 }
 
-@media screen and (max-width: 1000px) {
-  #main-nav li {
-    display: block;
-    float: none;
-  }
+h1 {
+  font-size: 200%;
+}
 
-  #main-nav button {
-    width: 100%;
-  }
+p,
+p ul li {
+  font-size: 115%;
+}
 
-  #main-nav {
-    font-size: 130%;
-  }
+#banner p {
+  font-size: 150%;
+  padding: 40px;
+}
 
-  #main-nav li:last-child {
-    float: none;
-  }
+.right {
+  display: flex;
+  min-width: calc(50vw - 19px);
+  float: right;
+}
 
-  #banner p {
-    font-size: 150%;
-    padding: 40px;
-  }
+.left {
+  display: flex;
+  min-width: calc(50vw - 19px);
+  float: left;
+  margin-left: 0;
+}
 
-  h1 {
-    font-size: 250%;
-  }
-
-  button {
-    font-size: 80%;
-  }
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 .p,
@@ -331,4 +297,8 @@ sub {
   background-color: rgba(100, 0, 100, 0.7);
   box-shadow: 0 0 6px purple;
   font-size: 100%;
+}
+
+html {
+  background: black;
 }
