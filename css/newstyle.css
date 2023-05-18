@@ -17,6 +17,7 @@
 
 * {
   margin: 0;
+  scrollbar-width: none;
 }
 
 #main-screen h1 {
