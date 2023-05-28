@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Event loop</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">7.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">8.</strong> Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="explaination/event-loop.html"><strong aria-hidden="true">6.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">7.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">8.</strong> Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -191,11 +191,13 @@ env:
 <li>Mouse support</li>
 <li>Extensible keybindings system</li>
 <li>Offline library</li>
+<li>Subscriptions</li>
 </ul>
 <h3 id="what-it-doesnt-have"><a class="header" href="#what-it-doesnt-have">What it doesn't have</a></h3>
 <ul>
-<li>Subscriptions (first priority)</li>
-<li>Clipboard feature that does not depend on the <code>clipboard</code> feature</li>
+<li>[URGENT] Replace the no-longer-going-to-compile <code>typemap</code> dependency with either a self implementation of it or a useable crate.</li>
+<li>Strip down some libraries to reduce compile speed.</li>
+<li>Add command section for channel main page (first priority)</li>
 <li>Up arrow command history + Ctrl arrow keys move between words</li>
 </ul>
 <h2 id="how-to-contribute"><a class="header" href="#how-to-contribute">How to contribute</a></h2>
@@ -208,7 +210,7 @@ env:
 </ol>
 <p>Or just <em>fix that typo in README</em> -_-</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
-<p>The YouTube TUI is <em>not</em> tested for Windows.</p>
+<p>The YouTube TUI is <em>not</em> intended for Windows, pull requests to make it work are welcome.</p>
 <h2 id="install-from-cratesio-recommended"><a class="header" href="#install-from-cratesio-recommended">Install from Crates.io (recommended)</a></h2>
 <p>Crates.io is a repository for programs written in Rust, and the YouTube TUI is available <a href="https://crates.io/crates/youtube-tui" target=_blank><em>there</em></a>.</p>
 <p>To install using this method, you will need <code>rustc</code> and <code>cargo</code> present. <a href="https://www.rust-lang.org/tools/install" target=_blank><em>Here</em></a>'s a tutorial on how to get them.</p>
@@ -226,7 +228,7 @@ yay -S youtube-tui-git # latest git version, potentially untested
 yay -S youtube-tui-full-bin # default binary (out of date)
 yay -S youtube-tui-nodefaults-bin # minimal binary (out of date)
 </code></pre>
-<h2 id="installation-on-nixos"><a class="header" href="#installation-on-nixos">Installation on NixOS</a></h2>
+<h2 id="installation-on-nixos--recommended"><a class="header" href="#installation-on-nixos--recommended">Installation on NixOS  (recommended)</a></h2>
 <p>Add the following Nix code to your NixOS Configuration</p>
 <pre><code class="language-nix">environment.systemPackages = [
   pkgs.youtube-tui
@@ -295,6 +297,9 @@ cargo install youtube-tui --all-features # install with all features (even if no
 <p>If that is not the case, you can learn how to change that in the <em>custom commands</em> section.</p>
 </blockquote>
 <p>Press <code>Enter</code> to select a video or playlist from any lists, then move the cursor to the <em>bottom item</em> where you can play, download and open the webpage in browser.</p>
+<h2 id="feeds"><a class="header" href="#feeds">Feeds</a></h2>
+<p>Feeds allows you to view updates from subscribed channels, similar to how subscriptions works on YouTube.</p>
+<p><img src="./images/feed-showcase.png" alt="" /></p>
 <h2 id="command-mode"><a class="header" href="#command-mode">Command mode</a></h2>
 <p>Command mode is like that of Vim, it can be started by pressing <code>:</code> when nothing is selected.</p>
 <p>More about commands in the <a href="commands.html">next chapter</a>.</p>
@@ -359,9 +364,12 @@ parrun [command]
 <p><code>run</code> is used for running <em>blocking commands</em>, while <code>parrun</code> is non-blocking.</p>
 </blockquote>
 <h2 id="library-1"><a class="header" href="#library-1">Library</a></h2>
-<pre><code class="language-vim">bookmark [id]
-unmark [id]
-togglemark [id]
+<pre><code class="language-vim">bookmark [id]                   Bookmark item with ID (item must be already loaded)
+unmark [id]                     Remove bookmark item with ID
+togglemark [id]                 Toggle bookmark status
+sub/sync [id or url]            Add channel to subscription, or sync an existing channel
+unsub [id or url]               Remove channel from subscription
+syncall                         Sync all subscriptions
 </code></pre>
 <h2 id="text-commands"><a class="header" href="#text-commands">Text commands</a></h2>
 <p>Text commands generates a <em>text only response</em> without launching the TUI.</p>
@@ -532,6 +540,10 @@ playlist:
 <tr><td><code>embed-url</code></td><td>video</td><td>String url to the embed video (required to play video using mpv from Invidious)</td></tr>
 <tr><td><code>all-videos</code></td><td>playlist</td><td>String url<em><strong>s</strong></em> separated by space to all embed videos in a playlist</td></tr>
 <tr><td><code>hover-url</code></td><td>trending, popular, search</td><td>Url of the currenly hovering item.</td></tr>
+<tr><td><code>hover-channel-url</code></td><td>feed</td><td>Url of the currenly hovering channel.</td></tr>
+<tr><td><code>hover-channel-id</code></td><td>feed</td><td>ID of the currenly hovering channel.</td></tr>
+<tr><td><code>hover-video-url</code></td><td>feed</td><td>Url of the currenly hovering video.</td></tr>
+<tr><td><code>hover-video-id</code></td><td>feed</td><td>ID of the currenly hovering video.</td></tr>
 <tr><td><code>all-ids</code></td><td>playlist</td><td>IDs of all videos in a playlist, separated with space.</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="keybindings-config"><a class="header" href="#keybindings-config">Keybindings config</a></h1>
@@ -769,12 +781,13 @@ filters:
 <p>This is an interesting one. As <a href="explaination/framework.html#selectableself---bool">mentioned below</a>, some items can be hovered when other cannot. Each <code>selectables[x][y]</code> maps to a selectable (hoverable) coordinate.</p>
 <p>Instead of using a <code>HashMap&lt;(usize, usize)&gt;</code>, using a 2D array ensures that all <em>x: 0..range</em> and <em>y: 0..range</em> are mapped to a selectable item. And moving the cursor left is as easy as increasing x by 1, without having to worry about selectability check and stuff.</p>
 <h2 id="data"><a class="header" href="#data">Data</a></h2>
-<p>There are 2 sets of data available - <em>global</em> and <em>state</em>.</p>
+<p>There are 2 pools of data available - <em>global</em> and <em>state</em>.</p>
 <p><strong>Global data</strong> are global across all pages, this is mainly used to store config structs, as they are meant to be applied globally.</p>
-<p><strong>State data</strong> are exclusive to each page, this is done to ensure that each page will get the correct data.</p>
+<p><strong>State data</strong> are exclusive to each page, this is done to ensure that each page will get the correct data. </p>
 <blockquote>
 <p>For example, if state data is not used, the next page will overwrite data in the previous page, making going back in history impossible.</p>
 </blockquote>
+<p><a href="https://github.com/Siriusmart/tui-additions/blob/3087abbf8e121f26c0956cda5fb43efc7b862bc7/src/framework/framework.rs#LL39C4-L39C4">This</a> showed how state data stays with the history <em>snapshot</em> of the page, whereas global data does not.</p>
 <h2 id="history-1"><a class="header" href="#history-1">History</a></h2>
 <p>This stores the past states and data of the struct, pretty self explanatory.</p>
 <hr>
@@ -827,51 +840,90 @@ filters:
 <h3 id="mouse_eventmut-self-mut-framework-x-y---bool"><a class="header" href="#mouse_eventmut-self-mut-framework-x-y---bool">.mouse_event(&amp;mut self, &amp;mut Framework, x, y) -&gt; bool</a></h3>
 <p>Similar to key_event, this function takes in the relative <code>x</code> and <code>y</code> of the mouse click on the item.</p>
 <p>The return boolean indicates if the item has been modified by the mouse click, if true then the screen will rerender.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="event-loop"><a class="header" href="#event-loop">Event loop</a></h1>
+<p>The event loop is like the glue that puts everything together.</p>
+<h2 id="before-the-event-loop"><a class="header" href="#before-the-event-loop">Before the event loop</a></h2>
+<p>But before the TUI enters it's main event loop, it does several things.</p>
+<h3 id="1-check-what-command-is-being-ran"><a class="header" href="#1-check-what-command-is-being-ran">1. Check what command is being ran.</a></h3>
+<p>If the command does not need to enter the main TUI, don't enter the main TUI.</p>
+<p>For example, <code>help</code> or <code>version</code> just returns a text message on your terminal screen. In <a href="https://github.com/Siriusmart/youtube-tui/blob/f3b1912e0d99b46fd8c7b0be2a1606a7b087b650/src/main.rs#LL19C1-L19C43"><code>main.rs</code></a> line 19, it is checked whether the entered command is a valid text command. If so, the program exits without ever reaching the TUI code.</p>
+<h3 id="2-enable-raw-mode"><a class="header" href="#2-enable-raw-mode">2. Enable raw mode</a></h3>
+<p>If you've tried killing youtube-tui while it's running (<code>killall youtube-tui</code>), your terminal should be in a weird state - where everything, including mouse movement seem to be captured. That's the raw mode.</p>
+<p>I have no idea what is special about it, but it is in the examples of <code>tui-rs</code> <a href="https://github.com/fdehau/tui-rs/blob/fafad6c96109610825aad89c4bba5253e01101ed/examples/block.rs#L18">here</a> (one of the main dependency of this TUI).</p>
+<h3 id="3-init"><a class="header" href="#3-init">3. Init</a></h3>
+<p>There are a bunch of things happening in this stage, but it really just boils down to a few basic things:</p>
+<ul>
+<li>Reading/creating config files, subscriptions, libraries and inserting them to the <em>pool of shared data</em> (global data) within the <a href="https://docs.rs/tui-additions/0.1.13/tui_additions/framework/struct.Framework.html">framework</a> struct.</li>
+</ul>
+<p>Global data is used here, the reason should be obvious. All pages, should share the same config, there is no need to keep extra copies of the (usually) same thing and waste memory.</p>
+<ul>
+<li>Insert some structs needed for the TUI to run.</li>
+</ul>
+<p>These structs includes <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/global/structs/message.rs"><code>Message</code></a> storing the message to be displayed in message bar, and <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/global/structs/status.rs"><code>Status</code></a>, useful for storing all sorts of values, for example helping with the running (mostly rendering) of the TUI.</p>
+<ul>
+<li>Move some files</li>
+</ul>
+<p>Some files have to be moved to <code>~/.cache/youtube-tui/</code> from (usually) <code>~/.local/share/youtube-tui/</code> for stored content to be used by the TUI, this is why running multiple instances of the program can mess things up - as one instance exits the files got moved from <code>.cache</code> to <code>.local</code>, and the other instance no longer sees the files they thought was still in <code>.cache</code>.</p>
+<blockquote>
+<p>The full init code is <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/init.rs">here</a></p>
+</blockquote>
+<hr />
+<p>todo...</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelogs"><a class="header" href="#changelogs">Changelogs</a></h1>
-<h2 id="v071"><a class="header" href="#v071">v0.7.1</a></h2>
+<h2 id="v072"><a class="header" href="#v072">v0.7.2</a></h2>
 <h3 id="added"><a class="header" href="#added">Added</a></h3>
+<ul>
+<li>Feeds page, and the subscriptions system.</li>
+<li>Reduced compile time needed by a lot.</li>
+</ul>
+<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<ul>
+<li>I remember fixing something but forgot what it was D:</li>
+</ul>
+<h3 id="v071"><a class="header" href="#v071">v0.7.1</a></h3>
+<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
 <ul>
 <li>Options for config loading. (<code>write_config</code> in <code>main.yml</code>)</li>
 <li>Parrallel/blocking commands <code>parrun</code>/<code>run</code></li>
 </ul>
-<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<h4 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h4>
 <ul>
 <li>Fixed crashing when launching without permissions to write to config files (<a href="https://github.com/Siriusmart/youtube-tui/issues/29" target=_blank>issue 29</a>)</li>
 </ul>
 <h3 id="v070"><a class="header" href="#v070">v0.7.0</a></h3>
-<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
+<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
 <ul>
 <li>File system based caching</li>
 <li>Bookmark library</li>
 <li>Save video/playlists for offline viewing</li>
 </ul>
-<h4 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h4>
+<h4 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h4>
 <ul>
 <li>Empty ItemList crash (<a href="https://github.com/Siriusmart/youtube-tui/issues/26" target=_blank>issue 26</a>)</li>
 </ul>
 <hr>
 <h2 id="v062"><a class="header" href="#v062">v0.6.2</a></h2>
-<h3 id="added-2"><a class="header" href="#added-2">Added</a></h3>
+<h3 id="added-3"><a class="header" href="#added-3">Added</a></h3>
 <ul>
 <li>Command bindings</li>
 </ul>
-<h3 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h3>
+<h3 id="fixed-3"><a class="header" href="#fixed-3">Fixed</a></h3>
 <ul>
 <li>Image not cleared when going back to &quot;switch view&quot;</li>
 </ul>
 <h3 id="v061"><a class="header" href="#v061">v0.6.1</a></h3>
-<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
+<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
 <ul>
 <li>Rework of the env system, now using environment variables provided by the OS as opposed to implmenting own version of env</li>
 <li>Ability to use envs in command mode</li>
 <li>Launch commands (including <code>youtube-tui help</code>)</li>
 </ul>
-<h4 id="fixed-3"><a class="header" href="#fixed-3">Fixed</a></h4>
+<h4 id="fixed-4"><a class="header" href="#fixed-4">Fixed</a></h4>
 <ul>
 <li>Screen blinking when pressing up arrow on the first item in playlist page, videos view</li>
 </ul>
 <h3 id="v060"><a class="header" href="#v060">v0.6.0</a></h3>
-<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
+<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
 <ul>
 <li>Mouse support</li>
 <li>Vim-like commands</li>
@@ -879,28 +931,28 @@ filters:
 </ul>
 <hr>
 <h2 id="v053"><a class="header" href="#v053">v0.5.3</a></h2>
-<h3 id="fixed-4"><a class="header" href="#fixed-4">Fixed</a></h3>
+<h3 id="fixed-5"><a class="header" href="#fixed-5">Fixed</a></h3>
 <ul>
 <li>Search bar could not handle non English characters (e.g. <a href="https://github.com/Siriusmart/youtube-tui/issues/14" target=_blank>Russian</a>)</li>
 </ul>
 <h3 id="v052"><a class="header" href="#v052">v0.5.2</a></h3>
-<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
+<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
 <ul>
 <li>Improved config files (including hex colour support)</li>
 <li>Page turners (next/prev page in search)</li>
 </ul>
-<h3 id="fixed-5"><a class="header" href="#fixed-5">Fixed</a></h3>
+<h3 id="fixed-6"><a class="header" href="#fixed-6">Fixed</a></h3>
 <ul>
 <li>Where the image and text are displaying in the same place, and the image is displayed over the text</li>
 </ul>
 <h3 id="v051"><a class="header" href="#v051">v0.5.1</a></h3>
-<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
+<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
 <ul>
 <li>Image lazy loading (will not rerender image if already rendered)</li>
 <li>Optional features that can be disabled</li>
 </ul>
 <h3 id="v050"><a class="header" href="#v050">v0.5.0</a></h3>
-<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
+<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
 <ul>
 <li>Entire TUI rewritten from scratch, now using the <a href="https://crates.io/crates/tui-additions" target=_blank><code>tui-additions</code></a> crate</li>
 <li>Sixels image support</li>
@@ -908,7 +960,7 @@ filters:
 </ul>
 <hr>
 <h2 id="v044"><a class="header" href="#v044">v0.4.4</a></h2>
-<h3 id="added-8"><a class="header" href="#added-8">Added</a></h3>
+<h3 id="added-9"><a class="header" href="#added-9">Added</a></h3>
 <ul>
 <li>Added default select item for each page (can be changed in <code>layouts.yml</code>)</li>
 </ul>
@@ -919,7 +971,7 @@ filters:
 <li>Search options gray backgound + image covering popup</li>
 </ul>
 <h3 id="v043"><a class="header" href="#v043">v0.4.3</a></h3>
-<h4 id="added-9"><a class="header" href="#added-9">Added</a></h4>
+<h4 id="added-10"><a class="header" href="#added-10">Added</a></h4>
 <ul>
 <li>Refreshing page</li>
 <li>Key modifiers for key bindings</li>

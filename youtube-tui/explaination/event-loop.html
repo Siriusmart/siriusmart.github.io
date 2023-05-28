@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>appearance - YouTube TUI User Manual</title>
+        <title>Event loop - YouTube TUI User Manual</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="../commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="../config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="../config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="../config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="../config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="../config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="../config/appearance.html" class="active"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="../config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="../explaination/how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../explaination/framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="../explaination/event-loop.html"><strong aria-hidden="true">6.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="../changelogs.html"><strong aria-hidden="true">7.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="../contributors.html"><strong aria-hidden="true">8.</strong> Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="../commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="../config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="../config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="../config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="../config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="../config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="../config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="../config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="../explaination/how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../explaination/framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="../explaination/event-loop.html" class="active"><strong aria-hidden="true">6.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="../changelogs.html"><strong aria-hidden="true">7.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="../contributors.html"><strong aria-hidden="true">8.</strong> Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -121,7 +121,7 @@
                         <a href="https://github.com/siriusmart/youtube-tui/tree/master/docs" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/siriusmart/youtube-tui/edit/master/docs/src/config/appearance.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/siriusmart/youtube-tui/edit/master/docs/src/explaination/event-loop.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -150,60 +150,45 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="appearance-config"><a class="header" href="#appearance-config">Appearance config</a></h1>
-<p>Appearance config controls the colours and the &quot;looks and feel&quot; of the TUI, it is located in <code>~/.config/youtube-tui/appearance.yml</code>.</p>
-<h2 id="example-appearance-config"><a class="header" href="#example-appearance-config">Example appearance config</a></h2>
-<pre><code class="language-yaml">borders: Rounded
-colors:
-  text: Reset
-  text_special: Reset
-  text_secondary: Reset
-  text_error: LightRed
-  outline: Reset
-  outline_selected: LightBlue
-  outline_hover: LightRed
-  outline_secondary: LightYellow
-  message_outline: '#FF7F00'
-  message_error_outline: LightRed
-  message_success_outline: LightGreen
-  item_info:
-    tag: Gray
-    title: LightBlue
-    description: Gray
-    author: LightGreen
-    viewcount: LightYellow
-    length: LightCyan
-    published: LightMagenta
-    video_count: '#838DFF'
-    sub_count: '#65FFBA'
-    likes: '#C8FF81'
-    genre: '#FF75D7'
-    page_turner: Gray
-</code></pre>
-<hr>
-<p>Below are the description of each of the fields:</p>
-<h3 id="borders"><a class="header" href="#borders">borders</a></h3>
-<p>The style of the borders/outline, if outdated view <a href="https://docs.rs/tui/latest/tui/widgets/enum.BorderType.html" target=_blank><em>here</em></a>.</p>
-<p><em>Accept: <code>Plain</code>/<code>Rounded</code>/<code>Double</code>/<code>Thick</code></em></p>
-<h3 id="literally-everything-else"><a class="header" href="#literally-everything-else">Literally everything else</a></h3>
-<p>Any colours, here are the 2 main represenations of colours, for more check out this page <a href="https://docs.rs/tui/latest/tui/style/enum.Color.html" target=_blank><em>here</em></a>.</p>
-<h4 id="terminal-colour"><a class="header" href="#terminal-colour">Terminal colour</a></h4>
-<p>This can be modified by the themes of your terminal (e.g. white, green, etc).</p>
-<h4 id="hex"><a class="header" href="#hex">Hex</a></h4>
-<p>Hex should be a string that starts with the <code>#</code> character, and can be from <code>000000</code> (black) to <code>FFFFFF</code> (white).</p>
+                        <h1 id="event-loop"><a class="header" href="#event-loop">Event loop</a></h1>
+<p>The event loop is like the glue that puts everything together.</p>
+<h2 id="before-the-event-loop"><a class="header" href="#before-the-event-loop">Before the event loop</a></h2>
+<p>But before the TUI enters it's main event loop, it does several things.</p>
+<h3 id="1-check-what-command-is-being-ran"><a class="header" href="#1-check-what-command-is-being-ran">1. Check what command is being ran.</a></h3>
+<p>If the command does not need to enter the main TUI, don't enter the main TUI.</p>
+<p>For example, <code>help</code> or <code>version</code> just returns a text message on your terminal screen. In <a href="https://github.com/Siriusmart/youtube-tui/blob/f3b1912e0d99b46fd8c7b0be2a1606a7b087b650/src/main.rs#LL19C1-L19C43"><code>main.rs</code></a> line 19, it is checked whether the entered command is a valid text command. If so, the program exits without ever reaching the TUI code.</p>
+<h3 id="2-enable-raw-mode"><a class="header" href="#2-enable-raw-mode">2. Enable raw mode</a></h3>
+<p>If you've tried killing youtube-tui while it's running (<code>killall youtube-tui</code>), your terminal should be in a weird state - where everything, including mouse movement seem to be captured. That's the raw mode.</p>
+<p>I have no idea what is special about it, but it is in the examples of <code>tui-rs</code> <a href="https://github.com/fdehau/tui-rs/blob/fafad6c96109610825aad89c4bba5253e01101ed/examples/block.rs#L18">here</a> (one of the main dependency of this TUI).</p>
+<h3 id="3-init"><a class="header" href="#3-init">3. Init</a></h3>
+<p>There are a bunch of things happening in this stage, but it really just boils down to a few basic things:</p>
+<ul>
+<li>Reading/creating config files, subscriptions, libraries and inserting them to the <em>pool of shared data</em> (global data) within the <a href="https://docs.rs/tui-additions/0.1.13/tui_additions/framework/struct.Framework.html">framework</a> struct.</li>
+</ul>
+<p>Global data is used here, the reason should be obvious. All pages, should share the same config, there is no need to keep extra copies of the (usually) same thing and waste memory.</p>
+<ul>
+<li>Insert some structs needed for the TUI to run.</li>
+</ul>
+<p>These structs includes <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/global/structs/message.rs"><code>Message</code></a> storing the message to be displayed in message bar, and <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/global/structs/status.rs"><code>Status</code></a>, useful for storing all sorts of values, for example helping with the running (mostly rendering) of the TUI.</p>
+<ul>
+<li>Move some files</li>
+</ul>
+<p>Some files have to be moved to <code>~/.cache/youtube-tui/</code> from (usually) <code>~/.local/share/youtube-tui/</code> for stored content to be used by the TUI, this is why running multiple instances of the program can mess things up - as one instance exits the files got moved from <code>.cache</code> to <code>.local</code>, and the other instance no longer sees the files they thought was still in <code>.cache</code>.</p>
 <blockquote>
-<p>RGB color values has been deprecated</p>
+<p>The full init code is <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/init.rs">here</a></p>
 </blockquote>
+<hr />
+<p>todo...</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../config/pages.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../explaination/framework.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../config/search.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../changelogs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -213,11 +198,11 @@ colors:
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../config/pages.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../explaination/framework.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../config/search.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../changelogs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
