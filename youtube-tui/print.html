@@ -870,60 +870,70 @@ filters:
 <hr />
 <p>todo...</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelogs"><a class="header" href="#changelogs">Changelogs</a></h1>
-<h2 id="v072"><a class="header" href="#v072">v0.7.2</a></h2>
-<h3 id="added"><a class="header" href="#added">Added</a></h3>
+<h3 id="v073-latest-unstable-on-git"><a class="header" href="#v073-latest-unstable-on-git">v0.7.3 (latest unstable on git)</a></h3>
+<h4 id="added"><a class="header" href="#added">Added</a></h4>
+<ul>
+<li>Lazy feed syncing (configurable), so you are not actively ddosing the Invidious instance as badly.</li>
+</ul>
+<h4 id="fixed"><a class="header" href="#fixed">Fixed</a></h4>
+<ul>
+<li>Search bar no longer shows escaped search query: the original text string is displayed instead.</li>
+<li>Fixed something about labeling channels with * although no new video is published.</li>
+</ul>
+<h2 id="v072-latest-stable-on-cratesio"><a class="header" href="#v072-latest-stable-on-cratesio">v0.7.2 (latest stable on crates.io)</a></h2>
+<h3 id="added-1"><a class="header" href="#added-1">Added</a></h3>
 <ul>
 <li>Feeds page, and the subscriptions system.</li>
 <li>Reduced compile time needed by a lot.</li>
 </ul>
-<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<h3 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h3>
 <ul>
-<li>I remember fixing something but forgot what it was D:</li>
+<li>Search url not escaped, so searches with symbols or spaces are now working.</li>
 </ul>
 <h3 id="v071"><a class="header" href="#v071">v0.7.1</a></h3>
-<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
+<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
 <ul>
 <li>Options for config loading. (<code>write_config</code> in <code>main.yml</code>)</li>
 <li>Parrallel/blocking commands <code>parrun</code>/<code>run</code></li>
 </ul>
-<h4 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h4>
+<h4 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h4>
 <ul>
 <li>Fixed crashing when launching without permissions to write to config files (<a href="https://github.com/Siriusmart/youtube-tui/issues/29" target=_blank>issue 29</a>)</li>
 </ul>
 <h3 id="v070"><a class="header" href="#v070">v0.7.0</a></h3>
-<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
+<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
 <ul>
 <li>File system based caching</li>
 <li>Bookmark library</li>
 <li>Save video/playlists for offline viewing</li>
 </ul>
-<h4 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h4>
+<h4 id="fixed-3"><a class="header" href="#fixed-3">Fixed</a></h4>
 <ul>
 <li>Empty ItemList crash (<a href="https://github.com/Siriusmart/youtube-tui/issues/26" target=_blank>issue 26</a>)</li>
 </ul>
 <hr>
 <h2 id="v062"><a class="header" href="#v062">v0.6.2</a></h2>
-<h3 id="added-3"><a class="header" href="#added-3">Added</a></h3>
+<h3 id="added-4"><a class="header" href="#added-4">Added</a></h3>
 <ul>
 <li>Command bindings</li>
 </ul>
-<h3 id="fixed-3"><a class="header" href="#fixed-3">Fixed</a></h3>
+<h3 id="fixed-4"><a class="header" href="#fixed-4">Fixed</a></h3>
 <ul>
 <li>Image not cleared when going back to &quot;switch view&quot;</li>
 </ul>
 <h3 id="v061"><a class="header" href="#v061">v0.6.1</a></h3>
-<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
+<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
 <ul>
 <li>Rework of the env system, now using environment variables provided by the OS as opposed to implmenting own version of env</li>
 <li>Ability to use envs in command mode</li>
 <li>Launch commands (including <code>youtube-tui help</code>)</li>
 </ul>
-<h4 id="fixed-4"><a class="header" href="#fixed-4">Fixed</a></h4>
+<h4 id="fixed-5"><a class="header" href="#fixed-5">Fixed</a></h4>
 <ul>
 <li>Screen blinking when pressing up arrow on the first item in playlist page, videos view</li>
 </ul>
 <h3 id="v060"><a class="header" href="#v060">v0.6.0</a></h3>
-<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
+<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
 <ul>
 <li>Mouse support</li>
 <li>Vim-like commands</li>
@@ -931,28 +941,28 @@ filters:
 </ul>
 <hr>
 <h2 id="v053"><a class="header" href="#v053">v0.5.3</a></h2>
-<h3 id="fixed-5"><a class="header" href="#fixed-5">Fixed</a></h3>
+<h3 id="fixed-6"><a class="header" href="#fixed-6">Fixed</a></h3>
 <ul>
 <li>Search bar could not handle non English characters (e.g. <a href="https://github.com/Siriusmart/youtube-tui/issues/14" target=_blank>Russian</a>)</li>
 </ul>
 <h3 id="v052"><a class="header" href="#v052">v0.5.2</a></h3>
-<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
+<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
 <ul>
 <li>Improved config files (including hex colour support)</li>
 <li>Page turners (next/prev page in search)</li>
 </ul>
-<h3 id="fixed-6"><a class="header" href="#fixed-6">Fixed</a></h3>
+<h3 id="fixed-7"><a class="header" href="#fixed-7">Fixed</a></h3>
 <ul>
 <li>Where the image and text are displaying in the same place, and the image is displayed over the text</li>
 </ul>
 <h3 id="v051"><a class="header" href="#v051">v0.5.1</a></h3>
-<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
+<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
 <ul>
 <li>Image lazy loading (will not rerender image if already rendered)</li>
 <li>Optional features that can be disabled</li>
 </ul>
 <h3 id="v050"><a class="header" href="#v050">v0.5.0</a></h3>
-<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
+<h4 id="added-9"><a class="header" href="#added-9">Added</a></h4>
 <ul>
 <li>Entire TUI rewritten from scratch, now using the <a href="https://crates.io/crates/tui-additions" target=_blank><code>tui-additions</code></a> crate</li>
 <li>Sixels image support</li>
@@ -960,7 +970,7 @@ filters:
 </ul>
 <hr>
 <h2 id="v044"><a class="header" href="#v044">v0.4.4</a></h2>
-<h3 id="added-9"><a class="header" href="#added-9">Added</a></h3>
+<h3 id="added-10"><a class="header" href="#added-10">Added</a></h3>
 <ul>
 <li>Added default select item for each page (can be changed in <code>layouts.yml</code>)</li>
 </ul>
@@ -971,7 +981,7 @@ filters:
 <li>Search options gray backgound + image covering popup</li>
 </ul>
 <h3 id="v043"><a class="header" href="#v043">v0.4.3</a></h3>
-<h4 id="added-10"><a class="header" href="#added-10">Added</a></h4>
+<h4 id="added-11"><a class="header" href="#added-11">Added</a></h4>
 <ul>
 <li>Refreshing page</li>
 <li>Key modifiers for key bindings</li>
