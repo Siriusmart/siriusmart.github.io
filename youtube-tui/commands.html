@@ -182,6 +182,7 @@ flush
 quit (alt `q`, `exit`, `x`)
 run [command]
 parrun [command]
+key [keycode] [keymodifier]
 </code></pre>
 <blockquote>
 <p>The <code>flush</code> command is used to run all tasks in queue immediately, this is usually done automatically.</p>
@@ -189,6 +190,10 @@ parrun [command]
 </blockquote>
 <blockquote>
 <p><code>run</code> is used for running <em>blocking commands</em>, while <code>parrun</code> is non-blocking.</p>
+</blockquote>
+<blockquote>
+<p>Valid keycodes are the same as in <a href="./config/keybindings.html"><code>keybindings.yml</code></a> and <a href="./config/commandbindings.html"><code>commandbindings.yml</code></a>. For a full list of keys, check out <a href="https://docs.rs/youtube-tui/latest/youtube_tui/config/serde/enum.KeyCodeSerde.html"><code>KeyCodeSerde</code></a> in <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/config/serde.rs"><code>/src/config/serde.rs</code></a>.</p>
+<p>More about keymodifiers can be found in the doc page for <a href="./config/keybindings.html"><code>keybindings.yml</code></a></p>
 </blockquote>
 <h2 id="library"><a class="header" href="#library">Library</a></h2>
 <pre><code class="language-vim">bookmark [id]                   Bookmark item with ID (item must be already loaded)

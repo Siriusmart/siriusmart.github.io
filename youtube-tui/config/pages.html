@@ -171,6 +171,7 @@
     items:
     - MessageBar
   message: Loading main menu...
+  command: key Esc 0 ;; key Up 0 ;; key Left 0 ;; key Enter 0 # this focuses on the search bar
 
 # and much more ...
 </code></pre>
@@ -184,6 +185,8 @@
 <p>Each item are ordered from left to right.</p>
 <h2 id="message"><a class="header" href="#message">Message</a></h2>
 <p>The message to display when loading the page.</p>
+<h2 id="command"><a class="header" href="#command">Command</a></h2>
+<p>Command to run when the page loads, you can use the <code>key</code> command to select an item on load.</p>
 <h3 id="items-reference"><a class="header" href="#items-reference">Items reference</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Item</th><th>Can be used in page</th><th>Description</th></tr></thead><tbody>
 <tr><td>MessageBar</td><td>Any</td><td>The panel (default in the bottom of every page) that displays message and error messages</td></tr>

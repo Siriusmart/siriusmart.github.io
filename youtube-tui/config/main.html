@@ -204,6 +204,18 @@ env:
 <h3 id="refresh_after_modifying_search_filters"><a class="header" href="#refresh_after_modifying_search_filters">refresh_after_modifying_search_filters</a></h3>
 <p>Whether to refresh the current search page after search filters are modified</p>
 <p><em>Accept: <code>true</code>/<code>false</code></em></p>
+<h3 id="download_images"><a class="header" href="#download_images">download_images</a></h3>
+<p>Whether to download images for all subscription videos</p>
+<p><em>Accept: <code>true</code>/<code>false</code></em></p>
+<h3 id="sync_channel_info"><a class="header" href="#sync_channel_info">sync_channel_info</a></h3>
+<p>Whether to also request an updated version of the channel info when syncing feeds. Disabling this halves the number of requests sent to Invidious, but channel info will not be updated (the videos will).</p>
+<p><em>Accept: <code>true</code>/<code>false</code></em></p>
+<h3 id="sync_channel_cooldown_secs"><a class="header" href="#sync_channel_cooldown_secs">sync_channel_cooldown_secs</a></h3>
+<p>Sync all do not sync channel info if it has been synced in the past <em>n</em> seconds.</p>
+<p><em>Accept: integer value seconds</em></p>
+<h3 id="sync_videos_cooldown_secs"><a class="header" href="#sync_videos_cooldown_secs">sync_videos_cooldown_secs</a></h3>
+<p>Sync all do not sync videos from channel if it has been synced in the past <em>n</em> seconds.</p>
+<p><em>Accept: integer value seconds</em></p>
 <h3 id="image_index"><a class="header" href="#image_index">image_index</a></h3>
 <p>The index in the array of thumbnail qualities you want to download</p>
 <p>Typically these are the avaliable qualities:</p>
@@ -221,10 +233,15 @@ env:
 </div>
 <p>Usually you don't want to use the max resolution as it will create a large gap between the page being loaded and before the thumbnails are started to get displayed</p>
 <p><em>Accept: integer that is a valid index</em></p>
-<h3 id="provider"><a class="header" href="#provider">Provider</a></h3>
+<h3 id="provider"><a class="header" href="#provider">provider</a></h3>
 <p>This changes the <code>${url}</code> and <code>${embed-url}</code> of videos, allowing you to watch videos from Invidious if it is restricted on YouTube.</p>
 <p>(Don't always use Invidious if YouTube is working, because first of all the load time if gonna be much slower, and secondly you will be DDoSing Invidious)</p>
 <p><em>Accept: <code>YouTube</code>/<code>Invidious</code></em></p>
+<h3 id="shell"><a class="header" href="#shell">shell</a></h3>
+<p>Shell used to run commands, such as <code>sh</code> (default), <code>bash</code> or even <code>zsh</code>.</p>
+<p><em>Accept: any valid path to a shell binary</em></p>
+<h3 id="legacy_input_handling"><a class="header" href="#legacy_input_handling">legacy_input_handling</a></h3>
+<p>Switch back the old key input handling where the selected item captures all input (except escape).</p>
 <h3 id="env"><a class="header" href="#env">env</a></h3>
 <p>Env are variables that can be used in <code>commands.yml</code>, this allows you to change multiple commands by modifying just one env variable. And not to be confused with system/terminal environment variables, these are just <em>&quot;a thing&quot;</em> that you can use in the TUI.</p>
 <p><em>Accept: <code>string_key: string_value</code> pairs</em></p>

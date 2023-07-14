@@ -199,10 +199,8 @@ Left:
 <p>Each modifier has its own code, for instance <code>Shift</code> would be <code>1</code> and <code>Ctrl</code> would be <code>2</code>. The final modifier will be the <u>sum</u> of all modifier keys. (<code>Ctrl + Shift</code> would be a <code>3</code>).</p>
 <h3 id="keys-reference"><a class="header" href="#keys-reference">Keys reference</a></h3>
 <p>All possible keys can be found <a href="https://docs.rs/crossterm/latest/crossterm/event/enum.KeyCode.html" target=_blank><em>here</em></a>.</p>
-<blockquote>
-<p>Enums are represented using the character <code>!</code>, for example the <code>q</code> key would be <code>!Char 'q'</code></p>
-<p><code>Shift + Q</code> however would be <code>!Char 'Q'</code> with <code>0</code> as modifier code as <code>Shift</code> turns <code>q</code> into an upper case character.</p>
-</blockquote>
+<h3 id="key-actions"><a class="header" href="#key-actions">Key actions</a></h3>
+<p>All key actions can be found in <a href="https://docs.rs/youtube-tui/latest/youtube_tui/global/structs/enum.KeyAction.html"><code>KeyAction</code></a> under <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/global/structs/keyaction.rs"><code>/src/global/structs/keyaction.rs</code></a>.</p>
 <h3 id="modifiers-reference"><a class="header" href="#modifiers-reference">Modifiers reference</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Modifier</th><th>Code</th></tr></thead><tbody>
 <tr><td>None</td><td><code>0</code></td></tr>

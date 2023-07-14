@@ -355,6 +355,7 @@ flush
 quit (alt `q`, `exit`, `x`)
 run [command]
 parrun [command]
+key [keycode] [keymodifier]
 </code></pre>
 <blockquote>
 <p>The <code>flush</code> command is used to run all tasks in queue immediately, this is usually done automatically.</p>
@@ -362,6 +363,10 @@ parrun [command]
 </blockquote>
 <blockquote>
 <p><code>run</code> is used for running <em>blocking commands</em>, while <code>parrun</code> is non-blocking.</p>
+</blockquote>
+<blockquote>
+<p>Valid keycodes are the same as in <a href="./config/keybindings.html"><code>keybindings.yml</code></a> and <a href="./config/commandbindings.html"><code>commandbindings.yml</code></a>. For a full list of keys, check out <a href="https://docs.rs/youtube-tui/latest/youtube_tui/config/serde/enum.KeyCodeSerde.html"><code>KeyCodeSerde</code></a> in <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/config/serde.rs"><code>/src/config/serde.rs</code></a>.</p>
+<p>More about keymodifiers can be found in the doc page for <a href="./config/keybindings.html"><code>keybindings.yml</code></a></p>
 </blockquote>
 <h2 id="library-1"><a class="header" href="#library-1">Library</a></h2>
 <pre><code class="language-vim">bookmark [id]                   Bookmark item with ID (item must be already loaded)
@@ -451,6 +456,18 @@ env:
 <h3 id="refresh_after_modifying_search_filters"><a class="header" href="#refresh_after_modifying_search_filters">refresh_after_modifying_search_filters</a></h3>
 <p>Whether to refresh the current search page after search filters are modified</p>
 <p><em>Accept: <code>true</code>/<code>false</code></em></p>
+<h3 id="download_images"><a class="header" href="#download_images">download_images</a></h3>
+<p>Whether to download images for all subscription videos</p>
+<p><em>Accept: <code>true</code>/<code>false</code></em></p>
+<h3 id="sync_channel_info"><a class="header" href="#sync_channel_info">sync_channel_info</a></h3>
+<p>Whether to also request an updated version of the channel info when syncing feeds. Disabling this halves the number of requests sent to Invidious, but channel info will not be updated (the videos will).</p>
+<p><em>Accept: <code>true</code>/<code>false</code></em></p>
+<h3 id="sync_channel_cooldown_secs"><a class="header" href="#sync_channel_cooldown_secs">sync_channel_cooldown_secs</a></h3>
+<p>Sync all do not sync channel info if it has been synced in the past <em>n</em> seconds.</p>
+<p><em>Accept: integer value seconds</em></p>
+<h3 id="sync_videos_cooldown_secs"><a class="header" href="#sync_videos_cooldown_secs">sync_videos_cooldown_secs</a></h3>
+<p>Sync all do not sync videos from channel if it has been synced in the past <em>n</em> seconds.</p>
+<p><em>Accept: integer value seconds</em></p>
 <h3 id="image_index"><a class="header" href="#image_index">image_index</a></h3>
 <p>The index in the array of thumbnail qualities you want to download</p>
 <p>Typically these are the avaliable qualities:</p>
@@ -468,10 +485,15 @@ env:
 </div>
 <p>Usually you don't want to use the max resolution as it will create a large gap between the page being loaded and before the thumbnails are started to get displayed</p>
 <p><em>Accept: integer that is a valid index</em></p>
-<h3 id="provider"><a class="header" href="#provider">Provider</a></h3>
+<h3 id="provider"><a class="header" href="#provider">provider</a></h3>
 <p>This changes the <code>${url}</code> and <code>${embed-url}</code> of videos, allowing you to watch videos from Invidious if it is restricted on YouTube.</p>
 <p>(Don't always use Invidious if YouTube is working, because first of all the load time if gonna be much slower, and secondly you will be DDoSing Invidious)</p>
 <p><em>Accept: <code>YouTube</code>/<code>Invidious</code></em></p>
+<h3 id="shell"><a class="header" href="#shell">shell</a></h3>
+<p>Shell used to run commands, such as <code>sh</code> (default), <code>bash</code> or even <code>zsh</code>.</p>
+<p><em>Accept: any valid path to a shell binary</em></p>
+<h3 id="legacy_input_handling"><a class="header" href="#legacy_input_handling">legacy_input_handling</a></h3>
+<p>Switch back the old key input handling where the selected item captures all input (except escape).</p>
 <h3 id="env"><a class="header" href="#env">env</a></h3>
 <p>Env are variables that can be used in <code>commands.yml</code>, this allows you to change multiple commands by modifying just one env variable. And not to be confused with system/terminal environment variables, these are just <em>&quot;a thing&quot;</em> that you can use in the TUI.</p>
 <p><em>Accept: <code>string_key: string_value</code> pairs</em></p>
@@ -595,10 +617,8 @@ Left:
 <p>Each modifier has its own code, for instance <code>Shift</code> would be <code>1</code> and <code>Ctrl</code> would be <code>2</code>. The final modifier will be the <u>sum</u> of all modifier keys. (<code>Ctrl + Shift</code> would be a <code>3</code>).</p>
 <h3 id="keys-reference"><a class="header" href="#keys-reference">Keys reference</a></h3>
 <p>All possible keys can be found <a href="https://docs.rs/crossterm/latest/crossterm/event/enum.KeyCode.html" target=_blank><em>here</em></a>.</p>
-<blockquote>
-<p>Enums are represented using the character <code>!</code>, for example the <code>q</code> key would be <code>!Char 'q'</code></p>
-<p><code>Shift + Q</code> however would be <code>!Char 'Q'</code> with <code>0</code> as modifier code as <code>Shift</code> turns <code>q</code> into an upper case character.</p>
-</blockquote>
+<h3 id="key-actions"><a class="header" href="#key-actions">Key actions</a></h3>
+<p>All key actions can be found in <a href="https://docs.rs/youtube-tui/latest/youtube_tui/global/structs/enum.KeyAction.html"><code>KeyAction</code></a> under <a href="https://github.com/Siriusmart/youtube-tui/blob/master/src/global/structs/keyaction.rs"><code>/src/global/structs/keyaction.rs</code></a>.</p>
 <h3 id="modifiers-reference"><a class="header" href="#modifiers-reference">Modifiers reference</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Modifier</th><th>Code</th></tr></thead><tbody>
 <tr><td>None</td><td><code>0</code></td></tr>
@@ -660,6 +680,7 @@ watchhistory:
     items:
     - MessageBar
   message: Loading main menu...
+  command: key Esc 0 ;; key Up 0 ;; key Left 0 ;; key Enter 0 # this focuses on the search bar
 
 # and much more ...
 </code></pre>
@@ -673,6 +694,8 @@ watchhistory:
 <p>Each item are ordered from left to right.</p>
 <h2 id="message"><a class="header" href="#message">Message</a></h2>
 <p>The message to display when loading the page.</p>
+<h2 id="command"><a class="header" href="#command">Command</a></h2>
+<p>Command to run when the page loads, you can use the <code>key</code> command to select an item on load.</p>
 <h3 id="items-reference"><a class="header" href="#items-reference">Items reference</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Item</th><th>Can be used in page</th><th>Description</th></tr></thead><tbody>
 <tr><td>MessageBar</td><td>Any</td><td>The panel (default in the bottom of every page) that displays message and error messages</td></tr>
@@ -870,71 +893,81 @@ filters:
 <hr />
 <p>todo...</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelogs"><a class="header" href="#changelogs">Changelogs</a></h1>
+<h3 id="v074-latest-unstable-on-git"><a class="header" href="#v074-latest-unstable-on-git">v0.7.4 (latest unstable on git)</a></h3>
+<h4 id="added"><a class="header" href="#added">Added</a></h4>
+<ul>
+<li><code>Ctrl + w</code> and <code>Ctrl + u</code> in search bar and command mode.</li>
+<li>Keybindings works even when an item is selected (<code>legacy_input_handling: false</code> in <code>main.yml</code>).</li>
+</ul>
+<h4 id="fixed"><a class="header" href="#fixed">Fixed</a></h4>
+<ul>
+<li>Search filters popup closing when you click on it.</li>
+</ul>
 <h2 id="v073-latest-stable-on-cratesio"><a class="header" href="#v073-latest-stable-on-cratesio">v0.7.3 (latest stable on crates.io)</a></h2>
-<h3 id="added"><a class="header" href="#added">Added</a></h3>
+<h3 id="added-1"><a class="header" href="#added-1">Added</a></h3>
 <ul>
 <li>Lazy feed syncing (configurable), so you are not actively ddosing the Invidious instance as badly.</li>
 </ul>
-<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<h3 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h3>
 <ul>
 <li>Search bar no longer shows escaped search query: the original text string is displayed instead.</li>
 <li>Fixed something about labeling channels with * although no new video is published.</li>
 <li>Blank screen on loadpage if itemlist is empty.</li>
 </ul>
 <h3 id="v072"><a class="header" href="#v072">v0.7.2</a></h3>
-<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
+<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
 <ul>
 <li>Feeds page, and the subscriptions system.</li>
 <li>Reduced compile time needed by a lot.</li>
 </ul>
-<h4 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h4>
+<h4 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h4>
 <ul>
 <li>Search url not escaped, so searches with symbols or spaces are now working.</li>
 </ul>
 <h3 id="v071"><a class="header" href="#v071">v0.7.1</a></h3>
-<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
+<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
 <ul>
 <li>Options for config loading. (<code>write_config</code> in <code>main.yml</code>)</li>
 <li>Parrallel/blocking commands <code>parrun</code>/<code>run</code></li>
 </ul>
-<h4 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h4>
+<h4 id="fixed-3"><a class="header" href="#fixed-3">Fixed</a></h4>
 <ul>
 <li>Fixed crashing when launching without permissions to write to config files (<a href="https://github.com/Siriusmart/youtube-tui/issues/29" target=_blank>issue 29</a>)</li>
 </ul>
 <h3 id="v070"><a class="header" href="#v070">v0.7.0</a></h3>
-<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
+<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
 <ul>
 <li>File system based caching</li>
 <li>Bookmark library</li>
 <li>Save video/playlists for offline viewing</li>
 </ul>
-<h4 id="fixed-3"><a class="header" href="#fixed-3">Fixed</a></h4>
+<h4 id="fixed-4"><a class="header" href="#fixed-4">Fixed</a></h4>
 <ul>
 <li>Empty ItemList crash (<a href="https://github.com/Siriusmart/youtube-tui/issues/26" target=_blank>issue 26</a>)</li>
 </ul>
 <hr>
 <h2 id="v062"><a class="header" href="#v062">v0.6.2</a></h2>
-<h3 id="added-4"><a class="header" href="#added-4">Added</a></h3>
+<h3 id="added-5"><a class="header" href="#added-5">Added</a></h3>
 <ul>
 <li>Command bindings</li>
 </ul>
-<h3 id="fixed-4"><a class="header" href="#fixed-4">Fixed</a></h3>
+<h3 id="fixed-5"><a class="header" href="#fixed-5">Fixed</a></h3>
 <ul>
 <li>Image not cleared when going back to &quot;switch view&quot;</li>
 </ul>
 <h3 id="v061"><a class="header" href="#v061">v0.6.1</a></h3>
-<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
+<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
 <ul>
 <li>Rework of the env system, now using environment variables provided by the OS as opposed to implmenting own version of env</li>
 <li>Ability to use envs in command mode</li>
 <li>Launch commands (including <code>youtube-tui help</code>)</li>
 </ul>
-<h4 id="fixed-5"><a class="header" href="#fixed-5">Fixed</a></h4>
+<h4 id="fixed-6"><a class="header" href="#fixed-6">Fixed</a></h4>
 <ul>
 <li>Screen blinking when pressing up arrow on the first item in playlist page, videos view</li>
 </ul>
 <h3 id="v060"><a class="header" href="#v060">v0.6.0</a></h3>
-<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
+<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
 <ul>
 <li>Mouse support</li>
 <li>Vim-like commands</li>
@@ -942,28 +975,28 @@ filters:
 </ul>
 <hr>
 <h2 id="v053"><a class="header" href="#v053">v0.5.3</a></h2>
-<h3 id="fixed-6"><a class="header" href="#fixed-6">Fixed</a></h3>
+<h3 id="fixed-7"><a class="header" href="#fixed-7">Fixed</a></h3>
 <ul>
 <li>Search bar could not handle non English characters (e.g. <a href="https://github.com/Siriusmart/youtube-tui/issues/14" target=_blank>Russian</a>)</li>
 </ul>
 <h3 id="v052"><a class="header" href="#v052">v0.5.2</a></h3>
-<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
+<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
 <ul>
 <li>Improved config files (including hex colour support)</li>
 <li>Page turners (next/prev page in search)</li>
 </ul>
-<h3 id="fixed-7"><a class="header" href="#fixed-7">Fixed</a></h3>
+<h3 id="fixed-8"><a class="header" href="#fixed-8">Fixed</a></h3>
 <ul>
 <li>Where the image and text are displaying in the same place, and the image is displayed over the text</li>
 </ul>
 <h3 id="v051"><a class="header" href="#v051">v0.5.1</a></h3>
-<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
+<h4 id="added-9"><a class="header" href="#added-9">Added</a></h4>
 <ul>
 <li>Image lazy loading (will not rerender image if already rendered)</li>
 <li>Optional features that can be disabled</li>
 </ul>
 <h3 id="v050"><a class="header" href="#v050">v0.5.0</a></h3>
-<h4 id="added-9"><a class="header" href="#added-9">Added</a></h4>
+<h4 id="added-10"><a class="header" href="#added-10">Added</a></h4>
 <ul>
 <li>Entire TUI rewritten from scratch, now using the <a href="https://crates.io/crates/tui-additions" target=_blank><code>tui-additions</code></a> crate</li>
 <li>Sixels image support</li>
@@ -971,7 +1004,7 @@ filters:
 </ul>
 <hr>
 <h2 id="v044"><a class="header" href="#v044">v0.4.4</a></h2>
-<h3 id="added-10"><a class="header" href="#added-10">Added</a></h3>
+<h3 id="added-11"><a class="header" href="#added-11">Added</a></h3>
 <ul>
 <li>Added default select item for each page (can be changed in <code>layouts.yml</code>)</li>
 </ul>
@@ -982,7 +1015,7 @@ filters:
 <li>Search options gray backgound + image covering popup</li>
 </ul>
 <h3 id="v043"><a class="header" href="#v043">v0.4.3</a></h3>
-<h4 id="added-11"><a class="header" href="#added-11">Added</a></h4>
+<h4 id="added-12"><a class="header" href="#added-12">Added</a></h4>
 <ul>
 <li>Refreshing page</li>
 <li>Key modifiers for key bindings</li>
