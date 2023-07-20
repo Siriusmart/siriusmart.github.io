@@ -1,0 +1,42 @@
+.hide {
+  display: none;
+}
+
+body {
+  background: black;
+  margin: 0;
+}
+
+#url,
+#load {
+  box-shadow: 3px 3px pink;
+  text-align: center;
+  font-size: 1em;
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 1.5em;
+  padding: 0.5em;
+  margin: 0.25em;
+}
+
+input:focus {
+  outline: none;
+}
+
+#url:hover,
+#load:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px pink;
+}
+
+#load:hover {
+  cursor: pointer;
+}
+
+#inputs, #player{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
