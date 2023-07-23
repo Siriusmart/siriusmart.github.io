@@ -7,12 +7,14 @@ function play() {
     return;
   }
 
-  document.getElementById("inputs").classList.add("hide");
+  // document.getElementById("inputs").classList.add("hide");
 
   let player = document.getElementById("player");
 
   player.setAttribute("src", url);
   player.classList.remove("hide");
+  player.classList.add("player-js");
+  openFullscreen();
 }
 
 document.getElementById("url").addEventListener("keyup", function (event) {
@@ -20,3 +22,14 @@ document.getElementById("url").addEventListener("keyup", function (event) {
     play();
   }
 });
+
+function openFullscreen() {
+  let player = document.getElementById("player");
+  if (player.requestFullscreen) {
+    player.requestFullscreen();
+  } else if (player.webkitRequestFullscreen) {
+    player.webkitRequestFullscreen();
+  } else if (player.msRequestFullscreen) {
+    player.msRequestFullscreen();
+  }
+}
