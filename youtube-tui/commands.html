@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="invidious.html"><strong aria-hidden="true">4.</strong> Invidious</a></li><li class="chapter-item expanded "><a href="commands.html" class="active"><strong aria-hidden="true">5.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">6.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">6.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">6.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">6.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">6.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">6.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">6.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">6.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">7.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">7.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="explaination/event-loop.html"><strong aria-hidden="true">7.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">8.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">9.</strong> Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="commands.html" class="active"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li><li class="chapter-item expanded "><a href="config/cmdefine.html"><strong aria-hidden="true">5.8.</strong> cmdefine</a></li><li class="chapter-item expanded "><a href="config/remap.html"><strong aria-hidden="true">5.9.</strong> remap</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="explaination/event-loop.html"><strong aria-hidden="true">6.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">7.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">8.</strong> Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -173,7 +173,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="commands"><a class="header" href="#commands">Commands</a></h1>
-<p>Commands can be entered to the TUI by pressing the <code>:</code> key, the same as in Vim. Some commands have shorter <em>alternatives</em> that can be used instead.</p>
+<p>Commands can be entered to the TUI by pressing the <code>:</code> key, the same as in Vim.</p>
+<p>Run the help command to view more detailed help.</p>
+<pre><code class="language-sh">youtube-tui help
+</code></pre>
 <blockquote>
 <p>Env variables can be used by passing in as <code>${key}</code>, such as <code>:channel ${channel-id}</code> when in a video or playlist page.</p>
 </blockquote>
@@ -184,27 +187,22 @@
 <p>Below are the avaliable commands:</p>
 <h2 id="loadpage"><a class="header" href="#loadpage">Loadpage</a></h2>
 <p><code>loadpage</code> can be used to load a specific page.</p>
-<pre><code class="language-vim">loadpage popular (alt: `popular`)
-loadpage trending (alt: `trending`)
-loadpage watchhistory (alt: `watchhistory`)
-loadpage search [search query] (alt: `search [search query]`)
-loadpage video [id or url] (alt: `video [id or url]`)
-loadpage playlist [id or url] (alt: `playlist [id or url] `)
-loadpage channel [id or url] (alt: `channel [id or url] `)
+<pre><code class="language-vim">loadpage [page]
 </code></pre>
 <h2 id="history"><a class="header" href="#history">History</a></h2>
 <p><code>history</code> is used to manage page history (<code>Backspace</code> equivalent).</p>
-<pre><code class="language-vim">history back (alt: `back`)
+<pre><code class="language-vim">history back
 history clear
 </code></pre>
 <h2 id="utility"><a class="header" href="#utility">Utility</a></h2>
-<pre><code class="language-vim">reload (alt `r`)
-reload configs (alt `reload/r config/configs`)
+<pre><code class="language-vim">reload // reloads the page
+reload configs // reload config files in ~/.config/youtube-tui/
 flush
-quit (alt `q`, `exit`, `x`)
+quit
 run [command]
 parrun [command]
 key [keycode] [keymodifier]
+echo [mode] (message) # run youtube-tui help to learn more about modes
 </code></pre>
 <blockquote>
 <p>The <code>flush</code> command is used to run all tasks in queue immediately, this is usually done automatically.</p>
@@ -225,6 +223,16 @@ sub/sync [id or url]            Add channel to subscription, or sync an existing
 unsub [id or url]               Remove channel from subscription
 syncall                         Sync all subscriptions
 </code></pre>
+<h2 id="mpv-commands"><a class="header" href="#mpv-commands">MPV commands</a></h2>
+<p><sub>Only with the <a href="installation.html#mpv-default"><code>mpv</code></a> feature.</sub></p>
+<pre><code class="language-vim">mpv prop [label]                Gets mpv property
+mpv sprop [label] [value]       Set mpv property
+mpv tprop [label] [value]       Toggle a yes/no property
+mpv [command]                   Runs a libmpv command
+</code></pre>
+<blockquote>
+<p>Note that properties and commands are <strong>libmpv</strong> commands, <em>not</em> mpv commands. Please refer to <a href="https://mpv.io/manual/master/">mpv reference</a>.</p>
+</blockquote>
 <h2 id="text-commands"><a class="header" href="#text-commands">Text commands</a></h2>
 <p>Text commands generates a <em>text only response</em> without launching the TUI.</p>
 <pre><code class="language-vim">help
@@ -244,7 +252,7 @@ version
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="invidious.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="basic_usage.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -258,7 +266,7 @@ version
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="invidious.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="basic_usage.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

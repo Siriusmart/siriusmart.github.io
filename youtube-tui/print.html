@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="invidious.html"><strong aria-hidden="true">4.</strong> Invidious</a></li><li class="chapter-item expanded "><a href="commands.html"><strong aria-hidden="true">5.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">6.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">6.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">6.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">6.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">6.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">6.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">6.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">6.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">7.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">7.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="explaination/event-loop.html"><strong aria-hidden="true">7.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">8.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">9.</strong> Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li><li class="chapter-item expanded "><a href="config/cmdefine.html"><strong aria-hidden="true">5.8.</strong> cmdefine</a></li><li class="chapter-item expanded "><a href="config/remap.html"><strong aria-hidden="true">5.9.</strong> remap</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="explaination/event-loop.html"><strong aria-hidden="true">6.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">7.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">8.</strong> Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -171,9 +171,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
-<p>Written in Rust, the <strong>YouTube TUI</strong> is a lightweight and user friendly TUI for browsing YouTube content from the terminal.</p>
+<p>Written in Rust, the <strong>YouTube TUI</strong> is a lightweight and user friendly TUI for browsing YouTube content from the terminal. Works out of the box and easily to configurable.</p>
 <p><img src="./images/search-showcase.png" alt="" /></p>
 <p>It is like an <em>app launcher</em>, it launches other programs to do the heavy lifting (for example, <code>mpv</code> for playing videos).</p>
+<p><sub>It also have an embedded mpv music player, but that can be disabled in compile time.</sub></p>
 <blockquote>
 <p>Consider regenerating config files on updates to allow new features.</p>
 </blockquote>
@@ -202,10 +203,10 @@ env:
 <h2 id="powerful"><a class="header" href="#powerful">Powerful</a></h2>
 <p>The YouTube TUI allows you to browse YouTube with (almost) all of it's features, functions including:</p>
 <ul>
-<li>View popular/trending videos</li>
 <li>View information about channels, playlists and videos</li>
 <li>Use search filters to sort and filter search results</li>
 <li>Save browsing history</li>
+<li>Embedded audio/music player</li>
 </ul>
 <p>It also includes features like:</p>
 <ul>
@@ -220,7 +221,7 @@ env:
 <li>[URGENT] Replace the no-longer-going-to-compile <code>typemap</code> dependency with either a self implementation of it or a useable crate.</li>
 <li>Strip down some libraries to reduce compile speed.</li>
 <li>Add command section for channel main page (first priority)</li>
-<li>Up arrow command history + Ctrl arrow keys move between words</li>
+<li>Git like command line to improve on <code>yt-dlp</code> - make changes to existing downloaded playlists instead of redownloading the entire thing.</li>
 </ul>
 <h2 id="how-to-contribute"><a class="header" href="#how-to-contribute">How to contribute</a></h2>
 <p>You will need a <u>general knowledge</u> of the Rust programming language, and the ability to <em>understand my spaghetti</em>.</p>
@@ -282,6 +283,9 @@ cargo install youtube-tui --all-features # install with all features (even if no
 <h3 id="clipboard-default"><a class="header" href="#clipboard-default"><code>clipboard</code> (default)</a></h3>
 <p>Allows clipboard pasting in commands and search bar.</p>
 <p>Requires <a href="https://xcb.freedesktop.org/" target=_blank><code>libxcb</code></a>.</p>
+<h3 id="mpv-default"><a class="header" href="#mpv-default"><code>mpv</code> (default)</a></h3>
+<p>Embedded audio player</p>
+<p>Requires <a href="https://mpv.io/" target=_blank><code>mpv</code></a> (libmpv) to be installed in your system.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="basic-usage"><a class="header" href="#basic-usage">Basic usage</a></h1>
 <p>Here is a basic how-to guide on the TUI.</p>
 <h2 id="cursor"><a class="header" href="#cursor">Cursor</a></h2>
@@ -302,6 +306,10 @@ cargo install youtube-tui --all-features # install with all features (even if no
 <tr><td>First page history</td><td>Home</td></tr>
 <tr><td>Clear page history</td><td>End</td></tr>
 <tr><td>Paste from clipboard</td><td><code>Ctrl</code> + <code>V</code></td></tr>
+<tr><td>Next/previous entry on search and command</td><td><code>Ctrl</code> + up/down arrow</td></tr>
+<tr><td>Next song</td><td><code>Ctrl</code> + <code>Shift</code> + Right arrow</td></tr>
+<tr><td>Seek audio</td><td><code>Ctrl</code> + left/right arrow</td></tr>
+<tr><td>Pause/resume audio</td><td>Space</td></tr>
 <tr><td>Enter command mode</td><td><code>:</code></td></tr>
 <tr><td>Quit</td><td><code>q</code></td></tr>
 </tbody></table>
@@ -313,12 +321,24 @@ cargo install youtube-tui --all-features # install with all features (even if no
 <p>Type the search query when the search bar and press <code>Enter</code>, use arrow keys to move the cursor around.</p>
 <p>To apply search filters, select the button with 3 dots (<code>...</code>) to the right of the search bar, hit enter to start modifying and enter again to save. Pressing <code>Esc</code> should reload the current search page to apply the filters.</p>
 <p><img src="./images/search-filters-showcase.png" alt="" /></p>
-<h2 id="playing-videos-and-playlists"><a class="header" href="#playing-videos-and-playlists">Playing videos and playlists</a></h2>
+<blockquote>
+<p>You may use <code>Ctrl + Up/Down arrow</code> to cycle through previously searched queries (when focused on the search bar).</p>
+</blockquote>
+<h2 id="playing-media-with-embedded-player"><a class="header" href="#playing-media-with-embedded-player">Playing media with embedded player</a></h2>
+<p>By default, running any &quot;play video&quot; options in video or playlist view will open a new mpv player window.</p>
+<p>While any &quot;play audio&quot; options will start playing the audio in the embedded audio player,</p>
+<ul>
+<li>seek and rewind using <code>Ctrl + Left/Right arrow</code></li>
+<li>skip with <code>Ctrl + Shift + Right arrow</code></li>
+<li>pause and resume with space</li>
+</ul>
+<h2 id="playing-videos-and-playlists-externally"><a class="header" href="#playing-videos-and-playlists-externally">Playing videos and playlists externally</a></h2>
+<p>You can also play audio and videos externally.</p>
 <blockquote>
 <p>This part assumes that you use <code>mpv</code> as your video player, <code>konsole</code> as your terminal emulator, <code>yt-dlp</code> as your YouTube video downloader, and <code>firefox</code> as your browser.</p>
 <p>If that is not the case, you can learn how to change that in the <em>custom commands</em> section.</p>
 </blockquote>
-<p>Press <code>Enter</code> to select a video or playlist from any lists, then move the cursor to the <em>bottom item</em> where you can play, download and open the webpage in browser.</p>
+<p>You can press keybindings like <code>Shift</code> + <code>A</code> to run a command which opens a new terminal screen, and in that terminal screen it runs an mpv command to play the media.</p>
 <h2 id="feeds"><a class="header" href="#feeds">Feeds</a></h2>
 <p>Feeds allows you to view updates from subscribed channels, similar to how subscriptions works on YouTube.</p>
 <p><img src="./images/feed-showcase.png" alt="" /></p>
@@ -345,25 +365,11 @@ cargo install youtube-tui --all-features # install with all features (even if no
 </ol>
 <h2 id="library"><a class="header" href="#library">Library</a></h2>
 <p>Items can be bookmarked and saved to library, they can also be saved to be viewed offline.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="invidious"><a class="header" href="#invidious">Invidious</a></h1>
-<p>Invidious is a free and open-source alternative frontend to YouTube. It is intended to be used as a lightweight and &quot;privacy-respecting&quot; alternative to the official YouTube website.</p>
-<h2 id="how-invidious-is-used-in-youtube-tui"><a class="header" href="#how-invidious-is-used-in-youtube-tui">How Invidious is used in youtube-tui</a></h2>
-<p>The TUI does not access YouTube using its official API, instead it uses the Invidious API to access videos - since it is much easier to use and does not require users to be logged using their API token.</p>
-<p>By sending a request to one of their <a href="https://docs.invidious.io/api/">API paths</a>, it returns a JSON response containing information about videos, playlists, channels which can be understood by the program.</p>
-<h2 id="youtube-is-blocking-invidious"><a class="header" href="#youtube-is-blocking-invidious">YouTube is blocking Invidious</a></h2>
-<p>Referencing to <a href="https://github.com/iv-org/invidious/issues/3822">this GitHub issue</a>, YouTube has started trying to block public Invidious instances. So far some Invidious instances are blocked from accessing video information, the TUI displays an error when that happens, which may happen more and more frequently, and to more instances.</p>
-<p>There are several ways to bypass this.</p>
-<h3 id="use-smaller-or-private-instances"><a class="header" href="#use-smaller-or-private-instances">Use smaller, or private instances</a></h3>
-<p>All public instances can be found in <a href="https://api.invidious.io/">api.invidious.io</a>, it is likely there are instances on the list which are not blocked from accessing YouTube videos. Change your <code>invidious_instance</code> option in <a href="./config/main.html"><code>main.yml</code></a> to the new instance address.</p>
-<p>If you know people who host their own websites and services, it is possible that they already have their own private Invidious instance running. If that's not the case, try asking nicely for them to host an Invidious instance, it might work. (Stop being the introvert you are, go touch some grass and talk to humans)</p>
-<h3 id="self-host-a-local-instance"><a class="header" href="#self-host-a-local-instance">Self host a local instance</a></h3>
-<p><a href="https://docs.invidious.io/installation/">Here</a>'s the official installation guide, and <a href="https://github.com/tmiland/Invidious-Updater">here</a>'s a cool install script.</p>
-<blockquote>
-<p>Note: the install script is a bit buggy and does not prompt you to press <code>y</code>, so it may appear that it is hanging. For that you can just look into <code>invidious_installer.log</code> to see if you are supposed to press <code>y</code>.</p>
-</blockquote>
-<p>No more info for now.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="commands"><a class="header" href="#commands">Commands</a></h1>
-<p>Commands can be entered to the TUI by pressing the <code>:</code> key, the same as in Vim. Some commands have shorter <em>alternatives</em> that can be used instead.</p>
+<p>Commands can be entered to the TUI by pressing the <code>:</code> key, the same as in Vim.</p>
+<p>Run the help command to view more detailed help.</p>
+<pre><code class="language-sh">youtube-tui help
+</code></pre>
 <blockquote>
 <p>Env variables can be used by passing in as <code>${key}</code>, such as <code>:channel ${channel-id}</code> when in a video or playlist page.</p>
 </blockquote>
@@ -374,27 +380,22 @@ cargo install youtube-tui --all-features # install with all features (even if no
 <p>Below are the avaliable commands:</p>
 <h2 id="loadpage"><a class="header" href="#loadpage">Loadpage</a></h2>
 <p><code>loadpage</code> can be used to load a specific page.</p>
-<pre><code class="language-vim">loadpage popular (alt: `popular`)
-loadpage trending (alt: `trending`)
-loadpage watchhistory (alt: `watchhistory`)
-loadpage search [search query] (alt: `search [search query]`)
-loadpage video [id or url] (alt: `video [id or url]`)
-loadpage playlist [id or url] (alt: `playlist [id or url] `)
-loadpage channel [id or url] (alt: `channel [id or url] `)
+<pre><code class="language-vim">loadpage [page]
 </code></pre>
 <h2 id="history"><a class="header" href="#history">History</a></h2>
 <p><code>history</code> is used to manage page history (<code>Backspace</code> equivalent).</p>
-<pre><code class="language-vim">history back (alt: `back`)
+<pre><code class="language-vim">history back
 history clear
 </code></pre>
 <h2 id="utility"><a class="header" href="#utility">Utility</a></h2>
-<pre><code class="language-vim">reload (alt `r`)
-reload configs (alt `reload/r config/configs`)
+<pre><code class="language-vim">reload // reloads the page
+reload configs // reload config files in ~/.config/youtube-tui/
 flush
-quit (alt `q`, `exit`, `x`)
+quit
 run [command]
 parrun [command]
 key [keycode] [keymodifier]
+echo [mode] (message) # run youtube-tui help to learn more about modes
 </code></pre>
 <blockquote>
 <p>The <code>flush</code> command is used to run all tasks in queue immediately, this is usually done automatically.</p>
@@ -415,6 +416,16 @@ sub/sync [id or url]            Add channel to subscription, or sync an existing
 unsub [id or url]               Remove channel from subscription
 syncall                         Sync all subscriptions
 </code></pre>
+<h2 id="mpv-commands"><a class="header" href="#mpv-commands">MPV commands</a></h2>
+<p><sub>Only with the <a href="installation.html#mpv-default"><code>mpv</code></a> feature.</sub></p>
+<pre><code class="language-vim">mpv prop [label]                Gets mpv property
+mpv sprop [label] [value]       Set mpv property
+mpv tprop [label] [value]       Toggle a yes/no property
+mpv [command]                   Runs a libmpv command
+</code></pre>
+<blockquote>
+<p>Note that properties and commands are <strong>libmpv</strong> commands, <em>not</em> mpv commands. Please refer to <a href="https://mpv.io/manual/master/">mpv reference</a>.</p>
+</blockquote>
 <h2 id="text-commands"><a class="header" href="#text-commands">Text commands</a></h2>
 <p>Text commands generates a <em>text only response</em> without launching the TUI.</p>
 <pre><code class="language-vim">help
@@ -440,25 +451,39 @@ version
 <li><a href="config/./pages.html"><code>pages.yml</code></a></li>
 <li><a href="config/./appearance.html"><code>appearance.yml</code></a></li>
 <li><a href="config/./search.html"><code>search.yml</code></a></li>
+<li><a href="config/./cmdefine.html"><code>cmdefine.yml</code></a></li>
+<li><a href="config/./remap.html"><code>remap.yml</code></a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-main-config"><a class="header" href="#the-main-config">The main config</a></h1>
 <p>The main config file is located in <code>~/.config/youtube-tui/main.yml</code>.</p>
 <h2 id="example-mainyml"><a class="header" href="#example-mainyml">Example main.yml</a></h2>
 <pre><code class="language-yaml">mouse_support: true
-invidious_instance: https://y.com.sb
+invidious_instance: https://invidious.fdn.fr
 write_config: Try
-max_watch_history: 50
-allow_unicode: false
+allow_unicode: true
 message_bar_default: All good :)
 images: Sixels
 refresh_after_modifying_search_filters: true
+syncing:
+  download_images: true
+  sync_channel_info: true
+  sync_channel_cooldown_secs: 86400
+  sync_videos_cooldown_secs: 600
+limits:
+  watch_history: 50
+  search_history: 75
+  commands_history: 75
 image_index: 4
 provider: YouTube
+shell: sh
+legacy_input_handling: false
 env:
-  browser: firefox
+  video-player: mpv
+  download-path: ~/Downloads/%(title)s-%(id)s.%(ext)s
   terminal-emulator: konsole -e
   youtube-downloader: yt-dlp
-  video-player: mpv
+  save-path: ~/.local/share/youtube-tui/saved/
+  browser: firefox
 </code></pre>
 <hr>
 <p>Below are the description of each of the fields:</p>
@@ -480,9 +505,6 @@ env:
 <p><code>main.yml</code> is a loaded with <code>Try</code> no matter what.</p>
 </blockquote>
 <p><em>Accept: <code>Must</code>/<code>Try</code>/<code>Dont</code></em></p>
-<h3 id="max_watch_history"><a class="header" href="#max_watch_history">max_watch_history</a></h3>
-<p>The maximum length that the watch history can hold, a value higher will record more items, but will also result in a larger file size in storage.</p>
-<p><em>Accept: positive integer below 2<sup><em>your CPU architecture</em></sup> - 1</em></p>
 <h3 id="allow_unicode"><a class="header" href="#allow_unicode">allow_unicode</a></h3>
 <p>Enable unicode in video and playlist names, doing so may cause unwanted behaviors like video name continuing into the info field to the right.</p>
 <p><em>Accept: <code>true</code>/<code>false</code></em></p>
@@ -507,6 +529,9 @@ env:
 <h3 id="sync_videos_cooldown_secs"><a class="header" href="#sync_videos_cooldown_secs">sync_videos_cooldown_secs</a></h3>
 <p>Sync all do not sync videos from channel if it has been synced in the past <em>n</em> seconds.</p>
 <p><em>Accept: integer value seconds</em></p>
+<h3 id="limits"><a class="header" href="#limits">limits</a></h3>
+<p>The maximum length that the watch/search/command history can hold, a value higher will record more items, but will also result in a larger file size in storage.</p>
+<p><em>Accept: positive integer below 2<sup><em>your CPU architecture</em></sup> - 1</em></p>
 <h3 id="image_index"><a class="header" href="#image_index">image_index</a></h3>
 <p>The index in the array of thumbnail qualities you want to download</p>
 <p>Typically these are the avaliable qualities:</p>
@@ -539,60 +564,67 @@ env:
 <div style="break-before: page; page-break-before: always;"></div><h1 id="commands-config"><a class="header" href="#commands-config">Commands config</a></h1>
 <p>The commands config file decides what options (that will run a certain command on select) to be display in the <em>video</em> and <em>playlist</em> page respectively, it is located in <code>~/.config/youtube-tui/commands.yml</code>.</p>
 <h2 id="example-commands-config"><a class="header" href="#example-commands-config">Example commands config</a></h2>
-<pre><code class="language-yaml">launch_command: loadpage popular ;; flush ;; history clear # suggested to set page to watchhistory if you don't want to wait for popular to load
+<pre><code class="language-yaml">launch_command: loadpage library ;; flush ;; history clear ;; key Esc 0 ;; key Up 0 ;; key Up 0 ;; key Left 0 ;; key Enter 0 # the key commands select the searchbar on launch
 video:
-- Play video: ${video-player} ${embed-url}
-- Play audio: ${terminal-emulator} ${video-player} ${embed-url} --no-video
-- Play audio (loop): ${terminal-emulator} ${video-player} ${embed-url} --no-video --loop-file=inf
-- View channel: :channel ${channel-id}
-- Open in browser: ${browser} ${url}
-- Download video (webm): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${embed-url}
-- Download audio (opus): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${embed-url} -x
-- 'Mode: ${provider}': '%switch-provider%'
-playlist:
-- Switch view: '%switch-view%'
-- Play all videos: ${video-player} ${all-videos}
-- Play all audio: ${terminal-emulator} ${video-player} ${all-videos} --no-video
-- Shuffle play all audio: ${terminal-emulator} ${video-player} ${all-videos} --no-video --shuffle
-- Shuffle play all audio (loop): ${terminal-emulator} ${video-player} ${all-videos} --no-video --shuffle --loop-playlist=inf
-- View channel: :channel ${channel-id}
-- Open in browser: ${browser} ${url}
-- Download all video (webm): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${all-videos}
-- Download all audio (opus): ${terminal-emulator} ${youtube-downloader} -o ${download-path} ${all-videos} -x
-- 'Mode: ${provider}': '%switch-provider%'
+- Reload updated video: run rm '~/.cache/youtube-tui/info/${id}.json' ;; video ${id} # remove the cached info first, then reload the page
+- Play video: parrun ${video-player} '${embed-url}'
+- Play audio: mpv stop ;; resume ;; mpv sprop loop-file no ;; mpv loadfile '${embed-url}' ;; echo mpv Player started
+- Play audio (loop): mpv stop ;; resume ;; mpv sprop loop-file inf ;; mpv loadfile '${embed-url}' ;; echo mpv Player started
+- View channel: channel ${channel-id}
+- Subscribe to channel: sync ${channel-id}
+- Open in browser: parrun ${browser} '${url}'
+- Toggle bookmark: togglemark ${id}
+- Save video to library: bookmark ${id} ;; run rm -rf '${save-path}${id}.*' ;; parrun ${terminal-emulator} ${youtube-downloader} '${embed-url}' -o '${save-path}%(title)s[%(id)s].%(ext)s'
+- Save audio to library: bookmark ${id} ;; parrun rm -rf '${save-path}${id}.*' ;; parrun ${terminal-emulator} ${youtube-downloader} '${embed-url}' -x -o '${save-path}%(title)s[%(id)s].%(ext)s'
+- 'Mode: ${provider}': switchprovider
+
+# ...
 </code></pre>
+<hr>
+<p>The few required fields are:</p>
+<ul>
+<li><code>video</code></li>
+<li><code>saved_video</code></li>
+<li><code>playlist</code></li>
+<li><code>saved_playlist</code></li>
+</ul>
 <h2 id="env-variables"><a class="header" href="#env-variables">Env variables</a></h2>
 <p>Notice that a lot of the commands contains the <code>${label}</code> pattern, this actually replaces the text with the env variables set in <code>main.yml</code>, or is added by the current page (video or playlist) on-the-go.</p>
-<p>Replacing all these with known values it might look something like this:</p>
-<pre><code class="language-yaml">launch_command: loadpage popular ;; flush ;; history clear
-video:
-- Play video: mpv 'https://youtube.com/embed/dQw4w9WgXcQ'
-- Play audio: konsole -e mpv 'https://youtube.com/embed/dQw4w9WgXcQ' --no-video
-- Open in browser: firefox 'https://youtu.be/dQw4w9WgXcQ'
-- Download video (webm): konsole -e yt-dlp -o '~/Downloads/%(title)s-%(id)s.%(ext)s' 'https://youtube.com/embed/dQw4w9WgXcQ'
-- 'Mode: ${provider}': '%switch-provider%'
-
-playlist:
-- Switch view: '%switch-view%'
-- Play all videos: mpv 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps' # and much more...
-- Play all audio: konsole -e mpv 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps' --no-video
-- Shuffle play all audio: konsole -e mpv 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps' --no-video --shuffle
-- Open in browser: firefox 'https://www.youtube.com/playlist?list=PLdgHTasZAjYZlCXN9rTcX9LFOQ-RIrzCs'
-- Download all video (webm): konsole -e yt-dlp -o '~/Downloads/%(title)s-%(id)s.%(ext)s' 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps'
-- 'Mode: ${provider}': '%switch-provider%'
-</code></pre>
-<blockquote>
-<p>Global commands can also be used here. (Ones that start with an <code>:</code>).</p>
-</blockquote>
-<hr>
-<p>Below are the description of each of the fields:</p>
-<h3 id="video"><a class="header" href="#video">video</a></h3>
-<p>Commands to be displayed in a video page.</p>
-<p><em>Accept: <code>string_label: string_command</code> pairs</em></p>
-<h3 id="playlist"><a class="header" href="#playlist">playlist</a></h3>
-<p>Commands to be displayed in a playlist page (commands view).</p>
-<p><em>Accept: <code>string_label: string_command</code> pairs</em></p>
-<h2 id="env-reference"><a class="header" href="#env-reference">Env reference</a></h2>
+<!-- Replacing all these with known values it might look something like this: -->
+<!--  -->
+<!-- ```yaml -->
+<!-- launch_command: loadpage popular ;; flush ;; history clear -->
+<!-- video: -->
+<!-- - Play video: mpv 'https://youtube.com/embed/dQw4w9WgXcQ' -->
+<!-- - Play audio: konsole -e mpv 'https://youtube.com/embed/dQw4w9WgXcQ' --no-video -->
+<!-- - Open in browser: firefox 'https://youtu.be/dQw4w9WgXcQ' -->
+<!-- - Download video (webm): konsole -e yt-dlp -o '~/Downloads/%(title)s-%(id)s.%(ext)s' 'https://youtube.com/embed/dQw4w9WgXcQ' -->
+<!-- - 'Mode: ${provider}': '%switch-provider%' -->
+<!--  -->
+<!-- playlist: -->
+<!-- - Switch view: '%switch-view%' -->
+<!-- - Play all videos: mpv 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps' # and much more... -->
+<!-- - Play all audio: konsole -e mpv 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps' --no-video -->
+<!-- - Shuffle play all audio: konsole -e mpv 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps' --no-video --shuffle -->
+<!-- - Open in browser: firefox 'https://www.youtube.com/playlist?list=PLdgHTasZAjYZlCXN9rTcX9LFOQ-RIrzCs' -->
+<!-- - Download all video (webm): konsole -e yt-dlp -o '~/Downloads/%(title)s-%(id)s.%(ext)s' 'https://youtube.com/embed/Z8oiddSsB6I' 'https://youtube.com/embed/yiS0DPekSDQ' 'https://youtube.com/embed/YhM8GYuDFps' -->
+<!-- - 'Mode: ${provider}': '%switch-provider%' -->
+<!-- ``` -->
+<!-- > Global commands can also be used here. (Ones that start with an `:`). -->
+<!-- Below are the description of each of the fields: -->
+<!--  -->
+<!-- ### video -->
+<!--  -->
+<!-- Commands to be displayed in a video page. -->
+<!--  -->
+<!-- *Accept: `string_label: string_command` pairs* -->
+<!--  -->
+<!-- ### playlist -->
+<!--  -->
+<!-- Commands to be displayed in a playlist page (commands view). -->
+<!--  -->
+<!-- *Accept: `string_label: string_command` pairs* -->
+<h3 id="env-reference"><a class="header" href="#env-reference">Env reference</a></h3>
 <p>Does not include custom env set in <code>main.yml</code>.</p>
 <div class="table-wrapper"><table><thead><tr><th>Name</th><th>Page</th><th>Value</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>search, popular, trending, video, playlist</td><td>String url to the web page</td></tr>
@@ -606,6 +638,9 @@ playlist:
 <tr><td><code>hover-video-url</code></td><td>feed</td><td>Url of the currenly hovering video.</td></tr>
 <tr><td><code>hover-video-id</code></td><td>feed</td><td>ID of the currenly hovering video.</td></tr>
 <tr><td><code>all-ids</code></td><td>playlist</td><td>IDs of all videos in a playlist, separated with space.</td></tr>
+<tr><td><code>offline-path</code></td><td>Saved video and playlist only</td><td>Direct path to saved file.</td></tr>
+<tr><td><code>mpv-queuelist</code></td><td>Online playlists only</td><td>Valid mpv command to queue all videos in the list.</td></tr>
+<tr><td><code>offline-queuelist</code></td><td>Saved playlists only</td><td>Valid mpv command to queue all saved videos in the list.</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="keybindings-config"><a class="header" href="#keybindings-config">Keybindings config</a></h1>
 <p>The keybindings config binds each key to an action, or multiple keys for the same action. It can be found in <code>~/.config/youtube-tui/keybindings.yml</code>.</p>
@@ -749,6 +784,8 @@ watchhistory:
 <tr><td>ChannelMain</td><td>Channel display</td><td>Loads the main channel page</td></tr>
 <tr><td>ChannelVideos</td><td>Channel display</td><td>Loads the channel videos page</td></tr>
 <tr><td>ChannelPlaylists</td><td>Channel display</td><td>Loads the channel playlists page</td></tr>
+<tr><td>ChannelList</td><td>Feed</td><td>Displays subscribed channels</td></tr>
+<tr><td>VideoList</td><td>Feed</td><td>Displays videos of subscribed channels</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="appearance-config"><a class="header" href="#appearance-config">Appearance config</a></h1>
 <p>Appearance config controls the colours and the &quot;looks and feel&quot; of the TUI, it is located in <code>~/.config/youtube-tui/appearance.yml</code>.</p>
@@ -809,9 +846,45 @@ filters:
 <h3 id="query"><a class="header" href="#query">query</a></h3>
 <p>The default query when you launch the TUI.</p>
 <p><em>Accept: any string</em></p>
-<h3 id="sort"><a class="header" href="#sort">Sort</a></h3>
+<h3 id="sort"><a class="header" href="#sort">sort</a></h3>
 <p>How the search results are sorted.</p>
 <p><em>Accept: <code>Relevance</code>/<code>Rating</code>/<code>Date</code>/<code>Views</code></em></p>
+<h3 id="date"><a class="header" href="#date">date</a></h3>
+<p>Restrict videos publish date.</p>
+<p><em>Accept: <code>None</code>, <code>Hour</code>, <code>Day</code>, <code>Week</code>, <code>Month</code>, <code>Year</code></em></p>
+<h3 id="duration"><a class="header" href="#duration">duration</a></h3>
+<p>Restrict videos duration.</p>
+<p><em>Accept: <code>None</code>, <code>Short</code>, <code>Medium</code>, <code>Long</code></em></p>
+<h3 id="type"><a class="header" href="#type">type</a></h3>
+<p>Restrict video types</p>
+<p><em>Accept: <code>All</code>, <code>Video</code>, <code>Channel</code>, <code>Playlist</code></em></p>
+<blockquote>
+<p>All these options can also be changed in runtime using <a href="config/basic_usage.html#searching">search filters</a></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="custom-commands"><a class="header" href="#custom-commands">Custom commands</a></h1>
+<p>Define custom commands. It can be found in <code>~/.config/youtube-tui/cmdefine.yml</code>.</p>
+<blockquote>
+<p>This is still a work in progress, perhaps in the future scripting will be allowed to control and interact with elements within the TUI.</p>
+</blockquote>
+<pre><code class="language-yml">print: echo
+pause: mpv sprop pause yes ;; echo mpv Player paused
+next: mpv playlist-next ;; echo mpv Skipped
+resume: mpv sprop pause no ;; echo mpv Player resumed
+search: loadpage search
+rc: reload configs
+</code></pre>
+<hr />
+<p>General format:</p>
+<pre><code class="language-yml">new command: original command
+</code></pre>
+<p>This allows for alternative shorthand commands.</p>
+<p><sub>More about commands run <code>youtube-tui help</code> or check out <a href="config/commands.html">commands</a>.</sub></p>
+<blockquote>
+<p>Try not to use self referencing commands, it'll make a mess.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="key-remaps"><a class="header" href="#key-remaps">Key remaps</a></h1>
+<p>Very old concept of hard remapping one key to another. The config file can be found in <code>~/.config/youtube-tui/remaps.yml</code>.</p>
+<p>Not recommended using unless you got some issues that prevents certain keys from being pressed.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="how-it-works"><a class="header" href="#how-it-works">How it works</a></h1>
 <p>This sections talks about roughly how this TUI works, <em>crates</em>, <em>important structs</em> and their location, and the <em>main event loop</em> will be mentioned.</p>
 <h2 id="table-of-contents"><a class="header" href="#table-of-contents">Table of contents</a></h2>
@@ -932,121 +1005,133 @@ filters:
 <hr />
 <p>todo...</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelogs"><a class="header" href="#changelogs">Changelogs</a></h1>
-<h2 id="v074-latest-stable-on-cratesio"><a class="header" href="#v074-latest-stable-on-cratesio">v0.7.4 (latest stable on crates.io)</a></h2>
+<h2 id="v080-latest"><a class="header" href="#v080-latest">v0.8.0 (latest)</a></h2>
 <h3 id="added"><a class="header" href="#added">Added</a></h3>
+<ul>
+<li>Built in MPV player, controlled by command <code>mpv [libmpv command] [args...]</code></li>
+<li>Command/search histories.</li>
+<li>Keys remapping, custom commands.</li>
+</ul>
+<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<ul>
+<li>Some keys captured in search bar and are not working <a href="https://github.com/Siriusmart/youtube-tui/issues/37">#37</a>.</li>
+</ul>
+<hr />
+<h3 id="v074"><a class="header" href="#v074">v0.7.4</a></h3>
+<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
 <ul>
 <li><code>Ctrl + w</code> and <code>Ctrl + u</code> in search bar and command mode.</li>
 <li>Keybindings works even when an item is selected (<code>legacy_input_handling: false</code> in <code>main.yml</code>).</li>
 <li>Creating fake key input using <code>:key</code></li>
 </ul>
-<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<h4 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h4>
 <ul>
 <li>Search filters popup closing when you click on it.</li>
 <li>Configured keybindings in all items.</li>
 <li>Fixed multiple issues in <a href="https://github.com/Siriusmart/youtube-tui/issues/35">#35</a></li>
 </ul>
 <h3 id="v073"><a class="header" href="#v073">v0.7.3</a></h3>
-<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
+<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
 <ul>
 <li>Lazy feed syncing (configurable), so you are not actively ddosing the Invidious instance as badly.</li>
 </ul>
-<h4 id="fixed-1"><a class="header" href="#fixed-1">Fixed</a></h4>
+<h4 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h4>
 <ul>
 <li>Search bar no longer shows escaped search query: the original text string is displayed instead.</li>
 <li>Fixed something about labeling channels with * although no new video is published.</li>
 <li>Blank screen on loadpage if itemlist is empty.</li>
 </ul>
 <h3 id="v072"><a class="header" href="#v072">v0.7.2</a></h3>
-<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
+<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
 <ul>
 <li>Feeds page, and the subscriptions system.</li>
 <li>Reduced compile time needed by a lot.</li>
 </ul>
-<h4 id="fixed-2"><a class="header" href="#fixed-2">Fixed</a></h4>
+<h4 id="fixed-3"><a class="header" href="#fixed-3">Fixed</a></h4>
 <ul>
 <li>Search url not escaped, so searches with symbols or spaces are now working.</li>
 </ul>
 <h3 id="v071"><a class="header" href="#v071">v0.7.1</a></h3>
-<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
+<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
 <ul>
 <li>Options for config loading. (<code>write_config</code> in <code>main.yml</code>)</li>
 <li>Parrallel/blocking commands <code>parrun</code>/<code>run</code></li>
 </ul>
-<h4 id="fixed-3"><a class="header" href="#fixed-3">Fixed</a></h4>
+<h4 id="fixed-4"><a class="header" href="#fixed-4">Fixed</a></h4>
 <ul>
 <li>Fixed crashing when launching without permissions to write to config files (<a href="https://github.com/Siriusmart/youtube-tui/issues/29" target=_blank>issue 29</a>)</li>
 </ul>
 <h3 id="v070"><a class="header" href="#v070">v0.7.0</a></h3>
-<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
+<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
 <ul>
 <li>File system based caching</li>
 <li>Bookmark library</li>
 <li>Save video/playlists for offline viewing</li>
 </ul>
-<h4 id="fixed-4"><a class="header" href="#fixed-4">Fixed</a></h4>
+<h4 id="fixed-5"><a class="header" href="#fixed-5">Fixed</a></h4>
 <ul>
 <li>Empty ItemList crash (<a href="https://github.com/Siriusmart/youtube-tui/issues/26" target=_blank>issue 26</a>)</li>
 </ul>
-<hr>
+<hr />
 <h2 id="v062"><a class="header" href="#v062">v0.6.2</a></h2>
-<h3 id="added-5"><a class="header" href="#added-5">Added</a></h3>
+<h3 id="added-6"><a class="header" href="#added-6">Added</a></h3>
 <ul>
 <li>Command bindings</li>
 </ul>
-<h3 id="fixed-5"><a class="header" href="#fixed-5">Fixed</a></h3>
+<h3 id="fixed-6"><a class="header" href="#fixed-6">Fixed</a></h3>
 <ul>
 <li>Image not cleared when going back to &quot;switch view&quot;</li>
 </ul>
 <h3 id="v061"><a class="header" href="#v061">v0.6.1</a></h3>
-<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
+<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
 <ul>
 <li>Rework of the env system, now using environment variables provided by the OS as opposed to implmenting own version of env</li>
 <li>Ability to use envs in command mode</li>
 <li>Launch commands (including <code>youtube-tui help</code>)</li>
 </ul>
-<h4 id="fixed-6"><a class="header" href="#fixed-6">Fixed</a></h4>
+<h4 id="fixed-7"><a class="header" href="#fixed-7">Fixed</a></h4>
 <ul>
 <li>Screen blinking when pressing up arrow on the first item in playlist page, videos view</li>
 </ul>
 <h3 id="v060"><a class="header" href="#v060">v0.6.0</a></h3>
-<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
+<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
 <ul>
 <li>Mouse support</li>
 <li>Vim-like commands</li>
 <li>Pasting with <code>Ctrl + V</code> in search bar and command mode</li>
 </ul>
-<hr>
+<hr />
 <h2 id="v053"><a class="header" href="#v053">v0.5.3</a></h2>
-<h3 id="fixed-7"><a class="header" href="#fixed-7">Fixed</a></h3>
+<h3 id="fixed-8"><a class="header" href="#fixed-8">Fixed</a></h3>
 <ul>
 <li>Search bar could not handle non English characters (e.g. <a href="https://github.com/Siriusmart/youtube-tui/issues/14" target=_blank>Russian</a>)</li>
 </ul>
 <h3 id="v052"><a class="header" href="#v052">v0.5.2</a></h3>
-<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
+<h4 id="added-9"><a class="header" href="#added-9">Added</a></h4>
 <ul>
 <li>Improved config files (including hex colour support)</li>
 <li>Page turners (next/prev page in search)</li>
 </ul>
-<h3 id="fixed-8"><a class="header" href="#fixed-8">Fixed</a></h3>
+<h3 id="fixed-9"><a class="header" href="#fixed-9">Fixed</a></h3>
 <ul>
 <li>Where the image and text are displaying in the same place, and the image is displayed over the text</li>
 </ul>
 <h3 id="v051"><a class="header" href="#v051">v0.5.1</a></h3>
-<h4 id="added-9"><a class="header" href="#added-9">Added</a></h4>
+<h4 id="added-10"><a class="header" href="#added-10">Added</a></h4>
 <ul>
 <li>Image lazy loading (will not rerender image if already rendered)</li>
 <li>Optional features that can be disabled</li>
 </ul>
 <h3 id="v050"><a class="header" href="#v050">v0.5.0</a></h3>
-<h4 id="added-10"><a class="header" href="#added-10">Added</a></h4>
+<h4 id="added-11"><a class="header" href="#added-11">Added</a></h4>
 <ul>
 <li>Entire TUI rewritten from scratch, now using the <a href="https://crates.io/crates/tui-additions" target=_blank><code>tui-additions</code></a> crate</li>
 <li>Sixels image support</li>
 <li>Improved config files</li>
 </ul>
-<hr>
+<hr />
 <h2 id="v044"><a class="header" href="#v044">v0.4.4</a></h2>
-<h3 id="added-11"><a class="header" href="#added-11">Added</a></h3>
+<h3 id="added-12"><a class="header" href="#added-12">Added</a></h3>
 <ul>
 <li>Added default select item for each page (can be changed in <code>layouts.yml</code>)</li>
 </ul>
@@ -1057,7 +1142,7 @@ filters:
 <li>Search options gray backgound + image covering popup</li>
 </ul>
 <h3 id="v043"><a class="header" href="#v043">v0.4.3</a></h3>
-<h4 id="added-12"><a class="header" href="#added-12">Added</a></h4>
+<h4 id="added-13"><a class="header" href="#added-13">Added</a></h4>
 <ul>
 <li>Refreshing page</li>
 <li>Key modifiers for key bindings</li>

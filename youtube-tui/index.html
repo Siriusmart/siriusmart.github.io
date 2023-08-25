@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="invidious.html"><strong aria-hidden="true">4.</strong> Invidious</a></li><li class="chapter-item expanded "><a href="commands.html"><strong aria-hidden="true">5.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">6.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">6.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">6.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">6.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">6.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">6.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">6.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">6.7.</strong> search</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">7.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">7.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="explaination/event-loop.html"><strong aria-hidden="true">7.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">8.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">9.</strong> Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li><li class="chapter-item expanded "><a href="config/cmdefine.html"><strong aria-hidden="true">5.8.</strong> cmdefine</a></li><li class="chapter-item expanded "><a href="config/remap.html"><strong aria-hidden="true">5.9.</strong> remap</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="explaination/event-loop.html"><strong aria-hidden="true">6.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">7.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">8.</strong> Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -173,9 +173,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
-<p>Written in Rust, the <strong>YouTube TUI</strong> is a lightweight and user friendly TUI for browsing YouTube content from the terminal.</p>
+<p>Written in Rust, the <strong>YouTube TUI</strong> is a lightweight and user friendly TUI for browsing YouTube content from the terminal. Works out of the box and easily to configurable.</p>
 <p><img src="./images/search-showcase.png" alt="" /></p>
 <p>It is like an <em>app launcher</em>, it launches other programs to do the heavy lifting (for example, <code>mpv</code> for playing videos).</p>
+<p><sub>It also have an embedded mpv music player, but that can be disabled in compile time.</sub></p>
 <blockquote>
 <p>Consider regenerating config files on updates to allow new features.</p>
 </blockquote>
@@ -204,10 +205,10 @@ env:
 <h2 id="powerful"><a class="header" href="#powerful">Powerful</a></h2>
 <p>The YouTube TUI allows you to browse YouTube with (almost) all of it's features, functions including:</p>
 <ul>
-<li>View popular/trending videos</li>
 <li>View information about channels, playlists and videos</li>
 <li>Use search filters to sort and filter search results</li>
 <li>Save browsing history</li>
+<li>Embedded audio/music player</li>
 </ul>
 <p>It also includes features like:</p>
 <ul>
@@ -222,7 +223,7 @@ env:
 <li>[URGENT] Replace the no-longer-going-to-compile <code>typemap</code> dependency with either a self implementation of it or a useable crate.</li>
 <li>Strip down some libraries to reduce compile speed.</li>
 <li>Add command section for channel main page (first priority)</li>
-<li>Up arrow command history + Ctrl arrow keys move between words</li>
+<li>Git like command line to improve on <code>yt-dlp</code> - make changes to existing downloaded playlists instead of redownloading the entire thing.</li>
 </ul>
 <h2 id="how-to-contribute"><a class="header" href="#how-to-contribute">How to contribute</a></h2>
 <p>You will need a <u>general knowledge</u> of the Rust programming language, and the ability to <em>understand my spaghetti</em>.</p>
