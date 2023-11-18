@@ -316,3 +316,7 @@ footer p {
   text-align: end;
   padding: 5px;
 }
+
+.image {
+  margin: auto;
+}
