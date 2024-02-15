@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/topbar.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-dark.svg"
+      type="image/x-icon"
+    />
+    <title>OpenAlleragyRating</title>
+  </head>
+  <body>
+    <div id="top-bar">
+      <div id="top-bar-left">
+        <a href="./" id="top-bar-icon"
+          ><img src="./images/icon.png" alt="" width="30"
+        /></a>
+        <a href="./docs" class="top-bar-link">API</a>
+        <a href="" class="top-bar-link">Blog</a>
+      </div>
+      <div id="top-bar-right">
+        <img src="./images/bell.svg" id="notif-bell" alt="" width="15" />
+        <img
+          src="./images/pfp.png"
+          id="topbar-pfp"
+          alt=""
+          width="30"
+          height="30"
+        />
+      </div>
+    </div>
+    <center>
+      <h1>Not found</h1>
+      <p>
+        We searched far and wide, but we could not find what you are
+        looking for.
+      </p>
+      <div class="map-wrapper">
+        <iframe
+          width="50%"
+          height="350"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-2.77679443359375%2C50.77120783188783%2C1.72210693359375%2C52.283282143126215&amp;layer=mapnik"
+          style="border: none"
+        ></iframe>
+      </div>
+
+      <div id="searchbarcontainer">
+        <input
+          type="text"
+          id="searchbar"
+          placeholder='Try "places near me to dine"'
+        />
+        <img src="./images/magnifying-glass.svg" alt="" id="magnifying-glass" />
+      </div>
+    </center>
+
+    <script src="./scripts/search.js"></script>
+  </body>
+</html>

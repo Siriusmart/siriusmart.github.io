@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/topbar.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/icon.png"
+      type="image/x-icon"
+    />
+    <title>OpenAlleragyRating</title>
+  </head>
+  <body>
+    <div id="top-bar">
+      <div id="top-bar-left">
+        <a href="./" id="top-bar-icon"
+          ><img src="./images/icon.png" alt="" width="30"
+        /></a>
+        <a href="./docs" class="top-bar-link">API</a>
+        <a href="" class="top-bar-link">Blog</a>
+      </div>
+      <div id="top-bar-right">
+        <img src="./images/bell.svg" id="notif-bell" alt="" width="15" />
+        <img
+          src="./images/pfp.png"
+          id="topbar-pfp"
+          alt=""
+          width="30"
+          height="30"
+        />
+      </div>
+    </div>
+    <center>
+      <div id="searchbarcontainer">
+        <input
+          type="text"
+          id="searchbar"
+          placeholder='Try "places near me to dine"'
+        />
+        <img src="./images/magnifying-glass.svg" alt="" id="magnifying-glass" />
+      </div>
+
+      <div class="map-wrapper">
+          <iframe width="800" height="650" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.4460084438323975%2C51.4446411016582%2C-0.4416149854660035%2C51.446120569139275&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=19/51.44538/-0.44381">View Larger Map</a></small>
+      </div>
+    </center>
+
+    <script src="./scripts/search.js"></script>
+  </body>
+</html>

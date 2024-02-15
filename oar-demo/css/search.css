@@ -1,0 +1,119 @@
+#left {
+  float: left;
+  width: 50%;
+}
+
+#right {
+  float: right;
+  width: 50%;
+}
+
+#centerwrapper {
+  width: 50%;
+}
+
+#split-container {
+  margin-top: 50px;
+}
+
+#comments {
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+#comments * {
+  text-align: left;
+}
+
+#comments .tag {
+  margin-left: 10px;
+}
+
+#comments .content {
+  margin-left: 15px;
+}
+
+#comments .username {
+  margin-left: 3px;
+  color: #ccccff;
+}
+
+#comments .username:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+td {
+    padding: 5px;
+}
+
+.tag {
+  cursor: pointer;
+  padding: 3px;
+  background-color: #556633;
+  color: white;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+#comments .content {
+  margin-top: 7px;
+}
+
+#comments .singlerating {
+  float: right;
+}
+
+#leavecomment {
+  text-align: left !important;
+  margin: 20px;
+  margin-top: 40px;
+}
+
+#leavecomment textarea {
+    margin-top: 10px;
+    width: 100%;
+    background: none;
+    border: 1px solid #888888;
+    color: white;
+    padding: 10px;
+}
+
+#leavecomment textarea:focus {
+    outline: none;
+}
+
+#stars {
+    font-size: 2em;
+}
+
+#stars * {
+    margin: 2px;
+    opacity: 0.5;
+    transition: 150ms;
+}
+
+#stars *:hover {
+    opacity: 1 !important;
+    transition: 150ms;
+    cursor: pointer;
+}
+
+#send {
+    background-color: #88dd88;
+    margin-top: 7px;
+    transform: translateX(20px);
+    padding: 7px;
+    border-radius: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: black;
+    float: right;
+    transition: 150ms;
+}
+
+#send:hover {
+    background-color: #aaddaa;
+    transition: 150ms;
+    cursor: pointer;
+}
