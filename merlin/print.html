@@ -1,0 +1,557 @@
+<!DOCTYPE HTML>
+<html lang="en" class="ayu" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Basehunter Sero and the Twelve Dupe Stashes</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Basehunter Sero and the Twelve Dupe Stashes is a legendary tale centered around Basehunter Sero, the mythical discoverer of bases, and his secretive list of dupe stashes known as the Dupe Stashes of the Round Table. The story encompasses themes of chivalry, loyalty, and adventure.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded affix "><li class="part-title">Module system</li><li class="chapter-item expanded "><a href="modules/index.html"><strong aria-hidden="true">4.</strong> Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="modules/switches.html"><strong aria-hidden="true">4.1.</strong> Switches</a></li><li class="chapter-item expanded "><a href="modules/permissions.html"><strong aria-hidden="true">4.2.</strong> Permissions</a></li><li class="chapter-item expanded "><a href="modules/clearance.html"><strong aria-hidden="true">4.3.</strong> Clearance levels</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Configuration</li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Config files</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> master.jsonc</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> switch.jsonc</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> clearance.jsonc</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> mongodb.jsonc</div></li></ol></li><li class="chapter-item expanded "><li class="part-title">Modules</li><li class="chapter-item expanded "><a href="features/index.html"><strong aria-hidden="true">6.</strong> Features</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> core</div></li><li class="chapter-item expanded "><a href="features/coords/index.html"><strong aria-hidden="true">6.2.</strong> coords</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.1.</strong> cogadd</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.2.</strong> cogedit</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.3.</strong> cogrm</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.4.</strong> cogperms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.5.</strong> coordadd</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.6.</strong> coordedit</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.7.</strong> coordrm</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.8.</strong> find</div></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Development</li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Framework</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Module</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> Module lifecycle</div></li></ol></li><li class="chapter-item expanded "><a href="issues.html"><strong aria-hidden="true">9.</strong> Known issues</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Basehunter Sero and the Twelve Dupe Stashes</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/siriusmart/merlin/tree/master/docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
+<p>Written in Rust, <strong>Merlin</strong> is a utility bot for Discord that responds to message commands. Easily configurable with a customisable module system.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p>This page assumes you have Rust and Cargo installed. <a href="https://www.rust-lang.org/tools/install"><em>Here's</em></a> a guide on how to get them.</p>
+<h2 id="install-from-git"><a class="header" href="#install-from-git">Install from Git</a></h2>
+<p>You can install the latest commit from Git with Cargo.</p>
+<pre><code class="language-sh">cargo install --git https://github.com/siriusmart/merlin
+</code></pre>
+<p>The installed binary can be found in <code>~/.cargo/bin/</code>.</p>
+<blockquote>
+<p>Merlin does not auto update, for updates you will have to watch the repository.</p>
+</blockquote>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<p>By default Merlin compiles with all features. If there are features you don't need or wish to be replaced, you can compile without them using the <code>--no-default-features</code> flag.</p>
+<p>Features can be added to a <em>featureless</em> install with the <code>-F [feature]</code> feature flag, the installation command can include as many feature flags as needed.</p>
+<p>Here's a list of available features:</p>
+<div class="table-wrapper"><table><thead><tr><th>Feature</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>modcore</code></td><td>Core module, provide basic functionalities.</td></tr>
+<tr><td><code>modcoords</code></td><td>Coords DB module for anarchy servers, WIP.</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="basic-usage"><a class="header" href="#basic-usage">Basic usage</a></h1>
+<p>A list of commands can be accessed through the <code>help</code> command.</p>
+<h2 id="command-structure"><a class="header" href="#command-structure">Command structure</a></h2>
+<p>A command can be called by specifying its full name. For example</p>
+<pre><code class="language-sh">.core ping
+</code></pre>
+<p>Calls the <code>ping</code> command in the <code>core</code> module.</p>
+<h2 id="the-help-command"><a class="header" href="#the-help-command">The help command</a></h2>
+<p>The help command is an internal command (does not belong to any module, cannot be disabled) to disable information about a module or command.</p>
+<h3 id="module"><a class="header" href="#module">Module</a></h3>
+<p>A module is a collection of command of similar function, for example the <code>core</code> module provides commands for basic housekeeping. Whereas the <code>coords</code> module contains everything to do with the coords DB feature.</p>
+<pre><code class="language-sh">$ .help core
+
+[Module] core
+Core service modules.
+
+Commands
+- ping
+- uptime
+- version
+
+Aliases
+- ping → core ping
+- uptime → core uptime
+- version → core version
+</code></pre>
+<h3 id="alias"><a class="header" href="#alias">Alias</a></h3>
+<p>An alias is a shortcut for another command, in the example above, the command <code>.ping</code> will be aliased to <code>.core ping</code>, so a command can be ran without mentioning its module.</p>
+<h3 id="command"><a class="header" href="#command">Command</a></h3>
+<p>A command <em>does something</em>. Commands can be disabled globally, and per-user permission can be set up. When running a command that is disabled or without sufficient permission, it will be ignored by the bot.</p>
+<pre><code class="language-sh">$ .help core.ping
+
+[Command] core.ping
+Check shard network latency.
+
+Usage:
+.core ping
+</code></pre>
+<blockquote>
+<p>You can also use alias on help: <code>.help ping</code> is equivalent to <code>.help core.ping</code>.</p>
+</blockquote>
+<h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
+<p>Command usage can be displayed by using <code>.help</code> on the command. Each line in usage example represents a different way of using the command.</p>
+<pre><code>Usage:
+.module command [required argument] (optional argument) (remaning arguments...)
+.module command clear (either this|or this)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="modules"><a class="header" href="#modules">Modules</a></h1>
+<p>Modules are independent units with a specific function - enabling/disabling one module will have no effect on one another. Modules that are disabled will not be loaded on startup.</p>
+<h2 id="structure"><a class="header" href="#structure">Structure</a></h2>
+<p>Each module is a collection of commands and aliases, it also provides a brief description of itself to be used in the help commands.</p>
+<p>Each module contains the following information:</p>
+<pre><code class="language-yml">name: core
+description: Core service modules.
+
+aliases:
+    - ping → core ping
+    - version → core version
+
+commands:
+    - ping
+    - version
+</code></pre>
+<p>And each command contains the following information:</p>
+<pre><code class="language-yml">name: ping
+description: Check shard network latency.
+
+usage:
+    - .core ping
+</code></pre>
+<h2 id="module-options"><a class="header" href="#module-options">Module options</a></h2>
+<p>Module/command can be enabled and disabled without restarting the bot, and permission rules can be applied, which will be discussed in greater detail in following chapters.</p>
+<blockquote>
+<p>Bot options can only be modified by <code>admins</code>, you can give yourself permission to edit options by adding <code>+@[user_id]</code> to <code>~/.config/merlin/clearance.jsonc</code>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="switches"><a class="header" href="#switches">Switches</a></h1>
+<p>Each module and command can be enabled/disabled through <em>switching</em>.</p>
+<p>The command <code>core.switch</code> provides functionality for enabling and disabling a module.</p>
+<pre><code class="language-sh">$ .help switch
+
+[Command] core.switch
+Enable/disable commands and modules.
+
+Usage:
+.core switch [module] (enable|disable)
+</code></pre>
+<h3 id="module-1"><a class="header" href="#module-1">Module</a></h3>
+<p>The module <code>core</code> can be disabled with</p>
+<pre><code class="language-sh">$ .switch core disable
+
+core has been disabled. (not saved)
+</code></pre>
+<h3 id="command-1"><a class="header" href="#command-1">Command</a></h3>
+<blockquote>
+<p>We will be considering commands to be a module, for example command <code>ping</code> in module <code>core</code> will have identifier <code>core.ping</code>.</p>
+</blockquote>
+<p>The command <code>core.ping</code> can be disabled with</p>
+<pre><code class="language-sh">$ .switch core.ping disable
+
+core.ping has been disabled. (not saved)
+</code></pre>
+<h2 id="disable-behaviour"><a class="header" href="#disable-behaviour">Disable behaviour</a></h2>
+<p>A command can only be used if itself and its parent module are both enabled.</p>
+<p>Disabling a module will take effect immediately, and the bot will not respond to any disabled commands. This change can be made persistent across reloads by writing any changed options to config using <code>.save</code>.</p>
+<p>A disabled module may still appear in help pages, as there is no mechanics to unload modules at runtime. To fully unexist the module, a reload should be done using the <code>.reload</code> command. (make sure to run <code>.save</code> first!)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="permissions"><a class="header" href="#permissions">Permissions</a></h1>
+<p>On every action, the permission system checks you against a "rule list" for that operation. Only if you passes the rule list the operation will continue, otherwise your message will be ignored or a rejection message will be given as response.</p>
+<h2 id="rule-list"><a class="header" href="#rule-list">Rule list</a></h2>
+<p>A rule list consist of multiple rules, for example</p>
+<pre><code class="language-js">1. +everyone
+2. -dm
+3. +@siriusmart
+</code></pre>
+<p>Rules closer to the bottom has higher priority than rules on top, you can think of it as rules later in the list will "override" previous rules. Each condition is prefixed with a <code>+</code> or <code>-</code> to show the rule is an "allow" or "disallow" type of rule.</p>
+<p>In our example rule list, the checks runs in the sequence:</p>
+<ol>
+<li>Check rule 3: Is your username "siriusmart"? If so, the check ends here and you are allowed to continue.</li>
+<li>Check rule 2: Are you running this command in a dm? If so, the check ends here and you are not allowed to continue.</li>
+<li>Check rule 1: Everyone is allowed, if you are not subjected to rule 2 or 3, then you are allowed to continue.</li>
+</ol>
+<blockquote>
+<p>If the user is subjected to none of the rules, then it is assumed that the user is allowed to continue.</p>
+</blockquote>
+<h2 id="syntax"><a class="header" href="#syntax">Syntax</a></h2>
+<p>Each rule starts with a modifier (<code>+</code> or <code>-</code>), followed by a condition.</p>
+<pre><code class="language-sh">[modifier][condition]
+</code></pre>
+<blockquote>
+<p>Clearance presets is the only type of rule that doesn't begin with a modifier, this will be mentioned later.</p>
+</blockquote>
+<h3 id="conditions"><a class="header" href="#conditions">Conditions</a></h3>
+<p>Here's a list of all conditions</p>
+<div class="table-wrapper"><table><thead><tr><th>Condition</th><th>Satisfied when</th></tr></thead><tbody>
+<tr><td><code>everyone</code></td><td>Always satisfied.</td></tr>
+<tr><td><code>everywhere</code></td><td>Always satisfied.</td></tr>
+<tr><td><code>dm</code></td><td>The command is ran in a DM to the bot.</td></tr>
+<tr><td><code>server</code></td><td>The command is ran in a server.</td></tr>
+<tr><td><code>@user_name</code></td><td>The user has the specified username.</td></tr>
+<tr><td><code>@user_id</code></td><td>The user has the specified user ID.</td></tr>
+<tr><td><code>&amp;role_name</code></td><td>The user has the specified role.</td></tr>
+<tr><td><code>&amp;role_id</code></td><td>The user has the specified role of the ID.</td></tr>
+<tr><td><code>#channel_name</code></td><td>The command is ran in a channel with the specified name.</td></tr>
+<tr><td><code>#channel_id</code></td><td>The command is ran in a channel with the specified channel ID.</td></tr>
+<tr><td><del><code>%server_name</code></del></td><td>WIP</td></tr>
+<tr><td><del><code>%server_id</code></del></td><td>WIP</td></tr>
+</tbody></table>
+</div>
+<h2 id="changing-permissions"><a class="header" href="#changing-permissions">Changing permissions</a></h2>
+<p>The command <code>core.perms</code> provides functionality for modifying module and command permissions.</p>
+<pre><code class="language-sh">$ .help perms
+
+[Command] core.perms
+Manage module permissions.
+
+Usage:
+.core perms [module] (rules...)
+.core perms [module] clear
+</code></pre>
+<p>The argument <code>(rules...)</code> represent a list that is optional, for example</p>
+<pre><code class="language-sh">$ .perms core.ping -everyone +@siriusmart
+
+Module permissions for core.ping updated. (not saved)
+</code></pre>
+<p>Disables <code>core.ping</code> for everyone except siriusmart. The rule <code>+@siriusmart</code> is later in the list, and therefore has a higher priority than <code>-everyone</code>.</p>
+<h3 id="viewing-permissions"><a class="header" href="#viewing-permissions">Viewing permissions</a></h3>
+<p>Permissions for existing commands can be viewed by not including a rule list, for example.</p>
+<pre><code class="language-js">$ .perms core.ping
+
+[Permission] core.ping
+1. -everyone
+2. +@623823202073706496
+</code></pre>
+<blockquote>
+<p>A command can be used only if it is allowed by <em>both</em> the rule lists for the command and for its parent module.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="clearance-presets"><a class="header" href="#clearance-presets">Clearance presets</a></h1>
+<p>Clearance presets are macros that can be used in rule lists.</p>
+<p>Using presets allow for changes in permission to propagate to multiple rule lists using the preset. Presets can be used in rule lists with the <code>?preset_name</code> syntax.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p>Suppose we have the preset "admin" as follows</p>
+<pre><code class="language-js">1. +&amp;bot_masters
+2. +@siriusmart
+3. +#admin_chat
+</code></pre>
+<p>This preset can be used in other rule lists</p>
+<pre><code class="language-js">1. -everyone
+2. ?admin
+3. -dm
+</code></pre>
+<p>since preset work the same as macros, the rule list above is equivalent to</p>
+<pre><code class="language-js">1. -everyone
+2. +&amp;bot_masters
+3. +@siriusmart
+4. +#admin_chat
+5. -dm
+</code></pre>
+<p>where the <code>?admin</code> rule is replaced by contents in the preset.</p>
+<blockquote>
+<p>Using a preset that doesn't exist is the same as using an empty preset, this is unsounding so make sure you are not making a type when specifying presets.</p>
+</blockquote>
+<h2 id="managing-presets"><a class="header" href="#managing-presets">Managing presets</a></h2>
+<p>The command <code>core.clearance</code> provides functionality for modifying presets.</p>
+<pre><code class="language-sh">$ .help clearance
+
+[Command] core.clearance
+Manage clearance presets.
+
+Usage:
+.core clearance (preset)
+.core clearance [preset] (rules...)
+.core clearance [preset] clear
+</code></pre>
+<p>Using the command without arguments responds with a list of all nonempty presets. Preset content can be changed similar to how permission is changed.</p>
+<pre><code class="language-js">$ .clearance admin +&amp;bot_masters +@siriusmart +#admin_chat
+
+Clearance preset admin updated.
+</code></pre>
+<blockquote>
+<p>To prevent circular definitions, presets should not contain other presets. Although not recommended, you may still define presets in terms of other presets by modifying <code>clearance.jsonc</code>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="features-1"><a class="header" href="#features-1">Features</a></h1>
+<p>Features are essentially a module system at compile time - a feature can be disabled at compile such that it is physically not in the bot. (Ideally) features are independent of each other, and can be developed separately.</p>
+<p>The bot currently includes 2 features, both are enabled by default.</p>
+<ul>
+<li>modcore</li>
+<li>modcoords</li>
+</ul>
+<p>To only compile certain features, use the cargo compile flags</p>
+<pre><code class="language-sh">$ cargo build --release --no-default-features -F feature1 -F feature2 # ...
+</code></pre>
+<p>where <code>feature1</code> and <code>feature2</code> are features you wish to compile.</p>
+<h2 id="modules-1"><a class="header" href="#modules-1">Modules</a></h2>
+<p>Modules are loaded in when the bot starts. Each module consists of</p>
+<ul>
+<li>A help page</li>
+<li>Multiple commands</li>
+<li>Multiple aliases</li>
+<li>A default command</li>
+</ul>
+<h3 id="aliases"><a class="header" href="#aliases">Aliases</a></h3>
+<p>Aliases are decoy commands that redirects you to another command. For example, given the alias <code>ping → core ping</code> running</p>
+<pre><code class="language-sh">$ .ping
+</code></pre>
+<p>will be recognised as running</p>
+<pre><code class="language-sh">$ .core ping
+</code></pre>
+<p>where <code>ping</code> is replaced by <code>core ping</code>.</p>
+<h3 id="default-command"><a class="header" href="#default-command">Default command</a></h3>
+<p>A default command is essentially an alias, when calling a module without specifying a command, the "default command" will get ran instead. For example, <code>core → help core</code>. Which is why when running <code>.core</code> you will see the help page.</p>
+<h2 id="module-documentation"><a class="header" href="#module-documentation">Module documentation</a></h2>
+<p>The following pages will contain information about various modules and their commands.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="module-coords-db"><a class="header" href="#module-coords-db">[Module] Coords DB</a></h1>
+<p>Searchable coordinates for anarchy servers.</p>
+<h2 id="categorisation"><a class="header" href="#categorisation">Categorisation</a></h2>
+<p>Each entry is associated with a parent category and a child category, similar to the <em>binary nomenclature</em> used in naming species.</p>
+<p>For example, <code>farm.enderman</code> would be a valid name for a category.</p>
+<h3 id="reserved-categories"><a class="header" href="#reserved-categories">Reserved categories</a></h3>
+<p>Most categories can be treated as a folder where privileged users can access. However, there are some reserved categories with special behaviours.</p>
+<div class="table-wrapper"><table><thead><tr><th>Category</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>generic.unspecified</code></td><td>When an entry is added without specifying a category, it will be assumed to be in this category. When deleting a main category, its entries will be automatically moved here.</td></tr>
+<tr><td><del><code>generic.private</code></del></td><td>Entries added to this category will only be visible to the person who added the entry with no exception.</td></tr>
+<tr><td><code>[cogname].unspecified</code></td><td>Entries added to <code>[cogname]</code> without specifying a subcategory will be added here, it has the same permission level as its parent category.</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<p><code>generic.private</code> is basically unusable because role based permissions are currently not working in DMs.</p>
+</blockquote>
+<h2 id="operations"><a class="header" href="#operations">Operations</a></h2>
+<p>Each parent and subcategory can include a rule list. Users with permission to a category has full access to that category, a user have permission to a subcategory if it has permission to both the parent and child category.</p>
+<blockquote>
+<p>By default, all commands have requires the <code>?coorduser</code> clearance.</p>
+</blockquote>
+<h3 id="add-a-category"><a class="header" href="#add-a-category">Add a category</a></h3>
+<p>Main article: <code>cogadd</code></p>
+<p>Parent categories can be created by anyone with access to the command, child categories can only be created with users with access to the parent category.</p>
+<blockquote>
+<p>You cannot create subcategories for the <code>generic</code> category.</p>
+</blockquote>
+<h3 id="add-an-entry"><a class="header" href="#add-an-entry">Add an entry</a></h3>
+<p>Main article: <code>coordadd</code></p>
+<p>Anyone with access to a category can add entries to it. Since <code>general.unspecified</code> can be access by anyone with permission to the command, users can always add entries to it.</p>
+<blockquote>
+<p>Entries will not be added if there already exist an entry within close proximity of the new entry.</p>
+</blockquote>
+<h3 id="edit-a-category"><a class="header" href="#edit-a-category">Edit a category</a></h3>
+<p>Main article: <code>cogedit</code></p>
+<p>The name and description of a category can be modified by anyone with access to that category.</p>
+<h3 id="edit-an-entry"><a class="header" href="#edit-an-entry">Edit an entry</a></h3>
+<p>Main article: <code>coordedit</code></p>
+<p>Name, description and category of multiple entries can be bulk edited with a single command.</p>
+<h3 id="find-an-entry"><a class="header" href="#find-an-entry">Find an entry</a></h3>
+<p>Main article: <code>find</code></p>
+<p>Find entries by its name, category, and distance from a location in world.</p>
+<h3 id="remove-a-category"><a class="header" href="#remove-a-category">Remove a category</a></h3>
+<p>Main article: <code>cogrm</code></p>
+<p>Remove a category, all items within that category will be moved to <code>parent.unspecified</code> is a subcategory is deleted, or <code>generic.unspecified</code> if the parent category is deleted, note that permissions required to view an entry may change as a result.</p>
+<h3 id="remove-an-entry"><a class="header" href="#remove-an-entry">Remove an entry</a></h3>
+<p>Main article <code>coordrm</code></p>
+<p>Remove an entry, full stop.</p>
+<h3 id="manage-category-permissions"><a class="header" href="#manage-category-permissions">Manage category permissions</a></h3>
+<p>Main article: <code>cogperms</code></p>
+<p>Manage permissions required to access each category.</p>
+<blockquote>
+<p>This command requires the <code>?coordmod</code> clearance by default.</p>
+</blockquote>
+<h3 id="revert-an-action"><a class="header" href="#revert-an-action"><del>Revert an action</del></a></h3>
+<p>WIP: provides an ID for each action so that the reverse can be ran if something is done accidentally.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="known-issues"><a class="header" href="#known-issues">Known issues</a></h1>
+<p>This acts as an issue tracker so I can keep track of what needs to be done first.</p>
+<ul>
+<li>Role based permissions not working outside the server</li>
+<li>Coord entries should check for nearby entries when being edited, and disallow bulk edit to a new location.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
