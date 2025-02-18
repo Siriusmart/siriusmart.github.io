@@ -1,0 +1,1 @@
+A socket specifies<br><ul><li>Which <b>device</b> the packet must be sent to, and</li><li>The&nbsp;<b>application</b>&nbsp;being used on that device.</li></ul>

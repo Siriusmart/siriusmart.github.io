@@ -1,0 +1,1 @@
+Unless two computers are on the same network, the destination MAC address will initially be the MAC adderss of the&nbsp;<b>first router</b>&nbsp;that the packet is sent to.

@@ -1,0 +1,1 @@
+The subnet ID is created by using the&nbsp;<b>most significant bits</b>&nbsp;from the&nbsp;<b>host ID</b>&nbsp;section of the IP address.

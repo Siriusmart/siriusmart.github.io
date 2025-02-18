@@ -1,0 +1,1 @@
+Requests to access the internal server is sent to the IP address of the&nbsp;<b>external router</b>, which can be programmed to forward them to a particular internal IP address and port.

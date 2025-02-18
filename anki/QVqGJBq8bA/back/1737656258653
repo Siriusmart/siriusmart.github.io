@@ -1,0 +1,1 @@
+<ul><li>A dropped packet is quietly removed</li><li>A rejected packet cause a rejection notice to be sent back to the sender</li></ul>

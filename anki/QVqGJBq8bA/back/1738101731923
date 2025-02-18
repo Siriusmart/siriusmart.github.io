@@ -1,0 +1,1 @@
+Data will collide as two nodes might transmit at the same time as they both sense the channel is idle.

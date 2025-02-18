@@ -1,0 +1,1 @@
+<ol><li>A&nbsp;<b>hash total</b> is calculated from the unencrypted message data.</li><li>The sender uses its own private key to encrypt the hash total.</li><li>This signature is attached to the message being sent.</li><li>The whole message including the digital signature is encrypted using the recipient's public key before being sent.</li></ol>

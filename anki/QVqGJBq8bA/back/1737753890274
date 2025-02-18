@@ -1,0 +1,1 @@
+<ol><li>A program accidentally write values to memory locations too small to handle them, and</li><li>Inadvertenly overwrites the values in neighbouring locations that it is not supposed to have access to.</li></ol>

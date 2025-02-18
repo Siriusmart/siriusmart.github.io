@@ -1,0 +1,1 @@
+All packets communicating via a WebSocket are&nbsp;<u>automatically accepted</u>&nbsp;at either end <b>without the usual need for security checks</b>.
