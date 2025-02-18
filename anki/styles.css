@@ -237,7 +237,20 @@ body {
   width: 100%;
 }
 
+.light #browse {
+  color: #3c3f59;
+}
+
+.dark #browse {
+  color: #cdd6f4;
+}
+
 .light #browse #load {
   background-color: #eff1f5;
   border: 1px solid #bcc0cc;
+}
+
+.dark #browse #load {
+  background-color: #1e1e2e;
+  border: 1px solid #45475a;
 }
