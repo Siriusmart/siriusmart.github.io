@@ -328,6 +328,7 @@ body {
   border-radius: 1em;
   -webkit-appearance: none;
   -moz-appearance: textfield;
+  appearance: none;
   padding: 0.3em;
   padding-left: 0.8em;
   outline: none;
@@ -356,4 +357,8 @@ body {
 
 .light #shuffle .cardHolder {
   border: 1px solid #bcc0cc;
+}
+
+.dark #shuffle .cardHolder {
+  border: 1px solid #45475a;
 }

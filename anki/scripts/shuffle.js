@@ -239,8 +239,7 @@ async function shuffle() {
         let url = new URL(window.location.href);
         const params = new URLSearchParams(url.search);
         let enabled = params.get("decks").split("$-$");
-        cardNumberInput.value =
-            params.get("count") === null ? 3 : params.get("count");
+        cardNumberInput.value = params.get("count");
         for (const name of Array.from(
             document.getElementsByClassName("name"),
         )) {

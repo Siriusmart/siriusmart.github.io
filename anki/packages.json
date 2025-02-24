@@ -1,7 +1,12 @@
 {
-    "QVqGJBq8bA": {
-        "name": "FactSheet",
+    "factsheet-physics": {
+        "name": "Factsheet Physics",
         "author": "Sirius",
-        "date": "2025-02-18"
+        "date": "2025-02-24"
+    },
+    "factsheet-cs": {
+        "name": "Factsheet Computing",
+        "author": "Sirius",
+        "date": "2025-02-24"
     }
 }
