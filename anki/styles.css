@@ -2,6 +2,7 @@
 
 body {
   font-family: "Open Sans";
+  user-select: none;
 }
 
 #loading {
@@ -253,4 +254,106 @@ body {
 .dark #browse #load {
   background-color: #1e1e2e;
   border: 1px solid #45475a;
+}
+
+/* shuffle */
+#shuffle .collapse {
+  text-align: center;
+}
+
+#shuffle #settings,
+#shuffle #cardNumberWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+#shuffle .cardScreen {
+  text-align: center;
+}
+
+#shuffle .generate {
+  font-size: larger;
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1.25em;
+  cursor: pointer;
+  width: fit-content;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#shuffle .cardHolder {
+  padding: 1em;
+  min-height: 7em;
+  width: calc(min(30em, 80%));
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+#shuffle .frontTag,
+#shuffle .backTag {
+  opacity: 0.5;
+  margin-bottom: 0.5em;
+}
+
+#shuffle #settings li {
+  margin: 0.2em;
+  font-size: large;
+  list-style-type: none;
+}
+
+#shuffle .name {
+  margin-left: 0.3em;
+}
+
+#shuffle .collapse {
+  font-size: large;
+  cursor: pointer;
+}
+
+#shuffle #cardNumberWrapper {
+  margin-top: 1em;
+  font-size: large;
+}
+
+#shuffle .cardNumInput {
+  margin-left: 0.8em;
+  font-size: large;
+  border-radius: 1em;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  padding: 0.3em;
+  padding-left: 0.8em;
+  outline: none;
+  width: 5em;
+}
+
+.light #shuffle {
+  color: #3c3f59;
+}
+
+.dark #shuffle {
+  color: #cdd6f4;
+}
+
+.light #shuffle .generate,
+.light #shuffle .cardNumInput {
+  background-color: #eff1f5;
+  border: 1px solid #bcc0cc;
+}
+
+.dark #shuffle .generate,
+.dark #shuffle .cardNumInput {
+  background-color: #1e1e2e;
+  border: 1px solid #45475a;
+}
+
+.light #shuffle .cardHolder {
+  border: 1px solid #bcc0cc;
 }

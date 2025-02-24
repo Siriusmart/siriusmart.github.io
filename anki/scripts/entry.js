@@ -27,6 +27,7 @@ function sanitise() {
             sanitised.append("screen", "shuffle");
             sanitised.append("package", params.get("package"));
             sanitised.append("decks", params.get("decks"));
+            sanitised.append("count", params.get("count"));
             break;
         case "packages":
         default:

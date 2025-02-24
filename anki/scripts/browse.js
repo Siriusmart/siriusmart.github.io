@@ -1,4 +1,34 @@
 async function browse() {
+    let renderQueue = [];
+    let render = (item) => {
+        renderQueue.push(item);
+        return item;
+    };
+
+    let katexScript = document.createElement("script");
+    katexScript.src =
+        "https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.js";
+    document.head.appendChild(katexScript);
+
+    katexScript.onload = () => {
+        let katexAutoScript = document.createElement("script");
+        katexAutoScript.src =
+            "https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.js";
+        katexAutoScript.onload = () => {
+            document.body.appendChild(katexAutoScript);
+            render = renderMathInElement;
+            for (const elem of renderQueue) {
+                render(elem);
+            }
+        };
+        document.body.appendChild(katexAutoScript);
+    };
+
+    let katexStyle = document.createElement("link");
+    katexStyle.rel = "stylesheet";
+    katexStyle.href = "https://cdn.jsdelivr.net/npm/katex/dist/katex.css";
+    document.body.appendChild(katexStyle);
+
     const screen = document.getElementById("browse");
     screen.innerHTML = "";
     let url = new URL(window.location.href);
@@ -124,6 +154,9 @@ async function browse() {
         frontBox.innerHTML = front;
         let backBox = document.createElement("td");
         backBox.innerHTML = back;
+
+        render(frontBox);
+        render(backBox);
 
         let row = document.createElement("tr");
         row.appendChild(frontBox);
