@@ -1,0 +1,5 @@
+Consider an object of mass&nbsp;\(m\)&nbsp;<b>initially at rest</b>, acted on by a constant force&nbsp;\(F\)&nbsp;for a time&nbsp;\(t\)\[\begin{align*}
+\text{distance travelled}\,s&amp;=\frac{1}{2}vt\qquad\text{as $u=0$}\\
+a&amp;=\frac{v}{t}\\
+F&amp;=ma=\frac{mv}{t}
+\end{align*}\]So the work done by force&nbsp;\(F\)&nbsp;to move the object through distance&nbsp;\(s\)&nbsp;is<br>\[W=Fs=\frac{mv}{t}\times\frac{vt}{2}=\frac{1}{2}mv^2\]Because the gain of kinetic energy is&nbsp;<b>due to the work done</b>&nbsp;<br>\[E_K=\frac{1}{2}mv^2\]<br>
