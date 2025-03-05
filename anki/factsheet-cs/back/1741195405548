@@ -1,0 +1,1 @@
+<ul><li>Instance variables and attributes are declared <b>private</b>.</li><li>Most methods are declared&nbsp;<b>public</b>.</li></ul><div>Other classes may use methods belonging to another class, but may not see or change their attributes.</div>
