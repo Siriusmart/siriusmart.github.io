@@ -1,0 +1,1 @@
+<div>Resistors in series&nbsp;<b>pass the same current</b>, and the total pd is equal to the&nbsp;<b>sum of the individual pds</b>.</div><ul><li>\(V_1=IR_1\)<br></li><li>\(V_2=IR_2\)</li><li>\(V_\text{total}=V_1+V_2=IR_1+IR_2\)</li><li>\(R_\text{total}=\frac{V}{I}=\frac{IR_1+IR_2}{I}=R_1+R_2\)</li></ul>

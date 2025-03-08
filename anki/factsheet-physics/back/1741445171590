@@ -1,0 +1,1 @@
+<ul><li>For current&nbsp;\(I_1\), the terminal pd&nbsp;\(V_1=\epsilon-I_1r\)</li><li>For current&nbsp;\(I_2\), the terminal pd&nbsp;\(V_2=\epsilon-I_2r\)</li><li>Which gives&nbsp;\(V_1-V_2=(\epsilon-I_1r)-(\epsilon-I_2r)=r(I_2-I_1)\)</li><li>Therefore&nbsp;\(r=\frac{V_1-V_2}{I_2-I_1}\)</li></ul>
