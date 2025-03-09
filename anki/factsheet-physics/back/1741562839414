@@ -1,0 +1,5 @@
+<ol><li>Consider an object in uniform circular motion at speed&nbsp;\(v\)&nbsp;moving in a short time interval&nbsp;\(\delta t\)&nbsp;from A to B along the perimeter of a circle of radius&nbsp;\(r\).</li><li>The distance AB along the circle is&nbsp;\(\delta s=v\delta t\)</li><li>The line from the object to the centre of the circle C turns through angle&nbsp;\(\delta\theta\)&nbsp;when the object moves from A to B.</li><li>The change of velocity&nbsp;\(\delta v=v_B-v_A\)</li><li>The triangles ABC and the velocity vectors triangle are similar because they both have 2 sides of equal length with the same angle&nbsp;\(\delta\theta\)&nbsp;between two sides.</li></ol><div>When&nbsp;\(\delta t\)&nbsp;is small</div><div>\[\begin{align*}
+\frac{\delta v}{v}&amp;=\frac{\delta s}{r}\\
+&amp;=\frac{v\delta t}{r}\\
+\frac{\delta v}{\delta t}&amp;=\frac{v^2}{r}
+\end{align*}\]<br></div>
