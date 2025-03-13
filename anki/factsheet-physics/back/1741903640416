@@ -1,0 +1,4 @@
+<ul><li>Electrical energy delivered&nbsp;\(=IV\Delta t\)</li><li>Energy needed to raise the temperature&nbsp;\(=mc\Delta T\)</li></ul><div>Assuming no heat loss to the surroundings.\[\begin{align*}
+IV\Delta t&amp;=mc\Delta T\\
+c&amp;=\frac{IV\Delta t}{m\Delta T}
+\end{align*}\]</div>
