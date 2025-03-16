@@ -1,17 +1,17 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js ayu">
+<html lang="en" class="ayu sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>YouTube TUI User Manual</title>
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex">
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="The user manual, documentation and contribution guide for YouTube TUI">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -25,21 +25,23 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
-    </head>
-    <body>
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -61,65 +63,49 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
+            const html = document.documentElement;
             html.classList.remove('ayu')
             html.classList.add(theme);
-            html.classList.add('js');
+            html.classList.add("js");
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
+            sidebar_toggle.checked = sidebar === 'visible';
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="basic_usage.html"><strong aria-hidden="true">3.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="commands.html"><strong aria-hidden="true">4.</strong> Commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Customisation guide</li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">5.</strong> Config files</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/main.html"><strong aria-hidden="true">5.1.</strong> main</a></li><li class="chapter-item expanded "><a href="config/commands.html"><strong aria-hidden="true">5.2.</strong> commands</a></li><li class="chapter-item expanded "><a href="config/keybindings.html"><strong aria-hidden="true">5.3.</strong> keybindings</a></li><li class="chapter-item expanded "><a href="config/commandbindings.html"><strong aria-hidden="true">5.4.</strong> commandbindings</a></li><li class="chapter-item expanded "><a href="config/pages.html"><strong aria-hidden="true">5.5.</strong> pages</a></li><li class="chapter-item expanded "><a href="config/appearance.html"><strong aria-hidden="true">5.6.</strong> appearance</a></li><li class="chapter-item expanded "><a href="config/search.html"><strong aria-hidden="true">5.7.</strong> search</a></li><li class="chapter-item expanded "><a href="config/cmdefine.html"><strong aria-hidden="true">5.8.</strong> cmdefine</a></li><li class="chapter-item expanded "><a href="config/remap.html"><strong aria-hidden="true">5.9.</strong> remap</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Contributing</li><li class="chapter-item expanded "><a href="explaination/how_it_works.html"><strong aria-hidden="true">6.</strong> How it works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="explaination/framework.html"><strong aria-hidden="true">6.1.</strong> Framework</a></li><li class="chapter-item expanded "><a href="explaination/event-loop.html"><strong aria-hidden="true">6.2.</strong> Event loop</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Invidious and loading videos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Caching and library</div></li></ol></li><li class="chapter-item expanded "><a href="changelogs.html"><strong aria-hidden="true">7.</strong> Changelogs</a></li><li class="chapter-item expanded "><a href="contributors.html"><strong aria-hidden="true">8.</strong> Contributors</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
-
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -257,6 +243,13 @@ yay -S youtube-tui-nodefaults-bin # minimal binary (out of date)
   pkgs.youtube-tui
 ];
 </code></pre>
+<h2 id="installation-on-nixos-with-flakes-recommended"><a class="header" href="#installation-on-nixos-with-flakes-recommended">Installation on NixOS <strong>with flakes</strong> (recommended)</a></h2>
+<pre><code class="language-nix">{
+    inputs.youtube-tui.url = "github:Siriusmart/youtube-tui";
+
+    ...
+}
+</code></pre>
 <h2 id="build-from-source"><a class="header" href="#build-from-source">Build from source</a></h2>
 <p>Use the <code>cargo</code> command:</p>
 <pre><code class="language-sh">cargo install --git https://github.com/siriusmart/youtube-tui
@@ -325,8 +318,8 @@ cargo install youtube-tui --all-features # install with all features (even if no
 <p>You may use <code>Ctrl + Up/Down arrow</code> to cycle through previously searched queries (when focused on the search bar).</p>
 </blockquote>
 <h2 id="playing-media-with-embedded-player"><a class="header" href="#playing-media-with-embedded-player">Playing media with embedded player</a></h2>
-<p>By default, running any &quot;play video&quot; options in video or playlist view will open a new mpv player window.</p>
-<p>While any &quot;play audio&quot; options will start playing the audio in the embedded audio player,</p>
+<p>By default, running any "play video" options in video or playlist view will open a new mpv player window.</p>
+<p>While any "play audio" options will start playing the audio in the embedded audio player,</p>
 <ul>
 <li>seek and rewind using <code>Ctrl + Left/Right arrow</code></li>
 <li>skip with <code>Ctrl + Shift + Right arrow</code></li>
@@ -559,7 +552,7 @@ env:
 <h3 id="legacy_input_handling"><a class="header" href="#legacy_input_handling">legacy_input_handling</a></h3>
 <p>Switch back the old key input handling where the selected item captures all input (except escape).</p>
 <h3 id="env"><a class="header" href="#env">env</a></h3>
-<p>Env are variables that can be used in <code>commands.yml</code>, this allows you to change multiple commands by modifying just one env variable. And not to be confused with system/terminal environment variables, these are just <em>&quot;a thing&quot;</em> that you can use in the TUI.</p>
+<p>Env are variables that can be used in <code>commands.yml</code>, this allows you to change multiple commands by modifying just one env variable. And not to be confused with system/terminal environment variables, these are just <em>"a thing"</em> that you can use in the TUI.</p>
 <p><em>Accept: <code>string_key: string_value</code> pairs</em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="commands-config"><a class="header" href="#commands-config">Commands config</a></h1>
 <p>The commands config file decides what options (that will run a certain command on select) to be display in the <em>video</em> and <em>playlist</em> page respectively, it is located in <code>~/.config/youtube-tui/commands.yml</code>.</p>
@@ -633,6 +626,11 @@ video:
 <tr><td><code>embed-url</code></td><td>video</td><td>String url to the embed video (required to play video using mpv from Invidious)</td></tr>
 <tr><td><code>all-videos</code></td><td>playlist</td><td>String url<em><strong>s</strong></em> separated by space to all embed videos in a playlist</td></tr>
 <tr><td><code>hover-url</code></td><td>trending, popular, search</td><td>Url of the currenly hovering item.</td></tr>
+<tr><td><code>hover-id</code></td><td>trending, popular, search</td><td>Url of the currenly hovering item.</td></tr>
+<tr><td><code>hover-channel</code></td><td>trending, popular, search</td><td>Channel name of the currenly hovering item.</td></tr>
+<tr><td><code>hover-channel-id</code></td><td>trending, popular, search</td><td>Channel ID of the currenly hovering item.</td></tr>
+<tr><td><code>hover-channel</code></td><td>trending, popular, search</td><td>Url of the currenly hovering item.</td></tr>
+<tr><td><code>hover-channel-id</code></td><td>trending, popular, search</td><td>Url of the currenly hovering item.</td></tr>
 <tr><td><code>hover-channel-url</code></td><td>feed</td><td>Url of the currenly hovering channel.</td></tr>
 <tr><td><code>hover-channel-id</code></td><td>feed</td><td>ID of the currenly hovering channel.</td></tr>
 <tr><td><code>hover-video-url</code></td><td>feed</td><td>Url of the currenly hovering video.</td></tr>
@@ -699,7 +697,7 @@ Left:
 <tr><td><code>Shift</code></td><td><code>1</code></td></tr>
 <tr><td><code>Ctrl</code></td><td><code>2</code></td></tr>
 <tr><td><code>Alt</code></td><td><code>4</code></td></tr>
-<tr><td><code>Super</code>/&quot;Windows&quot; key</td><td><code>8</code></td></tr>
+<tr><td><code>Super</code>/"Windows" key</td><td><code>8</code></td></tr>
 <tr><td><code>Hyper</code></td><td><code>16</code></td></tr>
 <tr><td><code>Meta</code></td><td><code>32</code></td></tr>
 </tbody></table>
@@ -759,7 +757,7 @@ watchhistory:
 # and much more ...
 </code></pre>
 <h2 id="items"><a class="header" href="#items">Items</a></h2>
-<p>Each item is an individual &quot;thing&quot;, these things can be optionally selectable, or hoverable by the cursor.</p>
+<p>Each item is an individual "thing", these things can be optionally selectable, or hoverable by the cursor.</p>
 <h2 id="rows"><a class="header" href="#rows">Rows</a></h2>
 <p>A row is a horizontal row of items, it can be either centered (like the buttons) or non centered (which will align to the left).</p>
 <blockquote>
@@ -788,7 +786,7 @@ watchhistory:
 <tr><td>VideoList</td><td>Feed</td><td>Displays videos of subscribed channels</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="appearance-config"><a class="header" href="#appearance-config">Appearance config</a></h1>
-<p>Appearance config controls the colours and the &quot;looks and feel&quot; of the TUI, it is located in <code>~/.config/youtube-tui/appearance.yml</code>.</p>
+<p>Appearance config controls the colours and the "looks and feel" of the TUI, it is located in <code>~/.config/youtube-tui/appearance.yml</code>.</p>
 <h2 id="example-appearance-config"><a class="header" href="#example-appearance-config">Example appearance config</a></h2>
 <pre><code class="language-yaml">borders: Rounded
 colors:
@@ -832,7 +830,7 @@ colors:
 <p>RGB color values has been deprecated</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="default-search-options"><a class="header" href="#default-search-options">Default search options</a></h1>
-<p>The default search query/filters when launching the TUI, this can be found in <code>~/.config/youtube-tui/search.yml</code>, but should not be &quot;customised&quot; like how you would to a config file because it's just a configurable default value.</p>
+<p>The default search query/filters when launching the TUI, this can be found in <code>~/.config/youtube-tui/search.yml</code>, but should not be "customised" like how you would to a config file because it's just a configurable default value.</p>
 <h2 id="example-search-default-value"><a class="header" href="#example-search-default-value">Example search default value</a></h2>
 <pre><code class="language-yaml">query: ''
 filters:
@@ -918,7 +916,7 @@ rc: reload configs
 <h2 id="data"><a class="header" href="#data">Data</a></h2>
 <p>There are 2 pools of data available - <em>global</em> and <em>state</em>.</p>
 <p><strong>Global data</strong> are global across all pages, this is mainly used to store config structs, as they are meant to be applied globally.</p>
-<p><strong>State data</strong> are exclusive to each page, this is done to ensure that each page will get the correct data. </p>
+<p><strong>State data</strong> are exclusive to each page, this is done to ensure that each page will get the correct data.</p>
 <blockquote>
 <p>For example, if state data is not used, the next page will overwrite data in the previous page, making going back in history impossible.</p>
 </blockquote>
@@ -1005,20 +1003,25 @@ rc: reload configs
 <hr />
 <p>todo...</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelogs"><a class="header" href="#changelogs">Changelogs</a></h1>
-<h2 id="v080-latest"><a class="header" href="#v080-latest">v0.8.0 (latest)</a></h2>
+<h2 id="v082-latest"><a class="header" href="#v082-latest">v0.8.2 (latest)</a></h2>
 <h3 id="added"><a class="header" href="#added">Added</a></h3>
+<ul>
+<li>Added <code>hover-*</code> variables for item list.</li>
+</ul>
+<h3 id="v080"><a class="header" href="#v080">v0.8.0</a></h3>
+<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
 <ul>
 <li>Built in MPV player, controlled by command <code>mpv [libmpv command] [args...]</code></li>
 <li>Command/search histories.</li>
 <li>Keys remapping, custom commands.</li>
 </ul>
-<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
+<h4 id="fixed"><a class="header" href="#fixed">Fixed</a></h4>
 <ul>
 <li>Some keys captured in search bar and are not working <a href="https://github.com/Siriusmart/youtube-tui/issues/37">#37</a>.</li>
 </ul>
 <hr />
 <h3 id="v074"><a class="header" href="#v074">v0.7.4</a></h3>
-<h4 id="added-1"><a class="header" href="#added-1">Added</a></h4>
+<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
 <ul>
 <li><code>Ctrl + w</code> and <code>Ctrl + u</code> in search bar and command mode.</li>
 <li>Keybindings works even when an item is selected (<code>legacy_input_handling: false</code> in <code>main.yml</code>).</li>
@@ -1031,7 +1034,7 @@ rc: reload configs
 <li>Fixed multiple issues in <a href="https://github.com/Siriusmart/youtube-tui/issues/35">#35</a></li>
 </ul>
 <h3 id="v073"><a class="header" href="#v073">v0.7.3</a></h3>
-<h4 id="added-2"><a class="header" href="#added-2">Added</a></h4>
+<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
 <ul>
 <li>Lazy feed syncing (configurable), so you are not actively ddosing the Invidious instance as badly.</li>
 </ul>
@@ -1042,7 +1045,7 @@ rc: reload configs
 <li>Blank screen on loadpage if itemlist is empty.</li>
 </ul>
 <h3 id="v072"><a class="header" href="#v072">v0.7.2</a></h3>
-<h4 id="added-3"><a class="header" href="#added-3">Added</a></h4>
+<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
 <ul>
 <li>Feeds page, and the subscriptions system.</li>
 <li>Reduced compile time needed by a lot.</li>
@@ -1052,7 +1055,7 @@ rc: reload configs
 <li>Search url not escaped, so searches with symbols or spaces are now working.</li>
 </ul>
 <h3 id="v071"><a class="header" href="#v071">v0.7.1</a></h3>
-<h4 id="added-4"><a class="header" href="#added-4">Added</a></h4>
+<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
 <ul>
 <li>Options for config loading. (<code>write_config</code> in <code>main.yml</code>)</li>
 <li>Parrallel/blocking commands <code>parrun</code>/<code>run</code></li>
@@ -1062,7 +1065,7 @@ rc: reload configs
 <li>Fixed crashing when launching without permissions to write to config files (<a href="https://github.com/Siriusmart/youtube-tui/issues/29" target=_blank>issue 29</a>)</li>
 </ul>
 <h3 id="v070"><a class="header" href="#v070">v0.7.0</a></h3>
-<h4 id="added-5"><a class="header" href="#added-5">Added</a></h4>
+<h4 id="added-6"><a class="header" href="#added-6">Added</a></h4>
 <ul>
 <li>File system based caching</li>
 <li>Bookmark library</li>
@@ -1074,16 +1077,16 @@ rc: reload configs
 </ul>
 <hr />
 <h2 id="v062"><a class="header" href="#v062">v0.6.2</a></h2>
-<h3 id="added-6"><a class="header" href="#added-6">Added</a></h3>
+<h3 id="added-7"><a class="header" href="#added-7">Added</a></h3>
 <ul>
 <li>Command bindings</li>
 </ul>
 <h3 id="fixed-6"><a class="header" href="#fixed-6">Fixed</a></h3>
 <ul>
-<li>Image not cleared when going back to &quot;switch view&quot;</li>
+<li>Image not cleared when going back to "switch view"</li>
 </ul>
 <h3 id="v061"><a class="header" href="#v061">v0.6.1</a></h3>
-<h4 id="added-7"><a class="header" href="#added-7">Added</a></h4>
+<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
 <ul>
 <li>Rework of the env system, now using environment variables provided by the OS as opposed to implmenting own version of env</li>
 <li>Ability to use envs in command mode</li>
@@ -1094,7 +1097,7 @@ rc: reload configs
 <li>Screen blinking when pressing up arrow on the first item in playlist page, videos view</li>
 </ul>
 <h3 id="v060"><a class="header" href="#v060">v0.6.0</a></h3>
-<h4 id="added-8"><a class="header" href="#added-8">Added</a></h4>
+<h4 id="added-9"><a class="header" href="#added-9">Added</a></h4>
 <ul>
 <li>Mouse support</li>
 <li>Vim-like commands</li>
@@ -1107,7 +1110,7 @@ rc: reload configs
 <li>Search bar could not handle non English characters (e.g. <a href="https://github.com/Siriusmart/youtube-tui/issues/14" target=_blank>Russian</a>)</li>
 </ul>
 <h3 id="v052"><a class="header" href="#v052">v0.5.2</a></h3>
-<h4 id="added-9"><a class="header" href="#added-9">Added</a></h4>
+<h4 id="added-10"><a class="header" href="#added-10">Added</a></h4>
 <ul>
 <li>Improved config files (including hex colour support)</li>
 <li>Page turners (next/prev page in search)</li>
@@ -1117,13 +1120,13 @@ rc: reload configs
 <li>Where the image and text are displaying in the same place, and the image is displayed over the text</li>
 </ul>
 <h3 id="v051"><a class="header" href="#v051">v0.5.1</a></h3>
-<h4 id="added-10"><a class="header" href="#added-10">Added</a></h4>
+<h4 id="added-11"><a class="header" href="#added-11">Added</a></h4>
 <ul>
 <li>Image lazy loading (will not rerender image if already rendered)</li>
 <li>Optional features that can be disabled</li>
 </ul>
 <h3 id="v050"><a class="header" href="#v050">v0.5.0</a></h3>
-<h4 id="added-11"><a class="header" href="#added-11">Added</a></h4>
+<h4 id="added-12"><a class="header" href="#added-12">Added</a></h4>
 <ul>
 <li>Entire TUI rewritten from scratch, now using the <a href="https://crates.io/crates/tui-additions" target=_blank><code>tui-additions</code></a> crate</li>
 <li>Sixels image support</li>
@@ -1131,7 +1134,7 @@ rc: reload configs
 </ul>
 <hr />
 <h2 id="v044"><a class="header" href="#v044">v0.4.4</a></h2>
-<h3 id="added-12"><a class="header" href="#added-12">Added</a></h3>
+<h3 id="added-13"><a class="header" href="#added-13">Added</a></h3>
 <ul>
 <li>Added default select item for each page (can be changed in <code>layouts.yml</code>)</li>
 </ul>
@@ -1142,7 +1145,7 @@ rc: reload configs
 <li>Search options gray backgound + image covering popup</li>
 </ul>
 <h3 id="v043"><a class="header" href="#v043">v0.4.3</a></h3>
-<h4 id="added-13"><a class="header" href="#added-13">Added</a></h4>
+<h4 id="added-14"><a class="header" href="#added-14">Added</a></h4>
 <ul>
 <li>Refreshing page</li>
 <li>Key modifiers for key bindings</li>
