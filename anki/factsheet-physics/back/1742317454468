@@ -1,0 +1,7 @@
+<ol><li>The force of&nbsp;<b>gravitational attraction</b>&nbsp;between each planet and the sun is the&nbsp;<b>centripetal force&nbsp;</b>that keeps the planet on its orbit.</li><li>The&nbsp;<b>gravitational force</b>&nbsp;is&nbsp;\(F=\frac{GMm}{r^2}\)</li><li>The&nbsp;<b>gravitational field strength</b>&nbsp;therefore equals&nbsp;<b>centripetal acceleration</b>.\[\begin{align*}
+\frac{v^2}{r}&amp;=\frac{GM}{r^2}\\
+v^2&amp;=\frac{GM}{r}
+\end{align*}\]<br></li><li>Since&nbsp;\(v=\frac{2\pi r}{T}\)\[\begin{align*}
+\left(\frac{2\pi r}{T}\right)^2&amp;=\frac{GM}{r}\\
+\frac{r^3}{T^2}&amp;=\frac{GM}{4\pi^2}
+\end{align*}\]</li></ol>

@@ -1,0 +1,5 @@
+<ul><li>At the surface of a planet,&nbsp;\(V=\frac{GM}{R}\)</li><li>To move an object of mass&nbsp;\(m\)&nbsp;from the surface to infinity, the work that must be done is&nbsp;\(\Delta W=\frac{GMm}{R}\)</li><li>An object projected at speed&nbsp;\(v\)&nbsp;is able to escape from the planet if its&nbsp;<b>initial kinetic energy</b>\[\begin{align*}
+\frac{1}{2}mv^2&amp;\geq m\Delta V\\
+v^2&amp;\geq\frac{2GM}{R}\\
+v_\text{esc}&amp;=\sqrt{\frac{2GM}{R}}
+\end{align*}\]</li><li>Substituting&nbsp;\(g=\frac{GM}{R^2}\)&nbsp;=&gt;&nbsp;\(GM=gR^2\)\[v_\text{esc}=\sqrt{2gR}\]</li></ul>
