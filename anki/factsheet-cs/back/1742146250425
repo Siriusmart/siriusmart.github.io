@@ -1,0 +1,1 @@
+It operates by repeating three operations.<br><ol><li><b>Fetch</b>&nbsp;the next instruction from memory.<br></li><li><b>Decode</b>&nbsp;the instruction.</li><li><b>Execute</b>&nbsp;the instruction.<br></li></ol>

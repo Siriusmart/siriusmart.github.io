@@ -1,0 +1,1 @@
+The&nbsp;<b>width of the address bus</b>&nbsp;determines the&nbsp;<b>maximum possible memory capacity</b>&nbsp;of the system.<br><br>For an address bus with&nbsp;\(n\)&nbsp;lines, the&nbsp;<b>maximum address</b>&nbsp;it could transmit is&nbsp;\(2^n-1\), giving a&nbsp;<b>maximum memory capacity</b>&nbsp;of&nbsp;\(2^n\).

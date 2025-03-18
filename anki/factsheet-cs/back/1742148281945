@@ -1,0 +1,1 @@
+The controller is an&nbsp;<b>electric circuit board</b>&nbsp;consisting of<br><ul><li>An interface that allows connection of the controller&nbsp;<b>to the system bus</b>.</li><li>A set of&nbsp;<b>data, command and status registers</b>.</li><li>An interface that enables connection of the controller <b>to the cable</b> connecting the device to the computer.</li></ul>
