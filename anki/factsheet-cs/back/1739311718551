@@ -1,1 +1,0 @@
-It consists of a 32-bit number written in a&nbsp;<b>dotted-decimal notation</b>. Each part represents an 8-bit binary pattern giving a range of 0-255 for each decimal number.

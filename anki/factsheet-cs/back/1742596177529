@@ -1,0 +1,1 @@
+<ul><li>The interpreter software&nbsp;<b>contains subroutines</b>&nbsp;to carry out each high-level instruction.</li><li>The interpreter&nbsp;<b>looks at each line</b>&nbsp;of the source program,&nbsp;<b>analyses it</b>, and if it contains no syntax errors,&nbsp;<b>calls the appropriate subroutines</b>&nbsp;within its own program code to execute the command.</li></ul>

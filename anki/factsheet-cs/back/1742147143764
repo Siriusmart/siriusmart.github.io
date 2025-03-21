@@ -1,1 +1,0 @@
-Since the&nbsp;data and address bus&nbsp;are&nbsp;<b>shared by all components</b>&nbsp;of the system, control lines must be provided to ensure access and use of the data and address buses by different components of the system&nbsp;<b>does not lead to conflict</b>.

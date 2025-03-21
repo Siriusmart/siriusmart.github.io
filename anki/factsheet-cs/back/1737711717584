@@ -1,1 +1,0 @@
-<ol><li>Make a request of its own, on behalf of the user to the web server using its own IP, and</li><li>Forward the returned data to the user.</li><li>Adding the page to its cache for other users.</li></ol>

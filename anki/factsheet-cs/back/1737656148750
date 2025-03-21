@@ -1,1 +1,0 @@
-By blocking port 23, any packet attempting to connect through port 23 will be dropped or rejected to deny access.

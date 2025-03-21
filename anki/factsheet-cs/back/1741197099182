@@ -1,1 +1,0 @@
-The object's&nbsp;<b>instance variables are hidden</b>&nbsp;so that other objects <b>must use messages</b>&nbsp;to interact with that object's state.

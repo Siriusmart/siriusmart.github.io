@@ -1,1 +1,0 @@
-Machine code instructions are <b>fetched and executed serially</b> by a processor that performs arithmetic and logical operations.<br><ul><li>A program must be <b>resident in main memory</b>&nbsp;to be executed.</li><li>The machine code instructions are&nbsp;<b>fetched from memory</b>&nbsp;one at a time, decoded and executed in the processor.</li></ul>

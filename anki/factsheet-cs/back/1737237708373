@@ -1,1 +1,0 @@
-<ol><li>Parity bit is&nbsp;<u>set at the transmitting end</u>&nbsp;when data is transmitted.</li><li>Parity is checked at the receiving end.</li><li>If the wrong number of bits are 1s, an error has occured.</li></ol>

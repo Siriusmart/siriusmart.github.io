@@ -1,1 +1,0 @@
-<ul><li>In a large project, different programmers can <b>work on different classes</b> and not have to worry about how other parts of the system may affect the code they write.</li><li>They can also&nbsp;<b>use methods from other classes</b>&nbsp;without having to know how they work.</li></ul>

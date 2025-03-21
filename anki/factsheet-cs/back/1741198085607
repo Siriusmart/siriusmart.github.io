@@ -1,1 +1,0 @@
-In situations where a number of different classes of objects all need to understand a&nbsp;<b>particular set of messages</b>&nbsp;even though there is<b> no relationship</b>&nbsp;between them.

@@ -1,0 +1,1 @@
+The bytecode interpreter acts as an extra security layer between the computer and the program.<br><ul><li>The <b>bytecode interpreter is executed</b> rather than the program itself.</li><li>Which guards against any malicious programs.</li></ul>

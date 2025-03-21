@@ -1,1 +1,0 @@
-When an instruction is fetched from main memory, it is <b>copied into cache</b>&nbsp;so if it is needed again soon after, it can be fetched from cache, which is much quicker than going back to main memory.

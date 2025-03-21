@@ -1,1 +1,0 @@
-<ul><li>Each node is connected to a central device (e.g. a switch)</li><li>The switch keeps a record of the unique MAC address of each device on the network</li><li>Can identify which particular computer on the network it should send the data to</li></ul>

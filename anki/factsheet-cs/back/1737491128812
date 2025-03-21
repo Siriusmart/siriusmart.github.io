@@ -1,1 +1,0 @@
-<ol><li>Sends a broadcast message into the wire that all devices see.</li><li>Only the intended recipient actually accepts and processes the message.</li></ol>

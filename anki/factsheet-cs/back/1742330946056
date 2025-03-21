@@ -1,1 +1,0 @@
-<ul><li>One bit will be set if an <b>overflow </b>has occured.</li><li>Other bits indicate whether the result of the last instruction was <b>negative, zero or caused a carry</b>.</li></ul>
