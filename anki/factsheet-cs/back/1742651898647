@@ -1,0 +1,1 @@
+A foreign key is an attribute that&nbsp;<b>creates a join</b>&nbsp;between two tables.<br><ul><li>It is the attribute that is&nbsp;<b>common to both tables</b>, and</li><li>The&nbsp;<b>primary key&nbsp;</b>in one table is the foreign key in the table which it is linked.</li></ul>

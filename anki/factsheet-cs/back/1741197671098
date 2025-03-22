@@ -1,0 +1,1 @@
+Composition is stronger form of association. If the container is destroyed, every instance of the contained class is also destroyed.

@@ -1,0 +1,1 @@
+MAC addresses are changed at each hop.<br><ul><li>The source MAC address being the address of the device sending the packet for that specific hop.</li><li>The destination MAC address being the address of the device receiving the packet for that specific hop.</li></ul>

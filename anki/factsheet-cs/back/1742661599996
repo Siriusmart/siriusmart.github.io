@@ -1,0 +1,1 @@
+A non-key dependency is one where the value of an attribute is&nbsp;<b>determined by the value of another attribute</b>&nbsp;which is not the primary key.

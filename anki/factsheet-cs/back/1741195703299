@@ -1,0 +1,1 @@
+<ul><li>Like primitive variables, reference variables are&nbsp;<b>named memory locations</b>&nbsp;that can store information.</li><li>Unlike primitive variables, a reference does not hold the object - it <b>holds a reference</b>&nbsp;to where the object itself is stored.</li></ul>

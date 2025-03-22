@@ -1,0 +1,1 @@
+The methods specified in the interface will only be implemented by a class that implements the interface, and&nbsp;<b>not in the interface itself</b>.

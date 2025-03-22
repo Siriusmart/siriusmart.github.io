@@ -1,0 +1,1 @@
+<ol><li>Prior to transmitting, a node first listens for signals on the wireless network to determine whether another node is transmitting.</li><li>If a signal is detected, it waits for a random period of time for the node to stop transmitting, then listens again.</li></ol>

@@ -1,0 +1,3 @@
+<pre>INSERT INTO TableName(Field1, Field2)
+VALUES ("Value1", "Value2")
+</pre>

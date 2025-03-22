@@ -1,0 +1,1 @@
+A normalised database with&nbsp;<b>correctly defined relationships between tables</b>&nbsp;will not allow records in a table on the&nbsp;<i>one</i>&nbsp;side of a one-to-many relationship to be deleted accidentally.

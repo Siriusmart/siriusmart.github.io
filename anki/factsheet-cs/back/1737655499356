@@ -1,0 +1,1 @@
+Each data packet that attempts to pass between the two NIC is analysed against preconfigured rules, then accepted or rejected.

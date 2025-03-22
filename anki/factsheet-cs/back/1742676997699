@@ -1,0 +1,1 @@
+It is a technique which ensures that <b>transaction do not overlap in time</b>&nbsp;and therefore&nbsp;<b>cannot interfer with each other</b>&nbsp;or lead to updates being lost.

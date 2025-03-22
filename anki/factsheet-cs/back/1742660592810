@@ -1,0 +1,1 @@
+Tables can be linked through the use of a&nbsp;<b>common attribute</b>.<br><ul><li>This attribute must be a&nbsp;<b>primary key</b>&nbsp;in one table, and</li><li>Is known as a&nbsp;<b>foreign key</b>&nbsp;in the second table.</li></ul>

@@ -1,0 +1,1 @@
+<ul><li>The sensors are placed under a&nbsp;<b>mosaic of red, green and blue filters</b>&nbsp;to separate out different colour wavelengths.</li><li>The processor then approximates values for the three&nbsp;<b>RGB channels</b>&nbsp;of each individual pixels based on the values of neighbouring pixels.</li></ul>

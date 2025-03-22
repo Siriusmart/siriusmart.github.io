@@ -1,0 +1,2 @@
+<pre>FOREIGN KEY FieldName REFERENCES TableName(FieldName)
+</pre>

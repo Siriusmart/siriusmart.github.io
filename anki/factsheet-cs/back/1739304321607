@@ -1,0 +1,1 @@
+Using SSH with other&nbsp;<b>application level protocols</b>&nbsp;allows you to "tunnel" through port 22 through which HTTP, POP3 or SMTP requests can operate.

@@ -1,0 +1,1 @@
+An object encapsulates both its state and its behaviours.<br><br>All data and methods of each object are wrapped up into a single entity so that attributes and behaviours of one object&nbsp;<b>cannot affect the way in which another object functions</b>.

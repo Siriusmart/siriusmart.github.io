@@ -1,0 +1,1 @@
+The FTP client sits on top of the protocol, user actions can&nbsp;<u>generate the FTP commands</u>&nbsp;automatically.

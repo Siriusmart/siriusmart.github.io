@@ -1,0 +1,1 @@
+<ol><li>The clock emits a signal at regular intervals.</li><li>Transmissions along the busses start on a clock signal.</li><li>Which is shared by both sender and receiver.</li></ol>

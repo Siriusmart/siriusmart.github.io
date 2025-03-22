@@ -1,0 +1,1 @@
+It allows the split between network ID and host ID to be anywhere within the 32 bits, this is a far more flexible arrangement.

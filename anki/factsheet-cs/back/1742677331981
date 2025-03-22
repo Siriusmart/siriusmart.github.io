@@ -1,0 +1,1 @@
+It is a serialisation technique used to ensure that&nbsp;<b>transactions are not lost</b>&nbsp;when two or more users are simultaneously trying to access the same database object.

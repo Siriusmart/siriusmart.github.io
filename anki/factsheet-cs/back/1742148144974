@@ -1,0 +1,1 @@
+Each device has an I/O controller.<br><ol><li>The I/O controller&nbsp;<b>receive input/output requests</b>&nbsp;from the processor.</li><li>Then send&nbsp;<b>device-specific control signals</b>&nbsp;to the device they control.</li></ol><div>They also&nbsp;<b>manage data flow</b>&nbsp;to and from the device.</div>

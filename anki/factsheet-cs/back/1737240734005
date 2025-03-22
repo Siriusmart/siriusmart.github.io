@@ -1,0 +1,1 @@
+One byte at a time is sent, each character preceded by a start bit and followed by a stop bit.

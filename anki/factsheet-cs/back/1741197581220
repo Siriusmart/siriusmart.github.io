@@ -1,0 +1,1 @@
+Aggregation is a type of association. It occur when a class&nbsp;<b>is a collection or container</b>&nbsp;of other classes, but the contained classes <b>do not have a strong lifecycle dependency</b> on the container.

@@ -1,0 +1,1 @@
+<ul><li>A proxy maintain a cache of websites commonly visited</li><li>Return the web page data to the user immediately without the need to reconnect to the internet and re-request the page from the web server.</li></ul>
