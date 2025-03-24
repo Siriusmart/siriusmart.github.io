@@ -1,0 +1,1 @@
+If 8 bits is used to store the result, an overflow error occurs when a&nbsp;<b>carry from the most significant bit</b>&nbsp;requires a 9th bit.<br><br>Where the result of the addition is<b> greater than 255</b>.

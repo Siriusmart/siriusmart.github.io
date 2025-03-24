@@ -1,0 +1,1 @@
+A vector file stores only the necessary&nbsp;<b>details about each shape</b>&nbsp;in order to <b>redraw the object</b> when the file loads.
