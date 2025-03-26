@@ -1,0 +1,1 @@
+A higher-order function is one which either<br><ul><li><b>Takes a function</b> as an argument, or</li><li><b>Returns a function</b>&nbsp;as a result.</li></ul>

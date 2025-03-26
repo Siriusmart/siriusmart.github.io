@@ -1,0 +1,1 @@
+Because the same function always returns same result, functions can be&nbsp;<b>executed in any order</b>&nbsp;without any possibility that one function can change the behaviour of the other.

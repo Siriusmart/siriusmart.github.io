@@ -1,0 +1,1 @@
+Map is a higher-order function that<br><ul><li>Takes a list and the function to be applied to the arguments in the list as inputs</li><li>Returns a list made by applying the function to each element of the old list</li></ul>

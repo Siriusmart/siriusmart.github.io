@@ -1,0 +1,1 @@
+<ul><li>It has&nbsp;<b>no side effects</b>, this makes it easier to write&nbsp;<b>correct code&nbsp;</b>and to understand the behaviour of a program.</li><li>Support for&nbsp;<b>higher order functions</b>, map and reduce operations can be&nbsp;<b>easily parallelised</b>.</li><li><b>Forbids assignment</b>, making parallel processing extremely easy.<br></li></ul>
