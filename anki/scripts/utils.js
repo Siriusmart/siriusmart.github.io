@@ -23,3 +23,10 @@ function fetchTexts(urls) {
 function loaded() {
     document.getElementById("loading").hidden = true;
 }
+
+function downloadDeck(name) {
+    const link = document.createElement("a");
+    link.href = `./${name}.apkg`;
+    link.download = `${name}.apkg`;
+    link.click();
+}

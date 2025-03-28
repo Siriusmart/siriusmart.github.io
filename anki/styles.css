@@ -21,6 +21,11 @@ body {
   color: #4c4f69;
 }
 
+.light .icon-colour {
+  filter: invert(28%) sepia(36%) saturate(349%) hue-rotate(195deg)
+    brightness(98%) contrast(89%);
+}
+
 .dark {
   background: #11111b;
 }
@@ -48,7 +53,7 @@ body {
 }
 
 #packages .url {
-  display: block;
+  display: inline;
   text-decoration: underline;
 }
 
@@ -59,6 +64,17 @@ body {
 
 #packages {
   text-align: center;
+}
+
+#packages .urlWrap {
+  transform: translateY(-11px);
+}
+
+#packages .download {
+  height: 1em;
+  display: inline;
+  padding: 8px;
+  transform: translateY(11px);
 }
 
 .light #packages .title {
@@ -261,6 +277,39 @@ body {
   text-align: center;
 }
 
+#shuffle .cardHolder:hover .card-buttons {
+  opacity: 1;
+  transition: 0.1s;
+  transform: translateY(0px);
+}
+
+#shuffle .card-buttons {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.1s;
+}
+
+#shuffle .card-buttons {
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: block;
+  float: right;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+#shuffle #deleteButton {
+  margin-left: 10px;
+}
+
+#shuffle .card-buttons img {
+  height: 1em;
+}
+
 #shuffle #settings,
 #shuffle #cardNumberWrapper {
   margin-left: auto;
@@ -286,6 +335,7 @@ body {
 }
 
 #shuffle .cardHolder {
+  position: relative;
   padding: 1em;
   min-height: 7em;
   width: calc(min(30em, 80%));
@@ -343,6 +393,11 @@ body {
   color: #cdd6f4;
 }
 
+.light #shuffle .card-buttons {
+  background-color: #eaebf0;
+  border: 1px solid #ccd0dc;
+}
+
 .light #shuffle .generate,
 .light #shuffle .cardNumInput {
   background-color: #eff1f5;
@@ -350,6 +405,7 @@ body {
 }
 
 .dark #shuffle .generate,
+.dark #shuffle .card-buttons,
 .dark #shuffle .cardNumInput {
   background-color: #1e1e2e;
   border: 1px solid #45475a;

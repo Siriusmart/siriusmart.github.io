@@ -252,6 +252,73 @@ async function shuffle() {
 
     fromUrl();
 
+    let cards;
+
+    function putCard(cardHolder, front, back, id) {
+        let frontTag = `<div class="frontTag">[Front]</div>`;
+        let backTag = `<div class="backTag">[Back]</div>`;
+
+        let isFront = true;
+
+        cardHolder.onclick = () => {
+            cardHolder.innerHTML = isFront ? frontTag : backTag;
+            if (isFront) {
+                cardHolder.innerHTML += front;
+            } else {
+                cardHolder.innerHTML += back;
+            }
+            render(cardHolder);
+            isFront = !isFront;
+
+            let kickButton = document.createElement("img");
+            kickButton.src = "./icons/shuffle.svg";
+            kickButton.id = "kickButton";
+            kickButton.onclick = (e) => {
+                kick(cardHolder);
+                e.stopPropagation();
+            };
+
+            let deleteButton = document.createElement("img");
+            deleteButton.src = "./icons/delete.svg";
+            deleteButton.id = "deleteButton";
+            deleteButton.onclick = (e) => {
+                cardHolder.outerHTML = "";
+                e.stopPropagation();
+            };
+
+            let cardButtons = document.createElement("div");
+            cardButtons.appendChild(kickButton);
+            cardButtons.appendChild(deleteButton);
+            cardButtons.classList.add("card-buttons");
+            cardHolder.appendChild(cardButtons);
+        };
+        cardHolder.setAttribute("id", id);
+        cardHolder.onclick();
+    }
+
+    async function kick(box) {
+        if (cards.length == 0) {
+            let shownCards = Array.from(
+                document.getElementsByClassName("cardHolder"),
+            ).map((elem) => parseInt(elem.getAttribute("id")));
+            cards = walkTree().filter((id) => !shownCards.includes(id));
+        }
+
+        let index = Math.floor(Math.random() * cards.length);
+        let id = cards[index];
+        cards.splice(index, 1);
+        let frontTag = `<div class="frontTag">[Front]</div>`;
+        let backTag = `<div class="backTag">[Back]</div>`;
+        box.innerHTML = "";
+
+        let fetches = fetchTexts([
+            `./${params.get("package")}/front/${id}`,
+            `./${params.get("package")}/back/${id}`,
+        ]);
+
+        putCard(box, await fetches[0], await fetches[1], id);
+    }
+
     generate.onclick = async () => {
         let url = new URL(window.location.href);
         const params = new URLSearchParams(url.search);
@@ -260,7 +327,7 @@ async function shuffle() {
         url.search = params;
         window.history.replaceState({}, "", url);
 
-        let cards = walkTree();
+        cards = walkTree();
 
         let toFetch = [];
 
@@ -295,30 +362,14 @@ async function shuffle() {
             back.push(fetched);
         }
 
-        let frontTag = `<div class="frontTag">[Front]</div>`;
-        let backTag = `<div class="backTag">[Back]</div>`;
-
         cardScreen.innerHTML = "";
 
         for (let i = 0; i < front.length; i++) {
             let cardHolder = document.createElement("div");
             cardHolder.classList.add("cardHolder");
-
             cardScreen.appendChild(cardHolder);
 
-            let isFront = true;
-
-            cardHolder.onclick = () => {
-                cardHolder.innerHTML = isFront ? frontTag : backTag;
-                if (isFront) {
-                    cardHolder.innerHTML += front[i];
-                } else {
-                    cardHolder.innerHTML += back[i];
-                }
-                render(cardHolder);
-                isFront = !isFront;
-            };
-            cardHolder.onclick();
+            putCard(cardHolder, front[i], back[i], toFetch[i]);
         }
     };
 

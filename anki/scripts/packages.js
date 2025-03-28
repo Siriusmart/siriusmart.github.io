@@ -26,10 +26,25 @@ async function packages() {
         url.innerText = "Open package";
         url.classList.add("url");
 
+        let download = document.createElement("img");
+        download.src = "./icons/download.svg";
+        download.classList.add("download");
+        download.classList.add("icon-colour");
+        download.classList.add("icon-hover");
+        download.onclick = (e) => {
+            downloadDeck(id);
+            e.stopPropagation();
+        };
+
+        let urlWrap = document.createElement("div");
+        urlWrap.appendChild(url);
+        urlWrap.appendChild(download);
+        urlWrap.classList.add("urlWrap");
+
         pack.appendChild(title);
         pack.appendChild(author);
         pack.appendChild(date);
-        pack.appendChild(url);
+        pack.appendChild(urlWrap);
         screen.appendChild(pack);
 
         pack.onclick = () => {

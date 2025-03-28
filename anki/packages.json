@@ -2,11 +2,13 @@
     "factsheet-physics": {
         "name": "Factsheet Physics",
         "author": "Sirius",
-        "date": "2025-03-18"
+        "date": "2025-03-18",
+        "download": "./factsheet-physics.apkg"
     },
     "factsheet-cs": {
         "name": "Factsheet Computing",
         "author": "Sirius",
-        "date": "2025-03-26"
+        "date": "2025-03-26",
+        "download": "./factsheet-cs.apkg"
     }
 }
