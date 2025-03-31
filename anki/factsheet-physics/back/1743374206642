@@ -1,0 +1,7 @@
+<ol><li>Starting with the definition of&nbsp;\(\varepsilon_0\)&nbsp;satisfies\[\frac{Q}{A}=\varepsilon_0E\]where charge&nbsp;\(Q\)&nbsp;is evenly distributed over a surface area&nbsp;\(A\).</li><li>At distance&nbsp;\(r\),&nbsp;\(A=4\pi r^2\)\[\begin{align*}
+E&amp;=\frac{Q}{\varepsilon_0 A}\\
+&amp;=\frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2}
+\end{align*}\]<br></li><li>The force on a charge&nbsp;\(q\)&nbsp;placed in this field is\[\begin{align*}
+F&amp;=Eq\\
+&amp;=\frac{1}{4\pi\varepsilon_0}\frac{Qq}{r^2}
+\end{align*}\]</li></ol>
