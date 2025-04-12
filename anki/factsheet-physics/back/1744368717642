@@ -1,0 +1,6 @@
+\[\begin{align*}
+N&amp;=N_0e^{-\lambda t}\\
+A&amp;=\lambda N\\
+&amp;=\lambda N_0e^{-\lambda t}\\
+&amp;=A_0e^{-\lambda t}
+\end{align*}\]
