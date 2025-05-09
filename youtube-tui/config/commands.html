@@ -184,6 +184,7 @@ video:
 <li><code>saved_video</code></li>
 <li><code>playlist</code></li>
 <li><code>saved_playlist</code></li>
+<li><code>channel</code></li>
 </ul>
 <h2 id="env-variables"><a class="header" href="#env-variables">Env variables</a></h2>
 <p>Notice that a lot of the commands contains the <code>${label}</code> pattern, this actually replaces the text with the env variables set in <code>main.yml</code>, or is added by the current page (video or playlist) on-the-go.</p>
@@ -224,8 +225,10 @@ video:
 <h3 id="env-reference"><a class="header" href="#env-reference">Env reference</a></h3>
 <p>Does not include custom env set in <code>main.yml</code>.</p>
 <div class="table-wrapper"><table><thead><tr><th>Name</th><th>Page</th><th>Value</th></tr></thead><tbody>
-<tr><td><code>url</code></td><td>search, popular, trending, video, playlist</td><td>String url to the web page</td></tr>
-<tr><td><code>id</code></td><td>video, playlist</td><td>String id of the video or playlist</td></tr>
+<tr><td><code>url</code></td><td>search, popular, trending, video, playlist, channel (main)</td><td>String url to the web page</td></tr>
+<tr><td><code>id</code></td><td>video, playlist, channel (main)</td><td>String id of the video, playlist or channel</td></tr>
+<tr><td><code>title</code></td><td>video, playlist</td><td>Title of video or playlist</td></tr>
+<tr><td><code>name</code></td><td>channel</td><td>Name of channel</td></tr>
 <tr><td><code>channel-id</code></td><td>video, playlist</td><td>String id of the channel</td></tr>
 <tr><td><code>embed-url</code></td><td>video</td><td>String url to the embed video (required to play video using mpv from Invidious)</td></tr>
 <tr><td><code>all-videos</code></td><td>playlist</td><td>String url<em><strong>s</strong></em> separated by space to all embed videos in a playlist</td></tr>
