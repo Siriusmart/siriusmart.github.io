@@ -1,0 +1,4 @@
+\[\begin{align*}
+\frac{P_X}{P_Y}&amp;=\frac{\sigma A_X{T_X}^4}{\sigma A_Y{T_Y}^4}\\
+\frac{A_X}{A_Y}&amp;=\frac{P_X}{P_Y}\div\left[\frac{T_X}{T_Y}\right]^4
+\end{align*}\]

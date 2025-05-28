@@ -10,5 +10,11 @@
         "author": "Sirius",
         "date": "2025-03-26",
         "download": "./factsheet-cs.apkg"
+    },
+    "factsheet-astrophysics": {
+        "name": "Factsheet Astrophysics (WIP)",
+        "author": "Sirius",
+        "date": "2025-05-28",
+        "download": "./factsheet-asphysics.apkg"
     }
 }
