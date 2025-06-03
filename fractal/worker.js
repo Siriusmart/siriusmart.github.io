@@ -72,12 +72,18 @@ self.onmessage = function (event) {
             expr,
             iterations,
         );
+        let fillStyle;
+
+        if (diverges) {
+            fillStyle = `color-mix(in srgb, blue ${Math.min(Math.max(0.1, diverges * intensity), 1) * 100}%, white)`;
+        } else {
+            fillStyle = "black";
+        }
+
         self.postMessage({
             x,
             y,
-            fillStyle: diverges
-                ? `rgba(0,0,255,${Math.max(0.1, diverges * intensity)})`
-                : "black",
+            fillStyle,
         });
     }
 };
