@@ -91,11 +91,34 @@ window.onresize = () => {
     debounceRender();
 };
 
+{
+    let params = new URLSearchParams(window.location.search);
+    console.log(params.get("top"));
+    if (params.get("top") !== null)
+        document.getElementById("top").value = params.get("top");
+    if (params.get("right") !== null)
+        document.getElementById("right").value = params.get("right");
+    if (params.get("left") !== null)
+        document.getElementById("left").value = params.get("left");
+    if (params.get("iterations") !== null)
+        document.getElementById("iterations").value = params.get("iterations");
+    if (params.get("expression") !== null)
+        document.getElementById("formula").value = params.get("expression");
+}
+
 (document.getElementById("update").onclick = () => {
     up = parseFloat(document.getElementById("top").value);
     right = parseFloat(document.getElementById("right").value);
     left = parseFloat(document.getElementById("left").value);
     iterations = parseInt(document.getElementById("iterations").value);
     expression = document.getElementById("formula").value;
+
+    let params = new URLSearchParams();
+    params.set("top", up);
+    params.set("right", right);
+    params.set("left", left);
+    params.set("iterations", iterations);
+    params.set("expression", expression);
+    window.history.replaceState(null, null, `?${params.toString()}`);
     window.onresize();
 })();
