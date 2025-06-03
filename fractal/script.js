@@ -3,9 +3,9 @@ const ctx = canvas.getContext("2d");
 
 let expression;
 
-let left = -2.5;
-let right = 1.5;
-let up = 1.5;
+let left = -3;
+let right = 1.7;
+let up = 1.2;
 let iterations = 10;
 let intensity = 0.05;
 
