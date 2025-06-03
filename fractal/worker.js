@@ -26,7 +26,10 @@ class Complex {
     div(other) {
         if (other.im === 0)
             return new Complex(this.re / other.re, this.im / other.im);
-        else return;
+        else
+            return this.mul(other.conjugate()).div(
+                new Complex(Math.pow(other.re, 2) + Math.pow(other.im, 2), 0),
+            );
     }
 
     pow(n) {
