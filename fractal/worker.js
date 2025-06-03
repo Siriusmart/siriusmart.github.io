@@ -47,12 +47,12 @@ class Complex {
         return eval(expression);
     }
 
-    diverges(expression) {
+    diverges(expression, iterations) {
         let z = new Complex(0, 0);
         let c = this;
 
         for (let i = 0; i < 10; i++) {
-            z = z.iterate(c, "z.mul(z).add(c)");
+            z = z.iterate(c, expression);
         }
 
         if (z.magnitudeSquared() > 4)
@@ -62,13 +62,14 @@ class Complex {
 }
 
 self.onmessage = function (event) {
-    const { y, scale, width, left, up, expr } = event.data;
+    const { y, scale, width, left, up, expr, iterations } = event.data;
 
     expression = expr;
 
     for (let x = 0; x < width; x++) {
         let diverges = new Complex(left + scale * x, up - scale * y).diverges(
             expr,
+            iterations,
         );
         self.postMessage({
             x,
@@ -78,5 +79,4 @@ self.onmessage = function (event) {
                 : "black",
         });
     }
-    // self.postMessage({ x, y, color });
 };

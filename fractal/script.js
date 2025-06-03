@@ -6,6 +6,7 @@ let expression;
 let left = -2.5;
 let right = 1.5;
 let up = 1.5;
+let iterations = 10;
 
 let renderID = 0;
 
@@ -37,6 +38,7 @@ function render() {
             up,
             scale,
             expr: expression,
+            iterations,
         });
 
         workers[workerIndex].onmessage = function (event) {
@@ -53,6 +55,8 @@ function render() {
                     right,
                     up,
                     scale,
+                    expr: expression,
+                    iterations,
                 });
             }
         };
@@ -91,6 +95,7 @@ window.onresize = () => {
     up = parseFloat(document.getElementById("top").value);
     right = parseFloat(document.getElementById("right").value);
     left = parseFloat(document.getElementById("left").value);
+    iterations = parseInt(document.getElementById("iterations").value);
     expression = document.getElementById("formula").value;
     window.onresize();
 })();
