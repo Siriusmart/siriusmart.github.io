@@ -51,7 +51,7 @@ class Complex {
         let z = new Complex(0, 0);
         let c = this;
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < iterations; i++) {
             z = z.iterate(c, expression);
         }
 
@@ -62,7 +62,8 @@ class Complex {
 }
 
 self.onmessage = function (event) {
-    const { y, scale, width, left, up, expr, iterations } = event.data;
+    const { y, scale, width, left, up, expr, iterations, intensity } =
+        event.data;
 
     expression = expr;
 
@@ -75,7 +76,7 @@ self.onmessage = function (event) {
             x,
             y,
             fillStyle: diverges
-                ? `rgba(0,0,255,${Math.max(0.1, diverges * 0.05)})`
+                ? `rgba(0,0,255,${Math.max(0.1, diverges * intensity)})`
                 : "black",
         });
     }

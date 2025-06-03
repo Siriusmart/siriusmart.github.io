@@ -7,6 +7,7 @@ let left = -2.5;
 let right = 1.5;
 let up = 1.5;
 let iterations = 10;
+let intensity = 0.05;
 
 let renderID = 0;
 
@@ -39,6 +40,7 @@ function render() {
             scale,
             expr: expression,
             iterations,
+            intensity,
         });
 
         workers[workerIndex].onmessage = function (event) {
@@ -57,6 +59,7 @@ function render() {
                     scale,
                     expr: expression,
                     iterations,
+                    intensity,
                 });
             }
         };
@@ -104,6 +107,8 @@ window.onresize = () => {
         document.getElementById("iterations").value = params.get("iterations");
     if (params.get("expression") !== null)
         document.getElementById("formula").value = params.get("expression");
+    if (params.get("intensity") !== null)
+        document.getElementById("intensity").value = params.get("intensity");
 }
 
 (document.getElementById("update").onclick = () => {
@@ -119,6 +124,7 @@ window.onresize = () => {
     params.set("left", left);
     params.set("iterations", iterations);
     params.set("expression", expression);
+    params.set("intensity", intensity);
     window.history.replaceState(null, null, `?${params.toString()}`);
     window.onresize();
 })();
