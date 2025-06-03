@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+#options {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  background-color: white;
+  border: solid black 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+}
+
+#options input {
+  border: none;
+}
+
+#options button {
+  border-radius: 0px;
+  outline: none;
+  background-color: white;
+  border: solid black 1px;
+}

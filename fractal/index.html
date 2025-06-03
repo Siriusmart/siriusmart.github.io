@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="fractal"></canvas>
+    <div id="options">
+      <p>
+        z<sub>next</sub>&nbsp;=
+        <input type="text" id="formula" value="z.mul(z).add(c)" />
+      </p>
+      <p>
+        Left&nbsp;=
+        <input type="number" id="left" value="-2.5" />
+      </p>
+      <p>
+        Right&nbsp;=
+        <input type="number" id="right" value="1.5" />
+      </p>
+      <p>
+        Top&nbsp;=
+        <input type="number" id="top" value="1.5" />
+      </p>
+      <button id="update">Update</button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
