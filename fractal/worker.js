@@ -79,7 +79,11 @@ class Complex {
 
         let previous;
 
-        for (let i = 0; i < iterations && z.magnitudeSquared() < cutoff; i++) {
+        for (
+            let i = 0;
+            i < iterations && (cutoff == -1 || z.magnitudeSquared() < cutoff);
+            i++
+        ) {
             previous = z;
             z = z.iterate(c, expression);
 

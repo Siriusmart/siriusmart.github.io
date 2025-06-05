@@ -53,7 +53,7 @@ function render() {
             intensity,
             currentRender,
             cutoff,
-            threshold,
+            threshold: threshold ** 2,
         });
 
         workers[workerIndex].onmessage = function (event) {
@@ -79,7 +79,7 @@ function render() {
                     intensity,
                     currentRender,
                     cutoff,
-                    threshold,
+                    threshold: threshold ** 2,
                 });
             }
             if (currentRender != renderID) return;
