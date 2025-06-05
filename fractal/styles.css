@@ -24,3 +24,13 @@ body {
   background-color: white;
   border: solid black 1px;
 }
+
+#options.hover-hide {
+  transition: 300ms;
+  opacity: 0;
+}
+
+#options:hover.hover-hide {
+  transition: 300ms;
+  opacity: 1;
+}

@@ -6,14 +6,16 @@ let expression;
 let left = -3;
 let right = 1.7;
 let up = 1.2;
-let iterations = 10;
+let iterations = 20;
 let intensity = 0.05;
+let cutoff = 10000;
+let threshold = 2;
 
 let renderID = 0;
 
 const workers = [];
 
-for (let i = 0; i < 128; i++) {
+for (let i = 0; i < 16; i++) {
     workers.push(new Worker("./worker.js"));
 }
 
@@ -21,6 +23,13 @@ function render() {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     renderID++;
+
+    for (let worker of workers) {
+        worker.postMessage({
+            setRenderId: renderID,
+        });
+    }
+
     let currentRender = renderID;
 
     let scale = (right - left) / canvas.clientWidth;
@@ -28,6 +37,7 @@ function render() {
     let workerIndex = 0;
     let max = canvas.clientHeight;
     let y = 0;
+    let start = Date.now();
 
     for (let i = 0; i < Math.min(max, workers.length); i++) {
         workers[workerIndex].postMessage({
@@ -41,14 +51,21 @@ function render() {
             expr: expression,
             iterations,
             intensity,
+            currentRender,
+            cutoff,
+            threshold,
         });
 
         workers[workerIndex].onmessage = function (event) {
-            let { x: pixelX, y: pixelY, fillStyle } = event.data;
-            ctx.fillStyle = fillStyle;
-            ctx.fillRect(pixelX, pixelY, 1, 1);
-
-            if (y < max && renderID === currentRender) {
+            let {
+                x: pixelX,
+                y: pixelY,
+                fillStyle,
+                currentRender,
+                doneRow,
+            } = event.data;
+            if (doneRow && y >= max) console.log(Date.now() - start);
+            if (doneRow && y < max && renderID === currentRender) {
                 workers[workerIndex].postMessage({
                     y: y++,
                     scale,
@@ -60,8 +77,14 @@ function render() {
                     expr: expression,
                     iterations,
                     intensity,
+                    currentRender,
+                    cutoff,
+                    threshold,
                 });
             }
+            if (currentRender != renderID) return;
+            ctx.fillStyle = fillStyle;
+            ctx.fillRect(pixelX, pixelY, 1, 1);
         };
 
         workerIndex = (workerIndex + 1) % workers.length;
@@ -96,7 +119,6 @@ window.onresize = () => {
 
 {
     let params = new URLSearchParams(window.location.search);
-    console.log(params.get("top"));
     if (params.get("top") !== null)
         document.getElementById("top").value = params.get("top");
     if (params.get("right") !== null)
@@ -109,6 +131,10 @@ window.onresize = () => {
         document.getElementById("formula").value = params.get("expression");
     if (params.get("intensity") !== null)
         document.getElementById("intensity").value = params.get("intensity");
+    if (params.get("cutoff") !== null)
+        document.getElementById("cutoff").value = params.get("cutoff");
+    if (params.get("threshold") !== null)
+        document.getElementById("threshold").value = params.get("threshold");
 }
 
 (document.getElementById("update").onclick = () => {
@@ -117,6 +143,9 @@ window.onresize = () => {
     left = parseFloat(document.getElementById("left").value);
     iterations = parseInt(document.getElementById("iterations").value);
     expression = document.getElementById("formula").value;
+    intensity = document.getElementById("intensity").value;
+    cutoff = document.getElementById("cutoff").value;
+    threshold = document.getElementById("threshold").value;
 
     let params = new URLSearchParams();
     params.set("top", up);
@@ -125,6 +154,15 @@ window.onresize = () => {
     params.set("iterations", iterations);
     params.set("expression", expression);
     params.set("intensity", intensity);
+    params.set("cutoff", cutoff);
+    params.set("threshold", threshold);
     window.history.replaceState(null, null, `?${params.toString()}`);
-    window.onresize();
+
+    if (renderID == 0) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        render();
+    } else window.onresize();
 })();
+
+document.getElementById("options").classList.add("hover-hide");
