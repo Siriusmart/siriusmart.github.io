@@ -1,5 +1,0 @@
-<pre>CREATE TABLE TableName (
-    Field1    INTEGER NOT NULL PRIMARY KEY,
-    Field2    VARCHAR(20)
-)
-</pre>

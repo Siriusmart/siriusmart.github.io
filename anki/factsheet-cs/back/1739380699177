@@ -1,1 +1,0 @@
-<ul><li>A client <b>browser</b>&nbsp;sends an HTTP request to a web server for a web page data.</li><li>The page data is sent back from the HTTP server by the <b>way of response</b>.</li><li>And the browser&nbsp;<b>renders the web page</b>&nbsp;on the client's computer.</li></ul>

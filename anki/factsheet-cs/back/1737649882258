@@ -1,1 +1,0 @@
-<ol><li>Read the recipient's IP address in each packet, and</li><li>Forward it to the recipient via the fastest and least congested route to the next router.</li><li>Which will do the same until the packet reaches its destination.</li></ol>

@@ -1,1 +1,0 @@
-<ol><li>Attach a&nbsp;<b>hash total</b>&nbsp;calculated from the data contained in the packets.</li><li>The checksum is&nbsp;<b>recalculated</b>&nbsp;for each packet upon receipt.</li><li>A match is used to help verify the payload data has not changed during transmission.</li></ol>

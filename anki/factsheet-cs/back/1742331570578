@@ -1,1 +1,0 @@
-Each core is theoretically able to<b> process a different instruction at the same time</b> with its own fetch-execute cycle, making it 4 times faster in a quad core chip.

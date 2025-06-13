@@ -1,1 +1,0 @@
-The absolute error is calculated as the difference between the number to be represented, and the actual binary number that is the&nbsp;<b>closest possible approximation</b>&nbsp;in the given number of bits.

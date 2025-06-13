@@ -1,1 +1,0 @@
-<ol><li>All&nbsp;<b>header data</b>&nbsp;is stripped from the packet leaving only the raw data.</li><li><b>New header data</b>&nbsp;is added in the format of the new network.<br></li><li>The gateway sends the packet on its way again.</li></ol>

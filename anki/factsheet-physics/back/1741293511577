@@ -1,1 +1,0 @@
-Consider a weight supported by two springs&nbsp;\(P\)&nbsp;and&nbsp;\(Q\)&nbsp;parallel with each other, the extension&nbsp;\(\Delta L\)&nbsp;of each spring is the same.<br><ul><li>\(F_P=k_P\Delta L\)<br></li><li>\(F_Q=k_Q\Delta L\)</li></ul>\[W=F_P+F_Q=k_P\Delta L+k_Q\Delta L=k\Delta L\]where the effective spring constant<br><div>\[k=k_P+k_Q\]<br></div>

@@ -1,1 +1,0 @@
-Transactions are ordered in terms of their&nbsp;<b>dependencies on each other</b>&nbsp;and the&nbsp;<b>time</b>&nbsp;they were initiated.

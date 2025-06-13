@@ -1,1 +1,0 @@
-Whenever a transaction starts, it is&nbsp;<b>given a timestamp</b>, so that if two transactions affect the same object, the transaction with the early timestamp should apply first.

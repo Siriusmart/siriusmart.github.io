@@ -1,1 +1,0 @@
-Since an interface is implemented differently by different classes, code that <b>relies on the interface</b>&nbsp;can&nbsp;<b>handle any class</b>&nbsp;implementing the interface.<br><br>A new module can be introduced and no other modules needs to change.

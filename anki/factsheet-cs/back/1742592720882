@@ -1,1 +1,0 @@
-A typical instruction holds an&nbsp;<b>operation code</b>&nbsp;in the first few bits, and an <b>operand</b>&nbsp;in the rest of the memory cell.

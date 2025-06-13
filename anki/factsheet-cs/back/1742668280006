@@ -1,3 +1,0 @@
-<pre>DELETE FROM TableName
-WHERE CONDITION
-</pre>

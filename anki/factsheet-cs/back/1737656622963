@@ -1,1 +1,0 @@
-To ensure that incoming responses (to outgoing packets) arriving through the same port numbers, and with the same IP addresses can be temporarily allowed during that communication stream.

@@ -1,1 +1,0 @@
-<ol><li>Webpage is requested using the URL.</li><li>The corresponding IP address is requested from a local DNS.</li><li>Search is exteneded up the hierarchy to another larger DNS database.</li><li>The IP address is located.</li><li>Data request sent by the user's computer to the location to find the web page data.</li></ol>

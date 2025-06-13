@@ -1,1 +1,0 @@
-<ul><li>While one application is busy using the CPU for processing,</li><li>The operating system can&nbsp;<b>queue up the next process</b>&nbsp;required by another application to make the most efficient use of the CPU.</li></ul>

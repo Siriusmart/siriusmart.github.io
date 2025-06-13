@@ -1,1 +1,0 @@
-<ul><li><b>IP address</b>&nbsp;of the sender and recipient.<br></li><li><b>Protocol</b>&nbsp;in use.<br></li><li><b>Packet number</b>&nbsp;in the sequence.</li><li><b>Time to live</b>/hop limit.<br></li></ul>

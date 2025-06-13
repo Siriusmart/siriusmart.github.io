@@ -1,1 +1,0 @@
-WebSocket packets are greatly reduced in size since they use a&nbsp;<u>fraction of the usual header information</u>.

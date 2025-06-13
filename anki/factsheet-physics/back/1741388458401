@@ -1,1 +1,0 @@
-For a conductor of length&nbsp;\(L\)&nbsp;and uniform cross-section area&nbsp;\(A\)<br><ul><li>\(R\propto L\)<br></li><li>\(R\propto\frac{1}{A}\)</li></ul><div>So</div><div>\[R=\frac{\rho L}{A}\]where&nbsp;\(\rho\)&nbsp;is a constant for that material, known as its&nbsp;<b>resistivity</b>.</div><div><br></div><div>Rearranging gives</div><div>\[\rho=\frac{RA}{L}\]<br></div>

@@ -1,1 +1,0 @@
-<ol><li>When the CPU wishes to access a particular main memory location, it sends this address to memory on the&nbsp;<b>address bus</b>.</li><li>The data in that location is then returned to the CPU on the&nbsp;<b>data bus</b>.</li><li>And the&nbsp;<b>control signals</b>&nbsp;are sent along the&nbsp;<b>control bus</b>.</li></ol>

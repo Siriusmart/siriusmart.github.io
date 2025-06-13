@@ -1,1 +1,0 @@
-A MIDI controller carriers&nbsp;<b>event messages</b>&nbsp;that specify<br><ul><li>Pitch and duration of a note</li><li>Timbre, vibrato and volume changes.</li><li>An&nbsp;<b>synchronise tempo</b>&nbsp;between multiple devices.</li></ul>

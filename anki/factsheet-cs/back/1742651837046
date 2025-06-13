@@ -1,1 +1,0 @@
-In a relational database,<br><ul><li>A&nbsp;<b>separate table</b>&nbsp;is created for each entity identified in the system.</li><li>Where a <b>relationship</b> exists between entities, an extra field called a&nbsp;<b>foreign key</b>&nbsp;links the two tables.</li></ul>

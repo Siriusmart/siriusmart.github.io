@@ -1,1 +1,0 @@
-<ol><li>The source pd&nbsp;\(V_0=\text{resistor pd}+\text{capacitor pd}=IR+\frac{Q}{C}\)</li><li>The initial current&nbsp;\(I_0=\frac{V_0}{R}\)&nbsp;because the capacitor is initially uncharged.</li><li>At time&nbsp;\(t\)&nbsp;after charging starts,&nbsp;\(I=I_0e^\frac{-t}{RC}\)</li><li>So&nbsp;\(V=\frac{Q}{C}=V_0\left(1-e^\frac{-t}{RC}\right)\)</li></ol>

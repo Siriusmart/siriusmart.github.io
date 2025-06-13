@@ -1,1 +1,0 @@
-A first-class object is an object that may<br><ul><li>Appear in expressions</li><li>Be assigned to a variable</li><li>Be assigned as an argument</li><li>Be returned in a function call</li></ul>

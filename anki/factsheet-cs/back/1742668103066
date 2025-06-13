@@ -1,3 +1,0 @@
-<pre>ALTER TABLE TableName
-MODIFY COLUMN FieldName NEW TYPE
-</pre>

@@ -1,4 +1,0 @@
-<pre>UPDATE Table
-SET Field1 = "Value1", Field2 = "Value2"
-WHERE CONDITION
-</pre>

@@ -1,4 +1,0 @@
-A transformer is designed so all the magnetic flux produced by teh primary coil passes through the secondary coil.<br><br>Let&nbsp;\(\phi\)&nbsp;be the flux in the core passing through each turn.<br><ul><li>The flux linkage in the secondary coil is&nbsp;\(N_s\phi\), by Faraday's law the induced emf in the secondary coil&nbsp;\(V_s=N_s\frac{d\phi}{dt}\)</li><li>The flux linkage in the primary coil is&nbsp;\(N_p\phi\), the induced emf in the primary coil&nbsp;\(V_p=N_p\frac{d\phi}{dt}\)</li></ul><div>The induced emf in the primary coil&nbsp;<b>opposes the pd applied</b>&nbsp;to the primary coil, so the applied pd&nbsp;\(=V_p\).</div><br>\[\begin{align*}
-\frac{V_s}{V_p}&amp;=\frac{N_s\frac{d\phi}{dt}}{N_p\frac{d\phi}{dt}}\\
-&amp;=\frac{N_s}{N_p}
-\end{align*}\]

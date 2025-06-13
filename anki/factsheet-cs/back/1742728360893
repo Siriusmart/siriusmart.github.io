@@ -1,1 +1,0 @@
-Two complement work similar to an&nbsp;<b>analogue counter</b>.<br><ul><li>Move the wheel forward one creates a reading of 0001</li><li>Move the wheel backward one creates a reading of 9999, which is&nbsp;<b>interpreted as -1</b>.</li></ul>

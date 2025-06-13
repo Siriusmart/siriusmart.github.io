@@ -1,1 +1,0 @@
-The D-type flip-flop is a positive&nbsp;<b>edge-triggered flip-flop</b>.<br><ul><li>It can only change the output value when the clock is at a <b>rising edge</b>,</li><li>Otherwise the input edge is held and not changed.</li></ul>

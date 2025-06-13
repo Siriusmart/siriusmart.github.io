@@ -1,1 +1,0 @@
-A list is composed of a&nbsp;<b>head</b>&nbsp;and a&nbsp;<b>tail</b>.<br><ul><li>The head is the first element of the list.</li><li>The tail is the remainder of the list.</li></ul>

@@ -1,1 +1,0 @@
-<ul><li>Instead of capturing relationships between entities in a<b> join table</b> as in a relational database.</li><li>A graph database captures the relationships and their properties&nbsp;<b>directly within the stored data</b>.</li></ul>

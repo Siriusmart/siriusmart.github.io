@@ -1,1 +1,0 @@
-<ol><li>Each bit is to be&nbsp;<b>sent three times</b>.</li><li>If a bit value if flipped erroneously during transmission, the recipient computer would use the&nbsp;<b>majority rule</b>&nbsp;and assume that the two bits that have not changed are correct.</li></ol>

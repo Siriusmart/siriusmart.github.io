@@ -1,1 +1,0 @@
-<ol><li>HTML is broken down into a&nbsp;<u>hierarchy of tags</u>&nbsp;called a&nbsp;<b>Document Object Model</b>&nbsp;tree.</li><li>Styles from the CSS form their own&nbsp;<b>CSS Object Model</b>.</li><li>Javascript is parsed and executed.</li><li>Further HTTP requests may be made.</li></ol>

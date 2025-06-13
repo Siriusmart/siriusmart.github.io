@@ -1,1 +1,0 @@
-The sequence of operations involved in executing an instruction can be&nbsp;<b>divided into three phases</b>&nbsp;- fetch, decoding and executing it.<br><br>This cycle is repeated over and over as each instruction of the program is executed.

@@ -1,1 +1,0 @@
-In a functional programming language, the <b>value of a variable cannot change</b>.<br><ul><li>Variables are said to be&nbsp;<b>immutable</b>.</li><li>The program is said to be&nbsp;<b>stateless</b>.</li></ul>

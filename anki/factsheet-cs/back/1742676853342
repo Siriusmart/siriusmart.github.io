@@ -1,1 +1,0 @@
-<ul><li>A record is&nbsp;<b>locked</b>&nbsp;whenever a user retrieves it for editing or updating.</li><li>Anyone else attempting to retreive the same record is&nbsp;<b>denied access</b>&nbsp;until the transaction is completed or cancelled.</li></ul>

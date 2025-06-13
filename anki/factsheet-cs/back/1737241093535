@@ -1,1 +1,0 @@
-<ul><li>Allows the receiver time to identify the next start bit.</li><li>Gives the receiver time to process the data before the next value is transmitted.</li></ul>

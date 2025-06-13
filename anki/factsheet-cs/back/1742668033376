@@ -1,3 +1,0 @@
-<pre>ALTER TABLE TableName
-DROP COLUMN FieldName
-</pre>

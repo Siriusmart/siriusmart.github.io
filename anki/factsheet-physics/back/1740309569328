@@ -1,1 +1,0 @@
-<ul><li>Has a&nbsp;<b>horizontal component</b>&nbsp;that reduces the horizontal speed of the projectile and its range.</li><li>Has a&nbsp;<b>vertical component</b>&nbsp;that reduces the maxium height of the projectile if its initial direction is above the horizontal, and makes its descent steeper than its ascent.</li></ul>

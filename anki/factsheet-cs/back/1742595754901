@@ -1,1 +1,0 @@
-<ol><li>Each instruction in assembly language is&nbsp;<b>equivalent to one machine code instruction</b>.</li><li>The machine code instruction that a particular computer is&nbsp;<b>completely dependent on the hardware</b>.</li><li>Therefore each different type of processor will have a&nbsp;<b>different instruction set</b>&nbsp;and a different assembly language.</li></ol>

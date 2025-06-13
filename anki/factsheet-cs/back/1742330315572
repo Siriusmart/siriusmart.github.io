@@ -1,1 +1,0 @@
-The system clock&nbsp;<b>generates a series of signals</b>, switching between 0 and 1 billions of times per second and <b>synchronising CPU operations</b>.

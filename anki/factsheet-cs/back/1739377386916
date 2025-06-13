@@ -1,1 +1,0 @@
-<ol><li>An outgoing server request made by a computer on a private network&nbsp;<b>contains its own IP address</b>&nbsp;and&nbsp;<b>port number</b>.</li><li>The router logs these as an entry in a&nbsp;<b>translation table</b>.</li><li>And <b>swaps the packet IP address and port number</b>&nbsp;with its own external IP address and a unique port number.</li></ol>

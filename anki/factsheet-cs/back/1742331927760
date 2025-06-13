@@ -1,1 +1,0 @@
-<ul><li>All processor activities&nbsp;<b>begin on a clock pulse</b>.</li><li>Some activities may take&nbsp;<b>more than one clock cycle&nbsp;to complete</b>.</li></ul>

@@ -1,1 +1,0 @@
-Allowing multiple users to simultaneously update a database table may <b>cause one of the updates to be lost</b>.

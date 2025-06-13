@@ -1,1 +1,0 @@
-<ol><li>When an item is updated, the entire record will be&nbsp;<b>copied to the user's own local memory</b>&nbsp;at the workstation.</li><li>When the record is saved, the block is rewritten to the file server.</li></ol>

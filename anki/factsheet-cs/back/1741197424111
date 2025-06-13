@@ -1,1 +1,0 @@
-Association may be loosely described as a&nbsp;<b>has a</b>&nbsp;relationship between classes.<br><ul><li>There is&nbsp;<b>no ownership</b>&nbsp;between the objects.</li><li>Each objects&nbsp;<b>has their own lifecycle</b>.</li></ul>

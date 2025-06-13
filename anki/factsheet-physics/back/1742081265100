@@ -1,8 +1,0 @@
-Consider&nbsp;<b>one molecule</b>&nbsp;of mass&nbsp;\(m\)&nbsp;in a rectangular container.<br><ol><li>Each impact of the molecule with the (shaded) face&nbsp;<b>reverses the x-component</b>&nbsp;of velocity.\[\Delta p=2mv_x\]</li><li>The&nbsp;<b>time between successive impacts</b>\[\Delta t=\frac{2L_x}{v_x}\]</li><li>The&nbsp;<b>force&nbsp;on the molecule</b> is the same and opposite as the force on the surface\[F=\frac{\Delta p}{\Delta t}=\frac{m{v_x}^2}{L_x}\]</li><li>The&nbsp;<b>pressure</b>&nbsp;of the molecule on the surface.\[p=\frac{F}{A}=\frac{m{v_x}^2}{L_xL_yL_z}=\frac{m{v_x}^2}{V}\]</li></ol><div>Now consider&nbsp;\(n\)&nbsp;molecules moving at different velocities.</div><div><ol start="5"><li>The <b>total pressure</b>&nbsp;is the sum of the individual pressures\[\begin{align*}
-p&amp;=\frac{m{v_{x1}}^2}{V}+\frac{m{v_{x2}}^2}{V}+\cdots+\frac{m{v_{xN}}^2}{V}\\
-&amp;=\frac{m}{V}({v_{x1}}^2+{v_{x2}}^2+\cdots+{v_{xN}}^2)\\
-&amp;=\frac{Nm\bar{v_x}^2}{V}
-\end{align*}\]Where&nbsp;\(\bar{v_x}^2=\frac{{v_{x1}}^2+{v_{x2}}^2+\cdots+{v_{xN}}^2}{N}\)</li><li>Because the motion of the molecules is random, there is&nbsp;<b>no preferred direction</b>, so it is true that\[p=\frac{Nm\bar{v_y}^2}{V}+\frac{Nm\bar{v_z}^2}{V}\]Therefore\[\begin{align*}
-3p&amp;=\frac{Nm}{V}(\bar{v_x}^2+\bar{v_y}^2+\bar{v_z}^2)\\
-pV&amp;=\frac{1}{3}Nm{c_\text{rms}}^2
-\end{align*}\]</li></ol></div>

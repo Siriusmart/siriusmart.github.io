@@ -1,1 +1,0 @@
-<ul><li>127.x.x.x are <b>private</b>, non-routable address.</li><li>x.x.x.0 is the&nbsp;<b>network identifier</b>.</li><li>x.x.x.255 is reserved as the&nbsp;<b>broadcast address</b>.</li><li>x.x.x.1 is the default&nbsp;<b>router address</b>.</li></ul>

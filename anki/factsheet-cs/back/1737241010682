@@ -1,1 +1,0 @@
-The baud rate at the receiving end has to be set up to be the same as the sender's baud rate or the signal will not be received correctly.
